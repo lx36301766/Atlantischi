@@ -1,0 +1,11 @@
+include ':app', ':java', ':squareup'
+
+include 'force:dexshell', 'force:forceapkobj', 'force:reforceapk'
+
+include ':videocompress'
+
+include ':stetho'
+
+include ':rx'
+
+include 'annotation:javaannotation', 'annotation:androidannotation'

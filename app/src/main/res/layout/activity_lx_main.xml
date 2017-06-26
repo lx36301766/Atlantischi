@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:background="@drawable/common_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LxMainActivity">
+
+    <!--<ListView-->
+        <!--android:id="@+id/im_msg_items"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="210dp"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:animationCache="false"-->
+        <!--android:cacheColorHint="#00000000"-->
+        <!--android:clickable="false"-->
+        <!--android:divider="#00000000"-->
+        <!--android:focusable="true"-->
+        <!--android:listSelector="@android:color/transparent"-->
+        <!--android:overScrollMode="never"-->
+        <!--android:scrollbars="none"-->
+        <!--android:scrollingCache="false"-->
+        <!--android:smoothScrollbar="true"-->
+        <!--android:stackFromBottom="true"-->
+        <!--android:transcriptMode="alwaysScroll"/>-->
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

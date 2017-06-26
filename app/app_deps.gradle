@@ -1,0 +1,23 @@
+
+dependencies {
+
+    compile files('libs/httpmime-4.1.1.jar')
+
+    compile "${SUPPORT_DEPS.supportV4}"
+    compile "${SUPPORT_DEPS.supportV13}"
+    compile "${SUPPORT_DEPS.appcompatV7}"
+    compile "${SUPPORT_DEPS.cardview}"
+    compile "${SUPPORT_DEPS.annotations}"
+    compile "${SUPPORT_DEPS.design}"
+    compile "${SUPPORT_DEPS.recyclerView}"
+
+    compile "${DEPS.GIF_DRAWABLE}"
+    compile "${DEPS.HLISTVIEW}"
+
+    compile "${GOOGLE_AGERA.content}"
+    compile "${GOOGLE_AGERA.database}"
+    compile "${GOOGLE_AGERA.net}"
+    compile "${GOOGLE_AGERA.rvadapter}"
+    compile "${GOOGLE_AGERA.rvdatabinding}"
+
+}

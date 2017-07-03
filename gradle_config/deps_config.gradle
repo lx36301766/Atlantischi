@@ -20,6 +20,12 @@ ext {
             rvdatabinding: "com.google.android.agera:rvdatabinding:${GOOGLE_AGERA_VERSION}",
     ]
 
+    GLIDE_VERSION = '4.0.0-RC1'
+    GLIDE = [
+            glide   : "com.github.bumptech.glide:glide:${GLIDE_VERSION}",
+            compiler: "com.github.bumptech.glide:compiler:${GLIDE_VERSION}",
+    ]
+
     RX = [
             rxandroid: 'io.reactivex:rxandroid:1.2.1',
             rxjava   : 'io.reactivex:rxjava:1.1.6',
@@ -28,6 +34,7 @@ ext {
 
     RETROFIT_VERSION = '2.3.0'
     SQUAREUP = [
+            picasso                   : "com.squareup.picasso:picasso:2.5.2",
             javapoet                  : "com.squareup:javapoet:1.7.0",
             okhttp3                   : "com.squareup.okhttp3:okhttp:3.8.0",
             retrofit2                 : "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}",
@@ -38,9 +45,11 @@ ext {
     ]
 
     STETHO_VERSION = '1.5.0'
+    FRESCO_VERSION = '1.3.0'
     FACEBOOK = [
             stetho_okhttp: "com.facebook.stetho:stetho-okhttp:${STETHO_VERSION}",
             stetho       : "com.facebook.stetho:stetho:${STETHO_VERSION}",
+            fresco       : "com.facebook.fresco:fresco:${FRESCO_VERSION}",
     ]
 
     JSON = [

@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+apply from: "../../gradle_config/deps_config.gradle"
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile "${SQUAREUP.retrofit2}"
+    //compile "${SQUAREUP.retrofit2_gson_convert}"
+    compile "${SQUAREUP.retrofit2_fastjson_convert}"
+    compile "${SQUAREUP.retrofit2_adapter_rxjava}"
+    compile "${SQUAREUP.okhttp3}"
+
+    //compile "${JSON.fastjson}"
+
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

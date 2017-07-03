@@ -11,8 +11,8 @@ dependencies {
     compile "${SUPPORT_DEPS.design}"
     compile "${SUPPORT_DEPS.recyclerView}"
 
-    compile "${DEPS.GIF_DRAWABLE}"
-    compile "${DEPS.HLISTVIEW}"
+    compile "${DEPS.gif_drawable}"
+    compile "${DEPS.hlistview}"
 
     compile "${GOOGLE_AGERA.content}"
     compile "${GOOGLE_AGERA.database}"

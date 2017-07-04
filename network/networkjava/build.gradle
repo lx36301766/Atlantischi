@@ -1,6 +1,6 @@
 apply plugin: 'java'
 
-apply from: "../../gradle_config/deps_config.gradle"
+apply from: rootDir.absolutePath + "/gradle_config/deps_config.gradle"
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])

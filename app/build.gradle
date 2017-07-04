@@ -2,10 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'realm-android'
 
-apply from: "../gradle_config/base_config.gradle"
-apply from: "../gradle_config/deps_config.gradle"
-
-apply from: "../gradle_config/AndResGuard.gradle"
+apply from: rootDir.absolutePath + "/gradle_config/base_config.gradle"
+apply from: rootDir.absolutePath + "/gradle_config/deps_config.gradle"
+apply from: rootDir.absolutePath + "/gradle_config/AndResGuard.gradle"
 apply from: "app_deps.gradle"
 
 buildscript {

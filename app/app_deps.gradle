@@ -13,6 +13,7 @@ dependencies {
 
     compile "${DEPS.gif_drawable}"
     compile "${DEPS.hlistview}"
+    compile "${DEPS.kotlin}"
 
     compile "${GOOGLE_AGERA.content}"
     compile "${GOOGLE_AGERA.database}"

@@ -1,5 +1,7 @@
 apply plugin: 'java'
 
+apply from: rootDir.absolutePath + "/gradle_config/kotlin_deps.gradle"
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }

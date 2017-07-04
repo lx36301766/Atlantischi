@@ -1,5 +1,13 @@
 ext {
 
+    //module gradle apply from
+    def gradleDir = rootDir.absolutePath + "/gradle_config/"
+    GRADLES = [
+            base_config: gradleDir + "base_config.gradle",
+            AndResGuard: gradleDir + "AndResGuard.gradle",
+            kotlin_deps: gradleDir + "kotlin_deps.gradle",
+    ]
+
     SUPPORT_VERSION = '25.3.1'
     SUPPORT_DEPS = [
             supportV4   : "com.android.support:support-v4:${SUPPORT_VERSION}",
@@ -61,6 +69,7 @@ ext {
 
 
     DEPS = [
+            kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
             gif_drawable     : "pl.droidsonroids.gif:android-gif-drawable:1.2.2",
             hlistview        : "it.sephiroth.android.library.horizontallistview:hlistview:1.2.2",
             constraint_layout: "com.android.support.constraint:constraint-layout:1.0.2",

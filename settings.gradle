@@ -1,5 +1,4 @@
-
-include ':app', ':java'
+include ':app', ':java', ':kotlin'
 
 include ':videocompress'
 
@@ -13,4 +12,4 @@ include 'force:dexshell', 'force:forceapkobj', 'force:reforceapk'
 
 include 'annotation:javaannotation', 'annotation:androidannotation'
 
-include 'network:networkapp' , 'network:networkjava'
+include 'network:networkapp', 'network:networkjava'

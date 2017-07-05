@@ -1,4 +1,4 @@
-package pl.lx.test;
+package pl.atlantischi.test;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

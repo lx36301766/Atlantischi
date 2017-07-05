@@ -1,4 +1,4 @@
-package com.lx.test;
+package pl.atlantischi.test;
 
 import java.io.FileInputStream;
 import java.lang.reflect.Method;
@@ -45,7 +45,7 @@ public class ClassLoaderTest {
 
     public static void main(String args[]) throws Exception {
         MyClassLoader classLoader = new MyClassLoader("/Users/xuanluo/Develop/android/GitHub/AtlantischiTest/java/src/main/java");
-        Class clazz = classLoader.loadClass("com.lx.test.MyTest");
+        Class clazz = classLoader.loadClass("pl.atlantischi.test.MyTest");
         Object obj = clazz.newInstance();
         Method helloMethod = clazz.getDeclaredMethod("hello123", null);
         helloMethod.invoke(obj, null);

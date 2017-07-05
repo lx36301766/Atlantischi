@@ -1,4 +1,4 @@
-package com.lx.test;
+package pl.atlantischi.test;
 
 public class MyTest {
 

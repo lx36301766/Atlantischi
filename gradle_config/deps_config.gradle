@@ -69,12 +69,13 @@ ext {
 
 
     DEPS = [
-            kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
-            gif_drawable     : "pl.droidsonroids.gif:android-gif-drawable:1.2.2",
-            hlistview        : "it.sephiroth.android.library.horizontallistview:hlistview:1.2.2",
-            constraint_layout: "com.android.support.constraint:constraint-layout:1.0.2",
-            volley           : "com.android.volley:volley:1.0.0",
-            slimadapter      : "net.idik:slimadapter:2.1.0",
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+            gif_drawable          : "pl.droidsonroids.gif:android-gif-drawable:1.2.2",
+            hlistview             : "it.sephiroth.android.library.horizontallistview:hlistview:1.2.2",
+            constraint_layout     : "com.android.support.constraint:constraint-layout:1.0.2",
+            volley                : "com.android.volley:volley:1.0.0",
+            slimadapter           : "net.idik:slimadapter:2.1.0",
+            universal_image_loader: "com.nostra13.universalimageloader:universal-image-loader:1.9.5",
     ]
 
 }

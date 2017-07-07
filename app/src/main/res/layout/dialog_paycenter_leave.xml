@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="296dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_invoice_dialog_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:gravity="center"
+        android:text="便宜不等人,此单可享最高168元减免。"
+        android:textColor="#333333"
+        android:textSize="17sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:visibility="gone"
+        android:background="@color/jumei_gray_e3"/>
+
+    <RelativeLayout
+        android:id="@+id/action_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="18dp">
+
+        <Button
+            android:id="@+id/left_btn"
+            android:layout_width="96dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/shopcar_submit_btn_reverse_bg"
+            android:text="遗憾放弃"
+            android:textColor="#333333"
+            android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/right_btn"
+            android:layout_width="96dp"
+            android:layout_height="36dp"
+            android:layout_toRightOf="@+id/left_btn"
+            android:background="@drawable/shopcar_submit_btn_bg_normal"
+            android:text="把握机会"
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+
+
+</LinearLayout>
+

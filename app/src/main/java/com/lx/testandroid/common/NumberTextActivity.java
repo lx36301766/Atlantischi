@@ -4,10 +4,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.lx.testandroid.R;
+import com.lx.testandroid.testviews.PayCenterLeaveDialog;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -29,6 +32,28 @@ public class NumberTextActivity extends Activity {
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         TextView tvDate = (TextView) findViewById(R.id.date_text);
         tvDate.setText(java.text.DateFormat.getDateInstance().format(new Date()));
+
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PayCenterLeaveDialog.Builder builder = new PayCenterLeaveDialog.Builder(NumberTextActivity.this);
+                builder
+                 .setContext("便宜不等人,此单可享最高168元减免。")
+                        .setLeftButton("遗憾放弃", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setRightButton("遗憾放弃", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).create().show();
+
+            }
+        });
     }
 
 }

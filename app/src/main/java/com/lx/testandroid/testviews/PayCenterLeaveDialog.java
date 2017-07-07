@@ -42,7 +42,7 @@ public class PayCenterLeaveDialog extends Dialog {
             dialog.setContentView(root);
             TextView contentTv = (TextView) dialog.findViewById(R.id.content);
             contentTv.setText(mContent);
-            Button leftBtn = (Button) dialog.findViewById(R.id.left_btn);
+            TextView leftBtn = (TextView) dialog.findViewById(R.id.left_btn);
             leftBtn.setText(mLeftText);
             leftBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -52,7 +52,7 @@ public class PayCenterLeaveDialog extends Dialog {
                     }
                 }
             });
-            Button rightBtn = (Button) dialog.findViewById(R.id.right_btn);
+            TextView rightBtn = (TextView) dialog.findViewById(R.id.right_btn);
             rightBtn.setText(mRightText);
             rightBtn.setOnClickListener(new View.OnClickListener() {
                 @Override

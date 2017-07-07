@@ -9,6 +9,7 @@ import com.lx.testandroid.testviews.PayCenterLeaveDialog;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.TextView;
@@ -36,9 +37,11 @@ public class NumberTextActivity extends Activity {
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String str = "<font color=\"#333333\">便宜不等人，此单可享最高</font><font "
+                        + "color=\"#FE4070\">100000104.64元</font><font color=\"#333333\">减免</font>";
+                CharSequence text = Html.fromHtml(str);
                 PayCenterLeaveDialog.Builder builder = new PayCenterLeaveDialog.Builder(NumberTextActivity.this);
-                builder
-                 .setContext("便宜不等人,此单可享最高168元减免。")
+                builder.setContext(text)
                         .setLeftButton("遗憾放弃", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

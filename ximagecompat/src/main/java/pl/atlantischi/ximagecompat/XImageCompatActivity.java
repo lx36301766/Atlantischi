@@ -17,7 +17,6 @@ public class XImageCompatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ximage_compat);
 
         ImageView iv = (ImageView) findViewById(R.id.imageView);
-
         XImageCompat xImageCompat = new PicassoCompat();
         xImageCompat.display(url, iv);
 

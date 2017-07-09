@@ -1,6 +1,6 @@
 package pl.atlantischi.ximagecompat.interfaces;
 
-import android.widget.ImageView;
+        import android.widget.ImageView;
 
 /**
  * Created by admin on 2017/7/7.

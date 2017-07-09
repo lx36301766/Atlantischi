@@ -1,21 +1,19 @@
 package pl.atlantischi.ximagecompat.impl;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.widget.ImageView;
 import pl.atlantischi.ximagecompat.interfaces.XImageCompat;
 
 /**
- * Created by admin on 2017/7/7.
+ * Created by admin on 2017/7/9.
  */
 
-public class FrescoCompat implements XImageCompat {
+public class UniversalImageLoaderCompat implements XImageCompat {
 
     @Override
     public void display(String url, ImageView imageView) {
-        Fresco.initialize(imageView.getContext());
-
-
+        ImageLoader.getInstance().displayImage(url, imageView);
     }
 
 }

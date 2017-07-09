@@ -1,3 +1,4 @@
 
 void displayImage(ImageView imageView)
 
+Bitmap getBitmapFromUri(Uri uri)

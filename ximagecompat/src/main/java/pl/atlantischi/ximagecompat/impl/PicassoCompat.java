@@ -13,7 +13,7 @@ public class PicassoCompat implements XImageCompat {
 
     @Override
     public void display(String url, ImageView imageView) {
-        Picasso.with(imageView.getContext()).load(url);
+        Picasso.with(imageView.getContext()).load(url).into(imageView);;
     }
 
 }

@@ -3,7 +3,6 @@ package pl.atlantischi.ximagecompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
-import pl.atlantischi.ximagecompat.impl.PicassoCompat;
 import pl.atlantischi.ximagecompat.interfaces.XImageCompat;
 
 public class XImageCompatActivity extends AppCompatActivity {
@@ -17,8 +16,8 @@ public class XImageCompatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ximage_compat);
 
         ImageView iv = (ImageView) findViewById(R.id.imageView);
-        XImageCompat xImageCompat = new PicassoCompat();
-        xImageCompat.display(url, iv);
+//        XImageCompat xImageCompat = new PicassoCompat();
+//        xImageCompat.display(url, iv);
 
     }
 }

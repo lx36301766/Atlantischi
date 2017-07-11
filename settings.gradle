@@ -6,7 +6,7 @@ include ':stetho'
 
 include ':rx'
 
-include ':ximagecompat'
+include 'imagecompat:ximagecompat', 'imagecompat:picassocompat'
 
 include 'force:dexshell', 'force:forceapkobj', 'force:reforceapk'
 

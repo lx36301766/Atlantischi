@@ -1,4 +1,4 @@
-package pl.atlantischi.ximagecompat.impl;
+package pl.atlantischi.picassocompat;
 
 import com.squareup.picasso.Picasso;
 

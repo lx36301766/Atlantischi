@@ -66,6 +66,12 @@ ext {
             fastjson_android: "com.alibaba:fastjson:1.1.58.android",
     ]
 
+    LOG = [
+            klog  : "com.github.zhaokaiqiang.klog:library:1.6.0",
+            timber: "com.jakewharton.timber:timber:4.5.1",
+            logger: "com.orhanobut:logger:2.1.1",
+    ]
+
 
 
     DEPS = [

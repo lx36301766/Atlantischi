@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+//please uncomment fellow line before you build a patch
+//apply plugin: 'auto-patch-plugin'
+apply plugin: 'robust'
+
+apply from: rootDir.absolutePath + "/gradle_config/base_config.gradle"
+apply from: rootDir.absolutePath + "/gradle_config/deps_config.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId "pl.atlantischi.networkapp"
+        versionCode 1
+        versionName "1.0"
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "${SUPPORT_DEPS.appcompatV7}"
+    compile "${DEPS.constraint_layout}"
+
+
+    compile "com.meituan.robust:robust:$robust_version"
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}

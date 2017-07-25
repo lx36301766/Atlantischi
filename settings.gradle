@@ -6,10 +6,10 @@ include ':stetho'
 
 include ':rx'
 
-include 'imagecompat:ximagecompat', 'imagecompat:picassocompat'
-
 include 'force:dexshell', 'force:forceapkobj', 'force:reforceapk'
 
 include 'annotation:javaannotation', 'annotation:androidannotation'
 
 include 'network:networkapp', 'network:networkjava'
+
+include 'hotfix:robusttest'

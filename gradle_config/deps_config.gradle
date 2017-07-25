@@ -53,11 +53,14 @@ ext {
     ]
 
     STETHO_VERSION = '1.5.0'
-    FRESCO_VERSION = '1.3.0'
+    FRESCO_VERSION = '1.4.0'
     FACEBOOK = [
             stetho_okhttp: "com.facebook.stetho:stetho-okhttp:${STETHO_VERSION}",
             stetho       : "com.facebook.stetho:stetho:${STETHO_VERSION}",
             fresco       : "com.facebook.fresco:fresco:${FRESCO_VERSION}",
+            fresco       : "com.facebook.fresco:fresco:${FRESCO_VERSION}",
+            fresco_okhttp: "com.facebook.fresco:imagepipeline-okhttp3:0.12.0",
+            fresco_volley: "com.facebook.fresco:drawee-volley:0.12.0",
     ]
 
     JSON = [
@@ -82,6 +85,11 @@ ext {
             volley                : "com.android.volley:volley:1.0.0",
             slimadapter           : "net.idik:slimadapter:2.1.0",
             universal_image_loader: "com.nostra13.universalimageloader:universal-image-loader:1.9.5",
+    ]
+
+    GUAVA = [
+            guava        : "com.google.guava:guava:22.0",
+            guava_android: "com.google.guava:guava:22.0-android",
     ]
 
 }

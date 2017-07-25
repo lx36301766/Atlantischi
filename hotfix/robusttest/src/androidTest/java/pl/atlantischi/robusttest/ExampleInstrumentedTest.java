@@ -1,4 +1,4 @@
-package pl.atlantischi.test;
+package pl.atlantischi.robusttest;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,13 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("pl.atlantischi.test", appContext.getPackageName());
-    }
-    @Test
-    public void useAppContext2() throws Exception {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("pl.atlantischi.test2", appContext.getPackageName());
+        assertEquals("pl.atlantischi.robusttest", appContext.getPackageName());
     }
 }

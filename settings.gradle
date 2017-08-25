@@ -13,3 +13,5 @@ include 'annotation:javaannotation', 'annotation:androidannotation'
 include 'network:networkapp', 'network:networkjava'
 
 include 'hotfix:robusttest'
+
+include 'xjsonbridge:jsonbridgeapp'

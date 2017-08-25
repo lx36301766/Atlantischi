@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lx.testandroid.common.AnimationActivity">
+
+    <com.lx.testandroid.view.CheckView
+        xmlns:kongqw="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/checkView"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        kongqw:bg_color="#FFFFFF00"
+        kongqw:line_num="3"
+        kongqw:point_num="10"
+        kongqw:text_length="4"
+        kongqw:text_size="30dp" />
+
+</RelativeLayout>

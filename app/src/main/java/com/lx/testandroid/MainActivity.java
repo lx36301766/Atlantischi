@@ -1,14 +1,11 @@
 package com.lx.testandroid;
 
-import com.lx.testandroid.common.ClassLoaderActivity;
-import com.lx.testandroid.market.MarketActivity;
-import com.lx.testandroid.common.NumberTextActivity;
-import com.lx.testandroid.log.KLogTestActivity;
-import com.lx.testandroid.recyclerview.FragmentTestActivity;
-import com.lx.testandroid.study.realm.RealmActivity;
+import com.lx.testandroid.log.utils.KLog;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -19,22 +16,18 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.root_main);
 
-        addText(linearLayout, ClassLoaderActivity.class);
-        addText(linearLayout, MarketActivity.class);
-        addText(linearLayout, FragmentTestActivity.class);
-        addText(linearLayout, KLogTestActivity.class);
-        addText(linearLayout, NumberTextActivity.class);
-        addText(linearLayout, RealmActivity.class);
+        listAllActivities(linearLayout);
     }
 
-    private void addText(ViewGroup root, final Class<? extends Activity> clazz) {
-        clazz.getSimpleName();
+    private void addText(ViewGroup root, final Class<?> clazz) {
         TextView tv = new Button(this);
         tv.setPadding(0, 10, 0, 10);
 //        tv.setBackgroundColor(Color.RED);
@@ -55,5 +48,22 @@ public class MainActivity extends Activity {
         root.addView(tv, lp);
     }
 
+
+    private void listAllActivities(ViewGroup root) {
+        ActivityInfo[] list = new ActivityInfo[0];
+        try {
+            list = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_ACTIVITIES).activities;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        for (ActivityInfo activityInfo : list) {
+            KLog.d(TAG, "ActivityInfo = " + activityInfo.name);
+            try {
+                addText(root, Class.forName(activityInfo.name));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }

@@ -1,0 +1,607 @@
+{
+  "code": 0,
+  "sub_code": 0,
+  "action": "",
+  "message": "",
+  "data": {
+    "confirm_type_info": "cart",
+    "head_info": {
+      "title": "结算中心"
+    },
+    "submit_info": {
+      "title": "提交订单"
+    },
+    "delivery_unreachable": {
+      "label": "抱歉，您有商品不支持配送至当前地址，查看详情 >",
+      "win_title": "以下商品不支持配送当前地址",
+      "link_label": "移除这些商品",
+      "link": "{\"retail_global\\/611\\/\":{\"7021052500016_ht141022p2224121t1\":0}}",
+      "action": "remove"
+    },
+    "orders": [
+      {
+        "order_key": "retail_global/611/",
+        "order_type": "normal",
+        "seller_desc": "聚美优品发货",
+        "order_amount": "0",
+        "order_pay_amount": "0",
+        "order_discount_price": "51.55",
+        "need_express": 0,
+        "items": [
+          {
+            "item_key": "1005202_",
+            "item_type": "normal",
+            "item_short_name": "蜜丝佛陀(Max Factor)透滑粉饼(玉瓷色)1号10g",
+            "item_price": "129",
+            "quantity": 1,
+            "item_amount": "129",
+            "label": "",
+            "price_desc": "",
+            "item_buy_price": "129",
+            "attr_desc": "型号",
+            "low_inventory": 1,
+            "user_purchase_limit": "0",
+            "item_limit": 10,
+            "item_limit_desc": "一次最多只能购买10件，您可以结算完后再次购买",
+            "sale_status": "",
+            "add_key": "1005202,4555,jumei_mall",
+            "type": "jumei_mall",
+            "image": "https://p0.jmstatic.com/dev_test/test_product/000/004/4555_std/4555_200_200.jpg",
+            "show_vcb": 0,
+            "is_presale": 0,
+            "allow_modify_qty": 0,
+            "end_time": 0,
+            "item_url": "jumeimall://page/alldetail?itemid=4555&type=jumei_mall&selltype=&selllabel=",
+            "promo_sale": [],
+            "star_shop_name": "",
+            "show_tax_price": 0,
+            "product_id": "4555",
+            "sale_type": 4,
+            "sku": "1005202",
+            "deal_hash_id": "",
+            "item_id": "4555",
+            "category_ids": "107,3,383,20",
+            "item_discount_price": 0,
+            "image_tips": "",
+            "image_tips_color": "",
+            "delivery_unreachable": 0
+          },
+          {
+            "item_key": "1021611_",
+            "item_type": "normal",
+            "item_short_name": "蜜丝佛陀(Max Factor)透滑粉饼(润红色) 3号 10g",
+            "item_price": "129",
+            "quantity": 1,
+            "item_amount": "129",
+            "label": "",
+            "price_desc": "",
+            "item_buy_price": "129",
+            "attr_desc": "型号",
+            "low_inventory": 1,
+            "user_purchase_limit": "0",
+            "item_limit": 10,
+            "item_limit_desc": "一次最多只能购买10件，您可以结算完后再次购买",
+            "sale_status": "",
+            "add_key": "1021611,11254,jumei_mall",
+            "type": "jumei_mall",
+            "image": "https://p4.jmstatic.com/dev_test/test_product/000/011/11254_std/11254_200_200.jpg",
+            "show_vcb": 0,
+            "is_presale": 0,
+            "allow_modify_qty": 0,
+            "end_time": 0,
+            "item_url": "jumeimall://page/alldetail?itemid=11254&type=jumei_mall&selltype=&selllabel=",
+            "promo_sale": [],
+            "star_shop_name": "",
+            "show_tax_price": 0,
+            "product_id": "11254",
+            "sale_type": 4,
+            "sku": "1021611",
+            "deal_hash_id": "",
+            "item_id": "11254",
+            "category_ids": "107,3,383,20",
+            "item_discount_price": 0,
+            "image_tips": "",
+            "image_tips_color": "",
+            "delivery_unreachable": 0
+          },
+          {
+            "item_key": "7021052500016_ht141022p2224121t1",
+            "item_type": "normal",
+            "item_short_name": "莫斯奇诺男士剃须用品（测试lc)",
+            "item_price": "50",
+            "quantity": 2,
+            "item_amount": "100",
+            "label": "极速免税",
+            "price_desc": "",
+            "item_buy_price": "50",
+            "attr_desc": "重口味型 50g",
+            "low_inventory": 0,
+            "user_purchase_limit": "0",
+            "item_limit": 10,
+            "item_limit_desc": "一次最多只能购买10件，您可以结算完后再次购买",
+            "sale_status": "",
+            "add_key": "7021052500016,ht141022p2224121t1,global_deal",
+            "type": "global_deal",
+            "image": "https://p1.jmstatic.com/dev_test/test_product/002/224/2224121_std/2224121_200_200.jpg",
+            "show_vcb": 0,
+            "is_presale": 0,
+            "allow_modify_qty": 0,
+            "end_time": "1595677599",
+            "item_url": "jumeimall://page/alldetail?itemid=ht141022p2224121t1&type=global_deal&selltype=&selllabel=",
+            "promo_sale": [],
+            "star_shop_name": "",
+            "show_tax_price": 0,
+            "product_id": "2224121",
+            "sale_type": 258,
+            "sku": "7021052500016",
+            "deal_hash_id": "ht141022p2224121t1",
+            "item_id": "ht141022p2224121t1",
+            "category_ids": "107,1,9,353",
+            "item_discount_price": 0,
+            "image_tips": "无法配送",
+            "image_tips_color": "",
+            "delivery_unreachable": 1
+          }
+        ],
+        "promo_card": {
+          "usable_num_desc": "",
+          "discount_desc": "已自动使用，减免¥306.45",
+          "disable_desc": "",
+          "allow_use": 1,
+          "usable_num": -1,
+          "has_used": 1
+        },
+        "red_envelope": {
+          "usable_num_desc": "无可用",
+          "discount_desc": "",
+          "disable_desc": "",
+          "allow_use": 1,
+          "usable_num": 0,
+          "has_used": 0
+        },
+        "simple_promo_card_and_red_envelope": {
+          "title": "现金券、红包",
+          "discount_desc": "已为您自动选择",
+          "more_desc": "",
+          "price_desc": "-¥306.45",
+          "price_desc_mode": "auto",
+          "list_show": 1
+        },
+        "delivery_info": [
+          {
+            "type": "Express",
+            "title": "快递",
+            "fee": "5",
+            "reduction": "5",
+            "reduction_desc": "享自营满2件包邮，已减免¥5",
+            "order_amount": "0",
+            "is_default": 1,
+            "real_fee": "0",
+            "order_pay_amount": "0",
+            "desc": "（系统自动选择）"
+          }
+        ],
+        "discount_info": {
+          "discount_title": "优惠明细",
+          "discount_view": {
+            "title": "优惠明细",
+            "footer": "",
+            "items": [
+              {
+                "item_short_name": "蜜丝佛陀(Max Factor)透滑粉饼(玉瓷色)1号10g",
+                "image": "https://p0.jmstatic.com/dev_test/test_product/000/004/4555_std/4555_200_200.jpg",
+                "attr_desc": "型号",
+                "item_price": "129",
+                "item_discount_price": "0",
+                "quantity": 1,
+                "real_desc": "实付：￥0×1",
+                "real_title": "实付："
+              },
+              {
+                "item_short_name": "蜜丝佛陀(Max Factor)透滑粉饼(润红色) 3号 10g",
+                "image": "https://p4.jmstatic.com/dev_test/test_product/000/011/11254_std/11254_200_200.jpg",
+                "attr_desc": "型号",
+                "item_price": "129",
+                "item_discount_price": "0",
+                "quantity": "1",
+                "real_desc": "实付：￥0×1",
+                "real_title": "实付："
+              },
+              {
+                "item_short_name": "莫斯奇诺男士剃须用品（测试lc)",
+                "image": "https://p1.jmstatic.com/dev_test/test_product/002/224/2224121_std/2224121_200_200.jpg",
+                "attr_desc": "重口味型 50g",
+                "item_price": "50",
+                "item_discount_price": "0",
+                "quantity": 2,
+                "real_desc": "实付：￥0×2",
+                "real_title": "实付："
+              }
+            ]
+          }
+        },
+        "match_rule_desc": [
+          {
+            "display_name": "购物流程满50返1",
+            "rule_desc": "购物流程满50返1",
+            "short_desc": "满50元返1元现金券",
+            "rule_tag": "满返",
+            "rule_id": "1541627032",
+            "item_value": ""
+          },
+          {
+            "display_name": "购物流程-买2免1",
+            "rule_desc": "购物流程-买2免1",
+            "short_desc": "满2件免1件",
+            "rule_tag": "满X免Y",
+            "rule_id": "1541627030",
+            "item_value": ""
+          },
+          {
+            "display_name": "购物流程满10减1.55",
+            "rule_desc": "购物流程满10减1.55",
+            "short_desc": "满10元减1.55元",
+            "rule_tag": "满减",
+            "rule_id": "1541627027",
+            "item_value": ""
+          }
+        ],
+        "order_tax_fee_amount": 0
+      },
+      {
+        "order_key": "media/4055/",
+        "order_type": "normal",
+        "seller_desc": "POP9001发货",
+        "order_amount": "58.45",
+        "order_pay_amount": "58.45",
+        "order_discount_price": "51.55",
+        "need_express": 0,
+        "items": [
+          {
+            "item_key": "df810000200166014097_df1611023821p810000200",
+            "item_type": "normal",
+            "item_short_name": "国内POP付款优化二期1001",
+            "item_price": "50",
+            "quantity": 2,
+            "item_amount": "100",
+            "label": "",
+            "price_desc": "",
+            "item_buy_price": "50",
+            "attr_desc": "白的 白的",
+            "low_inventory": 0,
+            "user_purchase_limit": "0",
+            "item_limit": 10,
+            "item_limit_desc": "一次最多只能购买10件，您可以结算完后再次购买",
+            "sale_status": "",
+            "add_key": "df810000200166014097,df1611023821p810000200,jumei_pop",
+            "type": "jumei_pop",
+            "image": "https://p0.jmstatic.com/dev_test/test_product/810/000/810000200_std/810000200_200_200.jpg",
+            "show_vcb": 0,
+            "is_presale": 0,
+            "allow_modify_qty": 0,
+            "end_time": "2147483647",
+            "item_url": "jumeimall://page/alldetail?itemid=df1611023821p810000200&type=jumei_pop&selltype=&selllabel=",
+            "promo_sale": [],
+            "star_shop_name": "",
+            "show_tax_price": 0,
+            "product_id": "810000200",
+            "sale_type": 1,
+            "sku": "df810000200166014097",
+            "deal_hash_id": "df1611023821p810000200",
+            "item_id": "df1611023821p810000200",
+            "category_ids": "429,598,1384,602",
+            "item_discount_price": "24.225",
+            "image_tips": "",
+            "image_tips_color": "",
+            "delivery_unreachable": 0
+          }
+        ],
+        "promo_card": {
+          "usable_num_desc": "无可用",
+          "discount_desc": "",
+          "disable_desc": "",
+          "allow_use": 1,
+          "usable_num": 0,
+          "has_used": 0
+        },
+        "red_envelope": {
+          "usable_num_desc": "无可用",
+          "discount_desc": "",
+          "disable_desc": "",
+          "allow_use": 1,
+          "usable_num": 0,
+          "has_used": 0
+        },
+        "simple_promo_card_and_red_envelope": {
+          "title": "现金券、红包",
+          "discount_desc": "",
+          "more_desc": "",
+          "price_desc": "无可用",
+          "price_desc_mode": "nouse",
+          "list_show": 1
+        },
+        "delivery_info": [
+          {
+            "type": "Express",
+            "title": "快递",
+            "fee": "10",
+            "reduction": "0",
+            "reduction_desc": "",
+            "order_amount": "58.45",
+            "is_default": 1,
+            "real_fee": "10",
+            "order_pay_amount": "58.45",
+            "desc": "（系统自动选择）"
+          }
+        ],
+        "discount_info": {
+          "discount_title": "优惠明细",
+          "discount_view": {
+            "title": "优惠明细",
+            "footer": "",
+            "items": [
+              {
+                "item_short_name": "国内POP付款优化二期1001",
+                "image": "https://p0.jmstatic.com/dev_test/test_product/810/000/810000200_std/810000200_200_200.jpg",
+                "attr_desc": "白的 白的",
+                "item_price": "50",
+                "item_discount_price": "24.23",
+                "quantity": 2,
+                "real_desc": "实付：￥24.23×2",
+                "real_title": "实付："
+              }
+            ]
+          }
+        },
+        "match_rule_desc": [
+          {
+            "display_name": "购物流程-买2免1",
+            "rule_desc": "购物流程-买2免1",
+            "short_desc": "满2件免1件",
+            "rule_tag": "满X免Y",
+            "rule_id": "1541627030",
+            "item_value": ""
+          },
+          {
+            "display_name": "购物流程满10减1.55",
+            "rule_desc": "购物流程满10减1.55",
+            "short_desc": "满10元减1.55元",
+            "rule_tag": "满减",
+            "rule_id": "1541627027",
+            "item_value": ""
+          }
+        ],
+        "order_tax_fee_amount": 0
+      },
+      {
+        "order_key": "global/2901/",
+        "order_type": "normal",
+        "seller_desc": "叶川二仓发货",
+        "order_amount": "48.45",
+        "order_pay_amount": "48.45",
+        "order_discount_price": "1.55",
+        "need_express": 0,
+        "items": [
+          {
+            "item_key": "701506651_ht1466069465p800000018",
+            "item_type": "normal",
+            "item_short_name": "海王",
+            "item_price": "50",
+            "quantity": 1,
+            "item_amount": "50",
+            "label": "",
+            "price_desc": "",
+            "item_buy_price": "50",
+            "attr_desc": "gg",
+            "low_inventory": 0,
+            "user_purchase_limit": "0",
+            "item_limit": 10,
+            "item_limit_desc": "一次最多只能购买10件，您可以结算完后再次购买",
+            "sale_status": "",
+            "add_key": "701506651,ht1466069465p800000018,global_pop",
+            "type": "global_pop",
+            "image": "https://p3.jmstatic.com/dev_test/test_product/800/000/800000018_std/800000018_200_200.jpg",
+            "show_vcb": 0,
+            "is_presale": 0,
+            "allow_modify_qty": 0,
+            "end_time": "1588435199",
+            "item_url": "jumeimall://page/alldetail?itemid=ht1466069465p800000018&type=global_pop&selltype=&selllabel=",
+            "promo_sale": [],
+            "star_shop_name": "",
+            "show_tax_price": 0,
+            "product_id": "800000018",
+            "sale_type": 3,
+            "sku": "701506651",
+            "deal_hash_id": "ht1466069465p800000018",
+            "item_id": "ht1466069465p800000018",
+            "category_ids": "542,561,567,568",
+            "item_discount_price": "48.450",
+            "image_tips": "",
+            "image_tips_color": "",
+            "delivery_unreachable": 0
+          }
+        ],
+        "promo_card": {
+          "usable_num_desc": "无可用",
+          "discount_desc": "",
+          "disable_desc": "",
+          "allow_use": 1,
+          "usable_num": 0,
+          "has_used": 0
+        },
+        "red_envelope": {
+          "usable_num_desc": "无可用",
+          "discount_desc": "",
+          "disable_desc": "",
+          "allow_use": 1,
+          "usable_num": 0,
+          "has_used": 0
+        },
+        "simple_promo_card_and_red_envelope": {
+          "title": "现金券、红包",
+          "discount_desc": "",
+          "more_desc": "",
+          "price_desc": "无可用",
+          "price_desc_mode": "nouse",
+          "list_show": 1
+        },
+        "delivery_info": [
+          {
+            "type": "Express",
+            "title": "快递",
+            "fee": "0",
+            "reduction": "0",
+            "reduction_desc": "享商家包邮",
+            "order_amount": "48.45",
+            "is_default": 1,
+            "real_fee": "0",
+            "order_pay_amount": "48.45",
+            "desc": "（系统自动选择）"
+          }
+        ],
+        "discount_info": {
+          "discount_title": "优惠明细",
+          "discount_view": {
+            "title": "优惠明细",
+            "footer": "",
+            "items": [
+              {
+                "item_short_name": "海王",
+                "image": "https://p3.jmstatic.com/dev_test/test_product/800/000/800000018_std/800000018_200_200.jpg",
+                "attr_desc": "gg",
+                "item_price": "50",
+                "item_discount_price": "48.45",
+                "quantity": "1",
+                "real_desc": "实付：￥48.45×1",
+                "real_title": "实付："
+              }
+            ]
+          }
+        },
+        "match_rule_desc": [
+          {
+            "display_name": "购物流程满10减1.55",
+            "rule_desc": "购物流程满10减1.55",
+            "short_desc": "满10元减1.55元",
+            "rule_tag": "满减",
+            "rule_id": "1541627027",
+            "item_value": ""
+          }
+        ],
+        "order_tax_fee_amount": 0
+      }
+    ],
+    "address": {
+      "need_id_num": 0,
+      "is_disable_edit": 0,
+      "address_info": {
+        "address_id": "134131474",
+        "receiver_name": "*芬",
+        "hp": "186****1476",
+        "structured_address": "天津市-市辖区-河西区 三大发射点发",
+        "address_raw": "三大发射点发",
+        "is_default": 1
+      }
+    },
+    "delivery_day": [
+      {
+        "type": "",
+        "desc": "工作日/双休/节假日均可收货",
+        "is_default": 1,
+        "is_disable_edit": 0
+      },
+      {
+        "type": "weekday",
+        "desc": "仅工作日收货",
+        "is_default": 0,
+        "is_disable_edit": 0
+      },
+      {
+        "type": "weekend",
+        "desc": "仅双休/节假日收货",
+        "is_default": 0,
+        "is_disable_edit": 0
+      }
+    ],
+    "invoice": {
+      "allow_choose": 1,
+      "last_info": {
+        "is_choosed": 0,
+        "invoice_type": 2,
+        "invoice_company_name": "&lt;dfdf地方地方&gt;",
+        "invoice_medium": 1,
+        "invoice_code": "",
+        "invoice_email": ""
+      },
+      "medium_map": [
+        {
+          "invoice_medium": 1,
+          "name": "纸质发票",
+          "useable": 1,
+          "need_verify": 1
+        }
+      ],
+      "tips": {
+        "message": "部分商品不支持开具发票",
+        "show_type": 2,
+        "url": "http://s.h5.jumei.com/pages/1127",
+        "not_invoice_info": {
+          "title": "您购买的以下商品不支持索要发票",
+          "lists": [
+            {
+              "item_short_name": "莫斯奇诺男士剃须用品（测试lc)",
+              "image": "https://p1.jmstatic.com/dev_test/test_product/002/224/2224121_std/2224121_200_200.jpg",
+              "attr_desc": "重口味型 50g"
+            },
+            {
+              "item_short_name": "海王",
+              "image": "https://p3.jmstatic.com/dev_test/test_product/800/000/800000018_std/800000018_200_200.jpg",
+              "attr_desc": "gg"
+            }
+          ]
+        }
+      },
+      "notice": "温馨提示：下单后不能修改发票类型哦~",
+      "message": [
+        "备注：第三方商家将由商家开具发票并寄出，发票内容由商家决定。"
+      ]
+    },
+    "summary": {
+      "quantity": 7,
+      "rule_amount": 104.65,
+      "total_amount": 106.9,
+      "delivery_amount": 10,
+      "promo_card_amount": 306.45,
+      "red_envelope_amount": 0,
+      "all_orders_items_amount": 508,
+      "show_tax_price": 0,
+      "goods_price_amount": 0,
+      "tax_price_amount": 0,
+      "real_discount_tax_price_amount": 0
+    },
+    "id_verify_info": {
+      "name": "*芬",
+      "id_num": "500382***********X",
+      "cert_id": "11",
+      "notice": "因海关要求，购买海外商品需提供实名信息。您的身份信息会加密处理，确保您的信息安全。",
+      "name_key": "收货人",
+      "id_num_key": "身份证号",
+      "name_default": "请输入收货人姓名",
+      "id_num_default": "请输入*芬的身份证信息",
+      "is_show": 0,
+      "is_payer_auth": 0
+    },
+    "leave_toast_info": {
+      "is_show": 1,
+      "message": "<font color=\"#333333\">便宜不等人，此单可享最高</font><font color=\"#FE4070\">100000104.64元</font><font color=\"#333333\">减免</font>",
+      "cancel_button": {
+        "title": "把握机会"
+      },
+      "quit_button": {
+        "title": "遗憾放弃",
+        "redirect": ""
+      }
+    }
+  },
+  "extra": []
+}

@@ -2,56 +2,105 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.lx.testandroid">
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
-    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
-    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
 
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
 
+    <!-- 快捷方式相关 begin -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
+    <!-- 魅蓝3s 超大简易模式权限是下面的这个 -->
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <!-- coolpad -->
+    <uses-permission android:name="com.yulong.android.launcherL.permission.READ_SETTINGS"/>
+    <!-- flyme -->
+    <uses-permission android:name="com.meizu.flyme.launcher.permission.READ_SETTINGS"/>
+    <!-- vivo -->
+    <uses-permission android:name="com.bbk.launcher2.permission.READ_SETTINGS"/>
+    <!-- oppo -->
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <!-- HTC -->
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <!-- 奇酷 -->
+    <uses-permission android:name="com.qiku.launcher.permission.READ_SETTINGS"/>
+    <!-- 华为 -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <!-- 中兴 -->
+    <uses-permission android:name="com.zte.mifavor.launcher.permission.READ_SETTINGS"/>
+    <!-- 联想 -->
+    <uses-permission android:name="com.lenovo.launcher.permission.READ_SETTINGS"/>
+    <!-- 从360手机助手调试版复制过来的部分launcher权限  开始 -->
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.yulong.android.launcher3.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.READ_SETTINGS"/>
+    <uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.nd.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.yulong.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.ztemt.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="cn.nubia.launcher.permission.READ_SETTINGS"/>
+
+    <!-- 从360手机助手调试版复制过来的部分launcher权限  结束 -->
+    <!-- 快捷方式相关 end -->
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -61,19 +110,33 @@
         </activity>
         <activity android:name=".common.NumberTextActivity">
         </activity>
-        <activity android:name=".study.rx.RxAndroidTest">
-        </activity>
         <activity android:name=".viewpager.ViewPagerActivity">
-        </activity>
-        <activity android:name=".study.annotation.AnnotationTestActivity">
         </activity>
         <activity android:name=".market.MarketActivity">
         </activity>
         <activity android:name=".study.realm.RealmActivity">
         </activity>
+
+        <activity-alias
+            android:name=".MainAlias"
+            android:icon="@mipmap/default_ptr_rotate"
+            android:label="MainAlias"
+            android:targetActivity=".common.NumberTextActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
         <activity android:name=".common.ClassLoaderActivity">
         </activity>
-
+        <activity android:name=".common.LauncherIconActivity">
+        </activity>
+        <activity android:name=".common.AnimationActivity">
+        </activity>
+        <activity android:name=".common.CheckCodeActivity">
+        </activity>
     </application>
 
 </manifest>

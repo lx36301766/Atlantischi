@@ -55,8 +55,8 @@ ext {
 
     json = [
             gson            : "com.google.code.gson:gson:2.8.1",
-            fastjson        : "com.alibaba:fastjson:1.2.33",
-            fastjson_android: "com.alibaba:fastjson:1.1.58.android",
+            fastjson        : "com.alibaba:fastjson:1.2.37",
+            fastjson_android: "com.alibaba:fastjson:1.1.62.android",
     ]
 
     log = [

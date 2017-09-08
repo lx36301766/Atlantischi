@@ -131,11 +131,9 @@
 
         <activity android:name=".common.ClassLoaderActivity">
         </activity>
-        <activity android:name=".common.LauncherIconActivity">
-        </activity>
-        <activity android:name=".common.AnimationActivity">
-        </activity>
         <activity android:name=".common.CheckCodeActivity">
+        </activity>
+        <activity android:name=".common.CommonActivity">
         </activity>
     </application>
 

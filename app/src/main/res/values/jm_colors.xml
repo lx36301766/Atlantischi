@@ -258,4 +258,30 @@
 
     <color name="color_traneeeeee">#666666</color>
     <color name="cs_link_underline">#009f92</color>
+
+
+    <!--设计师统计色彩-->
+    <!--背景灰-->
+    <color name="jumei_gray_background">#f3f3f3</color>
+    <!--聚美红-->
+    <color name="jumei_red">#fe4070</color>
+    <!--红包-->
+    <color name="jumei_red_package_color">#f46167</color>
+    <!--聚美按下-->
+    <color name="jumei_red_press">#e43964</color>
+    <!--聚美禁用-->
+    <color name="jumei_red_disable">#feb2c5</color>
+    <!--绿-->
+    <color name="jumei_green">#8ddc9f</color>
+    <!--蓝-->
+    <color name="jumei_blue">#8dc6ee</color>
+    <!--橙-->
+    <color name="jumei_orange">#f1b24a</color>
+    <!--卡片背景-->
+    <color name="jumei_card_background_color">#fafafa</color>
+    <!--可以按项目背景-->
+    <color name="jumei_clickable_item_background_color">#f3f3f3</color>
+    <!--遮罩背景色-->
+    <color name="jumei_cover_layer">#cdffffff</color>
+
 </resources>

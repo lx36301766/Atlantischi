@@ -17,7 +17,7 @@
         <attr name="android:fadingEdgeLength" />
     </declare-styleable>
 
-    <declare-styleable name="CheckView">
+    <declare-styleable name="VerifyCodeView">
         <!-- 随机点数 -->
         <attr name="point_num" format="integer" />
         <!-- 随机线数 -->

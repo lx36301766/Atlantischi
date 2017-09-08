@@ -7,7 +7,7 @@ dependencies {
 
     compile "${SQUAREUP.retrofit2}"
     //compile "${SQUAREUP.retrofit2_gson_convert}"
-    compile "${SQUAREUP.retrofit2_fastjson_convert}"
+//    compile "${SQUAREUP.retrofit2_fastjson_convert}"
     compile "${SQUAREUP.retrofit2_adapter_rxjava}"
     compile "${SQUAREUP.okhttp3}"
 

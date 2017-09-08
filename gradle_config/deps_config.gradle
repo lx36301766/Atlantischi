@@ -46,8 +46,8 @@ ext {
             javapoet                  : "com.squareup:javapoet:1.7.0",
             okhttp3                   : "com.squareup.okhttp3:okhttp:3.8.0",
             retrofit2                 : "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}",
-            retrofit2_gson_convert    : "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}",
-            retrofit2_fastjson_convert: "org.ligboy.retrofit2:converter-fastjson:2.1.0",
+//            retrofit2_gson_convert    : "com.squareup.retrofit2:converter-gson:${RETROFIT_VERSION}",
+//            retrofit2_fastjson_convert: "org.ligboy.retrofit2:converter-fastjson:2.1.0",
             retrofit2_adapter_rxjava  : "com.squareup.retrofit2:adapter-rxjava:${RETROFIT_VERSION}",
             retrofit2_adapter_rxjava2 : "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}",
     ]

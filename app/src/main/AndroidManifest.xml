@@ -101,7 +101,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -121,13 +124,24 @@
             android:name=".MainAlias"
             android:icon="@mipmap/default_ptr_rotate"
             android:label="MainAlias"
-            android:targetActivity=".common.NumberTextActivity">
+            android:targetActivity=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+                <action android:name="shortcut"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity-alias>
+
+        <receiver
+            android:enabled="true"
+            android:exported="false"
+            android:name=".common.ShortcutReceiver">
+            <intent-filter>
+                <action android:name="shortcut"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
 
         <activity android:name=".common.ClassLoaderActivity">
         </activity>
@@ -135,6 +149,7 @@
         </activity>
         <activity android:name=".common.CommonActivity">
         </activity>
+
     </application>
 
 </manifest>

@@ -9,7 +9,7 @@
         android:id="@+id/app_icon"
         android:src="@drawable/icon_short_cut"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="13.3dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -24,96 +24,47 @@
 
         <LinearLayout
             android:id="@+id/notification_shortcut_0"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
+            style="@style/notification_item_wrapper_style">
             <ImageView
                 android:id="@+id/notification_shortcut_icon_0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                style="@style/notification_item_image_style"/>
             <TextView
                 android:id="@+id/notification_shortcut_name_0"
-                android:layout_marginTop="2dp"
-                android:text="省钱"
-                android:textSize="8sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                style="@style/notification_item_text_style"/>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/notification_shortcut_1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
+            style="@style/notification_item_wrapper_style">
             <ImageView
                 android:id="@+id/notification_shortcut_icon_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                style="@style/notification_item_image_style"/>
             <TextView
                 android:id="@+id/notification_shortcut_name_1"
-                android:layout_marginTop="2dp"
-                android:textSize="8sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                style="@style/notification_item_text_style"/>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/notification_shortcut_2"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
+            style="@style/notification_item_wrapper_style">
             <ImageView
                 android:id="@+id/notification_shortcut_icon_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                style="@style/notification_item_image_style"/>
             <TextView
                 android:id="@+id/notification_shortcut_name_2"
-                android:layout_marginTop="2dp"
-                android:textSize="8sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                style="@style/notification_item_text_style"/>
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/notification_shortcut_3"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
+            style="@style/notification_item_wrapper_style">
             <ImageView
                 android:id="@+id/notification_shortcut_icon_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                style="@style/notification_item_image_style"/>
             <TextView
                 android:id="@+id/notification_shortcut_name_3"
-                android:layout_marginTop="2dp"
-                android:textSize="8sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+                style="@style/notification_item_text_style"/>
         </LinearLayout>
-
-        <!--<include-->
-            <!--android:id="@+id/notification_shortcut_0"-->
-            <!--layout="@layout/resident_notification_item"/>-->
 
     </LinearLayout>
 
@@ -123,7 +74,7 @@
         android:src="@drawable/notification_shortcut_more"
         android:layout_alignParentRight="true"
         android:paddingLeft="5dp"
-        android:paddingRight="15dp"
+        android:paddingRight="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

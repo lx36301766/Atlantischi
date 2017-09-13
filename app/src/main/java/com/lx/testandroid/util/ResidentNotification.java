@@ -67,6 +67,9 @@ public class ResidentNotification {
                 .setWhen(System.currentTimeMillis())
                 .setCustomContentView(buildRootRemoteViews(context, dataList))
                 .setSmallIcon(R.drawable.icon_short_cut)
+                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.icon_short_cut))
+                .setContentTitle("123title")
+                .setContentText("123text")
                 .build();
         notificationManager.notify(R.string.app_name, notification);
     }
@@ -125,5 +128,103 @@ public class ResidentNotification {
             return Bitmap.createBitmap(firstBitmap.getWidth(), firstBitmap.getHeight(), Bitmap.Config.ALPHA_8);
         }
     }
+
+
+//
+//    public void doShow()
+//    {
+//        Application localApplication = ISApplication.context;
+//        Object localObject1 = getPackageManager(localApplication);
+//        if (TextUtils.isEmpty((CharSequence)localObject1)) {}
+//        for (;;)
+//        {
+//            return;
+//            Object localObject2 = BitmapFactory.decodeResource(localApplication.getResources(), 2130838093);
+//            localObject2 = new NotificationCompat.Builder(localApplication)
+//                    .setSmallIcon(2130838093)
+//                    .setLargeIcon((Bitmap)localObject2)
+//                    .setContentTitle(localApplication.getResources().getString(2131231473))
+//                    .setContentText(localApplication.getResources().getString(2131231472))
+//                    .setOngoing(true)
+//                    .setAutoCancel(false);
+//            ((NotificationCompat.Builder)localObject2).setContentIntent(
+//                    PendingIntent.getActivity(localApplication, 0, new Intent(localApplication, HomeActivity.class), 134217728));
+//            Notification localNotification = ((NotificationCompat.Builder)localObject2).build();
+//            NotificationManager localNotificationManager = (NotificationManager)localApplication.getSystemService("notification");
+//            localNotification.contentView = new RemoteViews((String)localObject1, 2130903652);
+//            localNotification.contentView.setImageViewResource(2131691546, 2130838093);
+//            localNotification.contentView.setImageViewResource(2131691547, 2130838158);
+//            localObject2 = new Bundle();
+//            localObject1 = new Intent(localApplication, PushRedirectActivity.class);
+//            ((Bundle)localObject2).putString("url", "ws-setting-message");
+//            ((Intent)localObject1).putExtras((Bundle)localObject2);
+//            localObject1 = PendingIntent.getActivity(localApplication, UUID.randomUUID().hashCode(), (Intent)localObject1, 134217728);
+//            localNotification.contentView.setOnClickPendingIntent(2131691547, (PendingIntent)localObject1);
+//            localObject1 = null;
+//            boolean bool = false;
+//            localObject2 = ConfigCenter.getInstance().getConfigResult("etao_android_notification");
+//            if (localObject2 != null)
+//            {
+//                localObject1 = new NotificationConfigData(JsonData.create((String)localObject2));
+//                bool = afterDownLoad((NotificationConfigData)localObject1);
+//            }
+//            localObject2 = getLocalData();
+//            label326:
+//            Resources localResources;
+//            Intent[] arrayOfIntent;
+//            int j;
+//            label347:
+//            int k;
+//            if (bool)
+//            {
+//                localObject1 = ((NotificationConfigData)localObject1).mFastEntryList;
+//                if (((List)localObject1).size() <= 4) {
+//                    break label649;
+//                }
+//                i = 4;
+//                localResources = localApplication.getResources();
+//                arrayOfIntent = new Intent[((List)localObject1).size()];
+//                j = 0;
+//                if (j >= i) {
+//                    break label686;
+//                }
+//                k = localResources.getIdentifier("text" + String.valueOf(j), "id", localApplication.getPackageName());
+//                localNotification.contentView.setTextViewText(k, ((NotificationConfigData.FastEntryItem)((List)localObject1).get(j)).mText);
+//                k = localResources.getIdentifier("image" + String.valueOf(j), "id", localApplication.getPackageName());
+//                if ((!bool) || (!TextUtils.isEmpty(((NotificationConfigData.FastEntryItem)((List)localObject1).get(j)).mLocalPath))) {
+//                    break label660;
+//                }
+//                localNotification.contentView.setImageViewUri(k, Uri.fromFile(new File(((NotificationConfigData.FastEntryItem)((List)localObject1).get(j)).mLocalPath)));
+//            }
+//            for (;;)
+//            {
+//                k = localResources.getIdentifier("layout" + String.valueOf(j), "id", localApplication.getPackageName());
+//                Object localObject3 = new Bundle();
+//                ((Bundle)localObject3).putString("url", ((NotificationConfigData.FastEntryItem)((List)localObject1).get(j)).mUrl);
+//                arrayOfIntent[j] = new Intent(localApplication, PushRedirectActivity.class);
+//                arrayOfIntent[j].putExtras((Bundle)localObject3);
+//                localObject3 = PendingIntent.getActivity(localApplication, UUID.randomUUID().hashCode(), arrayOfIntent[j], 134217728);
+//                localNotification.contentView.setOnClickPendingIntent(k, (PendingIntent)localObject3);
+//                localNotification.contentView.setViewVisibility(k, 0);
+//                j++;
+//                break label347;
+//                localObject1 = localObject2;
+//                break;
+//                label649:
+//                i = ((List)localObject1).size();
+//                break label326;
+//                label660:
+//                localNotification.contentView.setImageViewResource(k, ((NotificationConfigData.FastEntryItem)((List)localObject2).get(j)).mImgInt);
+//            }
+//            label686:
+//            for (int i = ((List)localObject1).size(); i < 4; i++)
+//            {
+//                j = localResources.getIdentifier("layout" + String.valueOf(i), "id", localApplication.getPackageName());
+//                localNotification.contentView.setViewVisibility(j, 8);
+//            }
+//            localNotificationManager.notify(RESIDENT_NOTIFICATION_NUM, localNotification);
+//        }
+//    }
+
 
 }

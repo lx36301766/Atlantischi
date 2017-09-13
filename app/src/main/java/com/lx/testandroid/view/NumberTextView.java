@@ -1,4 +1,4 @@
-package com.lx.testandroid.common;
+package com.lx.testandroid.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

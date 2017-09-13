@@ -3,22 +3,22 @@ dependencies {
 
     compile files('libs/httpmime-4.1.1.jar')
 
-    compile "${SUPPORT_DEPS.supportV4}"
-    compile "${SUPPORT_DEPS.supportV13}"
-    compile "${SUPPORT_DEPS.appcompatV7}"
-    compile "${SUPPORT_DEPS.cardview}"
-    compile "${SUPPORT_DEPS.annotations}"
-    compile "${SUPPORT_DEPS.design}"
-    compile "${SUPPORT_DEPS.recyclerView}"
+    compile "${support_deps.supportV4}"
+    compile "${support_deps.supportV13}"
+    compile "${support_deps.appcompatV7}"
+    compile "${support_deps.cardview}"
+    compile "${support_deps.annotations}"
+    compile "${support_deps.design}"
+    compile "${support_deps.recyclerView}"
 
-    compile "${DEPS.gif_drawable}"
-    compile "${DEPS.hlistview}"
-    compile "${DEPS.kotlin}"
+    compile "${view.gif_drawable}"
+    compile "${view.hlistview}"
+    compile "${tools.kotlin}"
 
-    compile "${GOOGLE_AGERA.content}"
-    compile "${GOOGLE_AGERA.database}"
-    compile "${GOOGLE_AGERA.net}"
-    compile "${GOOGLE_AGERA.rvadapter}"
-    compile "${GOOGLE_AGERA.rvdatabinding}"
+    compile "${google_agera.content}"
+    compile "${google_agera.database}"
+    compile "${google_agera.net}"
+    compile "${google_agera.rvadapter}"
+    compile "${google_agera.rvdatabinding}"
 
 }

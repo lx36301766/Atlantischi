@@ -17,6 +17,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.util.Pair;
+import android.util.SparseArray;
 
 import com.lx.testandroid.encrypt.tools.EncryptHelper;
 import com.lx.testandroid.encrypt.tools.RsaKeyPairs;
@@ -30,6 +31,14 @@ import com.lx.testandroid.encrypt.impl.Sha1WithRsaEncryptStrategy;
 public class EncryptManager {
 
     private static String TAG = "EncryptManager";
+
+    private static SparseArray<EncryptStrategy> sparseMap = new SparseArray<>();
+
+    static {
+        sparseMap.put(0, new NoEncryptStrategy());
+        sparseMap.put(1, new Sha1WithRsaEncryptStrategy());
+        sparseMap.put(2, new AesAndRsaEncryptStrategy());
+    }
 
     private static class EncryptApiParams {
         String mApiName;
@@ -78,11 +87,15 @@ public class EncryptManager {
         }
         int encryptType = randomType(params.mEncryptTypes);
         int decryptType = randomType(params.mDecryptTypes);
-        EncryptStrategy encryptStrategy = getEncryptStrategy(encryptType);
+        EncryptStrategy encryptStrategy = sparseMap.get(decryptType);
         if (encryptStrategy != null) {
             return encryptStrategy.encrypt(url, encryptType, decryptType);
         }
         return url;
+    }
+
+    private static int randomType(int[] types) {
+        return types[new Random().nextInt(types.length)];
     }
 
     /**
@@ -93,29 +106,11 @@ public class EncryptManager {
      */
     public static byte[] decrypt(byte[] data, String url) {
         int decryptType = getDecryptTypeFromUrl(url);
-        EncryptStrategy encryptStrategy = getEncryptStrategy(decryptType);
+        EncryptStrategy encryptStrategy = sparseMap.get(decryptType);
         if (encryptStrategy != null) {
             return encryptStrategy.decrypt(url, data);
         }
         return data;
-    }
-
-    private static EncryptStrategy getEncryptStrategy(int type) {
-        EncryptStrategy encryptStrategy;
-        switch (type) {
-            case 0:
-                encryptStrategy = new NoEncryptStrategy();
-                break;
-            case 1:
-                encryptStrategy = new Sha1WithRsaEncryptStrategy();
-                break;
-            case 2:
-                encryptStrategy = new AesAndRsaEncryptStrategy();
-                break;
-            default:
-                encryptStrategy = null;
-        }
-        return encryptStrategy;
     }
 
     private static void addEncryptApi(String apiName, String encryptTypes, String decryptTypes) {
@@ -165,10 +160,6 @@ public class EncryptManager {
             }
         }
         return encryptApiData;
-    }
-
-    private static int randomType(int[] types) {
-        return types[new Random().nextInt(types.length)];
     }
 
     private static int getDecryptTypeFromUrl(String url) {

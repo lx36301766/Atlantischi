@@ -5,18 +5,16 @@ import java.util.Date;
 import java.util.List;
 
 import com.lx.testandroid.R;
-import com.lx.testandroid.testviews.PayCenterLeaveDialog;
+import com.lx.testandroid.view.NumberTextView;
 
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.ComponentName;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Html;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;

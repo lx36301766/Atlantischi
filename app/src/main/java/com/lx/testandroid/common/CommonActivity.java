@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.lx.testandroid.R;
+import com.lx.testandroid.receiver.HomePressReceiver;
 import com.lx.testandroid.util.ResidentNotification;
 import com.lx.testandroid.util.TestShortcutUtils;
 
@@ -38,77 +39,38 @@ public class CommonActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.btn_3).setOnClickListener(this);
         findViewById(R.id.btn_4).setOnClickListener(this);
 
-        registerReceiver(homeKeyReceiver, new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
-
-        IntentFilter filter = new IntentFilter("shortcut");
-        filter.addCategory(Intent.CATEGORY_LAUNCHER);
-        registerReceiver(new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                if (intent != null && !TextUtils.isEmpty(intent.getAction())) {
-                    String action = intent.getAction();
-                    ComponentName componentName = intent.getComponent();
-                    System.out.println(componentName.getClassName());
-                }
-            }
-        }, filter);
+        //registerReceiver(new HomePressReceiver(), new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
     }
-
-    BroadcastReceiver homeKeyReceiver = new BroadcastReceiver() {
-
-        final String SYSTEM_DIALOG_REASON_KEY = "reason";
-        final String SYSTEM_DIALOG_REASON_RECENT_APPS = "recentapps";
-        final String SYSTEM_DIALOG_REASON_HOME_KEY = "homekey";
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (Intent.ACTION_CLOSE_SYSTEM_DIALOGS.equals(action)) {
-                String reason = intent.getStringExtra(SYSTEM_DIALOG_REASON_KEY);
-                if (reason != null) {
-                    if (reason.equals(SYSTEM_DIALOG_REASON_HOME_KEY)) {
-                        //Home键被监听
-                        Toast.makeText(CommonActivity.this, "home press", Toast.LENGTH_SHORT).show();
-                    } else if (reason.equals(SYSTEM_DIALOG_REASON_RECENT_APPS)) {
-                        //多任务键被监听
-                        Toast.makeText(CommonActivity.this, "recentapps press", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-        }
-    };
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_1:
-                TestShortcutUtils.addLaunchIcon(this);
+                //TestShortcutUtils.addLaunchIcon(this);
                 break;
             case R.id.btn_2:
-                TestShortcutUtils.delLaunchIcon(this);
+                //TestShortcutUtils.delLaunchIcon(this);
                 break;
             case R.id.btn_3:
-                List<ResidentNotification.RemoteViewsData> dataList = new ArrayList<>();
-                dataList.add(new ResidentNotification.RemoteViewsData("宝箱",
-                        BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon_treasure_box)));
-                dataList.add(new ResidentNotification.RemoteViewsData("签到",
-                        BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon_sign_in)));
-                dataList.add(new ResidentNotification.RemoteViewsData("搜索",
-                        BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon_search)));
-                dataList.add(new ResidentNotification.RemoteViewsData("聚美",
-                        BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon_jumei)));
-                ResidentNotification.setNotification(this, dataList);
+                //testShowNotification();
                 break;
             case R.id.btn_4:
-                ResidentNotification.cancelNotification(this);
+                //ResidentNotification.cancelNotification(this);
                 break;
         }
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        System.out.println();
+    private void testShowNotification() {
+        List<ResidentNotification.RemoteViewsData> dataList = new ArrayList<>();
+        dataList.add(new ResidentNotification.RemoteViewsData("宝箱",
+                BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon_treasure_box)));
+        dataList.add(new ResidentNotification.RemoteViewsData("签到",
+                BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon_sign_in)));
+        dataList.add(new ResidentNotification.RemoteViewsData("搜索",
+                BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon_search)));
+        dataList.add(new ResidentNotification.RemoteViewsData("聚美",
+                BitmapFactory.decodeResource(getResources(), R.drawable.notification_icon_jumei)));
+        ResidentNotification.setNotification(this, dataList);
     }
 
 }

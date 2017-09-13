@@ -2,9 +2,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'realm-android'
 
-apply from: rootDir.absolutePath + "/gradle_config/base_config.gradle"
+apply from: rootDir.absolutePath + "/gradle_config/android_config.gradle"
 apply from: rootDir.absolutePath + "/gradle_config/deps_config.gradle"
 apply from: rootDir.absolutePath + "/gradle_config/AndResGuard.gradle"
+
 apply from: "app_deps.gradle"
 
 buildscript {
@@ -33,14 +34,4 @@ android {
         versionName "1.000"
     }
 
-}
-
-dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
-    compile files('libs/classes-dex2jar.jar')
 }

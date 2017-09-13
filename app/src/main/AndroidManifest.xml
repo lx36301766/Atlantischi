@@ -133,22 +133,18 @@
             </intent-filter>
         </activity-alias>
 
-        <receiver
-            android:enabled="true"
-            android:exported="false"
-            android:name=".common.ShortcutReceiver">
-            <intent-filter>
-                <action android:name="shortcut"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </receiver>
-
         <activity android:name=".common.ClassLoaderActivity">
         </activity>
         <activity android:name=".common.CheckCodeActivity">
         </activity>
         <activity android:name=".common.CommonActivity">
         </activity>
+
+        <receiver android:name=".receiver.HomePressReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.CLOSE_SYSTEM_DIALOGS"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 

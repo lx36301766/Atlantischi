@@ -1,6 +1,8 @@
 
 apply plugin: 'kotlin-android'
 
+apply from: rootDir.absolutePath + "/gradle_config/deps_config.gradle"
+
 android {
 
     compileSdkVersion Integer.parseInt("${COMPILE_SDK_VERSION}")
@@ -54,4 +56,14 @@ android {
         }
     }
 
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile "${support_deps.appcompatV7}"
+    compile "${view.constraint_layout}"
 }

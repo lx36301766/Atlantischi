@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 
     private void addText(ViewGroup root, final Class<?> clazz) {
         TextView tv = new Button(this);
-        tv.setPadding(0, 10, 0, 10);
+        tv.setPadding(0, 10, 0, 10);//
 //        tv.setBackgroundColor(Color.RED);
         tv.setGravity(Gravity.CENTER);
         tv.setText(clazz.getSimpleName());

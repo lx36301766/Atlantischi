@@ -3,19 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.lx.testandroid.common.AnimationActivity">
+    android:layout_height="match_parent">
 
-    <com.lx.testandroid.view.VerifyCodeView
-        xmlns:kongqw="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/checkView"
-        android:layout_width="60dp"
-        android:layout_height="30dp"
-        kongqw:bg_color="#FFFFFF00"
-        kongqw:line_num="10"
-        kongqw:point_num="100"
-        kongqw:text_length="4"
-        kongqw:text_size="30dp" />
+    <!--<com.lx.testandroid.view.VerifyCodeView-->
+        <!--xmlns:kongqw="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/checkView"-->
+        <!--android:layout_width="137px"-->
+        <!--android:layout_height="50px"-->
+        <!--kongqw:bg_color="#FFFFFF00"-->
+        <!--kongqw:line_num="10"-->
+        <!--kongqw:point_num="100"-->
+        <!--kongqw:text_length="4"-->
+        <!--kongqw:text_size="30dp" />-->
+
+    <ImageView
+        android:id="@+id/verify_code_img"
+        android:layout_width="91dp"
+        android:layout_height="33.3dp"/>
 
     <Button
         android:id="@+id/btn"

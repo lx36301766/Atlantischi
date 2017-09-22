@@ -91,6 +91,7 @@ public class VerifyCodeView extends View {
 
     public void setText(String text) {
         mText = text;
+        mText = "8888";
         mTextLength = mText.length();
     }
 

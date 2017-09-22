@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.lx.testandroid.R;
 import com.lx.testandroid.receiver.HomePressReceiver;
+import com.lx.testandroid.shortcut.shortcut_lib.ShortcutSuperUtils;
 import com.lx.testandroid.util.ResidentNotification;
 import com.lx.testandroid.util.TestShortcutUtils;
 
@@ -46,16 +47,17 @@ public class CommonActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_1:
-                //TestShortcutUtils.addLaunchIcon(this);
+                TestShortcutUtils.addLaunchIcon(this);
+//                ShortcutSuperUtils.addShortcutByPackageName(this, "abcd");
                 break;
             case R.id.btn_2:
-                //TestShortcutUtils.delLaunchIcon(this);
+                TestShortcutUtils.delLaunchIcon(this);
                 break;
             case R.id.btn_3:
-                //testShowNotification();
+                testShowNotification();
                 break;
             case R.id.btn_4:
-                //ResidentNotification.cancelNotification(this);
+                ResidentNotification.cancelNotification(this);
                 break;
         }
     }

@@ -1,7 +1,7 @@
 
 apply plugin: 'kotlin-android'
 
-apply from: rootDir.absolutePath + "/gradle_config/deps_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 
 android {
 
@@ -20,7 +20,7 @@ android {
 
     signingConfigs {
 
-        def keystorePath = rootDir.absolutePath + "/gradle_config/atlantischi.jks"
+        def keystorePath = rootDir.absolutePath + "/gradle/keystore/atlantischi.jks"
 
         debug {
             storeFile file(keystorePath)

@@ -1,7 +1,7 @@
 
 apply plugin: 'kotlin'
 
-apply from: rootDir.absolutePath + "/gradle_config/deps_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 
 
 dependencies {

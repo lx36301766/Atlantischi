@@ -1,2 +1,2 @@
 
-apply from: rootDir.absolutePath + "/gradle_config/java_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/java_config.gradle"

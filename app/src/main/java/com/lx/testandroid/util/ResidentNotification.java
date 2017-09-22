@@ -17,6 +17,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.app.NotificationCompat;
 import android.widget.RemoteViews;
 
@@ -109,12 +110,20 @@ public class ResidentNotification {
         return remoteViews;
     }
 
+    static int abc = 1;
+    static int req = 1;
+
     private static void setRemoteViewItemData(RemoteViews remoteViews, List<RemoteViewsData> dataList, Context context,
                                               int position, int[] viewIds) {
         if (dataList.size() > position) {
             RemoteViewsData remoteViewsData = dataList.get(position);
+            Intent intent = new Intent(context, CheckCodeActivity.class);
+            intent.setAction("action-" + abc);
+            intent.putExtra("lx", "123");
+            intent.putExtra("lx123", abc++);
+            intent.setData(Uri.parse("http://ssab---" + abc));
             remoteViews.setOnClickPendingIntent(viewIds[0],
-                    PendingIntent.getActivity(context, 0, new Intent(context, CheckCodeActivity.class), 0));
+                    PendingIntent.getActivity(context, req++, intent, 0));
             remoteViews.setTextViewText(viewIds[2], remoteViewsData.title);
         }
         remoteViews.setImageViewBitmap(viewIds[1], fillTransparentBitmapIfNeed(position, dataList));

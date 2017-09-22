@@ -3,8 +3,8 @@ apply plugin: 'com.android.application'
 //apply plugin: 'auto-patch-plugin'
 apply plugin: 'robust'
 
-apply from: rootDir.absolutePath + "/gradle_config/android_config.gradle"
-apply from: rootDir.absolutePath + "/gradle_config/deps_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 
 android {
 

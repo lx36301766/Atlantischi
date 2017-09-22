@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                     if (xJsonBridgeRename.value().equals(key)) {
                         try {
                             field.set(object, value);
-                            System.out.println();
                             break;
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();

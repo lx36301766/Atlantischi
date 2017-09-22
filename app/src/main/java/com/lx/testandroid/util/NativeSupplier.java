@@ -2,6 +2,8 @@ package com.lx.testandroid.util;
 
 import java.util.Random;
 
+import com.lx.testandroid.App;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -28,11 +30,11 @@ public class NativeSupplier {
 
     public NativeSupplier(Context context) {
         mTextPaint.setAntiAlias(true);
-        mTextPaint.setTextSize(sp2px(context, TEXT_SIZE_SP));
+        mTextPaint.setTextSize(sp2px(TEXT_SIZE_SP));
         mTextPaint.setStrokeWidth(3);
 
         mLinePaint.setAntiAlias(true);
-        mLinePaint.setTextSize(sp2px(context, TEXT_SIZE_SP));
+        mLinePaint.setTextSize(sp2px(TEXT_SIZE_SP));
         mLinePaint.setStrokeWidth(2);
         mLinePaint.setTextAlign(Paint.Align.CENTER);
     }
@@ -107,6 +109,9 @@ public class NativeSupplier {
      */
     public static int getTextY(int height, int textHeight) {
         int tmpY = (int) ((height - textHeight) * Math.random());
+        int boundary = (int) dp2px(8);
+        tmpY = Math.min(tmpY, height - textHeight - boundary);
+        tmpY = Math.max(tmpY, boundary);
         return tmpY + textHeight;
     }
 
@@ -142,8 +147,13 @@ public class NativeSupplier {
         return tempCheckNum;
     }
 
-    public static float sp2px(Context context, float spVal) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spVal, context.getResources()
+    public static float dp2px(float spVal) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, spVal, App.sContext.getResources()
+                .getDisplayMetrics());
+    }
+
+    public static float sp2px(float spVal) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spVal, App.sContext.getResources()
                 .getDisplayMetrics());
     }
 

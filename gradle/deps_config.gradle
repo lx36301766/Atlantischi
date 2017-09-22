@@ -1,7 +1,7 @@
 ext {
 
     //module gradle apply from
-    def gradleDir = rootDir.absolutePath + "/gradle_config/"
+    def gradleDir = rootDir.absolutePath + "/gradle/"
     gradles = [
             base_config: gradleDir + "android_config.gradle",
             AndResGuard: gradleDir + "AndResGuard.gradle",

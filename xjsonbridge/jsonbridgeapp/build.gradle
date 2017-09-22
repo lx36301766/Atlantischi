@@ -17,5 +17,6 @@ dependencies {
     compile "${json.gson}"
     compile "${json.fastjson}"
     compile "${json.fastjson_android}"
-    compile "${json.moshi}"
+//    compile "${json.moshi}"
+    compile "${other_deps.okio}"
 }

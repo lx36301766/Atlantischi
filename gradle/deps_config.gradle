@@ -99,6 +99,7 @@ ext {
 
     other_deps = [
             slimadapter: "net.idik:slimadapter:2.1.0",
+            okio       : "com.squareup.okio:okio:1.13.0",
     ]
 
 }

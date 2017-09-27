@@ -1,6 +1,5 @@
 
 apply from: rootDir.absolutePath + "/gradle/java_config.gradle"
-apply from: rootDir.absolutePath + "/gradle/kotlin_deps.gradle"
 
 apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 

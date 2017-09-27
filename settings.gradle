@@ -1,6 +1,8 @@
-include ':app', ':java', ':kotlin'
+include ':app', ':java'
 
 include ':videocompress'
+
+include ':kotlinapp'
 
 include ':stetho'
 

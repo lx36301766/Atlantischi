@@ -1,6 +1,3 @@
-package pl.atlantischi.test
-
-
 import java.io.File
 
 /**

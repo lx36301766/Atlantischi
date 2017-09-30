@@ -21,4 +21,6 @@ dependencies {
     compile "${google_agera.rvadapter}"
     compile "${google_agera.rvdatabinding}"
 
+    //compile 'pl.atlantischi.ximagebriage:library:0.0.1'
+
 }

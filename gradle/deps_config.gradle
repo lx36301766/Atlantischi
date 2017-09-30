@@ -39,7 +39,7 @@ ext {
     uil_version = '1.9.5'
     image = [
             glide                 : "com.github.bumptech.glide:glide:${glide_version}",
-            compiler              : "com.github.bumptech.glide:compiler:${glide_version}",
+            glide_compiler        : "com.github.bumptech.glide:compiler:${glide_version}",
             picasso               : "com.squareup.picasso:picasso:${picasso_version}",
             fresco                : "com.facebook.fresco:fresco:${fresco_version}",
             fresco_okhttp         : "com.facebook.fresco:imagepipeline-okhttp3:${fresco_ext_version}",
@@ -100,6 +100,7 @@ ext {
     other_deps = [
             slimadapter: "net.idik:slimadapter:2.1.0",
             okio       : "com.squareup.okio:okio:1.13.0",
+            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
     ]
 
 }

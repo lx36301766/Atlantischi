@@ -5,36 +5,41 @@ apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 
 android {
 
-    compileSdkVersion Integer.parseInt("${COMPILE_SDK_VERSION}")
-    buildToolsVersion "${BUILD_TOOLS_VERSION}"
+    compileSdkVersion COMPILE_SDK_VERSION as int
+    buildToolsVersion BUILD_TOOLS_VERSION
 
     lintOptions {
         abortOnError false
     }
 
     defaultConfig {
-        minSdkVersion Integer.parseInt("${MIN_SDK_VERSION}")
-        targetSdkVersion Integer.parseInt("${TARGET_SDK_VERSION}")
+        minSdkVersion MIN_SDK_VERSION as int
+        targetSdkVersion TARGET_SDK_VERSION as int
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     signingConfigs {
 
-        def keystorePath = rootDir.absolutePath + "/gradle/keystore/atlantischi.jks"
+        def KEY_STORE_PATH = rootDir.absolutePath + "/gradle/keystore/atlantischi.jks"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        def KEY_ALIAS = properties.getProperty("KEY_ALIAS")
+        def KEY_PASSWORD = properties.getProperty("KEY_PASSWORD")
 
         debug {
-            storeFile file(keystorePath)
-            storePassword "5393147"
-            keyAlias "xuanl"
-            keyPassword "5393147"
+            storeFile file(KEY_STORE_PATH)
+            storePassword KEY_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
             v2SigningEnabled false
         }
 
         release {
-            storeFile file(keystorePath)
-            storePassword "5393147"
-            keyAlias "xuanl"
-            keyPassword "5393147"
+            storeFile file(KEY_STORE_PATH)
+            storePassword KEY_PASSWORD
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
             v2SigningEnabled false
         }
     }

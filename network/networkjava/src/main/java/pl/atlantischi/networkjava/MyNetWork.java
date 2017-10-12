@@ -1,6 +1,6 @@
 package pl.atlantischi.networkjava;
 
-public class MyClass {
+public class MyNetWork {
 
 
     public static void main(String[] args) {

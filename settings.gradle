@@ -1,5 +1,7 @@
 include ':app', ':java'
 
+//include 'earlier:libgdxtesttutorial', 'earlier:opengl-test-tutorial', 'earlier:powerwidget'
+
 include ':videocompress'
 
 include ':kotlinapp'

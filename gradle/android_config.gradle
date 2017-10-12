@@ -46,7 +46,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true// 允许使用proguard
+            minifyEnabled true
             zipAlignEnabled true
             shrinkResources true
             signingConfig signingConfigs.release
@@ -55,7 +55,7 @@ android {
         }
 
         debug {
-            minifyEnabled false // 允许使用proguard;
+            minifyEnabled false
             debuggable true
             zipAlignEnabled true
         }

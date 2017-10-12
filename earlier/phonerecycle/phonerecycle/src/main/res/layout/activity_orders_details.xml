@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+            layout="@layout/common_title"/>
+
+    <FrameLayout
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_gravity="center">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:layout_gravity="center"
+                android:scrollbars="none"
+                android:background="@drawable/shape_service_text_bounds"
+                android:layout_margin="10dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="15dp">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="用户名："
+                            android:textColor="@color/gray"/>
+                    <TextView
+                            android:id="@+id/user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text=""/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        style="@style/orders_detail_text_sytle">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="电    话："
+                            android:textColor="@color/gray"/>
+                    <TextView
+                            android:id="@+id/user_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text=""/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        style="@style/orders_detail_text_sytle">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="地    址："
+                            android:textColor="@color/gray"/>
+                    <TextView
+                            android:id="@+id/user_addr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:text=""/>
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/phone_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#8d93eb"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="18sp"
+                        style="@style/orders_detail_text_sytle"/>
+
+                <TextView
+                        android:id="@+id/phone_args_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="手机参数"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textSize="@dimen/orders_details_text_size"
+                        style="@style/orders_detail_text_sytle"
+                        android:background="#ff978a"
+                        android:textColor="@color/white"/>
+
+                <TextView
+                        android:id="@+id/phone_args"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text=""
+                        android:lineSpacingExtra="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textColor="@color/black"
+                        style="@style/orders_detail_text_sytle"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/orders_details_text_size"
+                        android:text="手机描述"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:background="#ff978a"
+                        android:textColor="@color/white"
+                        style="@style/orders_detail_text_sytle"/>
+
+                <TextView
+                        android:id="@+id/phone_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:text=""
+                        android:lineSpacingExtra="5dp"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:textColor="@color/black"
+                        style="@style/orders_detail_text_sytle"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_gradients_grey_item_bg"
+                android:text="2014-05-16"
+                android:paddingTop="7dp"
+                android:layout_marginTop="1dp"
+                android:paddingBottom="7dp"
+                android:textColor="#ff978a"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"/>
+
+    </FrameLayout>
+
+    <TextView
+            android:id="@+id/delete_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/order_delete_bg"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="visible"
+            android:text="删除订单"/>
+
+</LinearLayout>

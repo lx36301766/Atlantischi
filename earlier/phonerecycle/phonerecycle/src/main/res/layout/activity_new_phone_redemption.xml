@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+            layout="@layout/common_title"/>
+
+    <!--<ListView-->
+            <!--android:id="@+id/phone_list"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:dividerHeight="5dp"-->
+            <!--android:divider="@color/white"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
+
+    <com.lx.phonerecycle.widget.pulltorefresh.PullToRefreshListView
+            android:id="@+id/phone_list_refresh_view"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    </com.lx.phonerecycle.widget.pulltorefresh.PullToRefreshListView>
+
+</LinearLayout>

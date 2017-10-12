@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:background="@drawable/shape_phone_recom_item_bg"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <!--<ImageView-->
+                <!--android:id="@+id/phone_img"-->
+                <!--android:src="@drawable/test_phone"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:paddingLeft="15dp"-->
+                <!--android:paddingRight="15dp"-->
+                <!--android:paddingTop="2dp"-->
+                <!--android:paddingBottom="2dp"-->
+                <!--android:contentDescription="@string/app_name"-->
+                <!--android:layout_marginLeft="2dp"-->
+                <!--android:layout_marginRight="2dp"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:background="@drawable/shape_phone_recom_item_bg"-->
+                <!--android:layout_width="82dp"-->
+                <!--android:layout_height="124dp"/>-->
+
+        <RelativeLayout
+
+                android:background="@drawable/shape_phone_recom_item_bg"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="82dp"
+                android:layout_height="124dp">
+
+            <ImageView
+                    android:id="@+id/phone_img"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/app_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            <TextView
+                    android:id="@+id/contracts"
+                    android:text="合约"
+                    android:textSize="15sp"
+                    android:textColor="@color/darkorange"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:id="@+id/phone_recom_item_name"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/phone_recom_param1"
+                    android:layout_marginTop="5dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray"
+                    android:text=""
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/phone_recom_param2"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray"
+                    android:text=""
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/phone_recom_param3"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray"
+                    android:text=""
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/phone_recom_param4"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray"
+                    android:text=""
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:text="更多参数>>"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/details"
+                android:text="详情"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginRight="5dp"
+                android:background="#18b9b3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        <TextView
+                android:id="@+id/redemption"
+                android:text="换购"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:background="@color/darkorange"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</LinearLayout>

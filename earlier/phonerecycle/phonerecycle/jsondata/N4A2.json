@@ -1,0 +1,51 @@
+{
+    "status": 111,
+    "msg": "OK",
+    "page": 1,
+    "total_page": 1,
+    "count_num": 3,
+    "data": [
+        {
+            "order_id": "201408042354037140001",
+            "user_id": "1a688a3984aba85483df082f466aaf53",
+            "uname": "lx",
+            "phone_no": "15928115878",
+            "status": "0",
+            "status_info": "待收机",
+            "order_time": "2014年08月04日 00时00分",
+            "price": "4599",
+            "brand": "苹果",
+            "model": "5S",
+            "image": "",
+            "wap_pay_url": ""
+        },
+        {
+            "order_id": "201408042354023720001",
+            "user_id": "1a688a3984aba85483df082f466aaf53",
+            "uname": "lx",
+            "phone_no": "15928115878",
+            "status": "0",
+            "status_info": "待收机",
+            "order_time": "2014年08月04日 00时00分",
+            "price": "4599",
+            "brand": "苹果",
+            "model": "5S",
+            "image": "",
+            "wap_pay_url": ""
+        },
+        {
+            "order_id": "201408042352185720001",
+            "user_id": "1a688a3984aba85483df082f466aaf53",
+            "uname": "lx",
+            "phone_no": "15928115878",
+            "status": "0",
+            "status_info": "待收机",
+            "order_time": "2014年08月04日 00时00分",
+            "price": "4699",
+            "brand": "苹果",
+            "model": "5S",
+            "image": "",
+            "wap_pay_url": ""
+        }
+    ]
+}

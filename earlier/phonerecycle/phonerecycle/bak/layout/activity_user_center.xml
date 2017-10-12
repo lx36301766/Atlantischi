@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:background="@drawable/all_title_bg">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用户中心"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title_size"
+                    android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:id="@+id/head_layout_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/login_bg"
+                android:gravity="center">
+
+            <com.lx.phonerecycle.widget.CircularImage
+                    android:id="@+id/center_log_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/default_head_icon"/>
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="修改头像"
+                android:textColor="@color/gray"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/user_center_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="昵称"
+                    style="@style/user_center_text_style"/>
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/user_center_edit_text_style"
+                    android:text="XXX"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                style="@style/user_center_margin">
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_dash_line"
+                    android:layerType="software"/>
+
+            <TextView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enter"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/user_center_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="电话"
+                    style="@style/user_center_text_style"/>
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/user_center_edit_text_style"
+                    android:text="1307777777"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                style="@style/user_center_margin">
+
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/shape_dash_line"
+                    android:layerType="software"/>
+
+            <TextView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enter"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/user_center_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    style="@style/user_center_text_style"/>
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/user_center_edit_text_style"
+                    android:text="男"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                style="@style/user_center_margin">
+
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_dash_line"
+                    android:layerType="software"/>
+
+            <TextView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enter"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/user_center_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="生日"
+                    style="@style/user_center_text_style"/>
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/user_center_edit_text_style"
+                    android:text="1987年8月8日"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                style="@style/user_center_margin">
+
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_dash_line"
+                    android:layerType="software"/>
+
+            <TextView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enter"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/user_center_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="邮箱"
+                    style="@style/user_center_text_style"/>
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/user_center_edit_text_style"
+                    android:text="1350@qq.com"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                style="@style/user_center_margin">
+
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_dash_line"
+                    android:layerType="software"/>
+
+            <TextView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enter"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/user_center_margin">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收件地址"
+                    style="@style/user_center_text_style"/>
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/user_center_edit_text_style"
+                    android:maxLines="3"
+                    android:text="高新区"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                style="@style/user_center_margin">
+
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_dash_line"
+                    android:layerType="software"/>
+
+            <TextView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="enter"/>
+        </LinearLayout>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/user_center_margin"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_home_btn2_bg"
+                android:text="密码修改"
+                android:paddingTop="10dp"
+                android:textSize="18sp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/white"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:background="@drawable/all_title_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/back_btn"
+                android:src="@drawable/return_button"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/title_name"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title_text_common"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scrollbars="none"
+                android:padding="10dp"
+                android:background="@drawable/shape_service_text_bounds"
+                android:layout_margin="20dp">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/redem_phone_text_info"
+                        android:text="你的手机XXX"
+                        android:textSize="16sp"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/redem_phone_price"
+                        android:text="新机的价格是：XXXX"
+                        android:textSize="16sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <ImageView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray"/>
+
+                <TextView
+                        android:id="@+id/alipay"
+                        android:background="@drawable/alipay"
+                        android:textSize="14sp"
+                        android:textColor="@color/red"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <ImageView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/gray"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="0dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_success_tips1"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp"/>
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_success_tips2"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp"/>
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/order_success_tips3"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_gradients_grey_item_bg"
+                android:text="下单成功"
+                android:textSize="15sp"
+                android:textColor="#ff5102"
+                android:paddingTop="7dp"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="7dp"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"/>
+
+    </FrameLayout>
+
+</LinearLayout>

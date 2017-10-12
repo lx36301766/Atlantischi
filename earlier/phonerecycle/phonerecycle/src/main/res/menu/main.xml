@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/slideshow_settings"
+        android:menuCategory="system"
+        android:title="1">
+    </item>
+    <item
+        android:id="@+id/about"
+        android:menuCategory="system"
+        android:title="2"/>
+    <item
+        android:id="@+id/exit"
+        android:menuCategory="system"
+        android:title="3"/>
+
+</menu>

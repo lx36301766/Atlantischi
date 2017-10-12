@@ -1,0 +1,251 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#FFe9e9e9"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:background="@drawable/all_title_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/menu_btn"
+                android:src="@drawable/menu_btn_img"
+                android:layout_marginLeft="20dp"
+                android:paddingTop="0dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/title_name"
+                android:text="换机助手"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title_text_common"/>
+
+        <TextView
+                android:id="@+id/order_managerment_btn"
+                android:text="订单管理"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <com.lx.phonerecycle.widget.AlwaysMarqueeTextView
+            android:id="@+id/top_marquee_tips"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/shape_home_marquee_tips_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <com.lx.phonerecycle.widget.CustomScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_home_today_info_bg"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:text="今日行情"
+                        android:textSize="25dp"
+                        android:textColor="@color/white"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:background="@drawable/shape_home_today_title_info_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <android.support.v4.view.ViewPager
+                        android:id="@+id/home_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp" />
+
+                <com.viewpagerindicator.CirclePageIndicator
+                        android:id="@+id/indicator"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:paddingLeft="10dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                <View
+                        android:visibility="gone"
+                        android:background="#84444444"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"/>
+
+                <View
+                        android:visibility="gone"
+                        android:background="#24444444"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"/>
+
+                <LinearLayout
+                        android:visibility="gone"
+                        android:background="#24444444"
+                        android:orientation="horizontal"
+                        android:paddingBottom="6dp"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <include
+                            android:id="@+id/indicator1"
+                            layout="@layout/indicator"/>
+
+                    <include
+                            android:id="@+id/indicator2"
+                            layout="@layout/indicator"/>
+
+                    <include
+                            android:visibility="invisible"
+                            android:id="@+id/indicator3"
+                            layout="@layout/indicator"/>
+
+                    <include
+                            android:id="@+id/indicator4"
+                            layout="@layout/indicator"/>
+
+                    <include
+                            android:id="@+id/indicator5"
+                            layout="@layout/indicator"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/clinch_parent"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                    android:background="@color/home_dividing_line_color"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:id="@+id/home_second_handle_recycle_btn"
+                        android:background="@drawable/shape_home_btn1_bg"
+                        style="@style/home_btn_style">
+
+                    <ImageView
+                            android:src="@drawable/home_btn_icon1"
+                            android:contentDescription="@string/app_name"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:text="二手回收"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textSize="25sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/home_exchange_new_phone_btn"
+                        android:background="@drawable/shape_home_btn2_bg"
+                        style="@style/home_btn_style">
+
+                    <ImageView
+                            android:src="@drawable/home_btn_icon2"
+                            android:contentDescription="@string/app_name"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:text="新机换购"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textSize="25sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/home_activity_btn"
+                        android:background="@drawable/shape_home_btn3_bg"
+                        android:layout_marginBottom="20dp"
+                        style="@style/home_btn_style">
+
+                    <ImageView
+                            android:src="@drawable/home_btn_icon3"
+                            android:contentDescription="@string/app_name"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:text="活动促销"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/white"
+                            android:textSize="25sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                    android:id="@+id/faq_btn"
+                    android:text="常见问题"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:padding="10dp"
+                    android:background="@drawable/shape_home_faq_btn_bg"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </com.lx.phonerecycle.widget.CustomScrollView>
+
+</LinearLayout>

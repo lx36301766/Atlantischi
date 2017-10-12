@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <include
+            layout="@layout/common_title"/>
+
+    <ScrollView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+        <LinearLayout
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:id="@+id/head_layout_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/login_bg"
+                    android:gravity="center">
+
+                <com.lx.phonerecycle.widget.CircularImage
+                        android:id="@+id/avatar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/default_head_icon"/>
+            </LinearLayout>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="修改头像"
+                    android:textColor="@color/gray"/>
+
+            <include
+                    android:id="@+id/user_name_group"
+                    layout="@layout/user_center_item"/>
+
+            <include
+                    android:id="@+id/phone_group"
+                    layout="@layout/user_center_item"/>
+
+            <include
+                    android:id="@+id/sex_group"
+                    layout="@layout/user_center_item"/>
+
+            <include
+                    android:id="@+id/birthday_group"
+                    layout="@layout/user_center_item"/>
+
+            <include
+                    android:id="@+id/email_group"
+                    layout="@layout/user_center_item"/>
+
+            <include
+                    android:id="@+id/address_group"
+                    layout="@layout/user_center_item"/>
+
+            <include
+                    android:id="@+id/modify_password_group"
+                    layout="@layout/user_center_item"/>
+
+            <Button
+                    android:id="@+id/exit_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/shape_home_btn2_bg"
+                    android:text="退出登陆"
+                    android:paddingTop="10dp"
+                    android:textSize="18sp"
+                    android:paddingBottom="10dp"
+                    android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

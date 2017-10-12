@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+            layout="@layout/common_title"/>
+
+    <FrameLayout
+            android:layout_weight="1"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scrollbars="none"
+                android:background="@drawable/shape_service_text_bounds"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:visibility="visible">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:text="原手机："
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="5dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            <ImageView
+                                    android:src="@drawable/phone_small_icon"
+                                    android:contentDescription="@string/app_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                            <TextView
+                                    android:id="@+id/ori_phone_name"
+                                    android:text=""
+                                    android:textSize="15sp"
+                                    android:textColor="@color/black"
+                                    android:layout_gravity="center_vertical"
+                                    android:singleLine="true"
+                                    android:paddingBottom="3dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                                android:id="@+id/ori_phone_imei"
+                                android:text=""
+                                android:textSize="13sp"
+                                android:textColor="@color/black"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="-10dp"
+                                android:singleLine="true"
+                                android:paddingTop="3dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:background="@drawable/assessment_price_old_bg"
+                            android:orientation="vertical"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:text="旧机评估"
+                                android:textSize="10sp"
+                                android:textColor="@color/white"
+                                android:paddingLeft="10dp"
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <TextView
+                                android:background="#99FFFFFF"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+
+                        <TextView
+                                android:id="@+id/ori_phone_price"
+                                android:text=""
+                                android:textSize="14sp"
+                                android:textColor="@color/white"
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                        android:background="@drawable/assessment_line"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:text="换购手机："
+                        android:textSize="15sp"
+                        android:textColor="@color/black"
+                        android:singleLine="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:paddingLeft="5dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <ImageView
+                                android:src="@drawable/phone_small_icon"
+                                android:contentDescription="@string/app_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <TextView
+                                android:id="@+id/redem_phone_name"
+                                android:text=""
+                                android:textSize="15sp"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center_vertical"
+                                android:singleLine="true"
+                                android:paddingBottom="3dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:background="@drawable/assessment_price_bg_2"
+                            android:orientation="vertical"
+                            android:layout_weight="0"
+                            android:gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/redem_diff_price"
+                                android:text="换购补差"
+                                android:textSize="10sp"
+                                android:textColor="@color/white"
+                                android:paddingLeft="10dp"
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        <TextView
+                                android:background="#99FFFFFF"
+                                android:layout_marginRight="15dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"/>
+
+                        <TextView
+                                android:id="@+id/redem_phone_price"
+                                android:text=""
+                                android:textSize="14sp"
+                                android:textColor="@color/white"
+                                android:singleLine="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/redemption_phone_args"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_gradients_grey_item_bg"
+                android:paddingTop="3dp"
+                android:layout_marginTop="3dp"
+                android:paddingBottom="3dp"
+                android:textColor="#ff978a"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/confirm_order"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/login_blue_bg"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:text="确认下单"/>
+
+        <TextView
+                android:id="@+id/customer_order"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/login_blue_bg"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:text="帮客户下单"/>
+
+    </LinearLayout>
+
+</LinearLayout>

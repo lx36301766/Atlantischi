@@ -1,0 +1,20 @@
+{
+  "n2_a": "http://joy.cdctinfo.cn/tml_inter/n2a/index/nns_tag/android_phone",
+  "n3_a": "http://joy.cdctinfo.cn/tml_inter/n3a/index/nns_tag/android_phone",
+  "n4_a": "http://joy.cdctinfo.cn/tml_inter/n4a/index/nns_tag/android_phone",
+  "init_data": {
+    "time": "20140810180040",
+    "client_version": {
+      "android_phone": {
+        "version": "v1.0.1",
+        "version_inner": 1,
+        "url": "http://joy.cdctinfo.cn/uploadfiles/apk/ad0af87ae35c3a2a4e0e148241fc9a66.apk"
+      },
+      "android_pad": {
+        "version": "v1.0.0",
+        "version_inner": 1,
+        "url": ""
+      }
+    }
+  }
+}

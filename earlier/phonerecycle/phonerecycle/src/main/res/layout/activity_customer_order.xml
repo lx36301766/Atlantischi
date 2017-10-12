@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+            layout="@layout/common_title"/>
+
+    <FrameLayout
+            android:layout_weight="1"
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scrollbars="none"
+                android:background="@drawable/shape_service_text_bounds"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:visibility="visible">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <EditText
+                        android:id="@+id/customer_name"
+                        android:layout_marginTop="30dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:hint="请输入客户姓名"
+                        android:textColorHint="#99a9a9a9"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:background="@drawable/shape_custom_order_text_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/customer_phone_num"
+                        android:inputType="phone"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:hint="请输入客户电话号码"
+                        android:textColorHint="#99a9a9a9"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:background="@drawable/shape_custom_order_text_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/customer_redem_time"
+                        android:layout_marginTop="10dp"
+                        android:hint="请选择客户交机时间"
+                        style="@style/custom_location_text"/>
+
+                <TextView
+                        android:text="请选择交机地址"
+                        android:layout_marginTop="0dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/customer_redem_province"
+                            android:hint="省"
+                            style="@style/custom_location_text"/>
+
+                    <TextView
+                            android:id="@+id/customer_redem_city"
+                            android:hint="市"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginLeft="5dp"
+                            style="@style/custom_location_text"/>
+
+                    <TextView
+                            android:id="@+id/customer_redem_county"
+                            android:hint="县，区"
+                            style="@style/custom_location_text"/>
+
+                </LinearLayout>
+
+                <EditText
+                        android:id="@+id/customer_addr_details"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:hint="请输入详细交机地址"
+                        android:textColorHint="#99a9a9a9"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:gravity="top"
+                        android:background="@drawable/shape_custom_order_text_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"/>
+
+                <ImageView
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/assessment_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <CheckBox
+                            android:id="@+id/agree_check_box"
+                            android:background="@drawable/selector_check_box"
+                            android:button="@null"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:text="同意回收助手服务条款"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+                android:text="帮客户下单"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_gradients_grey_item_bg"
+                android:layout_marginTop="3dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textSize="15sp"
+                android:textColor="#ff5102"
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+    </FrameLayout>
+
+    <TextView
+            android:id="@+id/confirm_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/login_blue_bg"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="visible"
+            android:text="确定下单"/>
+
+</LinearLayout>

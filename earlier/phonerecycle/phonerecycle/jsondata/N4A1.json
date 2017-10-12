@@ -1,0 +1,26 @@
+{
+    "status": 111,
+    "msg": "OK",
+    "data": [
+        {
+            "status": 0,
+            "title": "待收机"
+        },
+        {
+            "status": 1,
+            "title": "订单异常(机型审核未通过)"
+        },
+        {
+            "status": 2,
+            "title": "待付款"
+        },
+        {
+            "status": 3,
+            "title": "转帐失败"
+        },
+        {
+            "status": 4,
+            "title": "交易完成"
+        }
+    ]
+}

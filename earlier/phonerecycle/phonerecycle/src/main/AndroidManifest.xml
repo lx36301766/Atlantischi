@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.lx.phonerecycle"
+          android:versionCode="13"
+          android:versionName="1.1.3">
+
+    <uses-sdk
+            android:minSdkVersion="10"
+            android:targetSdkVersion="14"/>
+
+    <supports-screens
+            android:anyDensity="true"
+            android:largeScreens="true"
+            android:normalScreens="true"
+            android:smallScreens="false">
+    </supports-screens>
+
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SET_DEBUG_APP"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+    <application
+            android:name=".App"
+            android:allowBackup="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+
+        <activity
+                android:name=".SplashActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".HomeActivity"
+                android:launchMode="singleTask"
+                android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+                android:name=".UserCenterActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".LoginActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".RegisterActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+                android:name=".ActivityDetailsActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".AssessmentBaseInfoActivity"
+                android:launchMode="singleTop"
+                android:windowSoftInputMode="adjustPan"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".AssessmentDetailsInfoActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".AssessmentResultsActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".FAQActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".ActivityAndPhoneRecommendActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+                android:name=".OrdersManagementActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".OrderSuccessActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".ServiceAgreementActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".OrdersDetailsActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".ModifyPasswordActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".DeliveryAddressActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".FindBackPasswordActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".PhoneDetailsActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".PhoneRedemptionActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".RedemptionDetailsActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".CustomerOrderActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".OrderPayActivity"
+                android:launchMode="singleTop"
+                android:screenOrientation="portrait">
+        </activity>
+
+
+        <service
+                android:name=".location.SyncLocationService">
+        </service>
+
+        <service android:name=".upgrade.DownloadService" />
+
+        <provider
+                android:name="com.lx.phonerecycle.location.LocationInfoProvider"
+                android:authorities="com.lx.phonerecycle.cityinfo.provider" >
+        </provider>
+
+        <meta-data
+                android:name="UMENG_APPKEY"
+                android:value="53de4285fd98c5e40a038791"/>
+
+        <activity
+                android:configChanges="orientation|keyboard"
+                android:launchMode="singleTask"
+                android:name="com.umeng.socialize.view.ShareActivity"
+                android:noHistory="true"
+                android:theme="@style/Theme.UMDialog"
+                android:windowSoftInputMode="stateVisible|adjustResize"/>
+        <activity
+                android:configChanges="keyboardHidden|orientation|screenSize"
+                android:exported="true"
+                android:name=".wxapi.WXEntryActivity"
+                android:screenOrientation="portrait"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+                android:configChanges="orientation|keyboard"
+                android:launchMode="singleTask"
+                android:name="com.tencent.tauth.AuthActivity"
+                android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="tencent添加你的App Id"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.tencent.connect.common.AssistActivity"
+                android:screenOrientation="portrait"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity
+                android:configChanges="orientation|navigation|keyboardHidden"
+                android:name="com.renn.rennsdk.oauth.OAuthActivity"/>
+    </application>
+
+</manifest>

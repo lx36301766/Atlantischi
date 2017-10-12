@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+            layout="@layout/common_title"/>
+
+    <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_weight="111"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/base_margin"
+                android:paddingRight="@dimen/base_margin"
+                android:id="@+id/base_info_main">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/base_margin"
+                    android:layout_marginBottom="@dimen/base_margin"
+                    android:gravity="center">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/write_icon"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/grey"
+                        android:textSize="13sp"
+                        android:text="请完善您的手机信息，以便得到更准确的评估"/>
+            </LinearLayout>
+
+            <EditText
+                    android:id="@+id/base_info_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="请输入您最近使用的手机号码"
+                    android:inputType="phone"
+                    android:textColorHint="#bbbbbb"
+                    android:textColor="@color/grey"
+                    android:singleLine="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/shape_assess_phone_edit_bg"
+                    android:textSize="15sp"/>
+
+            <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/assessment_text_title_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="手机品牌"/>
+
+                <LinearLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/brand_layout">
+                </LinearLayout>
+
+                <TextView
+                        android:id="@+id/phone_model_title"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/assessment_text_title_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="手机型号"/>
+
+                <LinearLayout
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/model_layout">
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+            android:id="@+id/base_info_next_step"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="下一步"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"
+            android:background="@drawable/shape_home_btn2_bg"/>
+
+</LinearLayout>

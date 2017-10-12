@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+            layout="@layout/common_title"/>
+
+    <LinearLayout
+            android:id="@+id/switch_btn_layout"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:id="@+id/activity_introduction"
+                android:layout_weight="1"
+                android:text="活动介绍"
+                android:textSize="20sp"
+                android:textColor="@color/text_selector_phone_recom_btn"
+                android:background="@drawable/selector_phone_recom_left_btn"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/new_phone_recom"
+                android:layout_weight="1"
+                android:text="新机推荐"
+                android:textSize="20sp"
+                android:textColor="@color/text_selector_phone_recom_btn"
+                android:background="@drawable/selector_phone_recom_right_btn"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <com.lx.phonerecycle.widget.pulltorefresh.PullToRefreshListView
+            android:id="@+id/phone_list_refresh_view"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    </com.lx.phonerecycle.widget.pulltorefresh.PullToRefreshListView>
+
+    <com.lx.phonerecycle.widget.pulltorefresh.PullToRefreshListView
+            android:id="@+id/activity_list_refresh_view"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    </com.lx.phonerecycle.widget.pulltorefresh.PullToRefreshListView>
+
+    <!--<ListView-->
+            <!--android:id="@+id/phone_list"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:dividerHeight="5dp"-->
+            <!--android:divider="@color/white"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
+
+    <!--<ListView-->
+            <!--android:id="@+id/activity_list"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:dividerHeight="5dp"-->
+            <!--android:divider="@color/white"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"/>-->
+
+</LinearLayout>

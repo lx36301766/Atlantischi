@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="black">#ff000000</color>
+    <color name="dark_gray">#ff606060</color>
+    <color name="darker_gray">#ff909090</color>
+
+    <drawable name="transparent">#00000000</drawable>
+
+</resources>

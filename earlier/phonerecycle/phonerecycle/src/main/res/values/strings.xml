@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">换机助手</string>
+
+    <string name="home_second_hand_recycle">二手回收</string>
+    <string name="home_new_phone_redemption">新机换购</string>
+    <string name="home_activity_promotions">活动促销</string>
+    <string name="home_marketing_support">营销支撑</string>
+    <string name="home_personal_center">个人中心</string>
+    <string name="home_order_management">订单管理</string>
+    <string name="about_me">关于我们</string>
+    <string name="service_agreement">本人同意将手机交于换机助手进行换机，并同意签署以下几条条款：1.本人承诺此次交付换机助手为原装品牌手机，符合换机助手的换机的要求，如手机经换机助手检测为山寨机或仿置机等不符合换机助手换机标准的，换机助手将有权利取消本次换机交易，处理办法由机助手决定。2.手机回收价格由换机助手提供，本人接受换机助手发布的该手机回收价格。"</string>
+    <string name="order_success_tips1">1.自助送机用户，请将手机送到XXXXX街251号</string>
+    <string name="order_success_tips2">2.上门收机用户，XXXXX</string>
+    <string name="order_success_tips3">3.郊县暂不提供上门收机服务，请将手机寄送</string>
+</resources>

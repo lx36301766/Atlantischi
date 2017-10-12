@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RollbackListView">
+        <attr name="pageCount" format="integer"/>
+    </declare-styleable>
+
+    <integer name="loading_anim_time">20</integer>
+
+    <integer name="activity_anim_time">500</integer>
+
+    <declare-styleable name="Slider">
+        <attr format="integer" name="slidingDuration" />
+        <attr format="reference" name="slidingInterpolator" />
+        <attr format="reference" name="slidingThumb" />
+        <attr format="integer" name="defaultSelection" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,15 @@
+{
+  "status": 111,
+  "msg": "OK",
+  "data": {
+    "id": "c54988a9dc1fc3ff80d5e64208160c90",
+    "title": "小活动小活动",
+    "content": "小活动小活动小活动小活动小活动小活动小活动小活动",
+    "expries": 0,
+    "join_num": "0",
+    "img": [
+      "http://joy.cdctinfo.cn/uploadfiles/image/2014/07/26/4ded25f0f7aa67922dca825b8d0f64fd.jpg",
+      "http://joy.cdctinfo.cn/uploadfiles/image/2014/07/26/09a3311df20e2bfafa1f1382e3472862.jpg"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "status": 111,
+  "msg": "OK",
+  "data": {
+    "id": "12",
+    "title": "三星N9009",
+    "price": "2100",
+    "tprice": "",
+    "sale_count": "0",
+    "img": [
+      "http://joy.cdctinfo.cn/uploadfiles/image/2014/07/26/26b22848a112cf696f46df1d0b372d8d.jpg",
+      "http://joy.cdctinfo.cn/uploadfiles/image/2014/07/26/f482ba6f84372668ea2fba292bd960aa.jpg"
+    ],
+    "model": [
+      {
+        "key": "屏幕分辨率",
+        "value": ""
+      },
+      {
+        "key": "系统",
+        "value": ""
+      },
+      {
+        "key": "CPU",
+        "value": "A81600"
+      },
+      {
+        "key": "后置摄像头",
+        "value": "200W像素"
+      }
+    ]
+  }
+}

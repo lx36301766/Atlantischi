@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners
+            android:bottomRightRadius="@dimen/phone_recom_btn_shape_corner"
+            android:topRightRadius="@dimen/phone_recom_btn_shape_corner"/>
+
+    <solid
+            android:color="#00ffffff"/>
+
+    <stroke
+            android:width="@dimen/phone_recom_btn_shape_stroke"
+            android:color="@color/phone_recom_green"/>
+
+</shape>

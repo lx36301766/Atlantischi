@@ -1,0 +1,16 @@
+{
+  "status": 111,
+  "msg": "OK",
+  "page": 1,
+  "total_page": 1,
+  "count_num": 1,
+  "data": [
+    {
+      "id": "c54988a9dc1fc3ff80d5e64208160c90",
+      "title": "小活动小活动",
+      "summary": "小活动小活动小活动小活动小活动小活动小活动小活动...",
+      "expries": 0,
+      "img": "http://joy.cdctinfo.cn/uploadfiles/image/2014/07/24/b0583a834b538d96fe64acb356b77242.jpg"
+    }
+  ]
+}

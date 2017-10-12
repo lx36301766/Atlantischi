@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:background="@drawable/shape_phone_recom_item_bg"
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:background="#00ffffff"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/activity_image"
+                android:src="@drawable/test_phone"
+                android:scaleType="fitXY"
+                android:paddingLeft="1dp"
+                android:paddingRight="1dp"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:contentDescription="@string/app_name"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/shape_phone_recom_item_bg"
+                android:layout_width="90dp"
+                android:layout_height="130dp"/>
+
+        <RelativeLayout
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:id="@+id/activity_name"
+                    android:text="小活动"
+                    android:textSize="20sp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/details_text"
+                    android:textSize="15sp"
+                    android:textColor="@color/red"
+                    android:text="详情>"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <com.lx.phonerecycle.widget.EllipsizingTextView
+                    android:id="@+id/activity_details"
+                    android:layout_marginTop="2dp"
+                    android:layout_above="@id/details_text"
+                    android:layout_below="@id/activity_name"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray"
+                    android:text="小活动小活动"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

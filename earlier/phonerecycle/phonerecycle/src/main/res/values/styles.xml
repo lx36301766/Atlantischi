@@ -1,0 +1,156 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+
+    <style name="userIcon">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">28dp</item>
+    </style>
+
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">#ffffff</item>
+        <item name="android:layout_marginTop">@dimen/login_line_margin</item>
+        <item name="android:layout_marginBottom">@dimen/login_line_margin</item>
+        <item name="android:layout_marginLeft">@dimen/login_margin</item>
+        <item name="android:layout_marginRight">@dimen/login_margin</item>
+    </style>
+
+    <style name="home_btn_style">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="orders_detail_text_sytle">
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="orders_success_text_sytle">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="user_center_margin">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+    </style>
+
+    <style name="user_center_text_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="user_center_edit_text_style">
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="title_text_common">
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="user_center_line">
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/shape_dash_line</item>
+        <item name="android:layerType">software</item>
+    </style>
+    <style name="modify_password_edit_item">
+        <item name="android:inputType">textPassword</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColorHint">#88a9a9a9</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="custom_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@drawable/shape_loading_dialog</item>
+        <item name="android:windowBackground">@drawable/shape_loading_dialog</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="custom_dialog2" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@drawable/shape_loading_dialog</item>
+        <item name="android:windowBackground">@drawable/shape_loading_dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="custom_location_text">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColorHint">#99a9a9a9</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingBottom">1dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:drawableRight">@drawable/custom_order_arrow</item>
+        <item name="android:background">@drawable/shape_custom_order_text_bg</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ProgressBar_Mini" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">50dip</item>
+        <item name="android:minHeight">8dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/progressbar_mini</item>
+    </style>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <com.atway.webshell.widget.VideoPlayerView
+            android:id="@+id/my_video"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <RelativeLayout
+            android:id="@+id/seek_layout"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+        <TextView
+                android:text="00:00:00"
+                android:id="@+id/current_time_tv"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="00:00:00"
+                android:id="@+id/total_time_tv"
+                android:gravity="right"
+                android:textColor="@android:color/white"
+                android:layout_alignParentRight="true"
+                android:singleLine="true"
+                android:textSize="20sp"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"/>
+
+        <SeekBar
+                android:id="@+id/my_seekbar"
+                android:layout_toLeftOf="@id/total_time_tv"
+                android:layout_toRightOf="@id/current_time_tv"
+                android:visibility="visible"
+                android:indeterminateOnly="false"
+                android:minHeight="15dp"
+                android:maxHeight="15dp"
+                android:progressDrawable="@drawable/player_seekbar"
+                android:thumb="@drawable/player_seekbar_thumb2"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <ImageView
+            android:id="@+id/play_state"
+            android:src="@drawable/player_pause"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</RelativeLayout>

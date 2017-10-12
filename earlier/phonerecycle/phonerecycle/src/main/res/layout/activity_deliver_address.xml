@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:background="@drawable/main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/deliver_address_layout">
+
+    <include
+            layout="@layout/common_title"/>
+
+    <TextView
+            android:text="所在地区"
+            android:textColor="@color/gray"
+            style="@style/modify_password_edit_item"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:id="@+id/deliver_address_text"
+            android:drawableRight="@drawable/right_arrow_small"
+            android:drawablePadding="3dp"/>
+
+    <EditText
+            android:id="@+id/detail_address"
+            android:hint="详细地址"
+            android:textSize="16sp"
+            android:inputType="text"
+            style="@style/modify_password_edit_item"/>
+
+    <Button
+            android:id="@+id/deliver_address_commit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/shape_home_btn2_bg"
+            android:text="提交"
+            android:paddingTop="10dp"
+            android:textSize="18sp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/white"/>
+
+</LinearLayout>

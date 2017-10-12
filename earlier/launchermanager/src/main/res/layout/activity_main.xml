@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="horizontal"
+              tools:context=".MainActivity">
+
+    <TextView
+            android:id="@+id/hunan_ott"
+            style="@style/text_style"
+            android:layout_width="180dip"
+            android:layout_height="220dip"
+            android:drawableTop="@drawable/icon_mangguo"
+            android:text="芒果TV"/>
+
+    <TextView
+            android:id="@+id/app_install"
+            style="@style/text_style"
+            android:layout_width="180dip"
+            android:layout_height="220dip"
+            android:drawableTop="@drawable/icon_app_install"
+            android:text="应用中心"/>
+
+    <TextView
+            android:id="@+id/system_setting"
+            style="@style/text_style"
+            android:layout_width="180dip"
+            android:layout_height="220dip"
+            android:drawableTop="@drawable/icon_system_setting"
+            android:text="系统设置"/>
+
+</LinearLayout>

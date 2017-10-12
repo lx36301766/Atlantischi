@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/shape_ord_grey_bg">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+        <LinearLayout
+                android:id="@+id/phone_img_layout"
+                android:layout_width="60dp"
+                android:layout_height="90dp"
+                android:gravity="center"
+                android:layout_margin="3dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shape_ord_light_grey_bg">
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/order_image"
+                    android:background="@drawable/ord_phone_icon"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_toRightOf="@id/phone_img_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="8dp"
+                android:layout_centerInParent="false">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:id="@+id/order_title"
+                    android:text="三星GALAXY S5 G9006V"
+                    android:textSize="18sp"/>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/gray"
+                        android:text="用户:"/>
+
+                <TextView
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/order_user"
+                        android:textSize="15sp"
+                        android:text="XXX"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_marginTop="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:textColor="@color/gray"
+                        android:text="电话:"/>
+
+                <TextView
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/order_phoneNumber"
+                        android:textSize="15sp"
+                        android:text="18030840046"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="8dp"
+                android:textColor="@color/red"
+                android:id="@+id/order_cost"
+                android:text="¥ 1290"
+                android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:id="@+id/order_error_line"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="16sp"
+            android:textColor="@color/red"
+            android:layout_gravity="center_horizontal"
+            android:text="异常状态:付款不成功"
+            android:id="@+id/order_error_tips"/>
+</LinearLayout>

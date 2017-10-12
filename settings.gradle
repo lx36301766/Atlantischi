@@ -1,21 +1,24 @@
 include ':app', ':java'
 
-//include 'earlier:libgdxtesttutorial', 'earlier:opengl-test-tutorial', 'earlier:powerwidget'
+//include 'earlier:libgdxtesttutorial'
+//include 'earlier:opengl-test-tutorial'
+//include 'earlier:powerwidget'
+//include 'earlier:atway:atwaywebshell', 'earlier:atway:serverapitest'
+//include 'earlier:phonerecycle:phonerecycle', 'earlier:phonerecycle:pagerindicatorlib','earlier:phonerecycle:pullrefreshview', 'earlier:phonerecycle:slidingmenu_library'
+//include 'earlier:designpattern'
+//include 'earlier:jswingtest'
+//include 'earlier:simplelauncher'
+//include 'earlier:launchermanager'
+//include 'earlier:starcormplayerdemo'
+//include 'earlier:weburltest'
+//include 'earlier:webservice:androidwebservice','earlier:webservice:javawebservice','earlier:webservice:webservicetest'
 
-include ':videocompress'
-
+//include ':videocompress'
+//include 'force:dexshell', 'force:forceapkobj', 'force:reforceapk'
+//include 'annotation:javaannotation', 'annotation:androidannotation'
+//include 'hotfix:robusttest'
+//include ':stetho'
+//include ':rx'
 include ':kotlinapp'
-
-include ':stetho'
-
-include ':rx'
-
-include 'force:dexshell', 'force:forceapkobj', 'force:reforceapk'
-
-include 'annotation:javaannotation', 'annotation:androidannotation'
-
 include 'network:networkapp', 'network:networkjava'
-
-include 'hotfix:robusttest'
-
-include 'xjsonbridge:jsonbridgeapp'
+//include 'xjsonbridge:jsonbridgeapp'

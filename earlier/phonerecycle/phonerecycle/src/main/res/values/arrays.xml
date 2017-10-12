@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="home_item_names_1">
+        <item>@string/home_second_hand_recycle</item>
+        <item>@string/home_activity_promotions</item>
+        <!--<item>@string/home_marketing_support</item>-->
+        <item>@string/home_personal_center</item>
+        <item>@string/home_order_management</item>
+        <item>@string/about_me</item>
+
+        <!--<item>ActivityAndPhoneRecommend</item>-->
+        <!--<item>AssessmentBaseInfo</item>-->
+        <!--<item>AssessmentDetailsInfo</item>-->
+        <!--<item>AssessmentResults</item>-->
+        <!--<item>FAQ</item>-->
+        <!--<item>Login</item>-->
+        <!--<item>OrdersManagement</item>-->
+        <!--<item>OrdersDetails</item>-->
+        <!--<item>OrderSuccess</item>-->
+        <!--<item>Register</item>-->
+        <!--<item>ServiceAgreement</item>-->
+        <!--<item>UserCenter</item>-->
+    </array>
+
+    <array name="home_item_icons_1">
+        <item>@drawable/home_second_hand_recycle</item>
+        <item>@drawable/home_activity_promotions</item>
+        <!--<item>@drawable/home_marketing_support</item>-->
+        <item>@drawable/home_personal_center</item>
+        <item>@drawable/home_order_management</item>
+        <item>@drawable/home_about_me</item>
+    </array>
+
+    <array name="home_item_names_2">
+        <item>@string/home_second_hand_recycle</item>
+        <item>@string/home_new_phone_redemption</item>
+        <item>@string/home_activity_promotions</item>
+        <!--<item>@string/home_marketing_support</item>-->
+        <item>@string/home_personal_center</item>
+        <item>@string/home_order_management</item>
+        <item>@string/about_me</item>
+
+    </array>
+
+    <array name="home_item_icons_2">
+        <item>@drawable/home_second_hand_recycle</item>
+        <item>@drawable/home_new_phone_redemption</item>
+        <item>@drawable/home_activity_promotions</item>
+        <!--<item>@drawable/home_marketing_support</item>-->
+        <item>@drawable/home_personal_center</item>
+        <item>@drawable/home_order_management</item>
+        <item>@drawable/home_about_me</item>
+
+    </array>
+
+</resources>

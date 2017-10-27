@@ -1,11 +1,11 @@
 ext {
 
     //module gradle apply from
-    def gradleDir = rootDir.absolutePath + "/gradle/"
+    gradle_root = rootDir.absolutePath + "/gradle"
     gradles = [
-            base_config: gradleDir + "android_config.gradle",
-            AndResGuard: gradleDir + "AndResGuard.gradle",
-            kotlin_deps: gradleDir + "kotlin_deps.gradle",
+            base_config: gradle_root + "/android_config.gradle",
+            AndResGuard: gradle_root + "/AndResGuard.gradle",
+            kotlin_deps: gradle_root + "/kotlin_deps.gradle",
     ]
 
     support_version = '25.3.1'
@@ -47,6 +47,12 @@ ext {
             universal_image_loader: "com.nostra13.universalimageloader:universal-image-loader:${uil_version}",
     ]
 
+    //butterknife_version = '8.8.1'
+    annotation = [
+            butterknife         : "com.jakewharton:butterknife:${butterknife_version}",
+            butterknife_compiler: "com.jakewharton:butterknife-compiler:${butterknife_version}"
+    ]
+
     rx = [
             rxandroid: 'io.reactivex:rxandroid:1.2.1',
             rxjava   : 'io.reactivex:rxjava:1.1.6',
@@ -73,6 +79,7 @@ ext {
             constraint_layout: "com.android.support.constraint:constraint-layout:1.0.2",
     ]
 
+    //robust_version = '0.6.18'
     hotfix = [
             robust: "com.meituan.robust:robust:$robust_version",
     ]
@@ -87,6 +94,7 @@ ext {
             rvdatabinding: "com.google.android.agera:rvdatabinding:${google_agera_version}",
     ]
 
+    //kotlin_version = '1.1.51'
     stetho_version = '1.5.0'
     tools = [
             kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
@@ -100,7 +108,6 @@ ext {
     other_deps = [
             slimadapter: "net.idik:slimadapter:2.1.0",
             okio       : "com.squareup.okio:okio:1.13.0",
-            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
     ]
 
 }

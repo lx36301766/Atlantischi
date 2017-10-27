@@ -1,3 +1,4 @@
+
 apply plugin: 'com.android.application'
 
 apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
@@ -6,19 +7,12 @@ apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 android {
 
     defaultConfig {
-        applicationId "pl.atlantischi.kotlinapp"
+        applicationId "pl.atlantischi.nativendktest"
         versionCode 1
         versionName "1.0"
-    }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
-        androidTest.java.srcDirs += 'src/androidTest/kotlin'
     }
 
 }
 
 dependencies {
-    compile "${tools.kotlin}"
 }

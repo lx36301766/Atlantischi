@@ -3,6 +3,8 @@ dependencies {
 
     compile files('libs/httpmime-4.1.1.jar')
 
+//    compile "${tools.kotlin}"
+
     compile "${support_deps.supportV4}"
     compile "${support_deps.supportV13}"
     compile "${support_deps.appcompatV7}"
@@ -13,7 +15,6 @@ dependencies {
 
     compile "${view.gif_drawable}"
     compile "${view.hlistview}"
-    compile "${tools.kotlin}"
 
     compile "${google_agera.content}"
     compile "${google_agera.database}"
@@ -21,6 +22,10 @@ dependencies {
     compile "${google_agera.rvadapter}"
     compile "${google_agera.rvdatabinding}"
 
+//    compile "${annotation.butterknife}"
+//    annotationProcessor "${annotation.butterknife_compiler}"
+
     compile 'pl.atlantischi.ximagebriage:library:0.0.1'
+
 
 }

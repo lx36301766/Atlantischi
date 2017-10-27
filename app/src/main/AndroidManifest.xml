@@ -44,18 +44,19 @@
 
     <!-- 快捷方式相关 begin -->
 
+
     <!-- 添加快捷方式 -->
-    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <uses-permission android:name="com.android.launcher2.permission.INSTALL_SHORTCUT" />
-    <uses-permission android:name="com.android.launcher3.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher2.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.INSTALL_SHORTCUT"/>
     <!-- 移除快捷方式 -->
-    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
-    <uses-permission android:name="com.android.launcher2.permission.UNINSTALL_SHORTCUT" />
-    <uses-permission android:name="com.android.launcher3.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher2.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.UNINSTALL_SHORTCUT"/>
     <!-- 查询快捷方式 -->
-    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS" />
-    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
 
     <!-- 魅蓝3s 超大简易模式权限是下面的这个 -->
     <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
@@ -97,10 +98,9 @@
     <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS"/>
     <uses-permission android:name="com.ztemt.launcher.permission.READ_SETTINGS"/>
     <uses-permission android:name="cn.nubia.launcher.permission.READ_SETTINGS"/>
+
     <!-- 从360手机助手调试版复制过来的部分launcher权限  结束 -->
-
     <!-- 快捷方式相关 end -->
-
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -154,6 +154,8 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".socket.SocketActivity">
+        </activity>
     </application>
 
 </manifest>

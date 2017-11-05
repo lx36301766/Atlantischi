@@ -9,12 +9,12 @@ dependencies {
     compile "${network.retrofit2}"
     compile "${network.retrofit2_gson_convert}"
     compile "${network.retrofit2_fastjson_convert}"
-    compile "${network.retrofit2_adapter_rxjava}"
+    compile "${network.retrofit2_adapter_rxjava2}"
     compile "${network.okhttp3}"
 
     compile "${json.fastjson}"
 
-    compile "${rx.rxjava}"
+//    compile "${rx.rxjava}"
     compile "${rx.rxjava2}"
 
 }

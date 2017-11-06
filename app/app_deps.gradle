@@ -28,4 +28,8 @@ dependencies {
     compile 'pl.atlantischi.ximagebriage:library:0.0.1'
 
 
+    compile "${log.timber}"
+    compile "${log.klog}"
+    compile "${log.xlog}"
+    compile "${log.logger}"
 }

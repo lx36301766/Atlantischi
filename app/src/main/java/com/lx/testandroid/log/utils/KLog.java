@@ -68,7 +68,6 @@ public class KLog {
     private static final int STACK_TRACE_INDEX = 5;
 
     private static String mGlobalTag;
-    private static boolean mIsGlobalTagEmpty = true;
     private static boolean IS_SHOW_LOG = true;
 
     private KLog() {}
@@ -80,7 +79,6 @@ public class KLog {
     public static void init(boolean isShowLog, @Nullable String tag) {
         IS_SHOW_LOG = isShowLog;
         mGlobalTag = tag;
-        mIsGlobalTagEmpty = TextUtils.isEmpty(mGlobalTag);
     }
 
     public static void v() {
@@ -253,9 +251,9 @@ public class KLog {
 
         String tag = (tagStr == null ? className : tagStr);
 
-        if (mIsGlobalTagEmpty && TextUtils.isEmpty(tag)) {
+        if (TextUtils.isEmpty(mGlobalTag) && TextUtils.isEmpty(tag)) {
             tag = TAG_DEFAULT;
-        } else if (!mIsGlobalTagEmpty) {
+        } else if (!TextUtils.isEmpty(mGlobalTag)) {
             tag = mGlobalTag;
         }
 

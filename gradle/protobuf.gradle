@@ -1,0 +1,39 @@
+
+apply plugin: 'com.google.protobuf'
+
+android {
+
+    sourceSets {
+        main {
+            proto {
+                srcDir 'src/main/protobuf'
+            }
+        }
+    }
+
+}
+
+protobuf {
+    //这里配置protoc编译器
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.0.0'
+    }
+    plugins {
+        javalite {
+            // The codegen for lite comes as a separate artifact
+            artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
+        }
+    }
+    //这里配置生成目录，编译后会在build的目录下生成对应的java文件
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                javalite {}
+            }
+        }
+    }
+}
+
+dependencies {
+    compile "${other_deps.protobuf}"
+}

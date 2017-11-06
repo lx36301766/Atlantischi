@@ -1,0 +1,344 @@
+//CMsgBodyGsmSetupAck.phpsyntax = "proto2";
+package ProtoBuf.DeviceCommand;
+//1.2.模板
+//消息模版
+message CMsg
+{
+    required CMsHead msgHead = 1; //消息头
+    optional CMsgBodyDeviceStatus deviceStatusBody = 2;//柜机状态消息体
+    optional CMsgBodyDeviceOpen openDeviceBody = 3;//开柜指令消息体
+    optional CMsgBodyDeviceAck openDeviceAckBody = 4;//电源取走或归还响应消息体
+    optional CMsgBodyWifiSetupInfo wifiSetupInfoBody = 5;//柜机wifi设置成功推送消息到服务器
+    optional CMsgBodyWifiSetupAck  wifiSetupAckBody = 6; //柜机wifi在服务器端处理后返回消息体
+    optional CMsgBodyUpgrade upgrade =7;//柜机软件升级
+    optional CMsgBodyInstallBatteryResult installBatteryResult=8;//安装电源结果，下一个卡槽
+    optional CMsgBodyGetBatteryPassword getBatteryPasswordBody=9;//获取电源密码请求
+    optional CMsgBodyGetBatteryPasswordAck getBatteryPasswordAckBody=10;//返回电源密码
+    optional CMsgBodyUpgradeAck upgradeAck =11;//柜机软件升级响应
+    optional CMsgBodyDeviceUpdate updateDeviceBody =12;//更新柜机参数
+    optional CMsgBodyGsmSetupInfo gsmSetupInfoBody = 13;//柜机2G信息推送消息到服务器
+    optional CMsgBodyGsmSetupAck gsmSetupAckBody =14; //柜机2G在服务器端处理后返回消息
+    optional CMsgBodyGsmFlowInfo gsmFlowInfoBody =15; //柜机2G损耗流量上报到服务器
+    optional CMsgBodyGsmFlowAck gsmFlowAckBody =16; //服务器返回收到流量的确认信息
+    optional CMsgBodyBatteryBack backBatteryBody =17; //自动归还充电宝
+}
+//消息头
+message CMsHead
+{
+    required CMD cmd = 1;//指令信息
+    optional string version = 2;//协议版本:q
+    optional string tranid =3;//交易ID      36字节
+    optional int32 groupid =4;//MQTT client分组编号
+    optional int32  errcode = 5; //
+    optional bool  heart_beat_flag = 6; //
+}
+//消息命令枚举
+enum CMD
+{
+    STATUSREQ = 1; //状态同步请求（请求即时心跳）
+    STATUSRES = 2;//状态同步响应（心跳）
+    OPENDEV = 3;//打开设备（借还）
+    OPENACK = 4;//设备响应（借还响应）
+
+    SETUPWIFI = 5;//设置Wifi信息（设置WiFi）
+    SETUPWIFIACK=6;//server 回复信息（设置WiFi响应）
+
+    UPGRADE=7;//升级固件
+    STARTINSTALLBATTERY=8;//开始安装电源
+    STOPINSTALLBATTERY=9;//结束安装电源
+    INSTALLBATTERYRESULT=10;//安装电源结果
+    GETBATTERYPASSWORD =11;//获取电源密码请求
+    GETBATTERYPASSWORDACK=12;//获取电源密码返回
+    UPDATEDEVICEPARAMS=13;//更新柜机参数
+
+    SETUPGSM = 14;//设置2G信息（设置2G）
+    SETUPGSMACK=15;//server 回复信息（设置2G响应）
+
+    UPLOADGSMFLOW= 16;//上报2g流量信息
+    UPLOADGSMFLOWACK=17;//server 回复信息
+
+    BACKBATTERY=18;//上报归还充电宝信息
+}
+//2.实体列表
+//2.1.卡槽
+enum HEART_BEAT_DEVICE_CODE
+{
+    HBD_STATUS_OK = 0;//正常成功
+    HBD_TEMPERATURE_ERROR = 1;//温度错误
+    HBD_WIFI_ERROR = 2;//WIFI错误
+    HBD_BLUE_ERROR = 3;//蓝牙错误
+    HBD_IBEACON_ERROR = 4;//ibeacon错误
+    HBD_CONFIG_FILE_ERROR = 5;//配置文件错误
+    HBD_SYSTEM_ERROR = 6;//系统错误
+    HBD_OTHER_ERROR = 7;//其他错误
+}
+enum HEART_BEAT_SLOT_CODE
+{
+    HBS_STATUS_OK = 0;//正常成功
+    HBS_REPAIR_OK  = 1;//温度错误
+    HBS_VOLTAGE_ERROR = 2;//电压错误
+    HBS_CURRENT_ERROR = 3;//电流错误
+    HBS_OTHER_ERROR = 4;//其他错误
+    HBS_MCU_ERROR = 5;//mcu错误，判定卡槽不可用
+    HBS_SN_N_CONTACT_Y_DOOR_Y_ERROR = 6;//sn为空，舱底压住，仓门压住
+    HBS_SN_N_CONTACT_Y_DOOR_N_ERROR = 7;//sn为空，舱底压住，仓门没有压住
+    HBS_SN_N_CONTACT_N_DOOR_Y_ERROR = 8;//sn为空，舱底没有压住，仓门压住
+    HBS_SN_N_CONTACT_N_DOOR_N_ERROR = 9;//sn为空，舱底没有压住，仓门没有压住
+    HBS_SN_Y_CONTACT_Y_DOOR_Y_ERROR = 10;//sn正常，舱底压住，仓门压住
+    HBS_SN_Y_CONTACT_Y_DOOR_N_ERROR = 11;//sn正常，舱底压住，仓门没有压住
+    HBS_SN_Y_CONTACT_N_DOOR_Y_ERROR = 12;//sn正常，舱底没有压住，仓门压住
+    HBS_SN_Y_CONTACT_N_DOOR_N_ERROR = 13;//sn正常，舱底没有压住，仓门没有压住
+}
+enum HEART_BEAT_BATTERY_CODE
+{
+    HBB_STATUS_OK = 0;//正常成功
+    HBB_OTHER_ERROR = 1;//其他错误
+    HBB_TEMPERATURE_ERROR = 2;//温度错误
+    HBB_VOLTAGE_ERROR = 3;//电压错误
+    HBB_CURRENT_ERROR = 4;//电流错误
+    HBB_CYCLECOUNT_ERROR = 5;//电流错误
+    HBB_INTERFACE_ERROR = 6;//电池接口类型错误
+    HBB_BODY_ERROR=7; //电池机身被拆开
+    HBB_LINE_ERROR=8; //电池充电线被破坏
+    HBB_BODY_AND_LINE_ERROR=9; //电池机身被拆开且充电线被破坏
+}
+
+enum ENABLE_BORROW_STATUS
+{
+    ENABLE_STATUS = 0;//可借状态（电池容量达到）
+    DISABLE_STATUS = 1;//不可借状态（电池容量没有达到）
+}
+message Slot
+{
+    required int32 num = 1;               // 从1开始
+    required HEART_BEAT_SLOT_CODE status= 2;                    //好坏状态   0为状态正常，>=1 状态异常(错误码)
+    optional string batterysn =3 ;     //为空的时候就是空卡槽
+}
+//2.2.电源
+message Battery
+ {
+    required string batterysn=1;  //电源sn
+    required float  temprature = 2;  //电源温度
+    required int32 voltage =3;   //电源电压
+    required int32 fullChargeCapacity = 4; //电源最大容量（mAh)
+    required int32 remainingCapacity = 5; //剩余容量（mAh)
+    required int32 averageCurrent = 6;//充放电电流(mA)
+    required int32 cycleCount = 7;   //循环次数
+    required int32 bmsSafetyStatus =8;//异常状态，预留，BMS内部状态
+    required int32 bmsFlags = 9;           //预留，BMS内部充满标志
+    required HEART_BEAT_BATTERY_CODE status= 10;           //异常状态
+    required ENABLE_BORROW_STATUS enableStatus = 11;           //可借标志(容量达到一定才能允许用户借）)
+}
+
+//2.3.柜机
+message Device
+{
+    required string deviceid= 1;               // id
+    optional float  armTemprature = 2;                   //ARM温度
+    optional float  environmentTemprature = 3;                   //外部环境温度 
+    optional string softwareVersion=4 ;     //软件版本
+    optional string ipAddr=5 ;     //ip地址
+    required HEART_BEAT_DEVICE_CODE status= 6;           //异常状态,各个部件的自检异常，运行异常
+}
+//3.消息列表
+//3.1.心跳
+
+//柜机状态
+message CMsgBodyDeviceStatus
+{
+    required Device device = 1;
+    repeated Battery battery = 2; 
+    repeated Slot slot = 3 ;
+}
+//3.2.借还
+//柜机动作类型枚举
+enum DEVACTION
+{
+    BORROW_CODE = 1;//借
+    RETURN_CODE = 2;//还
+}
+
+//柜机动作
+message CMsgBodyDeviceOpen
+{
+    required DEVACTION action = 1;//动作指令
+    required int32 num = 2;//卡槽编号   从零开始
+    required bytes password = 3;//密码
+}
+
+enum BATTERY_BORROW_RETURN_CODE
+{
+    BBR_STATUS_OK = 0;//正常成功
+    BBR_REQUEST_INVALID=1;//指令非法
+    BBR_REQUEST_REPEAT=2;//重复指令
+    BBR_REQUEST_NEED_WAIT=3;//当前有开柜指令正在执行
+    
+    BBR_SLOT_BLANK=4;//卡槽是空的
+    BBR_SLOT_NOT_BLANK=5;//卡槽不是空的
+    
+    BBR_SLOT_NOT_FETCH_BACK=6;//借：用户没有取,吞回
+    BBR_SLOT_NOT_FETCH_NOT_BACK=7;//借：用户没有取，没有吞回，卡槽进入卡死流程，业务端算成功
+
+    BBR_SLOT_NOT_PLUGIN=8;//还：用户未插入
+    BBR_SLOT_NOT_RECOGNIZE=9;//还：无法识别
+    
+    //技术性错误，需要重启MCU。卡槽坏的，能明确的需要单独命名，否则直接设置为     
+    //服务器记录连续发生两次，则自动锁死该卡槽
+    BBR_SLOT_FAIL=16;
+    BBR_SLOT_FAIL_MCU_ERROR_BMS=17;
+    BBR_SLOT_FAIL_MCU_ERROR_LED=18;
+    BBR_SLOT_FAIL_MCU_ERROR_MOTOR=19;
+    BBR_SLOT_FAIL_MCU_ERROR_SWITCH_DOOR=20;
+    BBR_SLOT_FAIL_MCU_ERROR_SWITCH_CONTACT=21;
+    BBR_SLOT_FAIL_MCU_ERROR_ELECT=22;
+    BBR_SLOT_FAIL_MCU_ERROR_MOBILE_POWER_OPEN=23;
+    BBR_SLOT_FAIL_MCU_ERROR_MOBILE_POWER_CLOSE=24;
+};
+
+message CMsgBodyBatteryBack
+{
+required string deviceid = 1;//设备id
+required int32 num = 2;//卡槽编号
+required string batterysn= 3;//还的时候需要发送电源ID
+required BATTERY_BORROW_RETURN_CODE state=4;//电源取走或插入是否成功状态
+}
+
+//电源取走或插入响应
+message CMsgBodyDeviceAck
+{
+    required DEVACTION action = 1;//动作指令
+    required string deviceid = 2;//设备id
+    required int32 num = 3;//卡槽编号
+    required string batterysn= 4;//还的时候需要发送电源ID
+    required BATTERY_BORROW_RETURN_CODE state=5;//电源取走或插入是否成功状态
+}
+//3.3.柜机升级
+enum UPGRADESTATUS
+ {
+    DOWNLOAD_OK= 0;      // 下载成功，准备升级           
+    DOWNLOAD_FAIL= 1;      // 下载失败
+ }
+//柜机升级软件
+message CMsgBodyUpgrade
+{
+    required string version = 1;//软件版本号
+    required string serverUrl = 2;//升级Url
+    required string fileMd5sum = 3;//MD5(128-bit) checksums
+}
+//柜机升级响应
+message CMsgBodyUpgradeAck
+{
+    required UPGRADESTATUS  upgradeStatus= 1;//升级状态
+}
+//服务器发送更新参数命令
+message  CMsgBodyDeviceUpdate
+{
+    required string cmd=1; //更新参数的命令（柜机直接执行该命令）
+}
+//3.4.安装WiFi
+// Wifi密码类型
+enum WIFIAUTHMODE
+ {
+    WIFIAUTHMODENONE = 0;      // 无密码                                                                                                                                                           
+    WIFIAUTHMODEWPA = 1;       // WPA 
+    WIFIAUTHMODEWPAPSK = 2;    // WPA-PSK
+    WIFIAUTHMODEWPA2 = 3;      // WPA2
+    WIFIAUTHMODEWPA2PSK = 4;   // WPA2-PSK
+    WIFIAUTHMODESHARED = 5;    // WEP对应的认证模式
+}
+// Wifi密码加密方式
+enum WIFIENCRYPT 
+{
+    WIFIENCRYPTNONE = 0; //none
+    WIFIENCRYPTAES  = 1;  //aes
+    WIFIENCRYPTTKIP = 2;     //tkip
+    WIFIENCRYPTWEP = 3;     //wep
+}
+//联网方式（0:WiFi, 1:蓝牙, 2: 2G, 3: 4G）
+enum CONNECTNETTYPE
+{
+    CONNECTNETWIFI =0;    //wifi
+    CONNECTNETBLUE =1;   //blue
+    CONNECTNET2G =2;     //2g,3g,4g
+}
+//柜机设置wifi信息
+message CMsgBodyWifiSetupInfo
+{
+    optional string ssid = 1;
+    optional string password = 2;
+    required CONNECTNETTYPE connectNetworkType = 3;//联网方式
+    optional WIFIAUTHMODE wifiAuthMode = 4;//wifi密码类型
+    optional WIFIENCRYPT WifiEncrypt = 5; //wifi密码加密方式
+    required string deviceid = 6;//柜机id
+}
+//柜机设置wifi结果反馈
+message CMsgBodyWifiSetupAck
+{
+    required RESCODE resCode = 1;//返回状态码 0网路配置失败,1网路配置成功
+}
+//柜机设置2G信息
+message CMsgBodyGsmSetupInfo
+{
+    required CONNECTNETTYPE connectNetworkType = 1;//联网方式
+    required string deviceid = 2;//柜机id
+    optional string  imei= 3;//2g_IMEI
+    optional string iccid= 4;//2g_iccid
+    optional string imsi= 5;//2g_imsi
+}
+//柜机设置2G结果反馈
+message CMsgBodyGsmSetupAck
+{
+    required RESCODE resCode = 1;//返回状态码 0网路配置失败,1网路配置成功
+}
+
+//server 返回状态码 0网路配置失败,1网路配置成功
+enum RESCODE
+{
+    RESCODEFAIL=0;      //fail
+    RESCODESUC=1;      //success
+}
+//柜机2G损耗流量上报到服务器
+message CMsgBodyGsmFlowInfo
+{
+    required string deviceid = 1; //柜机id
+    required int64 devUnixTime=2;//柜机unix时间
+    required int64 gsmFlowBytes=3;//2g流量使用情况 Bytes(字节)
+}
+//服务器返回收到流量的确认信息
+message CMsgBodyGsmFlowAck
+{
+    required RESCODE resCode = 1;//返回状态码 0确认收到正确信息，1确认收到错误信息
+}
+//3.5.安装电源
+message CMsgBodyInstallBatteryResult
+{
+    required string deviceId =1;//柜机ID
+    required int32 slotNum =2;//上一个卡槽序号
+    required InstallBatteryResCode resCode =3;//电源安装结果
+    required int32 nextSlotNum =4;//下一个卡槽序号 
+    required InstallBatteryOpenCode openCode = 5;
+}
+enum InstallBatteryOpenCode
+{
+    OPENCODEOK = 1;//成功打开
+    OPENCODEFULL = 2;//无可用卡槽
+    OPENCODEFAIL = 3;//上一次异常停止
+}
+enum InstallBatteryResCode
+{
+    RESCODEOK = 1;//插入成功
+    RESCODENOTPLUGIN = 2;//用户未插入
+    RESCODEERROR = 3;//电源无法识别
+}
+message CMsgBodyGetBatteryPassword
+{
+    required string deviceId =1;//柜机ID
+    required string batterySn= 2;//电源SN
+}
+message CMsgBodyGetBatteryPasswordAck
+{
+    required int32 resCode = 1;// 状态码：0表示获取失败，1表示获取成功
+    required string deviceId =2;//柜机ID
+    required string batterySn= 3;//电源SN
+    required string batteryPassword= 4;//电源密码
+}

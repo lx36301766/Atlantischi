@@ -156,6 +156,8 @@
 
         <activity android:name=".socket.SocketActivity">
         </activity>
+        <activity android:name=".common.ProtobufActivity">
+        </activity>
     </application>
 
 </manifest>

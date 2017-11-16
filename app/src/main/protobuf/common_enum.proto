@@ -1,0 +1,83 @@
+package protobuf;
+
+//HEART_BEAT_SLOT_CODE
+enum HEART_BEAT_SLOT_CODE {
+    HBS_STATUS_OK = 0; //正常成功
+    HBS_REPAIR_OK = 1; //温度错误
+    HBS_VOLTAGE_ERROR = 2; //电压错误
+    HBS_CURRENT_ERROR = 3; //电流错误
+    HBS_OTHER_ERROR = 4; //其他错误
+    HBS_MCU_ERROR = 5; //mcu错误，判定卡槽不可用
+    HBS_SN_N_CONTACT_Y_DOOR_Y_ERROR = 6; //sn为空，舱底压住，仓门压住
+    HBS_SN_N_CONTACT_Y_DOOR_N_ERROR = 7; //sn为空，舱底压住，仓门没有压住
+    HBS_SN_N_CONTACT_N_DOOR_Y_ERROR = 8; //sn为空，舱底没有压住，仓门压住
+    HBS_SN_N_CONTACT_N_DOOR_N_ERROR = 9; //sn为空，舱底没有压住，仓门没有压住
+    HBS_SN_Y_CONTACT_Y_DOOR_Y_ERROR = 10; //sn正常，舱底压住，仓门压住
+    HBS_SN_Y_CONTACT_Y_DOOR_N_ERROR = 11; //sn正常，舱底压住，仓门没有压住
+    HBS_SN_Y_CONTACT_N_DOOR_Y_ERROR = 12; //sn正常，舱底没有压住，仓门压住
+    HBS_SN_Y_CONTACT_N_DOOR_N_ERROR = 13; //sn正常，舱底没有压住，仓门没有压住
+}
+
+//HEART_BEAT_BATTERY_CODE
+enum HEART_BEAT_BATTERY_CODE {
+    HBB_STATUS_OK = 0; //正常成功
+    HBB_OTHER_ERROR = 1; //其他错误
+    HBB_TEMPERATURE_ERROR = 2; //温度错误
+    HBB_VOLTAGE_ERROR = 3; //电压错误
+    HBB_CURRENT_ERROR = 4; //电流错误
+    HBB_CYCLECOUNT_ERROR = 5; //电流错误
+    HBB_INTERFACE_ERROR = 6; //电池接口类型错误
+    HBB_BODY_ERROR = 7; //电池机身被拆开
+    HBB_LINE_ERROR = 8; //电池充电线被破坏
+    HBB_BODY_AND_LINE_ERROR = 9; //电池机身被拆开且充电线被破坏
+}
+
+//ENABLE_BORROW_STATUS
+enum ENABLE_BORROW_STATUS {
+    ENABLE_STATUS = 0; //可借状态(电池容量达到)
+    DISABLE_STATUS = 1; //不可借状态(电池容量没有达到)
+}
+
+//BATTERY_BORROW_RETURN_CODE
+enum BATTERY_BORROW_RETURN_CODE {
+    BBR_STATUS_OK = 0; //正常成功
+    BBR_REQUEST_INVALID = 1; //指令非法
+    BBR_REQUEST_REPEAT = 2; //重复指令
+    BBR_REQUEST_NEED_WAIT = 3; //当前有开柜指令正在执行
+    BBR_SLOT_BLANK = 4; //卡槽时空的
+    BBR_SLOT_NOT_BLANK = 5; //卡槽不是空的
+    BBR_SLOT_NOT_FETCH_BACK = 6; //借:用户没有取，吞回
+    BBR_SLOT_NOT_FETCH_NOT_BACK = 7; //借:用户没有取，没有吞回，卡槽进入卡死流程，业务端算成功。
+    BBR_SLOT_NOT_PLUGIN = 8; //还:用户未插入
+    BBR_SLOT_NOT_RECOGNIZE = 9; //还:无法识别
+    //技术性错误，需要重启MCU。卡槽坏的，能明确的需要单独命名，否则直接设置为服务器记录连续发生两次，
+    //则自动锁死该卡槽.
+    BBR_SLOT_FAIL = 16;
+    BBR_SLOT_FAIL_MCU_ERROR_BMS = 17;
+    BBR_SLOT_FAIL_MCU_ERROR_LED = 18;
+    BBR_SLOT_FAIL_MCU_ERROR_MOTOR = 19;
+    BBR_SLOT_FAIL_MCU_ERROR_SWITCH_DOOR = 20;
+    BBR_SLOT_FAIL_MCU_ERROR_SWITCH_CONTACT = 21;
+    BBR_SLOT_FAIL_MCU_ERROR_ELECT = 22;
+    BBR_SLOT_FAIL_MCU_ERROR_MOBILE_POWER_OPEN = 23;
+    BBR_SLOT_FAIL_MCU_ERROR_MOBILE_POWER_CLOSE = 24;
+}
+
+//InstallBatteryResCode
+enum InstallBatteryResCode {
+    RESCODEOK = 0; //插入成功
+    RESCODENOTPLUGIN = 1; //用户未插入
+    RESCODEERROR = 2; //电源无法识别
+}
+
+//InstallBatteryOpenCode
+enum InstallBatteryOpenCode {
+    OPENCODEOK = 1; //成功打开
+    OPENCODEFULL = 2; //无可用卡槽
+    OPENCODEFAIL = 3; //打开卡槽失败
+}
+
+enum DEVACTION {
+    BORROW = 1; //借
+    RETURN = 2; //还
+}

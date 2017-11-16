@@ -1,10 +1,12 @@
-//CMsgBodyGsmSetupAck.phpsyntax = "proto2";
-package ProtoBuf.DeviceCommand;
+package protobuf.server;
+
+import "common_enum.proto";
+
 //1.2.模板
 //消息模版
 message CMsg
 {
-    required CMsHead msgHead = 1; //消息头
+    required CMsgHead msgHead = 1; //消息头
     optional CMsgBodyDeviceStatus deviceStatusBody = 2;//柜机状态消息体
     optional CMsgBodyDeviceOpen openDeviceBody = 3;//开柜指令消息体
     optional CMsgBodyDeviceAck openDeviceAckBody = 4;//电源取走或归还响应消息体
@@ -20,10 +22,27 @@ message CMsg
     optional CMsgBodyGsmSetupAck gsmSetupAckBody =14; //柜机2G在服务器端处理后返回消息
     optional CMsgBodyGsmFlowInfo gsmFlowInfoBody =15; //柜机2G损耗流量上报到服务器
     optional CMsgBodyGsmFlowAck gsmFlowAckBody =16; //服务器返回收到流量的确认信息
-    optional CMsgBodyBatteryBack backBatteryBody =17; //自动归还充电宝
+    optional CMsgBodyBatteryBack backBatteryBody = 17; //一件归还
+    optional CMsgBodyWifiClearInfo clearwifiInfoBody = 18; //服务器推送清空wifi指令到柜机
+    optional CMsgBodyWifiClearAck clearWifiAckBody = 19;//回复服务器是否成功清空wifi信息
+    optional CMsgBodyDeviceOfflineStatus OfflineStatusBody = 20; //上报柜机离线状态原因(1.柜机上次重启的原因 或 2.柜机最近一次连不上服务器的原因)
+    optional CMsgBodyDeviceOfflineAck OfflineAckBody = 21;	//服务器返回收到柜机离线原因的信息
+    optional CMsgBodyDeviceRebootSys rebootSysBody=22;		 //柜机上报即将重启
+    optional CMsgBodyDeviceRebootSysAck rebootSysAckBody=23; //服务器告知柜机，柜机此时会重启。
+
+    //大柜机专用指令
+    optional CMsgBodyAdvScheduleList advScheduleListBody = 1001; //广告排期数据下发
+    optional CMsgBodyAdvScheduleListReport advScheduleListAck = 1002; //广告排期柜机执行状态上报
+    optional CMsgBodyAdvPlayCount advPlayCount = 1003; //广告播放统计数据上报
+    optional CMsgBodyAdvPlayCountAck advPlayCountAck = 1004; //广告播放统计数据上报服务器回执
+    optional CMsgBodyBcUpgrade bcUpgrade = 1005;//大柜机升级指令
+    optional CMsgBodyBcUpgradeAck bcUpgradeAck = 1006;//大柜机升级指令回执
+    optional CMsgBodyQrCodeRequest qrCodeRequest = 1007;//大柜机二维码获取请求
+    optional CMsgBodyQrCodeAck qrCodeAck = 1008;//大柜机二维码获取响应
+    optional CMsgBodyUploadAppLog uploadAppLog = 1009;//触发大柜机上传App日志
 }
 //消息头
-message CMsHead
+message CMsgHead
 {
     required CMD cmd = 1;//指令信息
     optional string version = 2;//协议版本:q
@@ -58,6 +77,24 @@ enum CMD
     UPLOADGSMFLOWACK=17;//server 回复信息
 
     BACKBATTERY=18;//上报归还充电宝信息
+    CLEARWIFIINFO=19;//清空柜机wifi信息
+    CLEARWIFIACK=20; //柜机回复信息（清空柜机wifi信息响应）
+    OFFLINESTATUS=21; //上报离线的原因
+    OFFLINEACK=22;    //server 回复信息
+    UPGRADEACK=23;//升级响应
+    REBOOTSYS=24; //系统重启请求
+    REBOOTSYSACK=25; //server 回复信息(系统重启)
+
+    //大柜机专用指令部份
+    ADV_SCHEDULE_LIST = 1001;//下发广告排期数据
+    ADV_SCHEDULE_LIST_REPORT = 1002;//广告排期数据状态上报
+    ADV_PLAY_COUNT = 1003;//广告播放统计数据上报
+    ADV_PLAY_COUNT_Ack = 1004;//广告播放统计数据上报服务器回执
+    BC_UPGRADE = 1005;//大柜机升级指令
+    BC_UPGRADE_ACK = 1006;//大柜机升级指令接收回执
+    QR_CODE_REQUEST = 1007;//大柜机二维码获取请求
+    QR_CODE_ACK = 1008;//大柜机二维码获取响应
+    UPLOAD_APP_LOG = 1009;//触发大柜机上传App日志
 }
 //2.实体列表
 //2.1.卡槽
@@ -72,42 +109,7 @@ enum HEART_BEAT_DEVICE_CODE
     HBD_SYSTEM_ERROR = 6;//系统错误
     HBD_OTHER_ERROR = 7;//其他错误
 }
-enum HEART_BEAT_SLOT_CODE
-{
-    HBS_STATUS_OK = 0;//正常成功
-    HBS_REPAIR_OK  = 1;//温度错误
-    HBS_VOLTAGE_ERROR = 2;//电压错误
-    HBS_CURRENT_ERROR = 3;//电流错误
-    HBS_OTHER_ERROR = 4;//其他错误
-    HBS_MCU_ERROR = 5;//mcu错误，判定卡槽不可用
-    HBS_SN_N_CONTACT_Y_DOOR_Y_ERROR = 6;//sn为空，舱底压住，仓门压住
-    HBS_SN_N_CONTACT_Y_DOOR_N_ERROR = 7;//sn为空，舱底压住，仓门没有压住
-    HBS_SN_N_CONTACT_N_DOOR_Y_ERROR = 8;//sn为空，舱底没有压住，仓门压住
-    HBS_SN_N_CONTACT_N_DOOR_N_ERROR = 9;//sn为空，舱底没有压住，仓门没有压住
-    HBS_SN_Y_CONTACT_Y_DOOR_Y_ERROR = 10;//sn正常，舱底压住，仓门压住
-    HBS_SN_Y_CONTACT_Y_DOOR_N_ERROR = 11;//sn正常，舱底压住，仓门没有压住
-    HBS_SN_Y_CONTACT_N_DOOR_Y_ERROR = 12;//sn正常，舱底没有压住，仓门压住
-    HBS_SN_Y_CONTACT_N_DOOR_N_ERROR = 13;//sn正常，舱底没有压住，仓门没有压住
-}
-enum HEART_BEAT_BATTERY_CODE
-{
-    HBB_STATUS_OK = 0;//正常成功
-    HBB_OTHER_ERROR = 1;//其他错误
-    HBB_TEMPERATURE_ERROR = 2;//温度错误
-    HBB_VOLTAGE_ERROR = 3;//电压错误
-    HBB_CURRENT_ERROR = 4;//电流错误
-    HBB_CYCLECOUNT_ERROR = 5;//电流错误
-    HBB_INTERFACE_ERROR = 6;//电池接口类型错误
-    HBB_BODY_ERROR=7; //电池机身被拆开
-    HBB_LINE_ERROR=8; //电池充电线被破坏
-    HBB_BODY_AND_LINE_ERROR=9; //电池机身被拆开且充电线被破坏
-}
 
-enum ENABLE_BORROW_STATUS
-{
-    ENABLE_STATUS = 0;//可借状态（电池容量达到）
-    DISABLE_STATUS = 1;//不可借状态（电池容量没有达到）
-}
 message Slot
 {
     required int32 num = 1;               // 从1开始
@@ -116,7 +118,7 @@ message Slot
 }
 //2.2.电源
 message Battery
- {
+{
     required string batterysn=1;  //电源sn
     required float  temprature = 2;  //电源温度
     required int32 voltage =3;   //电源电压
@@ -139,6 +141,17 @@ message Device
     optional string softwareVersion=4 ;     //软件版本
     optional string ipAddr=5 ;     //ip地址
     required HEART_BEAT_DEVICE_CODE status= 6;           //异常状态,各个部件的自检异常，运行异常
+    optional string appVersion = 7;//大柜机app版本
+}
+//柜机动作类型枚举
+enum PROJECTTYPE
+{
+	Y153X = 1;	//Y1534/Y1533
+	Y1801=2;	//Y1801
+}
+message  Extended
+{
+	optional PROJECTTYPE type=1;
 }
 //3.消息列表
 //3.1.心跳
@@ -149,13 +162,7 @@ message CMsgBodyDeviceStatus
     required Device device = 1;
     repeated Battery battery = 2; 
     repeated Slot slot = 3 ;
-}
-//3.2.借还
-//柜机动作类型枚举
-enum DEVACTION
-{
-    BORROW_CODE = 1;//借
-    RETURN_CODE = 2;//还
+    optional Extended extended=4; //心跳信息扩展
 }
 
 //柜机动作
@@ -163,44 +170,15 @@ message CMsgBodyDeviceOpen
 {
     required DEVACTION action = 1;//动作指令
     required int32 num = 2;//卡槽编号   从零开始
-    required bytes password = 3;//密码
+    required string password = 3;//密码
 }
-
-enum BATTERY_BORROW_RETURN_CODE
-{
-    BBR_STATUS_OK = 0;//正常成功
-    BBR_REQUEST_INVALID=1;//指令非法
-    BBR_REQUEST_REPEAT=2;//重复指令
-    BBR_REQUEST_NEED_WAIT=3;//当前有开柜指令正在执行
-    
-    BBR_SLOT_BLANK=4;//卡槽是空的
-    BBR_SLOT_NOT_BLANK=5;//卡槽不是空的
-    
-    BBR_SLOT_NOT_FETCH_BACK=6;//借：用户没有取,吞回
-    BBR_SLOT_NOT_FETCH_NOT_BACK=7;//借：用户没有取，没有吞回，卡槽进入卡死流程，业务端算成功
-
-    BBR_SLOT_NOT_PLUGIN=8;//还：用户未插入
-    BBR_SLOT_NOT_RECOGNIZE=9;//还：无法识别
-    
-    //技术性错误，需要重启MCU。卡槽坏的，能明确的需要单独命名，否则直接设置为     
-    //服务器记录连续发生两次，则自动锁死该卡槽
-    BBR_SLOT_FAIL=16;
-    BBR_SLOT_FAIL_MCU_ERROR_BMS=17;
-    BBR_SLOT_FAIL_MCU_ERROR_LED=18;
-    BBR_SLOT_FAIL_MCU_ERROR_MOTOR=19;
-    BBR_SLOT_FAIL_MCU_ERROR_SWITCH_DOOR=20;
-    BBR_SLOT_FAIL_MCU_ERROR_SWITCH_CONTACT=21;
-    BBR_SLOT_FAIL_MCU_ERROR_ELECT=22;
-    BBR_SLOT_FAIL_MCU_ERROR_MOBILE_POWER_OPEN=23;
-    BBR_SLOT_FAIL_MCU_ERROR_MOBILE_POWER_CLOSE=24;
-};
 
 message CMsgBodyBatteryBack
 {
-required string deviceid = 1;//设备id
-required int32 num = 2;//卡槽编号
-required string batterysn= 3;//还的时候需要发送电源ID
-required BATTERY_BORROW_RETURN_CODE state=4;//电源取走或插入是否成功状态
+    required string deviceid = 1;//设备id
+    required int32 num = 2;//卡槽编号
+    required string batterysn= 3;//还的时候需要发送电源ID
+    required BATTERY_BORROW_RETURN_CODE state=4;//电源取走或插入是否成功状态
 }
 
 //电源取走或插入响应
@@ -214,21 +192,26 @@ message CMsgBodyDeviceAck
 }
 //3.3.柜机升级
 enum UPGRADESTATUS
- {
+{
     DOWNLOAD_OK= 0;      // 下载成功，准备升级           
     DOWNLOAD_FAIL= 1;      // 下载失败
- }
+}
 //柜机升级软件
 message CMsgBodyUpgrade
 {
     required string version = 1;//软件版本号
     required string serverUrl = 2;//升级Url
     required string fileMd5sum = 3;//MD5(128-bit) checksums
+    optional string force_time = 4;//格式hh(时):mm(分),
+    optional int32 strategy = 5;// 是否需要强制升级，0：不强制升级，1：强制升级
 }
 //柜机升级响应
 message CMsgBodyUpgradeAck
 {
     required UPGRADESTATUS  upgradeStatus= 1;//升级状态
+    optional string lastfail =2;//柜机升级失败的原因
+    required string deviceid= 3;               // device id
+
 }
 //服务器发送更新参数命令
 message  CMsgBodyDeviceUpdate
@@ -259,7 +242,14 @@ enum CONNECTNETTYPE
 {
     CONNECTNETWIFI =0;    //wifi
     CONNECTNETBLUE =1;   //blue
-    CONNECTNET2G =2;     //2g,3g,4g
+    CONNECTNET2G =2;     //2g
+    CONNECTNET3G =3;     //3g
+    CONNECTNET4G =4;     //4g
+}
+enum CURRENTNETSTATE
+{
+    CURRENTNETDISABLE =1;		//net disable
+    CURRENTNETENABLE =2;		//net enable
 }
 //柜机设置wifi信息
 message CMsgBodyWifiSetupInfo
@@ -270,20 +260,39 @@ message CMsgBodyWifiSetupInfo
     optional WIFIAUTHMODE wifiAuthMode = 4;//wifi密码类型
     optional WIFIENCRYPT WifiEncrypt = 5; //wifi密码加密方式
     required string deviceid = 6;//柜机id
+    optional string modules_name = 7;//
+    optional string ipaddr = 8;// ip address
+    optional CURRENTNETSTATE currentNetState =9; //wifi 所处的网络的情况
 }
 //柜机设置wifi结果反馈
 message CMsgBodyWifiSetupAck
 {
     required RESCODE resCode = 1;//返回状态码 0网路配置失败,1网路配置成功
 }
+enum REALPLMN
+{
+	REALPLMNMOBILEGSM= 46000; //中国移动GSM
+	REALPLMNUNICOMGSM= 46001; //中国联通GSM
+	REALPLMNMOBILETD=  46002;  //中国移动TD-S
+	REALPLMNCTCCDMA=   46003;  //中国电信CDMA
+
+	REALPLMNCTC4G     = 46005;	//中国电信4G
+	REALPLMNUNICOM4G  = 46006;	//中国联通4G
+	REALPLMNMOBILE4G = 46007;		//中国移动4G
+}
+
 //柜机设置2G信息
 message CMsgBodyGsmSetupInfo
 {
     required CONNECTNETTYPE connectNetworkType = 1;//联网方式
     required string deviceid = 2;//柜机id
-    optional string  imei= 3;//2g_IMEI
-    optional string iccid= 4;//2g_iccid
-    optional string imsi= 5;//2g_imsi
+    optional string  imei= 3;//IMEI
+    optional string iccid= 4;//iccid
+    optional string imsi= 5;//imsi
+    optional string modules_name= 6;// EC20(4G),M26(2G),G510(2G),L710(4G)
+    optional string ipaddr= 7;	// 
+    optional REALPLMN RealPLMN =8; //public land mobile network (PLMN),连上基站后的运营商信息。
+    optional CURRENTNETSTATE currentNetState =9; //G网 所处的网络的情况
 }
 //柜机设置2G结果反馈
 message CMsgBodyGsmSetupAck
@@ -318,18 +327,7 @@ message CMsgBodyInstallBatteryResult
     required int32 nextSlotNum =4;//下一个卡槽序号 
     required InstallBatteryOpenCode openCode = 5;
 }
-enum InstallBatteryOpenCode
-{
-    OPENCODEOK = 1;//成功打开
-    OPENCODEFULL = 2;//无可用卡槽
-    OPENCODEFAIL = 3;//上一次异常停止
-}
-enum InstallBatteryResCode
-{
-    RESCODEOK = 1;//插入成功
-    RESCODENOTPLUGIN = 2;//用户未插入
-    RESCODEERROR = 3;//电源无法识别
-}
+
 message CMsgBodyGetBatteryPassword
 {
     required string deviceId =1;//柜机ID
@@ -342,3 +340,157 @@ message CMsgBodyGetBatteryPasswordAck
     required string batterySn= 3;//电源SN
     required string batteryPassword= 4;//电源密码
 }
+message CMsgBodyWifiClearInfo
+{
+
+}
+message CMsgBodyWifiClearAck
+{
+	required string deviceId =1;//柜机ID
+	required RESCODE resCode = 2;//返回状态码 0清空wifi失败,1清空wifi成功
+}
+enum DEVICE_OFFLINE_STATUS_CODE
+{
+	DOS_SOFT_RESET=1;        //软复位
+	DOS_HARD_RESET=2;		//硬复位	
+}
+message CMsgBodyDeviceOfflineStatus
+{
+	required string deviceId =1;//柜机ID
+	required int64 devUnixtimestamp=2;//柜机离线的时间戳
+	optional DEVICE_OFFLINE_STATUS_CODE state=3;//柜机离线的原因
+}
+message CMsgBodyDeviceOfflineAck
+{
+	required RESCODE resCode = 1;//服务器返回状态码 0未收到,1已收到
+}
+
+enum DEVICE_REBOOT_CODE
+{
+	DRC_UPGRADE_REBOOT=1;        //升级重启
+}
+message CMsgBodyDeviceRebootSys
+{
+	required string deviceId =1;//柜机ID
+	required DEVICE_REBOOT_CODE state=2;  //即将重启的原因
+}
+message CMsgBodyDeviceRebootSysAck
+{
+	required RESCODE resCode = 1;//服务器返回状态码，1表示可以重启
+}
+
+//大柜机专用指令部份
+//广告素材
+message Material
+{
+    required int32 materialId = 1;  //素材id
+    required string type = 2; //素材类型
+    optional string title = 3; //素材标题
+    required string url = 4; //素材地址
+    optional int32 playTime = 5; //播放时间
+    required string animationMode = 6; //动画类型
+}
+//播放列表
+message PlayView
+{
+    required int32 playId = 1; //列表id
+    optional string title = 2; //列表标题
+    required string position = 3; //列表位置
+    repeated Material material = 4; //素材列表
+}
+//排期消息体
+message CMsgBodyAdvScheduleList
+{
+    required int32 scheduleId = 1;//排期id
+    required int32 startTime = 2; //开始时间
+    required int32 endTime = 3; //结束时间
+    repeated PlayView playView = 4;//关联播放列表
+}
+//素材状态
+enum AdvScheduleResCode
+{
+    RESCODE_RECIVE = 1;//接收成功
+    RESCOD_DOWNLOAD = 2;//下载成功
+    RESCOD_PLAYED = 3;//开始播放
+}
+//广告排期回执
+message AdvScheduleListAck{
+    required int32 scheduleId = 1;//排期id
+    required int32 playId = 2;//列表id
+    required int32 materialId = 3;//素材id
+    required AdvScheduleResCode resCode = 4;//状态
+}
+//柜机上报广告排期状态回执
+message CMsgBodyAdvScheduleListReport
+{
+    repeated AdvScheduleListAck advScheduleListAck = 1;//状态列表
+}
+//广告播放统计数据上报
+message CMsgBodyAdvPlayCount
+{
+    required int32 scheduleId = 1;//排期id
+    required int32 playId = 2;//列表id
+    required int32 materialId = 3;//素材id
+    required int32 playCount = 4;//播放次数
+}
+//广告播放统计数据上报服务器回执
+message CMsgBodyAdvPlayCountAck
+{
+    required int32 scheduleId = 1;//排期id
+    required int32 playId = 2;//列表id
+    required int32 materialId = 3;//素材id
+}
+//大柜机升级target
+enum UpgradeTarget
+{
+    APP = 1;//APP
+    FIRMWARE = 2;//固件
+}
+//大柜机升级方式
+enum UpgradeModel
+{
+    NOW = 1;//立即升级
+    NEXT_RESTART = 2;//下次重启
+    IN_TIME = 3;//指定时间
+}
+//大柜机升级指令
+message CMsgBodyBcUpgrade
+{
+    required string version = 1;//软件版本号
+    required string serverUrl = 2;//升级Url
+    required string fileMd5sum = 3;//MD5(128-bit) checksums
+    required UpgradeTarget upgradeTarget = 4;//升级目标
+    required UpgradeModel upgradeModel = 5;//升级方式
+    optional int32 upgradeTime = 6;//当升级方式为指定时间升级时，升级时间
+}
+enum BC_UPGRADESTATUS
+{
+    BC_DOWNLOAD_OK= 0;      // 下载成功，准备升级           
+    BC_DOWNLOAD_FAIL= 1;      // 下载失败
+}
+//大柜机升级响应
+message CMsgBodyBcUpgradeAck
+{
+    required string  deviceId = 1;//柜机ID
+    required BC_UPGRADESTATUS  upgradeStatus= 2;//升级文件下载状态
+}
+//柜机二维码内容请求
+message CMsgBodyQrCodeRequest
+{
+    required string  deviceId = 1;//柜机ID
+}
+//柜机二维码内容请求服务器响应
+message CMsgBodyQrCodeAck
+{
+    required string deviceId = 1;//柜机ID
+    required string commonQrCode = 2;//通用二维码内容
+    required string wxQrCode = 3;//微信二维码内容
+    required string alipayQrCode = 4;//支付宝二维码内容
+    required int32 expireTime = 5;//二维码到期时间
+}
+//触发大柜机上传App日志
+message CMsgBodyUploadAppLog
+{
+    required string uploadUrl = 1;//上传地址
+}
+

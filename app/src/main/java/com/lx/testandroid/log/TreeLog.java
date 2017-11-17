@@ -1,24 +1,62 @@
-package com.lx.testandroid.log.utils;
+package com.lx.testandroid.log;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 /**
- * Created on 16/11/2017.
+ * Created on 06/11/2017.
  *
  * @author lx
- *
- *     京（Jie）东（Dian）Log工具
- *
  */
 
-public class JDLog {
+public class TreeLog {
+
+    private static final List<Tree> FOREST = new ArrayList<>();
+
+    public static class Tree {
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static void v(String msg) {
     }
@@ -83,6 +121,15 @@ public class JDLog {
 
     }
 
+
+    public static void array(Object[] array) {
+
+    }
+
+    public static void array(String tag, Object[] array) {
+
+    }
+
     public static void map(Map map) {
 
     }
@@ -123,12 +170,6 @@ public class JDLog {
 
     }
 
-    public static void bundle(Bundle bundle) {
 
-    }
-
-    public static void bundle(String tag, Bundle bundle) {
-
-    }
 
 }

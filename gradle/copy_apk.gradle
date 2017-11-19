@@ -1,0 +1,84 @@
+
+android.applicationVariants.all { variant ->
+    def apk = variant.outputs[0].outputFile;
+    def taskName = variant.name
+    def dir = System.getProperty("user.dir");
+    def date = new Date().format("MMdd-HH-mm-ss");
+    // 后面需要修改成动态
+    def Rpath = "${buildDir}/intermediates/symbols/release/R.txt"
+    println "APK task name: " + taskName + " OutPutFiles"
+    println "   R.txt       path: " + Rpath;
+    println "   mapping.txt path: " + variant.mappingFile
+    def exportFile = new File(dir + "/ExportApks")
+    // variant.outputs[0].outputFile = new File(dir + "/ExportApks", android.defaultConfig.versionCode + ".apk")
+
+    println "-------applicationVariants.all-------";
+    println variant.name;
+    println name;
+    println name.contains("normal");
+    println "-------applicationVariants.all-------";
+    if (variant.getBuildType().isMinifyEnabled()) {
+        variant.assemble.doLast {
+            if (variant.buildType.name.contains("release")) {
+                copy {
+                    from variant.mappingFile
+                    into dir + "/ExportApks"
+                    rename { String fileName ->
+                        fileName.replace("mapping.txt", "mapping_${android.defaultConfig.versionCode}-${date}.txt")
+                    }
+
+                    from Rpath
+                    into dir + "/ExportApks"
+                    rename { String fileName ->
+                        fileName.replace("R.txt", "R_${android.defaultConfig.versionCode}-${date}-R.txt")
+                    }
+                }
+                def unsignedName = ""
+                def signedName = ""
+                copy {
+                    from variant.outputs[0].outputFile
+                    into exportFile
+                    rename { String fileName ->
+                        signedName = "jiedian_cabinet_system_" + android.defaultConfig.versionCode + "_signed.apk"
+                        unsignedName = "jiedian_cabinet_system_" + android.defaultConfig.versionCode + ".apk"
+//                        println "fileName22222 = " + fileName;
+//                        def newName = "jiedian_cabinet_" + android.defaultConfig.versionCode + ".apk"
+//                        def signName = "jiedian_cabinet_" + android.defaultConfig.versionCode + "_signed.apk"
+//                        println "fileName = " + fileName;
+//                        println "newName = " + newName;
+//                        def command = """java -jar signapk.jar platform.x509.pem platform.pk8 ${newName} ${signName}"""
+//                        println "command = " + command;
+////                        def command = """ps"""
+//                        def proc = command.execute()
+//                        proc.waitFor()
+//                        return
+                    }
+                }
+                println "44444444444444";
+                def exportDir = dir + "/ExportApks/"
+                def signDir = dir + "/signAPK/"
+                unsignedName = exportDir + unsignedName
+                signedName = exportDir + signedName
+                def signApk = signDir + "signapk.jar"
+                def platform_x509 = signDir + "platform.x509.pem"
+                def platform_pk8 = signDir + "platform.pk8"
+                def command = "java -jar ${signApk} ${platform_x509} ${platform_pk8} ${unsignedName} ${signedName}"
+                def proc = command.execute()
+                proc.waitFor()
+                println "command = " + command;
+                println "555555555555555555";
+
+            }
+        }
+    }
+}
+
+android.productFlavors.all {
+    flavor ->
+        println "-------productFlavors.all-------";
+        println name;
+        println "-------productFlavors.all-------";
+        if ("system".equals(name)) {
+
+        }
+}

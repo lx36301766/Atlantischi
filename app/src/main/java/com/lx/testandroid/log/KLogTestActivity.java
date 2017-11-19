@@ -41,6 +41,9 @@ public class KLogTestActivity extends AppCompatActivity {
         initView();
         initData();
 //        handler.sendEmptyMessageDelayed(0, 3000);
+
+        Integer[] aaa = new Integer[4];
+        TreeLog.array(aaa);
     }
 
     private void initView() {

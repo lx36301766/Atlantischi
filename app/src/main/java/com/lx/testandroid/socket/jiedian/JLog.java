@@ -1,8 +1,4 @@
-package com.lx.testandroid.log.utils;
-
-import android.support.annotation.Nullable;
-import android.text.TextUtils;
-import android.util.Log;
+package com.lx.testandroid.socket.jiedian;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,23 +22,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * This is a Log tool，with this you can the following
- * <ol>
- * <li>use KLog.d(),you could print whether the method execute,and the default tag is current class's name</li>
- * <li>use KLog.d(msg),you could print log as before,and you could location the method with a click in Android Studio Logcat</li>
- * <li>use KLog.json(),you could print json string with well format automatic</li>
- * </ol>
- *
- * @author zhaokaiqiang
- *         github https://github.com/ZhaoKaiQiang/KLog
- *         15/11/17 扩展功能，添加对文件的支持
- *         15/11/18 扩展功能，增加对XML的支持，修复BUG
- *         15/12/8  扩展功能，添加对任意参数的支持
- *         15/12/11 扩展功能，增加对无限长字符串支持
- *         16/6/13  扩展功能，添加对自定义全局Tag的支持
- */
-public class KLog {
+import android.support.annotation.Nullable;
+import android.text.TextUtils;
+import android.util.Log;
+
+public class JLog {
 
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
     public static final String NULL_TIPS = "Log with null object";
@@ -70,7 +54,7 @@ public class KLog {
     private static String mGlobalTag;
     private static boolean IS_SHOW_LOG = true;
 
-    private KLog() {}
+    private JLog() {}
 
     public static void init(boolean isShowLog) {
         IS_SHOW_LOG = isShowLog;
@@ -305,22 +289,22 @@ public class KLog {
 
         private static void printSub(int type, String tag, String sub) {
             switch (type) {
-                case KLog.V:
+                case JLog.V:
                     Log.v(tag, sub);
                     break;
-                case KLog.D:
+                case JLog.D:
                     Log.d(tag, sub);
                     break;
-                case KLog.I:
+                case JLog.I:
                     Log.i(tag, sub);
                     break;
-                case KLog.W:
+                case JLog.W:
                     Log.w(tag, sub);
                     break;
-                case KLog.E:
+                case JLog.E:
                     Log.e(tag, sub);
                     break;
-                case KLog.A:
+                case JLog.A:
                     Log.wtf(tag, sub);
                     break;
             }
@@ -382,10 +366,10 @@ public class KLog {
             try {
                 if (msg.startsWith("{")) {
                     JSONObject jsonObject = new JSONObject(msg);
-                    message = jsonObject.toString(KLog.JSON_INDENT);
+                    message = jsonObject.toString(JLog.JSON_INDENT);
                 } else if (msg.startsWith("[")) {
                     JSONArray jsonArray = new JSONArray(msg);
-                    message = jsonArray.toString(KLog.JSON_INDENT);
+                    message = jsonArray.toString(JLog.JSON_INDENT);
                 } else {
                     message = msg;
                 }
@@ -394,8 +378,8 @@ public class KLog {
             }
 
             Util.printLine(tag, true);
-            message = headString + KLog.LINE_SEPARATOR + message;
-            String[] lines = message.split(KLog.LINE_SEPARATOR);
+            message = headString + JLog.LINE_SEPARATOR + message;
+            String[] lines = message.split(JLog.LINE_SEPARATOR);
             for (String line : lines) {
                 Log.d(tag, "║ " + line);
             }
@@ -411,11 +395,11 @@ public class KLog {
                 xml = XmlLog.formatXML(xml);
                 xml = headString + "\n" + xml;
             } else {
-                xml = headString + KLog.NULL_TIPS;
+                xml = headString + JLog.NULL_TIPS;
             }
 
             Util.printLine(tag, true);
-            String[] lines = xml.split(KLog.LINE_SEPARATOR);
+            String[] lines = xml.split(JLog.LINE_SEPARATOR);
             for (String line : lines) {
                 if (!Util.isEmpty(line)) {
                     Log.d(tag, "║ " + line);

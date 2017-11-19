@@ -1,0 +1,140 @@
+package protobuf.nativesocket;
+
+import "common_enum.proto";
+
+//socket通讯消息模版
+message NativeSocketCommand {
+    required CmdType cmdtype = 1;                                           //命令类型信息
+    optional CMsgBodyDeviceInfoRes DeviceInfoResBody = 2;                   //设备信息响应消息体
+    optional CMsgBodySlotStatusReq SlotStatusReqBody = 3;                   //卡槽及电池信息请求消息体
+    optional CMsgBodySlotStatusRes SlotStatusResBody = 4;                   //卡槽及电池信息响应消息体
+    optional CMsgBodyOpenDev OpenDevBody = 5;                               //柜机动作请求消息体
+    optional CMsgBodyOpenDevAck OpenDevAckBody = 6;                         //柜机动作响应消息体
+    optional CMsgBodyInstallBatteryResult InstallBatteryResultBody = 7;     //安装电源结果返回消息体
+    optional CMsgBodyGetBatteryPassword GetBatteryPasswordBody = 8;         //获取电源密码请求消息体
+    optional CMsgBodyGetBatteryPasswordAck GetBatteryPasswordAckBody = 9;   //获取电源密码响应消息体
+    optional CMsgBodyUpdateDeviceParams UpdateDeviceParamsBody = 10;        //更新柜机参数消息体
+    optional CMsgBodyBackBattery BackBatteryBody = 11;                      //异常超时返还消息体
+    optional CMsgBodyWifiProbeRes WifiProbeResBody = 12;                    //WiFi探针数据返回消息体
+    optional CMsgBodyWifiProbeStartRes WifiProbeStartResBody = 13;          //WiFi探针功能开启返回消息体
+    optional CMsgBodyWifiProbeStopRes WifiProbeStopResBody = 14;            //WiFi探针功能关闭返回消息体
+    optional CMsgBodySubUpgradeStatusRes SubUpgradeStatusResBody = 15;      //辅控板升级状态返回消息体
+}
+
+//命令类型枚举
+enum CmdType {
+    DEVICE_INFO_REQ = 1;            //设备信息请求            APP->Native
+    DEVICE_INFO_RES = 2;            //设备信息响应            Native->APP
+    SLOT_STATUS_REQ = 3;            //卡槽状态请求            APP->Native
+    SLOT_STATUS_RES = 4;            //卡槽状态响应            Native->APP
+    OPEN_DEV = 5;                   //打开设备（借还）        APP->Native
+    OPEN_ACK = 6;                   //设备响应（借还响应）     Native->APP
+    START_INSTALL_BATTERY = 7;      //开始安装电源            APP->Native
+    STOP_INSTALL_BATTERY = 8;       //结束安装电源            APP->Native
+    INSTALL_BATTERY_RESULT = 9;     //安装电源结果            Native->APP
+    GET_BATTERY_PASSWORD = 10;      //获取电源密码请求         Native->APP
+    GET_BATTERY_PASSWORD_ACK = 11;  //获取电源密码返回         APP->Native
+    UPDATE_DEVICE_PARAMS = 12;      //更新柜机参数            APP->Native
+    BACK_BATTERY = 13;              //异常超时                Native->APP
+
+    WIFI_PROBE_REQ = 14;            //WiFi探针信息请求        APP->Native
+    WIFI_PROBE_RES = 15;            //WiFi探针信息响应        Native->APP
+    WIFI_PROBE_START_REQ = 16;      //WiFi探针功能开启请求     APP->Native
+    WIFI_PROBE_START_RES = 17;      //WiFi探针功能开启响应     Native->APP
+    WIFI_PROBE_STOP_REQ = 18;       //WiFi探针功能关闭请求     APP->Native
+    WIFI_PROBE_STOP_RES = 19;       //WiFi探针功能关闭响应     Native->APP
+
+    SUB_UPDRADE_STAT_REQ = 20;      //辅控板升级状态请求       APP->Native
+    SUB_UPDRADE_STAT_RES = 21;      //辅控板升级状态响应       Native->APP
+}
+
+message CMsgBodyDeviceInfoRes {
+    required int32 total_slot_num = 1; //所有卡槽数目
+}
+
+message CMsgBodySlotStatusReq {
+    required int32 slot_num = 1; //卡槽编号
+}
+
+message CMsgBodySlotStatusRes {
+    required int32 slot_num = 1;                            //卡槽编号
+    required HEART_BEAT_SLOT_CODE slot_status = 2;          //卡槽状况,参考HEART_BEAT_SLOT_CODE
+    required bytes batterysn = 3;                          //为全"0"的时候就是空卡槽
+    required float temprature = 4;                          //电源温度
+    required int32 voltage = 5;                             //电源电压
+    required int32 fullChargeCapacity = 6;                  //电源最大容量（mAh)
+    required int32 remainingCapacity = 7;                   //剩余容量（mAh)
+    required int32 averageCurrent = 8;                      //充放电电流(mA)
+    required int32 cycleCount = 9;                          //循环次数
+    required int32 bmsSafetyStatus = 10;                    //异常状态，预留，BMS内部状态
+    required int32 bmsFlags = 11;                           //预留，BMS内部充满标志
+    required HEART_BEAT_BATTERY_CODE battery_status = 12;   //电池异常状态,参考HEART_BEAT_BATTERY_CODE
+    required ENABLE_BORROW_STATUS enableStatus = 13;        //可借标志(容量达到一定才能允许用户借），参考ENABLE_BORROW_STATUS
+}
+
+message CMsgBodyOpenDev {
+    required DEVACTION action = 1;  //动作指令,1=借，2=还.
+    required bytes tranid = 2;     //交易ID
+    required int32 slot_num = 3;    //卡槽编号
+    required bytes password = 4;   //密码，借有效，还无效.
+}
+
+message CMsgBodyOpenDevAck {
+    required DEVACTION action = 1;                  //动作指令,1=借，2=还.
+    required bytes tranid = 2;                     //交易ID
+    required int32 slot_num = 3;                    //卡槽编号
+    required bytes batterysn = 4;                  //还的时候需要发送电源ID
+    required BATTERY_BORROW_RETURN_CODE state = 5;  // 电源取走或插入是否成功状态，参考BATTERY_BORROW_RETURN_CODE
+}
+
+message CMsgBodyInstallBatteryResult {
+    required InstallBatteryResCode install_res = 1;     //安装电源结果，参考InstallBatteryResCode
+    required int32 slot_num = 2;                        //卡槽ID
+    required int32 next_slot_num = 3;                   //下一个要安装的卡槽ID
+    required InstallBatteryOpenCode open_next_slot = 4; //打开下一个卡槽的结果，参考InstallBatteryOpenCode
+}
+
+message CMsgBodyGetBatteryPassword {
+    required bytes battery_sn = 1; //电源SN
+}
+
+message CMsgBodyGetBatteryPasswordAck {
+    required int32 ret = 1;             //获取密码结果（0： 成功	1： 失败）
+    required bytes battery_pwd = 2;    //电源密码
+    required bytes battery_sn = 3;     //电源SN
+}
+
+message CMsgBodyUpdateDeviceParams {
+    required bytes cmd = 1; //cmd
+}
+
+message CMsgBodyBackBattery {
+    required int32 slot_num = 1;                    //卡槽编号
+    required bytes batterysn = 2;                  //还的时候需要发送电源ID
+    required BATTERY_BORROW_RETURN_CODE state = 3;  // 电源取走或插入是否成功状态，参考BATTERY_BORROW_RETURN_CODE
+}
+
+message WifiProbeElement {
+    required bytes macaddr = 1;       //设备物理MAC地址
+    required bool is_ap = 2;           //预留，设备是否为无线路由器：1位是，默认为0
+    required int32 dev_act = 3;        //设备行为：0=unknown;1=income；2=remain;3=leave
+    required int32 dev_channel = 4;    //设备通道
+    required int32 dev_signal = 5;     //设备信号强度
+    required uint64 dev_act_time = 6;  //进店或离开UTC时间 (time_t，long int).
+}
+
+message CMsgBodyWifiProbeRes {
+    repeated WifiProbeElement wpelement = 1; // 探针数据信息数组
+}
+
+message CMsgBodyWifiProbeStartRes {
+    required int32 status = 1; //0=失败；1=成功
+}
+
+message CMsgBodyWifiProbeStopRes {
+    required int32 status = 1; //0=失败；1=成功
+}
+
+message CMsgBodySubUpgradeStatusRes {
+    required int32 status = 1; //0=已完成；1=正在升级；2=升级失败
+}

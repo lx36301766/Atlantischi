@@ -3,9 +3,10 @@ apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 //apply plugin: 'com.jakewharton.butterknife'
 
-apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
 apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
-apply from: rootDir.absolutePath + "/gradle/AndResGuard.gradle"
+apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
+//apply from: rootDir.absolutePath + "/gradle/AndResGuard.gradle"
+apply from: rootDir.absolutePath + "/gradle/protobuf.gradle"
 
 apply from: "app_deps.gradle"
 

@@ -46,7 +46,7 @@ public class ClassLoaderTest {
 //    public static void main(String args[]) throws Exception {
 //        MyClassLoader classLoader =
 //                new MyClassLoader("/Users/xuanluo/Develop/android/GitHub/Atlantischi/java/src/main/java");
-//        Class clazz = classLoader.loadClass("pl.atlantischi.test.MyTest");
+//        Class clazz = classLoader.loadClass("pl.atlantischi.test.AlgorithmTest");
 //        Object obj = clazz.newInstance();
 //        Method helloMethod = clazz.getDeclaredMethod("hello123", null);
 //        helloMethod.invoke(obj, null);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MyTest {
+public class AlgorithmTest {
 
     public static void main(String[] args) {
         //        List<Integer> num = getNum(1, 100);

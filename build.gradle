@@ -9,8 +9,13 @@ buildscript {
     ext.butterknife_version = '8.5.1'
 
     repositories {
+        maven { url 'http://app.int.jumei.com:8081/nexus/content/repositories/snapshots/' }
+        maven { url 'http://app.int.jumei.com:8081/nexus/content/repositories/thirdparty' }
+        maven { url 'http://app.int.jumei.com:8081/nexus/content/repositories/release/' }
+        maven { url 'http://maven.int.jumei.com/content/repositories/thirdparty/' }
         jcenter()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -25,13 +30,23 @@ buildscript {
         classpath "com.meituan.robust:auto-patch-plugin:$robust_version"
         //classpath "com.jakewharton:butterknife-gradle-plugin:$butterknife_version"
         classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.3'
+
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.tencent.bugly:tinker-support:1.0.8"
     }
 }
 
 allprojects {
     repositories {
+        maven { url 'http://app.int.jumei.com:8081/nexus/content/repositories/thirdparty' }
+        maven { url 'http://app.int.jumei.com:8081/nexus/content/repositories/release/' }
+        maven { url 'https://plugins.gradle.org/m2/' }
         jcenter()
         mavenCentral()
+        maven { url 'http://maven.int.jumei.com/content/repositories/thirdparty/' }
+        maven { url "https://jitpack.io" }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/releases/' }
+//        google()
     }
 }
 
@@ -42,3 +57,4 @@ task clean(type: Delete) {
 subprojects {
     task allDeps(type: DependencyReportTask) {}
 }
+

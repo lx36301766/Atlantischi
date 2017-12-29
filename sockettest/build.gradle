@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/protobuf.gradle"
+apply from: "deps.gradle"
+apply from: rootDir.absolutePath + "/gradle/tinker_support.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId "pl.atlantischi.sockettest"
+        versionCode 1
+        versionName "1.0"
+
+        manifestPlaceholders += [
+                AMAP_KEY: "33f39521163fecd4b878f6586ee12e01"
+        ]
+
+    }
+
+    //不需要系统权限的运行 normal flavor
+    //需要系统权限的运行 system flavor
+    productFlavors {
+        normal {
+            manifestPlaceholders.put("SHARED_USER_ID", "pl.atlantischi.sockettest")
+        }
+        system {
+            manifestPlaceholders.put("SHARED_USER_ID", "android.uid.system")
+        }
+    }
+
+    signingConfigs {
+
+        def systemSignKeyPath = "${sign_apk}/cabinet.jks"
+
+        debug {
+            storeFile file(systemSignKeyPath)
+            storePassword SYSTEM_KEY_STORE_PASSWORD
+            keyAlias SYSTEM_KEY_STORE_ALIAS
+            keyPassword SYSTEM_KEY_STORE_PASSWORD
+            v2SigningEnabled false
+        }
+
+        release {
+            storeFile file(systemSignKeyPath)
+            storePassword SYSTEM_KEY_STORE_PASSWORD
+            keyAlias SYSTEM_KEY_STORE_ALIAS
+            keyPassword SYSTEM_KEY_STORE_PASSWORD
+            v2SigningEnabled false
+        }
+
+    }
+
+}
+
+dependencies {
+    compile support_deps.supportV13
+    compile support_deps.design
+    compile support_deps.annotations
+    compile support_deps.multidex
+    compile jm.jmMqtt
+    compile jm.fastjson
+    annotationProcessor router.compiler
+    compile router.router
+    annotationProcessor parceler.compiler
+    compile parceler.parceler
+    annotationProcessor annotation.butterknifeApt
+    compile annotation.butterknife
+    compile network.retrofit
+    compile network.retrofit_rxjava2_adapter
+    compile rx.rxandroid
+    compile network.glide
+    compile media.ksyplayer_java
+    compile media.ksyplayer_arm64
+    compile db.sugar
+    compile google.zxing
+    compile 'com.liulishuo.filedownloader:library:1.6.8'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile files('libs/commons-codec-1.7.jar')
+}

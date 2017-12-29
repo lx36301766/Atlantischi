@@ -1,5 +1,4 @@
 /**
- * Copyright (C) 2014 北京视达科科技有限公司 <br>
  * All rights reserved. <br>
  * author:  xuan.luo <br>
  * date:  14-12-10 下午5:16 <br>

@@ -1,16 +1,17 @@
 package pl.atlantischi.test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import sun.misc.BASE64Decoder;
 
 public class JavaTest {
 
     public static void main(String[] args) {
 
-        add();
-        add(null, null, new Object());
-        add(new Object());
+        System.out.println(Arrays.toString(DES3.Base64.decode("in4NpNs/E80DXXU9cn2fLA==")));
     }
 
     private static void add(Object... objs) {

@@ -1,2 +1,4 @@
-
 apply from: rootDir.absolutePath + "/gradle/java_config.gradle"
+dependencies {
+    compile files('libs/commons-codec-1.7.jar')
+}

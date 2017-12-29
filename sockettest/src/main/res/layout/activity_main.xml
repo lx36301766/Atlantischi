@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/play_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="playVideo"
+        android:onClick="playVideo"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="socket connect"
+        android:onClick="connect"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="socket close"
+        android:onClick="close"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:onClick="device_info_req"
+        android:text="DEVICE_INFO_REQ"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="slot_status_req"
+        android:text="SLOT_STATUS_REQ"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="open_dev"
+        android:text="OPEN_DEV"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="check_battery_password_req"
+        android:text="CHECK_BATTERY_PASSWORD_REQ"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="update_device_params"
+        android:text="UPDATE_DEVICE_PARAMS"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="wifi_probe_req"
+        android:text="WIFI_PROBE_REQ"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="wifi_probe_mac_address_req"
+        android:text="WIFI_PROBE_MAC_ADDRESS_REQ"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="sub_updrade_stat_res"
+        android:text="SUB_UPDRADE_STAT_RES"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:onClick="slot_led_act_req"
+        android:text="SLOT_LED_ACT_REQ"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+    <!--<Spinner-->
+        <!--android:id="@+id/send_message"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_marginLeft="80dp"-->
+        <!--android:layout_marginRight="80dp"-->
+        <!--android:background="@android:color/holo_blue_light"-->
+        <!--android:gravity="center"-->
+        <!--android:text="send_message"-->
+        <!--android:spinnerMode="dialog"-->
+        <!--android:textSize="16sp"-->
+        <!--android:padding="12dp"/>-->
+
+</LinearLayout>

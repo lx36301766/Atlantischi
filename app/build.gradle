@@ -2,14 +2,11 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'realm-android'
 //apply plugin: 'com.jakewharton.butterknife'
-
 apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
 //apply from: rootDir.absolutePath + "/gradle/AndResGuard.gradle"
 apply from: rootDir.absolutePath + "/gradle/protobuf.gradle"
-
 apply from: "app_deps.gradle"
-
 android {
 
     useLibrary 'org.apache.http.legacy'
@@ -20,4 +17,8 @@ android {
         versionName "1.000"
     }
 
+}
+
+dependencies {
+    compile files('libs/commons-codec-1.7.jar')
 }

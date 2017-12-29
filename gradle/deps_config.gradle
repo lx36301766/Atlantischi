@@ -1,5 +1,7 @@
 ext {
 
+    sign_apk = rootDir.absolutePath + "/signAPK"
+
     //module gradle apply from
     gradle_root = rootDir.absolutePath + "/gradle"
     gradles = [
@@ -86,9 +88,9 @@ ext {
     ]
 
     //robust_version = '0.6.18'
-    hotfix = [
-            robust: "com.meituan.robust:robust:$robust_version",
-    ]
+//    hotfix = [
+//            robust: "com.meituan.robust:robust:$robust_version",
+//    ]
 
 
     google_agera_version = '1.3.0'

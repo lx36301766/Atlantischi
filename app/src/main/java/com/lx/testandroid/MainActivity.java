@@ -3,6 +3,7 @@ package com.lx.testandroid;
 import com.lx.testandroid.log.utils.KLog;
 
 import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -25,6 +27,14 @@ public class MainActivity extends Activity {
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.root_main);
 
         listAllActivities(linearLayout);
+
+        BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+        if (!adapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, 2);
+            Toast.makeText(this, "bluetooth", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     private void addText(ViewGroup root, final Class<?> clazz) {

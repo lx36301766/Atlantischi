@@ -77,5 +77,4 @@ dependencies {
     compile google.zxing
     compile 'com.liulishuo.filedownloader:library:1.6.8'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile files('libs/commons-codec-1.7.jar')
 }

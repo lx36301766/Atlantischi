@@ -1,32 +1,28 @@
-package com.starcor.weburl;
+package pl.atlantischi.weburltest;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.app.Activity;
 import android.util.Log;
 import android.webkit.WebView;
 
 import java.util.Set;
 
 /**
- * Copyright (C) 2015 北京视达科科技有限公司 <br>
- * All rights reserved. <br>
- * author:  xuan.luo <br>
- * date:  15-9-11 下午2:23 <br>
- * description:
+ * am start -n pl.atlantischi.weburltest/.WebActivity -d ""
  */
 
-public class VideoTestActivity extends Activity {
+public class WebActivity extends Activity {
 
-    private static final String TAG = VideoTestActivity.class.getSimpleName();
+    private static final String TAG = WebActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d(TAG, "Extra= " + buildIntentExtraToString(getIntent()));
-        String url = "http://www.baidu.com";
+        Log.d(TAG, "Extra= "+buildIntentExtraToString(getIntent()));
+        String url = "https://ispwaready.toxicjohann.com";
 
         Uri data = getIntent().getData();
         if (data != null) {
@@ -37,6 +33,18 @@ public class VideoTestActivity extends Activity {
         WebView webView = (WebView) findViewById(R.id.my_web);
         webView.loadUrl(url);
         webView.getSettings().setJavaScriptEnabled(true);
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Intent i = new Intent();
+//                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                i.setAction("com.tencent.qqlivetv.open");
+//                i.putExtra("cp_data", "tenvideo2://?action=1&cover_id=3o56brnhunm5bwx");
+//                i.setData(Uri.parse("tenvideo2://?action=1&cover_id=7ap84xw7qx1h39c"));
+//                startActivity(i);
+//            }
+//        }, 3000);
     }
 
     public static String buildIntentExtraToString(Intent intent) {// 打印广播中接收到的数据

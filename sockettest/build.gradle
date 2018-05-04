@@ -19,13 +19,16 @@ android {
 
     }
 
+    flavorDimensions "normal", "system"
     //不需要系统权限的运行 normal flavor
     //需要系统权限的运行 system flavor
     productFlavors {
         normal {
+            dimension "normal"
             manifestPlaceholders.put("SHARED_USER_ID", "pl.atlantischi.sockettest")
         }
         system {
+            dimension "system"
             manifestPlaceholders.put("SHARED_USER_ID", "android.uid.system")
         }
     }
@@ -55,26 +58,26 @@ android {
 }
 
 dependencies {
-    compile support_deps.supportV13
-    compile support_deps.design
-    compile support_deps.annotations
-    compile support_deps.multidex
-    compile jm.jmMqtt
-    compile jm.fastjson
+    api support_deps.supportV13
+    api support_deps.design
+    api support_deps.annotations
+    api support_deps.multidex
+    api jm.jmMqtt
+    api jm.fastjson
     annotationProcessor router.compiler
-    compile router.router
+    api router.router
     annotationProcessor parceler.compiler
-    compile parceler.parceler
+    api parceler.parceler
     annotationProcessor annotation.butterknifeApt
-    compile annotation.butterknife
-    compile network.retrofit
-    compile network.retrofit_rxjava2_adapter
-    compile rx.rxandroid
-    compile network.glide
-    compile media.ksyplayer_java
-    compile media.ksyplayer_arm64
-    compile db.sugar
-    compile google.zxing
-    compile 'com.liulishuo.filedownloader:library:1.6.8'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    api annotation.butterknife
+    api network.retrofit
+    api network.retrofit_rxjava2_adapter
+    api rx.rxandroid
+    api network.glide
+    api media.ksyplayer_java
+    api media.ksyplayer_arm64
+    api db.sugar
+    api google.zxing
+    api 'com.liulishuo.filedownloader:library:1.6.8'
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
 }

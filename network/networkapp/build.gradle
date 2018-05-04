@@ -14,8 +14,8 @@ android {
 }
 
 dependencies {
-    compile "${network.retrofit2}"
-    compile "${network.okhttp3}"
-    compile "${network.volley}"
-    compile "${tools.javapoet}"
+    api "${network.retrofit2}"
+    api "${network.okhttp3}"
+    api "${network.volley}"
+    api "${tools.javapoet}"
 }

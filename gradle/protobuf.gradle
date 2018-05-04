@@ -35,5 +35,5 @@ protobuf {
 }
 
 dependencies {
-    compile "${other_deps.protobuf}"
+    api "${other_deps.protobuf}"
 }

@@ -1,39 +1,35 @@
 
 dependencies {
 
-    compile files('libs/httpmime-4.1.1.jar')
+    api files('libs/httpmime-4.1.1.jar')
 
-//    compile "${tools.kotlin}"
+    api "${support_deps.supportV4}"
+    api "${support_deps.supportV13}"
+    api "${support_deps.appcompatV7}"
+    api "${support_deps.cardview}"
+    api "${support_deps.annotations}"
+    api "${support_deps.design}"
+    api "${support_deps.recyclerView}"
 
-    compile "${support_deps.supportV4}"
-    compile "${support_deps.supportV13}"
-    compile "${support_deps.appcompatV7}"
-    compile "${support_deps.cardview}"
-    compile "${support_deps.annotations}"
-    compile "${support_deps.design}"
-    compile "${support_deps.recyclerView}"
+    api "${view.gif_drawable}"
+    api "${view.hlistview}"
 
-    compile "${view.gif_drawable}"
-    compile "${view.hlistview}"
+    api "${google_agera.content}"
+    api "${google_agera.database}"
+    api "${google_agera.net}"
+    api "${google_agera.rvadapter}"
+    api "${google_agera.rvdatabinding}"
 
-    compile "${google_agera.content}"
-    compile "${google_agera.database}"
-    compile "${google_agera.net}"
-    compile "${google_agera.rvadapter}"
-    compile "${google_agera.rvdatabinding}"
-
-    compile "${annotation.butterknife}"
+    api "${annotation.butterknife}"
     annotationProcessor "${annotation.butterknife_compiler}"
 
-    compile 'pl.atlantischi.ximagebriage:library:0.0.1'
+    api 'pl.atlantischi.ximagebriage:library:0.0.1'
 
 
-    compile "${log.timber}"
-    compile "${log.klog}"
-    compile "${log.xlog}"
-    compile "${log.logger}"
+    api "${log.timber}"
+    api "${log.klog}"
+    api "${log.xlog}"
+    api "${log.logger}"
 
-    compile 'org.jetbrains:annotations:13.0'
-//    compile 'org.jetbrains.annotations.version:15.0'
-//    compile 'com.intellij:annotations:+@jar'
+    api 'org.jetbrains:annotations:13.0'
 }

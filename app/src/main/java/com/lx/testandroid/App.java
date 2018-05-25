@@ -1,9 +1,12 @@
 package com.lx.testandroid;
 
-import com.ankerboxmanager.bluetooth.AnkerBoxBluetoothManager;
+import bak.bluetooth.AnkerBoxBluetoothManager;
 
+import android.Manifest;
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.support.v13.app.ActivityCompat;
 
 /**
  * Created on 22/03/2017.
@@ -19,6 +22,6 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         sContext = this;
-        AnkerBoxBluetoothManager.Companion.getInstance().init(this);
     }
+
 }

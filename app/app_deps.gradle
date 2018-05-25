@@ -1,35 +1,35 @@
 
 dependencies {
 
-    api files('libs/httpmime-4.1.1.jar')
+    implementation files('libs/httpmime-4.1.1.jar')
 
-    api "${support_deps.supportV4}"
-    api "${support_deps.supportV13}"
-    api "${support_deps.appcompatV7}"
-    api "${support_deps.cardview}"
-    api "${support_deps.annotations}"
-    api "${support_deps.design}"
-    api "${support_deps.recyclerView}"
+    implementation support_deps.supportV4
+    implementation support_deps.supportV13
+    implementation support_deps.appcompatV7
+    implementation support_deps.cardview
+    implementation support_deps.annotations
+    implementation support_deps.design
+    implementation support_deps.recyclerView
 
-    api "${view.gif_drawable}"
-    api "${view.hlistview}"
+    implementation view.gif_drawable
+    implementation view.hlistview
 
-    api "${google_agera.content}"
-    api "${google_agera.database}"
-    api "${google_agera.net}"
-    api "${google_agera.rvadapter}"
-    api "${google_agera.rvdatabinding}"
+    implementation google_agera.content
+    implementation google_agera.database
+    implementation google_agera.net
+    implementation google_agera.rvadapter
+    implementation google_agera.rvdatabinding
 
-    api "${annotation.butterknife}"
-    annotationProcessor "${annotation.butterknife_compiler}"
+    implementation annotation.butterknife
+    annotationProcessor annotation.butterknife_compiler
 
-    api 'pl.atlantischi.ximagebriage:library:0.0.1'
+    implementation 'pl.atlantischi.ximagebriage:library:0.0.1'
 
 
-    api "${log.timber}"
-    api "${log.klog}"
-    api "${log.xlog}"
-    api "${log.logger}"
+    implementation log.timber
+    implementation log.klog
+    implementation log.xlog
+    implementation log.logger
 
-    api 'org.jetbrains:annotations:13.0'
+    implementation 'org.jetbrains:annotations:13.0'
 }

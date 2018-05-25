@@ -4,7 +4,7 @@ apply plugin: 'kotlin'
 apply from: 'https://raw.githubusercontent.com/lx36301766/Atlantischi/master/gradle/publish/deps_config.gradle'
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
 buildscript {

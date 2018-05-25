@@ -87,6 +87,6 @@ tinkerPatch {
 }
 
 dependencies {
-    api bugly.crashreport_upgrade
-    api bugly.nativecrashreport
+    implementation bugly.crashreport_upgrade
+    implementation bugly.nativecrashreport
 }

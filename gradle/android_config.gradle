@@ -1,6 +1,4 @@
 
-//apply plugin: 'kotlin-android'
-
 apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 
 android {
@@ -16,6 +14,13 @@ android {
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['assets']
+        }
     }
 
     signingConfigs {
@@ -68,6 +73,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testImplementation 'junit:junit:4.12'
-    api "${support_deps.appcompatV7}"
-    api "${view.constraint_layout}"
+    implementation support_deps.appcompatV7
+    implementation view.constraint_layout
 }

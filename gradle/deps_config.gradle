@@ -7,7 +7,7 @@ ext {
     gradles = [
             base_config: gradle_root + "/android_config.gradle",
             AndResGuard: gradle_root + "/AndResGuard.gradle",
-            kotlin_deps: gradle_root + "/kotlin_deps.gradle",
+            kotlin_java: gradle_root + "/kotlin_java.gradle",
     ]
 
     support_version = '25.3.1'
@@ -105,7 +105,7 @@ ext {
     //kotlin_version = '1.1.51'
     stetho_version = '1.5.0'
     tools = [
-            kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+            kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
             javapoet     : "com.squareup:javapoet:1.7.0",
             guava        : "com.google.guava:guava:22.0",
             guava_android: "com.google.guava:guava:22.0-android",

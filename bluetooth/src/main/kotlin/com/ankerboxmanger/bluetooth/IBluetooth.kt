@@ -1,9 +1,8 @@
-package com.ankerboxmanager.bluetooth
-
-import com.ankerboxmanager.bluetooth.bean.AnkerBoxBluetoothDevice
+package com.ankerboxmanger.bluetooth
 
 import android.app.Activity
 import android.content.Context
+import com.ankerboxmanger.bluetooth.bean.AnkerBoxBluetoothDevice
 
 /**
  * Created on 19/03/2018.
@@ -13,8 +12,12 @@ import android.content.Context
 
 interface IBluetooth {
 
+    companion object {
+        val TAG = "AnkerBoxBluetooth"
+    }
+
     interface AsyncReturnCallback {
-        fun onAsyncReturn(result: Boolean)
+        fun onReturn(result: Boolean)
     }
 
     interface AdapterStateChangedListener {
@@ -45,17 +48,17 @@ interface IBluetooth {
 
     fun close(): Boolean
 
-    fun startDevicesDiscovery(): Boolean
+    fun startDevicesDiscovery(serviceUUIDs: Array<String>, returnCallback: AsyncReturnCallback?)
 
-    fun stopDevicesDiscovery(): Boolean
+    fun stopDevicesDiscovery(returnCallback: AsyncReturnCallback?)
 
     fun registerStateChangedListener(listener: AdapterStateChangedListener): Boolean
 
     fun unregisterStateChangedListener(listener: AdapterStateChangedListener): Boolean
 
-    fun registerDeviceFoundListener(listener: DeviceFoundListener): Boolean
+    fun addDeviceFoundListener(listener: DeviceFoundListener): Boolean
 
-    fun unregisterDeviceFoundListener(listener: DeviceFoundListener): Boolean
+    fun removeDeviceFoundListener(listener: DeviceFoundListener): Boolean
 
     fun getConnectedDevicesInfo(uuids: Array<String>): Set<AnkerBoxBluetoothDevice>?
 

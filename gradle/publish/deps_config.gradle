@@ -5,7 +5,7 @@ ext {
     gradles = [
             base_config: gradleDir + "android_config.gradle",
             AndResGuard: gradleDir + "AndResGuard.gradle",
-            kotlin_deps: gradleDir + "kotlin_deps.gradle",
+            kotlin_java: gradleDir + "kotlin_java.gradle",
     ]
 
     support_version = '25.3.1'
@@ -89,7 +89,7 @@ ext {
 
     stetho_version = '1.5.0'
     tools = [
-            kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+            kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
             javapoet     : "com.squareup:javapoet:1.7.0",
             guava        : "com.google.guava:guava:22.0",
             guava_android: "com.google.guava:guava:22.0-android",
@@ -100,7 +100,7 @@ ext {
     other_deps = [
             slimadapter: "net.idik:slimadapter:2.1.0",
             okio       : "com.squareup.okio:okio:1.13.0",
-            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
     ]
 
 }

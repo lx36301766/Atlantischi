@@ -10,7 +10,7 @@ ext {
             kotlin_java: gradle_root + "/kotlin_java.gradle",
     ]
 
-    support_version = '25.3.1'
+    support_version = '26.1.0'
     support_deps = [
             supportV4   : "com.android.support:support-v4:${support_version}",
             supportV13  : "com.android.support:support-v13:${support_version}",
@@ -117,6 +117,15 @@ ext {
             slimadapter: "net.idik:slimadapter:2.1.0",
             okio       : "com.squareup.okio:okio:1.13.0",
             protobuf   : "com.google.protobuf:protobuf-lite:3.0.0",
+    ]
+
+    map = [
+            aMaplocation        : "com.amap.api:location:latest.integration",
+            aMap3d              : "com.amap.api:3dmap:latest.integration",
+            aMapSearch          : "com.amap.api:search:latest.integration",
+
+            googleMap           : "com.google.android.gms:play-services-maps:15.0.1",
+            mapBox              : "com.mapbox.mapboxsdk:mapbox-android-sdk:6.1.3",
     ]
 
 }

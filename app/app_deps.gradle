@@ -31,5 +31,10 @@ dependencies {
     implementation log.xlog
     implementation log.logger
 
-    implementation 'org.jetbrains:annotations:13.0'
+//    implementation 'org.jetbrains:annotations:13.0'
+
+//    def nav_version = '1.0.0-alpha01'
+//    implementation "android.arch.navigation:navigation-fragment:$nav_version"
+//    implementation "android.arch.navigation:navigation-ui:$nav_version"
+
 }

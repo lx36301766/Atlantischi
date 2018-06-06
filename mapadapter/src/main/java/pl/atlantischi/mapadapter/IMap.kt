@@ -1,5 +1,9 @@
 package pl.atlantischi.mapadapter
 
+import android.app.Activity
+import android.content.Context
+import android.support.v4.app.Fragment
+
 /**
  * Created on 05/06/2018.
 
@@ -8,6 +12,8 @@ package pl.atlantischi.mapadapter
 
 interface IMap {
 
-    fun initialize()
+    fun initialize(activity: Activity)
+
+    fun initialize(fragment: Fragment)
 
 }

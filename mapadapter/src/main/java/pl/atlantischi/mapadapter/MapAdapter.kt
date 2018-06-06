@@ -1,5 +1,8 @@
 package pl.atlantischi.mapadapter
 
+import android.app.Activity
+import android.support.v4.app.Fragment
+
 /**
  * Created on 05/06/2018.
  *
@@ -21,8 +24,14 @@ class MapAdapter private constructor() {
     val defaultAdapter
         get() = iMap
 
-    fun init() {
-        iMap.initialize()
+    fun initialize(activity: Activity) {
+        iMap = GoogleMapAdapter()
+        iMap.initialize(activity)
+    }
+
+    fun initialize(fragment: Fragment) {
+        iMap = GoogleMapAdapter()
+        iMap.initialize(fragment)
     }
 
 }

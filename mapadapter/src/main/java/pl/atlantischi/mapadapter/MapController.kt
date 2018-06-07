@@ -15,17 +15,26 @@ import pl.atlantischi.mapadapter.google.GoogleMapAdapter
 
 class MapController private constructor() {
 
-    @IntDef(ADAPTER_TYPE_GOOGLE.toLong(), ADAPTER_TYPE_GAODE.toLong())
+    @IntDef(
+            ADAPTER_TYPE_GOOGLE.toLong(),
+            ADAPTER_TYPE_GAODE.toLong(),
+            ADAPTER_TYPE_BAIDU.toLong(),
+            ADAPTER_TYPE_TENCENT.toLong(),
+            ADAPTER_TYPE_MAPBOX.toLong()
+    )
     private annotation class AdapterType
 
+    @SuppressLint("SwitchIntDef")
     companion object {
 
         val instance = SingletonHolder.holder
 
         const val ADAPTER_TYPE_GOOGLE = 1
         const val ADAPTER_TYPE_GAODE = 2
+        const val ADAPTER_TYPE_BAIDU = 3
+        const val ADAPTER_TYPE_TENCENT = 4
+        const val ADAPTER_TYPE_MAPBOX = 5
 
-        @SuppressLint("SwitchIntDef")
         fun initialize(@AdapterType adapterType: Int, activity: Activity) {
             when(adapterType) {
                 ADAPTER_TYPE_GOOGLE -> instance.iMapAdapter = GoogleMapAdapter(activity)
@@ -34,7 +43,6 @@ class MapController private constructor() {
             }
         }
 
-        @SuppressLint("SwitchIntDef")
         fun initialize(@AdapterType adapterType: Int, fragment: Fragment) {
             when(adapterType) {
                 ADAPTER_TYPE_GOOGLE -> instance.iMapAdapter = GoogleMapAdapter(fragment)

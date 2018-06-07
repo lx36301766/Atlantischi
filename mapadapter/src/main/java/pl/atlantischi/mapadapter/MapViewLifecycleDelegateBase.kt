@@ -23,13 +23,13 @@ internal abstract class MapViewLifecycleDelegateBase :
 
     constructor(a: Activity) {
         activity = a
-        activity.application.registerActivityLifecycleCallbacks(this@MapViewLifecycleDelegateBase)
+        activity.application.registerActivityLifecycleCallbacks(this)
         registerLowMemoryCallback(activity)
     }
 
     constructor(f: Fragment) {
         fragment = f
-        fragment.fragmentManager.registerFragmentLifecycleCallbacks(this@MapViewLifecycleDelegateBase, false)
+        fragment.fragmentManager.registerFragmentLifecycleCallbacks(this, false)
         registerLowMemoryCallback(fragment.activity)
     }
 

@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <pl.atlantischi.mapadapter.MapView
-        android:id="@id/g_map"
+    <ViewStub
+        android:id="@+id/map_view_stub"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </pl.atlantischi.mapadapter.MapView>
+    </ViewStub>
 
 </android.support.constraint.ConstraintLayout>

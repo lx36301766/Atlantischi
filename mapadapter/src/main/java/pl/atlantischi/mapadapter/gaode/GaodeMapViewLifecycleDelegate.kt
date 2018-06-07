@@ -1,79 +1,70 @@
-package pl.atlantischi.mapadapter
+package pl.atlantischi.mapadapter.gaode
 
 import android.app.Activity
 import android.app.Application
 import android.content.ComponentCallbacks
-import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
-import android.support.v4.view.LayoutInflaterCompat
-import android.support.v4.view.LayoutInflaterFactory
-import android.support.v7.app.AppCompatActivity
-import android.util.AttributeSet
-import android.view.LayoutInflater
 import android.view.View
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapView
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.amap.api.maps.TextureMapView
+import pl.atlantischi.mapadapter.R
 
 /**
- * Created on 05/06/2018.
- *
+ * Created on 07/06/2018.
+
  * @author lx
  */
+class GaodeMapViewLifecycleDelegate {
 
+    lateinit var mapView: TextureMapView
 
-class GoogleMapAdapter: IMap, OnMapReadyCallback  {
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        val cd = LatLng(30.545162, 104.061024)
-        googleMap.addMarker(MarkerOptions().position(cd).title("Marker in CD"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cd, 12f))
-    }
-
-    lateinit var mapView: MapView
-
-    override fun initialize(activity: Activity) {
+    fun initialize(activity: Activity, onMapViewFound:(TextureMapView) -> Unit) {
         val app = activity.application
         app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
+
             override fun onActivityCreated(a: Activity, savedInstanceState: Bundle?) {
                 if (activity == a) onCreate(savedInstanceState)
             }
+
             override fun onActivityStarted(a: Activity) {
                 if (activity == a) onStart()
+                mapView = a.findViewById(R.id.gaode_map_view) as TextureMapView
+                onMapViewFound.invoke(mapView)
             }
+
             override fun onActivityPaused(a: Activity) {
                 if (activity == a) onPause()
             }
+
             override fun onActivityResumed(a: Activity) {
                 if (activity == a) onResume()
             }
+
             override fun onActivityStopped(a: Activity) {
                 if (activity == a) onStop()
             }
+
             override fun onActivityDestroyed(a: Activity) {
                 if (activity == a) onDestroy()
             }
+
             override fun onActivitySaveInstanceState(a: Activity, outState: Bundle?) {
                 if (activity == a) onSaveInstanceState(outState)
             }
 
         })
-        initializeInner(activity)
+        registerLowMemoryCallback(activity)
     }
 
-    override fun initialize(fragment: Fragment) {
+    fun initialize(fragment: Fragment, onMapViewFound:(TextureMapView) -> Unit) {
         fragment.fragmentManager.registerFragmentLifecycleCallbacks(object: FragmentManager.FragmentLifecycleCallbacks(){
 
             override fun onFragmentViewCreated(fm: FragmentManager?, f: Fragment?, v: View?, savedInstanceState: Bundle?) {
                 super.onFragmentViewCreated(fm, f, v, savedInstanceState)
-                mapView = v?.findViewById(R.id.g_map) as MapView
-                mapView.getMapAsync(this@GoogleMapAdapter)
+                mapView = v?.findViewById(R.id.gaode_map_view) as TextureMapView
+                onMapViewFound.invoke(mapView)
                 if (fragment == f) onCreate(savedInstanceState)
             }
 
@@ -108,50 +99,50 @@ class GoogleMapAdapter: IMap, OnMapReadyCallback  {
             }
 
         }, false)
-        initializeInner(fragment.activity)
+        registerLowMemoryCallback(fragment.activity)
     }
 
-    fun onCreate(savedInstanceState: Bundle?) {
+    private fun onCreate(savedInstanceState: Bundle?) {
         mapView.onCreate(savedInstanceState)
     }
 
-    fun onStart() {
-        mapView.onStart()
+    private fun onStart() {
+//        mapView.onStart()
     }
 
-    fun onResume() {
+    private fun onResume() {
         mapView.onResume()
     }
 
-    fun onPause() {
+    private fun onPause() {
         mapView.onPause()
     }
 
-    fun onStop() {
-        mapView.onStop()
+    private fun onStop() {
+//        mapView.onStop()
     }
 
-    fun onDestroy() {
+    private fun onDestroy() {
         mapView.onDestroy()
     }
 
-    fun onSaveInstanceState(outState: Bundle?) {
+    private fun onSaveInstanceState(outState: Bundle?) {
         mapView.onSaveInstanceState(outState)
     }
 
-    fun onLowMemory() {
+    private fun onLowMemory() {
         mapView.onLowMemory()
     }
 
-    private fun initializeInner(activity: Activity) {
+    private fun registerLowMemoryCallback(activity: Activity) {
         activity.registerComponentCallbacks(object : ComponentCallbacks {
             override fun onLowMemory() {
-                this@GoogleMapAdapter.onLowMemory()
+                this@GaodeMapViewLifecycleDelegate.onLowMemory()
             }
             override fun onConfigurationChanged(newConfig: Configuration) {
             }
         })
-
     }
+
 
 }

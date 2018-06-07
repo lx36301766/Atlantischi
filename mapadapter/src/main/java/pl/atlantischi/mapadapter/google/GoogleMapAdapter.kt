@@ -22,20 +22,19 @@ class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
 
     private lateinit var googleMap: GoogleMap
 
-    override fun initialize(activity: Activity) {
-        val mapViewLifecycleDelegate = GoogleMapViewLifecycleDelegate()
-        mapViewLifecycleDelegate.initialize(activity, {
-            mapView = it
-            mapView.getMapAsync(this@GoogleMapAdapter)
-        })
+    private var mapViewLifecycleDelegate: GoogleMapViewLifecycleDelegate
+
+    constructor(activity: Activity) {
+        mapViewLifecycleDelegate = GoogleMapViewLifecycleDelegate(activity, mapViewFoundCallback)
     }
 
-    override fun initialize(fragment: Fragment) {
-        val mapViewLifecycleDelegate = GoogleMapViewLifecycleDelegate()
-        mapViewLifecycleDelegate.initialize(fragment, {
-            mapView = it
-            mapView.getMapAsync(this@GoogleMapAdapter)
-        })
+    constructor(fragment: Fragment) {
+        mapViewLifecycleDelegate = GoogleMapViewLifecycleDelegate(fragment, mapViewFoundCallback)
+    }
+
+    private val mapViewFoundCallback: (MapView) -> Unit = {
+        mapView = it
+        mapView.getMapAsync(this@GoogleMapAdapter)
     }
 
     override fun onMapReady(map: GoogleMap) {

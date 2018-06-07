@@ -1,14 +1,12 @@
 package pl.atlantischi.mapadapter.google
 
 import android.app.Activity
-import android.app.Application
-import android.content.ComponentCallbacks
-import android.content.res.Configuration
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.view.View
 import com.google.android.gms.maps.MapView
+import pl.atlantischi.mapadapter.MapViewLifecycleDelegateBase
 import pl.atlantischi.mapadapter.R
 
 /**
@@ -16,125 +14,70 @@ import pl.atlantischi.mapadapter.R
 
  * @author lx
  */
-class GoogleMapViewLifecycleDelegate {
+internal class GoogleMapViewLifecycleDelegate : MapViewLifecycleDelegateBase {
 
-    lateinit var mapView: MapView
+    private var onMapViewFoundCallback: (MapView) -> Unit
 
-    fun initialize(activity: Activity, onMapViewFound:(MapView) -> Unit) {
-        val app = activity.application
-        app.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
-            override fun onActivityCreated(a: Activity, savedInstanceState: Bundle?) {
-                if (activity == a) onCreate(savedInstanceState)
-            }
-            override fun onActivityStarted(a: Activity) {
-                if (activity == a) onStart()
-                mapView = a.findViewById(R.id.google_map_view) as MapView
-                onMapViewFound.invoke(mapView)
-            }
-            override fun onActivityPaused(a: Activity) {
-                if (activity == a) onPause()
-            }
-            override fun onActivityResumed(a: Activity) {
-                if (activity == a) onResume()
-            }
-            override fun onActivityStopped(a: Activity) {
-                if (activity == a) onStop()
-            }
-            override fun onActivityDestroyed(a: Activity) {
-                if (activity == a) onDestroy()
-            }
-            override fun onActivitySaveInstanceState(a: Activity, outState: Bundle?) {
-                if (activity == a) onSaveInstanceState(outState)
-            }
+    private lateinit var mapView: MapView
 
-        })
-        registerLowMemoryCallback(activity)
+    constructor(a: Activity, onMapViewFound: (MapView) -> Unit) : super(a) {
+        onMapViewFoundCallback = onMapViewFound
     }
 
-    fun initialize(fragment: Fragment, onMapViewFound:(MapView) -> Unit) {
-        fragment.fragmentManager.registerFragmentLifecycleCallbacks(object: FragmentManager.FragmentLifecycleCallbacks(){
-
-            override fun onFragmentViewCreated(fm: FragmentManager?, f: Fragment?, v: View?, savedInstanceState: Bundle?) {
-                super.onFragmentViewCreated(fm, f, v, savedInstanceState)
-                mapView = v?.findViewById(R.id.google_map_view) as MapView
-                onMapViewFound.invoke(mapView)
-                if (fragment == f) onCreate(savedInstanceState)
-            }
-
-            override fun onFragmentStarted(fm: FragmentManager?, f: Fragment?) {
-                super.onFragmentStarted(fm, f)
-                if (fragment == f) onStart()
-            }
-
-            override fun onFragmentResumed(fm: FragmentManager?, f: Fragment?) {
-                super.onFragmentResumed(fm, f)
-                if (fragment == f) onResume()
-            }
-
-            override fun onFragmentPaused(fm: FragmentManager?, f: Fragment?) {
-                super.onFragmentPaused(fm, f)
-                if (fragment == f) onPause()
-            }
-
-            override fun onFragmentStopped(fm: FragmentManager?, f: Fragment?) {
-                super.onFragmentStopped(fm, f)
-                if (fragment == f) onStop()
-            }
-
-            override fun onFragmentViewDestroyed(fm: FragmentManager?, f: Fragment?) {
-                super.onFragmentViewDestroyed(fm, f)
-                if (fragment == f) onDestroy()
-            }
-
-            override fun onFragmentSaveInstanceState(fm: FragmentManager?, f: Fragment?, outState: Bundle?) {
-                super.onFragmentSaveInstanceState(fm, f, outState)
-                if (fragment == f) onSaveInstanceState(outState)
-            }
-
-        }, false)
-        registerLowMemoryCallback(fragment.activity)
+    constructor(f: Fragment, onMapViewFound: (MapView) -> Unit) : super(f) {
+        onMapViewFoundCallback = onMapViewFound
     }
 
-    private fun onCreate(savedInstanceState: Bundle?) {
+    override fun onActivityCreated(a: Activity, savedInstanceState: Bundle?) {
+        mapView = a.findViewById(R.id.google_map_view) as MapView
+        onMapViewFoundCallback.invoke(mapView)
+        super.onActivityCreated(a, savedInstanceState)
+    }
+
+    override fun onFragmentViewCreated(fm: FragmentManager?, f: Fragment?, v: View?, savedInstanceState: Bundle?) {
+        mapView = v?.findViewById(R.id.google_map_view) as MapView
+        onMapViewFoundCallback.invoke(mapView)
+        super.onFragmentViewCreated(fm, f, v, savedInstanceState)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         mapView.onCreate(savedInstanceState)
     }
 
-    private fun onStart() {
+    override fun onStart() {
+        super.onStart()
         mapView.onStart()
     }
 
-    private fun onResume() {
+    override fun onResume() {
+        super.onResume()
         mapView.onResume()
     }
 
-    private fun onPause() {
+    override fun onPause() {
+        super.onPause()
         mapView.onPause()
     }
 
-    private fun onStop() {
+    override fun onStop() {
+        super.onStop()
         mapView.onStop()
     }
 
-    private fun onDestroy() {
+    override fun onDestroy() {
+        super.onDestroy()
         mapView.onDestroy()
     }
 
-    private fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
         mapView.onSaveInstanceState(outState)
     }
 
-    private fun onLowMemory() {
+    override fun onLowMemory() {
+        super.onLowMemory()
         mapView.onLowMemory()
-    }
-
-    private fun registerLowMemoryCallback(activity: Activity) {
-        activity.registerComponentCallbacks(object : ComponentCallbacks {
-            override fun onLowMemory() {
-                this@GoogleMapViewLifecycleDelegate.onLowMemory()
-            }
-            override fun onConfigurationChanged(newConfig: Configuration) {
-            }
-        })
     }
 
 

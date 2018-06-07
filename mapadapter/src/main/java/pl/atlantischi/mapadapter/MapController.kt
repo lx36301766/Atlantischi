@@ -25,21 +25,20 @@ class MapController private constructor() {
         const val ADAPTER_TYPE_GOOGLE = 1
         const val ADAPTER_TYPE_GAODE = 2
 
+        @SuppressLint("SwitchIntDef")
         fun initialize(@AdapterType adapterType: Int, activity: Activity) {
-            initializeInner(adapterType)
-            instance.iMapAdapter.initialize(activity)
-        }
-
-        fun initialize(@AdapterType adapterType: Int, fragment: Fragment) {
-            initializeInner(adapterType)
-            instance.iMapAdapter.initialize(fragment)
-        }
-
-        private fun initializeInner(@AdapterType adapterType: Int) {
-            @SuppressLint("SwitchIntDef")
             when(adapterType) {
-                ADAPTER_TYPE_GOOGLE -> instance.iMapAdapter = GoogleMapAdapter()
-                ADAPTER_TYPE_GAODE -> instance.iMapAdapter = GaodeMapAdapter()
+                ADAPTER_TYPE_GOOGLE -> instance.iMapAdapter = GoogleMapAdapter(activity)
+                ADAPTER_TYPE_GAODE -> instance.iMapAdapter = GaodeMapAdapter(activity)
+                else -> throw IllegalArgumentException("error adapterType : $adapterType")
+            }
+        }
+
+        @SuppressLint("SwitchIntDef")
+        fun initialize(@AdapterType adapterType: Int, fragment: Fragment) {
+            when(adapterType) {
+                ADAPTER_TYPE_GOOGLE -> instance.iMapAdapter = GoogleMapAdapter(fragment)
+                ADAPTER_TYPE_GAODE -> instance.iMapAdapter = GaodeMapAdapter(fragment)
                 else -> throw IllegalArgumentException("error adapterType : $adapterType")
             }
         }

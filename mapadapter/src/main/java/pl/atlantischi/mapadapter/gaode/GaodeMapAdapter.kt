@@ -21,20 +21,19 @@ class GaodeMapAdapter: IMapAdapter {
 
     private lateinit var aMap: AMap
 
-    override fun initialize(activity: Activity) {
-        val mapViewLifecycleDelegate = GaodeMapViewLifecycleDelegate()
-        mapViewLifecycleDelegate.initialize(activity, {
-            mapView = it
-            aMap = mapView.map
-        })
+    private var mapViewLifecycleDelegate: GaodeMapViewLifecycleDelegate
+
+    constructor(activity: Activity) {
+        mapViewLifecycleDelegate = GaodeMapViewLifecycleDelegate(activity, mapViewFoundCallback)
     }
 
-    override fun initialize(fragment: Fragment) {
-        val mapViewLifecycleDelegate = GaodeMapViewLifecycleDelegate()
-        mapViewLifecycleDelegate.initialize(fragment, {
-            mapView = it
-            aMap = mapView.map
-        })
+    constructor(fragment: Fragment) {
+        mapViewLifecycleDelegate = GaodeMapViewLifecycleDelegate(fragment, mapViewFoundCallback)
+    }
+
+    private val mapViewFoundCallback: (TextureMapView) -> Unit = {
+        mapView = it
+        aMap = mapView.map
     }
 
     override fun setMapViewStub(viewStub: ViewStub) {

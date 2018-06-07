@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewStub
 import pl.atlantischi.mapadapter.MapController
 import pl.atlantischi.mapadapter.MapController.Companion.ADAPTER_TYPE_GAODE
 import pl.atlantischi.mapadapter.MapController.Companion.ADAPTER_TYPE_GOOGLE
@@ -29,7 +28,7 @@ class MapTestFragment: Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MapController.initialize(ADAPTER_TYPE_GAODE, this)
+        MapController.initialize(ADAPTER_TYPE_GOOGLE, this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

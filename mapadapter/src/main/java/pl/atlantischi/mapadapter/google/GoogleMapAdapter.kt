@@ -7,6 +7,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import pl.atlantischi.mapadapter.IMapAdapter
+import pl.atlantischi.mapadapter.IUISettings
 import pl.atlantischi.mapadapter.R
 
 /**
@@ -16,20 +17,22 @@ import pl.atlantischi.mapadapter.R
  */
 
 
-class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
+internal class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
 
     private lateinit var mapView: MapView
 
     private lateinit var googleMap: GoogleMap
 
-    private var mapViewLifecycleDelegate: GoogleMapViewLifecycleDelegate
+    private var mapViewLifecycleImpl: GoogleMapViewLifecycleImpl
+
+    private lateinit var uiSetting: IUISettings
 
     constructor(activity: Activity) {
-        mapViewLifecycleDelegate = GoogleMapViewLifecycleDelegate(activity, mapViewFoundCallback)
+        mapViewLifecycleImpl = GoogleMapViewLifecycleImpl(activity, mapViewFoundCallback)
     }
 
     constructor(fragment: Fragment) {
-        mapViewLifecycleDelegate = GoogleMapViewLifecycleDelegate(fragment, mapViewFoundCallback)
+        mapViewLifecycleImpl = GoogleMapViewLifecycleImpl(fragment, mapViewFoundCallback)
     }
 
     private val mapViewFoundCallback: (MapView) -> Unit = {
@@ -42,11 +45,16 @@ class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
 //        map.addMarker(MarkerOptions().position(cd).title("Marker in CD"))
 //        map.moveCamera(CameraUpdateFactory.newLatLngZoom(cd, 12f))
         googleMap = map
+        uiSetting = GoogleUISetting(googleMap.uiSettings)
     }
 
     override fun setMapViewStub(viewStub: ViewStub) {
         viewStub.layoutResource = R.layout.view_google_map
         viewStub.inflate()
+    }
+
+    override fun getUISetting(): IUISettings {
+        return uiSetting
     }
 
 }

@@ -14,7 +14,7 @@ import android.view.View
 
  * @author lx
  */
-internal abstract class MapViewLifecycleDelegateBase :
+internal abstract class MapViewLifecycleDelegate :
         FragmentManager.FragmentLifecycleCallbacks, Application.ActivityLifecycleCallbacks {
 
     private lateinit var activity: Activity
@@ -36,7 +36,7 @@ internal abstract class MapViewLifecycleDelegateBase :
     private fun registerLowMemoryCallback(activity: Activity) {
         activity.registerComponentCallbacks(object : ComponentCallbacks {
             override fun onLowMemory() {
-                this@MapViewLifecycleDelegateBase.onLowMemory()
+                this@MapViewLifecycleDelegate.onLowMemory()
             }
 
             override fun onConfigurationChanged(newConfig: Configuration) {

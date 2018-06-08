@@ -12,4 +12,6 @@ interface IMapAdapter {
 
     fun setMapViewStub(viewStub: ViewStub)
 
+    fun getUISetting(): IUISettings
+
 }

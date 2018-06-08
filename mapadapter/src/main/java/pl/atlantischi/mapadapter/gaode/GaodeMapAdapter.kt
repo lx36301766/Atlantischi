@@ -6,6 +6,7 @@ import android.view.ViewStub
 import com.amap.api.maps.AMap
 import com.amap.api.maps.TextureMapView
 import pl.atlantischi.mapadapter.IMapAdapter
+import pl.atlantischi.mapadapter.IUISettings
 import pl.atlantischi.mapadapter.R
 
 /**
@@ -15,30 +16,37 @@ import pl.atlantischi.mapadapter.R
  */
 
 
-class GaodeMapAdapter: IMapAdapter {
+internal class GaodeMapAdapter: IMapAdapter {
 
     private lateinit var mapView: TextureMapView
 
     private lateinit var aMap: AMap
 
-    private var mapViewLifecycleDelegate: GaodeMapViewLifecycleDelegate
+    private lateinit var uiSetting: IUISettings
+
+    private var mapViewLifecycleImpl: GaodeMapViewLifecycleImpl
 
     constructor(activity: Activity) {
-        mapViewLifecycleDelegate = GaodeMapViewLifecycleDelegate(activity, mapViewFoundCallback)
+        mapViewLifecycleImpl = GaodeMapViewLifecycleImpl(activity, mapViewFoundCallback)
     }
 
     constructor(fragment: Fragment) {
-        mapViewLifecycleDelegate = GaodeMapViewLifecycleDelegate(fragment, mapViewFoundCallback)
+        mapViewLifecycleImpl = GaodeMapViewLifecycleImpl(fragment, mapViewFoundCallback)
     }
 
     private val mapViewFoundCallback: (TextureMapView) -> Unit = {
         mapView = it
         aMap = mapView.map
+        uiSetting = GaodeUISetting(aMap.uiSettings)
     }
 
     override fun setMapViewStub(viewStub: ViewStub) {
         viewStub.layoutResource = R.layout.view_gaode_map
         viewStub.inflate()
+    }
+
+    override fun getUISetting(): IUISettings {
+        return uiSetting
     }
 
 }

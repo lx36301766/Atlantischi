@@ -24,14 +24,14 @@ internal class GaodeMapAdapter: IMapAdapter {
 
     private lateinit var uiSetting: IUISettings
 
-    private var mapViewLifecycleImpl: GaodeMapViewLifecycleImpl
+    private var mapViewLifecycleDelegateImpl: GaodeMapViewLifecycleDelegateImpl
 
     constructor(activity: Activity) {
-        mapViewLifecycleImpl = GaodeMapViewLifecycleImpl(activity, mapViewFoundCallback)
+        mapViewLifecycleDelegateImpl = GaodeMapViewLifecycleDelegateImpl(activity, mapViewFoundCallback)
     }
 
     constructor(fragment: Fragment) {
-        mapViewLifecycleImpl = GaodeMapViewLifecycleImpl(fragment, mapViewFoundCallback)
+        mapViewLifecycleDelegateImpl = GaodeMapViewLifecycleDelegateImpl(fragment, mapViewFoundCallback)
     }
 
     private val mapViewFoundCallback: (TextureMapView) -> Unit = {

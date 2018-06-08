@@ -65,4 +65,5 @@ internal class GoogleUISetting(var uiSettings: UiSettings) : IUISettings {
 
     //not support
     override var isGestureScaleByMapCenter = false
+
 }

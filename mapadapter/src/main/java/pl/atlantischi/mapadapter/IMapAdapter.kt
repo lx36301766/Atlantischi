@@ -14,4 +14,6 @@ interface IMapAdapter {
 
     fun getUISetting(): IUISettings
 
+//    fun getMarkerConfig(): IMarkerConfig
+
 }

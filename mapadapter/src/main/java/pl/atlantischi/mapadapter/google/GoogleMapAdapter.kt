@@ -23,16 +23,16 @@ internal class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
 
     private lateinit var googleMap: GoogleMap
 
-    private var mapViewLifecycleImpl: GoogleMapViewLifecycleImpl
+    private var mapViewLifecycleDelegateImpl: GoogleMapViewLifecycleDelegateImpl
 
     private lateinit var uiSetting: IUISettings
 
     constructor(activity: Activity) {
-        mapViewLifecycleImpl = GoogleMapViewLifecycleImpl(activity, mapViewFoundCallback)
+        mapViewLifecycleDelegateImpl = GoogleMapViewLifecycleDelegateImpl(activity, mapViewFoundCallback)
     }
 
     constructor(fragment: Fragment) {
-        mapViewLifecycleImpl = GoogleMapViewLifecycleImpl(fragment, mapViewFoundCallback)
+        mapViewLifecycleDelegateImpl = GoogleMapViewLifecycleDelegateImpl(fragment, mapViewFoundCallback)
     }
 
     private val mapViewFoundCallback: (MapView) -> Unit = {

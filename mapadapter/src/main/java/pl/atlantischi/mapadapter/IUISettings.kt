@@ -23,7 +23,7 @@ interface IUISettings {
 
     fun setAllGesturesEnabled(enable: Boolean)
 
-    //*****************************************************
+    //*****************************************************//
 
     var isIndoorSwitchEnabled: Boolean
 

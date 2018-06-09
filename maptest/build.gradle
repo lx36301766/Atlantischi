@@ -7,8 +7,6 @@ apply from: rootDir.absolutePath + "/gradle/kotlin_android.gradle"
 
 android {
 
-    useLibrary 'org.apache.http.legacy'
-
     defaultConfig {
         applicationId "com.lx.testandroid"
         versionCode 1000

@@ -1,9 +1,8 @@
 
 apply plugin: 'com.android.library'
 
-apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
 apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
-
+apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
 apply from: rootDir.absolutePath + "/gradle/kotlin_android.gradle"
 
 android {
@@ -11,15 +10,17 @@ android {
     defaultConfig {
         versionCode 1
         versionName "1.0"
-
     }
 
 }
 
 dependencies {
-    api map.aMaplocation
-    api map.aMap3d
-    api map.aMapSearch
 
-    api map.googleMap
+    implementation map.aMaplocation
+
+    implementation map.aMap3d
+    implementation map.aMapSearch
+
+    implementation map.googleMap
+
 }

@@ -3,7 +3,7 @@ package com.lx.testandroid.bluetooth;
 import java.util.UUID;
 
 import com.lx.testandroid.R;
-import com.lx.testandroid.util.Log;
+import com.lx.testandroid.log.KLog;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -37,7 +37,7 @@ public class BluetoothActivity2 extends AppCompatActivity {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 String name = device.getName();
                 String address = device.getAddress();
-                Log.d(TAG, "name=" + name + ", address=" + address);
+                KLog.d(TAG, "name=" + name + ", address=" + address);
             }
         }
     };
@@ -101,13 +101,13 @@ public class BluetoothActivity2 extends AppCompatActivity {
         if ((properties & BluetoothGattCharacteristic.PROPERTY_NOTIFY) == 0)
             return false;
 
-        Log.d("BLE", "gatt.setCharacteristicNotification(" + characteristic.getUuid() + ", true)");
+        KLog.d("BLE", "gatt.setCharacteristicNotification(" + characteristic.getUuid() + ", true)");
         gatt.setCharacteristicNotification(characteristic, true);
         final BluetoothGattDescriptor descriptor = characteristic.getDescriptor(CLIENT_CHARACTERISTIC_CONFIG_DESCRIPTOR_UUID);
         if (descriptor != null) {
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
-            Log.v("BLE", "Enabling notifications for " + characteristic.getUuid());
-            Log.d("BLE", "gatt.writeDescriptor(" + CLIENT_CHARACTERISTIC_CONFIG_DESCRIPTOR_UUID + ", value=0x01-00)");
+            KLog.v("BLE", "Enabling notifications for " + characteristic.getUuid());
+            KLog.d("BLE", "gatt.writeDescriptor(" + CLIENT_CHARACTERISTIC_CONFIG_DESCRIPTOR_UUID + ", value=0x01-00)");
             return gatt.writeDescriptor(descriptor);
         }
         return false;
@@ -124,13 +124,13 @@ public class BluetoothActivity2 extends AppCompatActivity {
         if ((properties & BluetoothGattCharacteristic.PROPERTY_INDICATE) == 0)
             return false;
 
-        Log.d("BLE", "gatt.setCharacteristicNotification(" + characteristic.getUuid() + ", true)");
+        KLog.d("BLE", "gatt.setCharacteristicNotification(" + characteristic.getUuid() + ", true)");
         gatt.setCharacteristicNotification(characteristic, true);
         final BluetoothGattDescriptor descriptor = characteristic.getDescriptor(CLIENT_CHARACTERISTIC_CONFIG_DESCRIPTOR_UUID);
         if (descriptor != null) {
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_INDICATION_VALUE);
-            Log.v("BLE", "Enabling indications for " + characteristic.getUuid());
-            Log.d("BLE", "gatt.writeDescriptor(" + CLIENT_CHARACTERISTIC_CONFIG_DESCRIPTOR_UUID + ", value=0x02-00)");
+            KLog.v("BLE", "Enabling indications for " + characteristic.getUuid());
+            KLog.d("BLE", "gatt.writeDescriptor(" + CLIENT_CHARACTERISTIC_CONFIG_DESCRIPTOR_UUID + ", value=0x02-00)");
             return gatt.writeDescriptor(descriptor);
         }
         return false;

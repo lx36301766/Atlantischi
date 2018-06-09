@@ -1,4 +1,4 @@
-package com.lx.testandroid.util;
+package com.lx.testandroid.log;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -41,7 +41,7 @@ import android.text.TextUtils;
  *         15/12/11 扩展功能，增加对无限长字符串支持
  *         16/6/13  扩展功能，添加对自定义全局Tag的支持
  */
-public class Log {
+public class KLog {
 
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
     public static final String NULL_TIPS = "Log with null object";
@@ -69,7 +69,7 @@ public class Log {
     private static String mGlobalTag;
     private static boolean IS_SHOW_LOG = true;
 
-    private Log() {}
+    private KLog() {}
 
     public static void init(boolean isShowLog) {
         IS_SHOW_LOG = isShowLog;
@@ -304,22 +304,22 @@ public class Log {
 
         private static void printSub(int type, String tag, String sub) {
             switch (type) {
-                case Log.V:
+                case KLog.V:
                     android.util.Log.v(tag, sub);
                     break;
-                case Log.D:
+                case KLog.D:
                     android.util.Log.d(tag, sub);
                     break;
-                case Log.I:
+                case KLog.I:
                     android.util.Log.i(tag, sub);
                     break;
-                case Log.W:
+                case KLog.W:
                     android.util.Log.w(tag, sub);
                     break;
-                case Log.E:
+                case KLog.E:
                     android.util.Log.e(tag, sub);
                     break;
-                case Log.A:
+                case KLog.A:
                     android.util.Log.wtf(tag, sub);
                     break;
             }
@@ -382,10 +382,10 @@ public class Log {
             try {
                 if (msg.startsWith("{")) {
                     JSONObject jsonObject = new JSONObject(msg);
-                    message = jsonObject.toString(Log.JSON_INDENT);
+                    message = jsonObject.toString(KLog.JSON_INDENT);
                 } else if (msg.startsWith("[")) {
                     JSONArray jsonArray = new JSONArray(msg);
-                    message = jsonArray.toString(Log.JSON_INDENT);
+                    message = jsonArray.toString(KLog.JSON_INDENT);
                 } else {
                     message = msg;
                 }
@@ -394,8 +394,8 @@ public class Log {
             }
 
             Util.printLine(tag, true);
-            message = headString + Log.LINE_SEPARATOR + message;
-            String[] lines = message.split(Log.LINE_SEPARATOR);
+            message = headString + KLog.LINE_SEPARATOR + message;
+            String[] lines = message.split(KLog.LINE_SEPARATOR);
             for (String line : lines) {
                 android.util.Log.d(tag, "║ " + line);
             }
@@ -411,11 +411,11 @@ public class Log {
                 xml = XmlLog.formatXML(xml);
                 xml = headString + "\n" + xml;
             } else {
-                xml = headString + Log.NULL_TIPS;
+                xml = headString + KLog.NULL_TIPS;
             }
 
             Util.printLine(tag, true);
-            String[] lines = xml.split(Log.LINE_SEPARATOR);
+            String[] lines = xml.split(KLog.LINE_SEPARATOR);
             for (String line : lines) {
                 if (!Util.isEmpty(line)) {
                     android.util.Log.d(tag, "║ " + line);

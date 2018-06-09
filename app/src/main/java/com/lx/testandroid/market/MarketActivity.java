@@ -25,16 +25,13 @@ public class MarketActivity extends Activity{
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_market);
-        Button button = (Button) findViewById(R.id.goto_market);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String pkg = "com.jm.android.jumei";
+        Button button = findViewById(R.id.goto_market);
+        button.setOnClickListener(v -> {
+            String pkg = "com.jm.android.jumei";
 //                goToMarket(MarketActivity.this, pkg);
-                goToSamsungappsMarket(MarketActivity.this, pkg);
+            goToSamsungappsMarket(MarketActivity.this, pkg);
 //                goToLeTVStoreDetail(MarketActivity.this, pkg);
-                //adb shell am start -a android.intent.action.VIEW -d market://details?id=com.jm.android.jumei
-            }
+            //adb shell am start -a android.intent.action.VIEW -d market://details?id=com.jm.android.jumei
         });
     }
 

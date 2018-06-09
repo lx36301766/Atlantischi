@@ -1,4 +1,4 @@
-package com.lx.testandroid.util;
+package com.lx.testandroid.log;
 
 import android.util.Log;
 

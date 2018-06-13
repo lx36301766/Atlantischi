@@ -23,7 +23,8 @@ interface IUISettings {
 
     fun setAllGesturesEnabled(enable: Boolean)
 
-    //*****************************************************//
+
+    //********************** just support Gaode *******************************//
 
     var isIndoorSwitchEnabled: Boolean
 

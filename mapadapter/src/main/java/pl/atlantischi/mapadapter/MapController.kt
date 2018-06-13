@@ -17,10 +17,7 @@ class MapController private constructor() {
 
     @IntDef(
             ADAPTER_TYPE_GOOGLE.toLong(),
-            ADAPTER_TYPE_GAODE.toLong(),
-            ADAPTER_TYPE_BAIDU.toLong(),
-            ADAPTER_TYPE_TENCENT.toLong(),
-            ADAPTER_TYPE_MAPBOX.toLong()
+            ADAPTER_TYPE_GAODE.toLong()
     )
     private annotation class AdapterType
 
@@ -31,9 +28,8 @@ class MapController private constructor() {
 
         const val ADAPTER_TYPE_GOOGLE = 1
         const val ADAPTER_TYPE_GAODE = 2
-        const val ADAPTER_TYPE_BAIDU = 3
-        const val ADAPTER_TYPE_TENCENT = 4
-        const val ADAPTER_TYPE_MAPBOX = 5
+//        const val ADAPTER_TYPE_BAIDU = 3
+//        const val ADAPTER_TYPE_TENCENT = 4
 
         fun initialize(@AdapterType adapterType: Int, activity: Activity) {
             when(adapterType) {

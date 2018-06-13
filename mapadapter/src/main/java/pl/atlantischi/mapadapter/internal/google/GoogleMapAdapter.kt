@@ -65,13 +65,13 @@ internal class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
 
     override fun setOnMapClickListener(onMapClickListener: (iLatlng: ILatLng) -> Unit) {
         googleMap.setOnMapClickListener {
-            onMapClickListener.invoke(GoogleLatLngDelegate(it))
+            onMapClickListener.invoke(GoogleLatLng(it))
         }
     }
 
     override fun setOnMapLongClickListener(onMapLongClickListener: (iLatlng: ILatLng) -> Unit) {
         googleMap.setOnMapLongClickListener {
-            onMapLongClickListener.invoke(GoogleLatLngDelegate(it))
+            onMapLongClickListener.invoke(GoogleLatLng(it))
         }
     }
 

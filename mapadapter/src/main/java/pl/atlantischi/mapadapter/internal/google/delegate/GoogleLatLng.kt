@@ -9,7 +9,7 @@ import pl.atlantischi.mapadapter.callback.ILatLng
  * @author lx
  */
 
-class GoogleLatLngDelegate(private val latlng: LatLng) : ILatLng {
+class GoogleLatLng(private val latlng: LatLng) : ILatLng {
 
     override val latitude: Double
         get() = latlng.latitude

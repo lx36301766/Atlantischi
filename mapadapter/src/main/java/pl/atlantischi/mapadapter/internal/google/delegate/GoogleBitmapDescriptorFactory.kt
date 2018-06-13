@@ -33,8 +33,7 @@ internal class GoogleBitmapDescriptorFactory: IBitmapDescriptorFactory {
         view.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
                 View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
         view.layout(0, 0, view.measuredWidth, view.measuredHeight)
-        val bitmap = view.drawingCache
-        return if (bitmap != null) bitmap.copy(Bitmap.Config.ARGB_8888, false) else null
+        return view.drawingCache?.copy(Bitmap.Config.ARGB_8888, false)
     }
 
 }

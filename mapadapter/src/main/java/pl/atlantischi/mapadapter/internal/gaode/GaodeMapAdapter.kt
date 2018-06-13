@@ -20,6 +20,7 @@ import pl.atlantischi.mapadapter.callback.*
 
 
 internal class GaodeMapAdapter: IMapAdapter {
+
     private lateinit var mapView: TextureMapView
 
     private lateinit var aMap: AMap

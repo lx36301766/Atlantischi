@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.gaode
+package pl.atlantischi.mapadapter.internal.gaode
 
 import android.app.Activity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.view.View
 import com.amap.api.maps.TextureMapView
-import pl.atlantischi.mapadapter.MapViewLifecycleDelegate
+import pl.atlantischi.mapadapter.MapViewLifecycleImpl
 import pl.atlantischi.mapadapter.R
 
 /**
@@ -14,7 +14,7 @@ import pl.atlantischi.mapadapter.R
 
  * @author lx
  */
-internal class GaodeMapViewLifecycleDelegateImpl : MapViewLifecycleDelegate {
+internal class GaodeMapViewLifecycleImpl : MapViewLifecycleImpl {
 
     private var onMapViewFoundCallback: (TextureMapView) -> Unit
 

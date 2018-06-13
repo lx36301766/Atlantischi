@@ -1,0 +1,91 @@
+package pl.atlantischi.mapadapter.internal.gaode
+
+import android.app.Activity
+import android.support.v4.app.Fragment
+import android.view.ViewStub
+import com.amap.api.maps.AMap
+import com.amap.api.maps.TextureMapView
+import com.amap.api.maps.model.CameraPosition
+import pl.atlantischi.mapadapter.IMapAdapter
+import pl.atlantischi.mapadapter.R
+import pl.atlantischi.mapadapter.internal.gaode.delegate.*
+import pl.atlantischi.mapadapter.params.MarkerOptionsDelegate
+import pl.atlantischi.mapadapter.callback.*
+
+/**
+ * Created on 05/06/2018.
+
+ * @author lx
+ */
+
+
+internal class GaodeMapAdapter: IMapAdapter {
+
+    private lateinit var mapView: TextureMapView
+
+    private lateinit var aMap: AMap
+
+    private var mapViewLifecycleDelegateImpl: GaodeMapViewLifecycleImpl
+
+    private lateinit var uiSetting: IUISettings
+
+    constructor(activity: Activity) {
+        mapViewLifecycleDelegateImpl = GaodeMapViewLifecycleImpl(activity, mapViewFoundCallback)
+    }
+
+    constructor(fragment: Fragment) {
+        mapViewLifecycleDelegateImpl = GaodeMapViewLifecycleImpl(fragment, mapViewFoundCallback)
+    }
+
+    private val mapViewFoundCallback: (TextureMapView) -> Unit = {
+        mapView = it
+        aMap = mapView.map
+        uiSetting = GaodeUISetting(aMap.uiSettings)
+    }
+
+    override fun setMapViewStub(viewStub: ViewStub) {
+        viewStub.layoutResource = R.layout.view_gaode_map
+        viewStub.inflate()
+    }
+
+    override fun getUISetting(): IUISettings {
+        return uiSetting
+    }
+
+    override fun addMarker(markerOptionsDelegate: MarkerOptionsDelegate): IMarker {
+        return GaodeMarker(aMap.addMarker(GaodeMarkerOptions.build(markerOptionsDelegate)))
+    }
+
+    override fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean) {
+        aMap.setOnMarkerClickListener {
+            onMarkerClickListener.invoke(GaodeMarker(it))
+        }
+    }
+
+    override fun setOnMapClickListener(onMapClickListener: (iLatlng: ILatLng) -> Unit) {
+        aMap.setOnMapClickListener {
+            onMapClickListener.invoke(GaodeLatLng(it))
+        }
+    }
+
+    override fun setOnMapLongClickListener(onMapLongClickListener: (iLatlng: ILatLng) -> Unit) {
+        aMap.setOnMapLongClickListener {
+            onMapLongClickListener.invoke(GaodeLatLng(it))
+        }
+    }
+
+    override fun setOnCameraChangeListener(onCameraChangeListener: (iCameraPosition: ICameraPosition, isFinished: Boolean) -> Unit) {
+        aMap.setOnCameraChangeListener(object: AMap.OnCameraChangeListener{
+
+            override fun onCameraChange(cameraPosition: CameraPosition) {
+                onCameraChangeListener.invoke(GaodeCameraPosition(cameraPosition), false)
+            }
+
+            override fun onCameraChangeFinish(cameraPosition: CameraPosition) {
+                onCameraChangeListener.invoke(GaodeCameraPosition(cameraPosition),true)
+            }
+
+        })
+    }
+
+}

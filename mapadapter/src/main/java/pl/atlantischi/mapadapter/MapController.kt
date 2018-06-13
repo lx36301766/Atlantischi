@@ -4,8 +4,8 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.support.annotation.IntDef
 import android.support.v4.app.Fragment
-import pl.atlantischi.mapadapter.gaode.GaodeMapAdapter
-import pl.atlantischi.mapadapter.google.GoogleMapAdapter
+import pl.atlantischi.mapadapter.internal.gaode.GaodeMapAdapter
+import pl.atlantischi.mapadapter.internal.google.GoogleMapAdapter
 
 /**
  * Created on 05/06/2018.

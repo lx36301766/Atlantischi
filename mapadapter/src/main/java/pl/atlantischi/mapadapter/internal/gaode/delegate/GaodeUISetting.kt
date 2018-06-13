@@ -8,6 +8,7 @@ import pl.atlantischi.mapadapter.callback.IUISettings
 
  * @author lx
  */
+
 internal class GaodeUISetting (var uiSettings: UiSettings) : IUISettings {
 
     override var isZoomControlsEnabled = uiSettings.isZoomControlsEnabled

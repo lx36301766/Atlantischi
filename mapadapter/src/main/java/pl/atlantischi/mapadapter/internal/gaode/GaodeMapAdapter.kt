@@ -9,7 +9,7 @@ import com.amap.api.maps.model.CameraPosition
 import pl.atlantischi.mapadapter.IMapAdapter
 import pl.atlantischi.mapadapter.R
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
-import pl.atlantischi.mapadapter.params.MarkerOptionsDelegate
+import pl.atlantischi.mapadapter.params.MarkerOptionsParameters
 import pl.atlantischi.mapadapter.callback.*
 
 /**
@@ -20,7 +20,6 @@ import pl.atlantischi.mapadapter.callback.*
 
 
 internal class GaodeMapAdapter: IMapAdapter {
-
     private lateinit var mapView: TextureMapView
 
     private lateinit var aMap: AMap
@@ -28,6 +27,8 @@ internal class GaodeMapAdapter: IMapAdapter {
     private var mapViewLifecycleDelegateImpl: GaodeMapViewLifecycleImpl
 
     private lateinit var uiSetting: IUISettings
+
+    private lateinit var bitmapDescriptorFactory: IBitmapDescriptorFactory
 
     constructor(activity: Activity) {
         mapViewLifecycleDelegateImpl = GaodeMapViewLifecycleImpl(activity, mapViewFoundCallback)
@@ -41,6 +42,7 @@ internal class GaodeMapAdapter: IMapAdapter {
         mapView = it
         aMap = mapView.map
         uiSetting = GaodeUISetting(aMap.uiSettings)
+        bitmapDescriptorFactory = GaodeBitmapDescriptorFactory()
     }
 
     override fun setMapViewStub(viewStub: ViewStub) {
@@ -52,8 +54,12 @@ internal class GaodeMapAdapter: IMapAdapter {
         return uiSetting
     }
 
-    override fun addMarker(markerOptionsDelegate: MarkerOptionsDelegate): IMarker {
-        return GaodeMarker(aMap.addMarker(GaodeMarkerOptions.build(markerOptionsDelegate)))
+    override fun getBitmapDescriptorFactory(): IBitmapDescriptorFactory {
+        return bitmapDescriptorFactory
+    }
+
+    override fun addMarker(markerOptionsParameters: MarkerOptionsParameters): IMarker {
+        return GaodeMarker(aMap.addMarker(GaodeMarkerOptions.build(markerOptionsParameters)))
     }
 
     override fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean) {

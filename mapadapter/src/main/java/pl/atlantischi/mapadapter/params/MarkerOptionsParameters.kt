@@ -8,7 +8,7 @@ import pl.atlantischi.mapadapter.callback.ILatLng
  * @author lx
  */
 
-class MarkerOptionsDelegate {
+class MarkerOptionsParameters {
 
     var position: ILatLng? = null
 

@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter
 
 import android.view.ViewStub
-import pl.atlantischi.mapadapter.params.MarkerOptionsDelegate
+import pl.atlantischi.mapadapter.params.MarkerOptionsParameters
 import pl.atlantischi.mapadapter.callback.*
 
 /**
@@ -16,7 +16,9 @@ interface IMapAdapter {
 
     fun getUISetting(): IUISettings
 
-    fun addMarker(markerOptionsDelegate: MarkerOptionsDelegate): IMarker
+    fun getBitmapDescriptorFactory(): IBitmapDescriptorFactory
+
+    fun addMarker(markerOptionsParameters: MarkerOptionsParameters): IMarker
 
     fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean)
 

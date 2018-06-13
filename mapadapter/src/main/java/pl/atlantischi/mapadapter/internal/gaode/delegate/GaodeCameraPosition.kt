@@ -10,7 +10,7 @@ import pl.atlantischi.mapadapter.callback.ILatLng
  * @author lx
  */
 
-class GaodeCameraPosition(private val cameraPosition: CameraPosition) : ICameraPosition {
+internal class GaodeCameraPosition(private val cameraPosition: CameraPosition) : ICameraPosition {
 
     override val target: ILatLng
         get() = GaodeLatLng(cameraPosition.target)

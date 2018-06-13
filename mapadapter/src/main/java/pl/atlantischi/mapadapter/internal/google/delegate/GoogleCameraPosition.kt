@@ -10,7 +10,7 @@ import pl.atlantischi.mapadapter.callback.ILatLng
  * @author lx
  */
 
-class GoogleCameraPosition(private val cameraPosition: CameraPosition) : ICameraPosition {
+internal class GoogleCameraPosition(private val cameraPosition: CameraPosition) : ICameraPosition {
 
     override val target: ILatLng
         get() = GoogleLatLng(cameraPosition.target)

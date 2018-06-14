@@ -6,6 +6,7 @@ import android.view.ViewStub
 import com.amap.api.maps.AMap
 import com.amap.api.maps.TextureMapView
 import com.amap.api.maps.model.CameraPosition
+import com.amap.api.maps.model.LatLngBounds
 import pl.atlantischi.mapadapter.IMapAdapter
 import pl.atlantischi.mapadapter.R
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
@@ -20,7 +21,6 @@ import pl.atlantischi.mapadapter.callback.*
 
 
 internal class GaodeMapAdapter: IMapAdapter {
-
     private lateinit var mapView: TextureMapView
 
     private lateinit var aMap: AMap
@@ -69,19 +69,23 @@ internal class GaodeMapAdapter: IMapAdapter {
         }
     }
 
-    override fun setOnMapClickListener(onMapClickListener: (iLatlng: ILatLng) -> Unit) {
+    override fun newLatLngBoundBuiler(): ILatLngBounds.Builder {
+        return GaodeLatLngBounds.Builder(LatLngBounds.Builder())
+    }
+
+    override fun setOnMapClickListener(onMapClickListener: (latlng: ILatLng) -> Unit) {
         aMap.setOnMapClickListener {
             onMapClickListener.invoke(GaodeLatLng(it))
         }
     }
 
-    override fun setOnMapLongClickListener(onMapLongClickListener: (iLatlng: ILatLng) -> Unit) {
+    override fun setOnMapLongClickListener(onMapLongClickListener: (latlng: ILatLng) -> Unit) {
         aMap.setOnMapLongClickListener {
             onMapLongClickListener.invoke(GaodeLatLng(it))
         }
     }
 
-    override fun setOnCameraChangeListener(onCameraChangeListener: (iCameraPosition: ICameraPosition, isFinished: Boolean) -> Unit) {
+    override fun setOnCameraChangeListener(onCameraChangeListener: (cameraPosition: ICameraPosition, isFinished: Boolean) -> Unit) {
         aMap.setOnCameraChangeListener(object: AMap.OnCameraChangeListener{
 
             override fun onCameraChange(cameraPosition: CameraPosition) {

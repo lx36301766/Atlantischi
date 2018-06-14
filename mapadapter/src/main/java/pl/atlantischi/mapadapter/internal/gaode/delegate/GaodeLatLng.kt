@@ -9,7 +9,7 @@ import pl.atlantischi.mapadapter.callback.ILatLng
  * @author lx
  */
 
-internal class GaodeLatLng(private val latlng: LatLng) : ILatLng {
+internal class GaodeLatLng(val latlng: LatLng) : ILatLng {
 
     override val latitude: Double
         get() = latlng.latitude

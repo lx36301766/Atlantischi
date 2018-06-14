@@ -22,10 +22,12 @@ interface IMapAdapter {
 
     fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean)
 
-    fun setOnMapClickListener(onMapClickListener: (iLatlng: ILatLng) -> Unit)
+    fun newLatLngBoundBuiler(): ILatLngBounds.Builder
 
-    fun setOnMapLongClickListener(onMapLongClickListener: (iLatlng: ILatLng) -> Unit)
+    fun setOnMapClickListener(onMapClickListener: (latlng: ILatLng) -> Unit)
 
-    fun setOnCameraChangeListener(onCameraChangeListener: (iCameraPosition: ICameraPosition, isFinished: Boolean) -> Unit)
+    fun setOnMapLongClickListener(onMapLongClickListener: (latlng: ILatLng) -> Unit)
+
+    fun setOnCameraChangeListener(onCameraChangeListener: (cameraPosition: ICameraPosition, isFinished: Boolean) -> Unit)
 
 }

@@ -15,6 +15,30 @@ import pl.atlantischi.mapadapter.callback.IBitmapDescriptorFactory
 
 internal class GoogleBitmapDescriptorFactory: IBitmapDescriptorFactory {
 
+    override fun defaultMarker(): IBitmapDescriptor {
+        return GoogleBitmapDescriptor(BitmapDescriptorFactory.defaultMarker())
+    }
+
+    override fun defaultMarker(hue: Float): IBitmapDescriptor {
+        return GoogleBitmapDescriptor(BitmapDescriptorFactory.defaultMarker(hue))
+    }
+
+    override fun fromAsset(asset: String): IBitmapDescriptor {
+        return GoogleBitmapDescriptor(BitmapDescriptorFactory.fromAsset(asset))
+    }
+
+    override fun fromFile(file: String): IBitmapDescriptor {
+        return GoogleBitmapDescriptor(BitmapDescriptorFactory.fromFile(file))
+    }
+
+    override fun fromPath(path: String): IBitmapDescriptor {
+        return GoogleBitmapDescriptor(BitmapDescriptorFactory.fromPath(path))
+    }
+
+    override fun fromResource(resId: Int): IBitmapDescriptor {
+        return GoogleBitmapDescriptor(BitmapDescriptorFactory.fromResource(resId))
+    }
+
     override fun fromBitmap(bitmap: Bitmap): IBitmapDescriptor {
         return GoogleBitmapDescriptor(BitmapDescriptorFactory.fromBitmap(bitmap))
     }

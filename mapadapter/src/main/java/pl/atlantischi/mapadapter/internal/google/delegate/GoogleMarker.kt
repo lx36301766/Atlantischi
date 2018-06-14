@@ -1,9 +1,8 @@
 package pl.atlantischi.mapadapter.internal.google.delegate
 
-import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.Marker
+import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
 import pl.atlantischi.mapadapter.callback.IMarker
-import pl.atlantischi.mapadapter.params.BitmapDescriptorParameters
 
 /**
  * Created on 11/06/2018.
@@ -12,10 +11,6 @@ import pl.atlantischi.mapadapter.params.BitmapDescriptorParameters
  */
 
 internal class GoogleMarker(private val marker: Marker): IMarker {
-
-    override fun setIcon(icon: BitmapDescriptorParameters) {
-        marker.setIcon(BitmapDescriptorFactory.defaultMarker())
-    }
 
     override var title: String
         get() = marker.title
@@ -45,6 +40,12 @@ internal class GoogleMarker(private val marker: Marker): IMarker {
 
     override fun isInfoWindowShown(): Boolean {
         return marker.isInfoWindowShown
+    }
+
+    override fun setIcon(bitmapDescriptor: IBitmapDescriptor) {
+        if (bitmapDescriptor is GoogleBitmapDescriptor) {
+            marker.setIcon(bitmapDescriptor.descriptor)
+        }
     }
 
 }

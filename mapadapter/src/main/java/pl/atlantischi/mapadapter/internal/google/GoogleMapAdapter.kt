@@ -6,6 +6,7 @@ import android.view.ViewStub
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.LatLngBounds
 import pl.atlantischi.mapadapter.IMapAdapter
 import pl.atlantischi.mapadapter.R
 import pl.atlantischi.mapadapter.params.MarkerOptionsParameters
@@ -17,7 +18,6 @@ import pl.atlantischi.mapadapter.internal.google.delegate.*
  *
  * @author lx
  */
-
 
 internal class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
 
@@ -68,21 +68,28 @@ internal class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
     }
 
     override fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean) {
+        googleMap.setOnMarkerClickListener {
+            onMarkerClickListener.invoke(GoogleMarker(it))
+        }
     }
 
-    override fun setOnMapClickListener(onMapClickListener: (iLatlng: ILatLng) -> Unit) {
+    override fun newLatLngBoundBuiler(): ILatLngBounds.Builder {
+        return GoogleLatLngBounds.Builder(LatLngBounds.Builder())
+    }
+
+    override fun setOnMapClickListener(onMapClickListener: (latlng: ILatLng) -> Unit) {
         googleMap.setOnMapClickListener {
             onMapClickListener.invoke(GoogleLatLng(it))
         }
     }
 
-    override fun setOnMapLongClickListener(onMapLongClickListener: (iLatlng: ILatLng) -> Unit) {
+    override fun setOnMapLongClickListener(onMapLongClickListener: (latlng: ILatLng) -> Unit) {
         googleMap.setOnMapLongClickListener {
             onMapLongClickListener.invoke(GoogleLatLng(it))
         }
     }
 
-    override fun setOnCameraChangeListener(onCameraChangeListener: (iCameraPosition: ICameraPosition, isFinished: Boolean) -> Unit) {
+    override fun setOnCameraChangeListener(onCameraChangeListener: (cameraPosition: ICameraPosition, isFinished: Boolean) -> Unit) {
         with(googleMap) {
             val callback : (isFinished: Boolean) -> Unit = {
                 onCameraChangeListener.invoke(GoogleCameraPosition(cameraPosition), it)

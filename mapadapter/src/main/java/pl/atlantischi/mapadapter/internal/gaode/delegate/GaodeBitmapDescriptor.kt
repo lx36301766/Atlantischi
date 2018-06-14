@@ -9,5 +9,4 @@ import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
  * @author lx
  */
 
-class GaodeBitmapDescriptor(descriptor: BitmapDescriptor) : IBitmapDescriptor {
-}
+class GaodeBitmapDescriptor(val descriptor: BitmapDescriptor) : IBitmapDescriptor

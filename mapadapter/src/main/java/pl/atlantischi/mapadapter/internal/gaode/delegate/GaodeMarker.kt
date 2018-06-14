@@ -1,6 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.delegate
 
 import com.amap.api.maps.model.Marker
+import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
 import pl.atlantischi.mapadapter.callback.IMarker
 
 /**
@@ -39,6 +40,12 @@ internal class GaodeMarker(private val marker: Marker) : IMarker {
 
     override fun isInfoWindowShown(): Boolean {
         return marker.isInfoWindowShown
+    }
+
+    override fun setIcon(bitmapDescriptor: IBitmapDescriptor) {
+        if (bitmapDescriptor is GaodeBitmapDescriptor) {
+            marker.setIcon(bitmapDescriptor.descriptor)
+        }
     }
 
 }

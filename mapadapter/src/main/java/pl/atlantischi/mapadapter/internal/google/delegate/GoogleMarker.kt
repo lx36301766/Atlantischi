@@ -12,20 +12,17 @@ import pl.atlantischi.mapadapter.callback.IMarker
 
 internal class GoogleMarker(private val marker: Marker): IMarker {
 
-    override var title: String
-        get() = marker.title
+    override var title = marker.title
         set(value) {
             marker.title = value
         }
 
-    override var snippet: String
-        get() = marker.snippet
+    override var snippet = marker.snippet
         set(value) {
             marker.snippet = value
         }
 
-    override var tag: Any?
-        get() = marker.tag
+    override var tag = marker.tag
         set(value) {
             marker.tag = value
         }

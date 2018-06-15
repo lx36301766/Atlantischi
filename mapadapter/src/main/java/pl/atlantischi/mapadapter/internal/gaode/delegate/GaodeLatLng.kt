@@ -11,10 +11,8 @@ import pl.atlantischi.mapadapter.callback.ILatLng
 
 internal class GaodeLatLng(val latlng: LatLng) : ILatLng {
 
-    override val latitude: Double
-        get() = latlng.latitude
+    override val latitude = latlng.latitude
 
-    override val longitude: Double
-        get() = latlng.longitude
+    override val longitude = latlng.longitude
 
 }

@@ -1,7 +1,6 @@
 package pl.atlantischi.mapadapter
 
 import android.view.ViewStub
-import pl.atlantischi.mapadapter.params.MarkerOptionsParameters
 import pl.atlantischi.mapadapter.callback.*
 
 /**
@@ -12,17 +11,13 @@ import pl.atlantischi.mapadapter.callback.*
 
 interface IMapAdapter {
 
+    val objectFactory: IObjectFactory
+
     fun setMapViewStub(viewStub: ViewStub)
 
-    fun getUISetting(): IUISettings
-
-    fun getBitmapDescriptorFactory(): IBitmapDescriptorFactory
-
-    fun addMarker(markerOptionsParameters: MarkerOptionsParameters): IMarker
+    fun addMarker(markerOptions: IMarkerOptions): IMarker
 
     fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean)
-
-    fun newLatLngBoundBuiler(): ILatLngBounds.Builder
 
     fun setOnMapClickListener(onMapClickListener: (latlng: ILatLng) -> Unit)
 

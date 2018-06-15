@@ -10,18 +10,14 @@ import pl.atlantischi.mapadapter.callback.ILatLng
  * @author lx
  */
 
-internal class GaodeCameraPosition(private val cameraPosition: CameraPosition) : ICameraPosition {
+internal class GaodeCameraPosition(val cameraPosition: CameraPosition) : ICameraPosition {
 
-    override val target: ILatLng
-        get() = GaodeLatLng(cameraPosition.target)
+    override val target = GaodeLatLng(cameraPosition.target)
 
-    override val zoom: Float
-        get() = cameraPosition.zoom
+    override val zoom = cameraPosition.zoom
 
-    override val tilt: Float
-        get() = cameraPosition.tilt
+    override val tilt = cameraPosition.tilt
 
-    override val bearing: Float
-        get() = cameraPosition.bearing
+    override val bearing = cameraPosition.bearing
 
 }

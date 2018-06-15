@@ -1,6 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.delegate
 
 import com.amap.api.maps.model.Marker
+import com.amap.api.maps.model.animation.Animation
 import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
 import pl.atlantischi.mapadapter.callback.IMarker
 
@@ -12,20 +13,17 @@ import pl.atlantischi.mapadapter.callback.IMarker
 
 internal class GaodeMarker(private val marker: Marker) : IMarker {
 
-    override var title: String
-        get() = marker.title
+    override var title = marker.title
         set(value) {
             marker.title = value
         }
 
-    override var snippet: String
-        get() = marker.snippet
+    override var snippet = marker.snippet
         set(value) {
             marker.snippet = value
         }
 
-    override var tag: Any?
-        get() = marker.`object`
+    override var tag = marker.`object`
         set(value) {
             marker.`object` = value
         }
@@ -46,6 +44,14 @@ internal class GaodeMarker(private val marker: Marker) : IMarker {
         if (bitmapDescriptor is GaodeBitmapDescriptor) {
             marker.setIcon(bitmapDescriptor.descriptor)
         }
+    }
+
+    fun setAnimation(animation: Animation) {
+        marker.setAnimation(animation)
+    }
+
+    fun startAnimation(): Boolean {
+        return marker.startAnimation()
     }
 
 }

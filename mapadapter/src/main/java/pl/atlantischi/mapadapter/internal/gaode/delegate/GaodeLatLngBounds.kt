@@ -10,7 +10,7 @@ import pl.atlantischi.mapadapter.callback.ILatLngBounds
  * @author lx
  */
 
-class GaodeLatLngBounds(private val latLngBounds: LatLngBounds) : ILatLngBounds {
+class GaodeLatLngBounds(val latLngBounds: LatLngBounds) : ILatLngBounds {
 
     override fun contains(latlng: ILatLng): Boolean {
         if (latlng is GaodeLatLng) {

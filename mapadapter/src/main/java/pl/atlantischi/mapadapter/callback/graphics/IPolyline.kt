@@ -1,4 +1,6 @@
-package pl.atlantischi.mapadapter.callback
+package pl.atlantischi.mapadapter.callback.graphics
+
+import pl.atlantischi.mapadapter.callback.ILatLng
 
 /**
  * Created on 11/06/2018.

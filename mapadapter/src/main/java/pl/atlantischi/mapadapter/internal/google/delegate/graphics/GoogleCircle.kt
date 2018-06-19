@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 
 import com.google.android.gms.maps.model.Circle
-import pl.atlantischi.mapadapter.callback.ICircle
+import pl.atlantischi.mapadapter.callback.graphics.ICircle
 
 /**
  * Created on 19/06/2018.

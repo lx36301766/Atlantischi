@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 
 import com.google.android.gms.maps.model.TileOverlay
-import pl.atlantischi.mapadapter.callback.ITileOverlay
+import pl.atlantischi.mapadapter.callback.graphics.ITileOverlay
 
 /**
  * Created on 19/06/2018.

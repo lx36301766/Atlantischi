@@ -3,7 +3,7 @@ package pl.atlantischi.mapadapter.internal.gaode.delegate.graphics
 import com.amap.api.maps.model.Marker
 import com.amap.api.maps.model.animation.Animation
 import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
-import pl.atlantischi.mapadapter.callback.IMarker
+import pl.atlantischi.mapadapter.callback.graphics.IMarker
 import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeBitmapDescriptor
 
 /**

@@ -20,7 +20,7 @@ internal class GaodeCameraPosition(val cameraPosition: CameraPosition) : ICamera
 
     override val bearing = cameraPosition.bearing
 
-    class Builder : ICameraPosition.Builder {
+    internal class Builder : ICameraPosition.Builder {
 
         private val builder = CameraPosition.Builder()
 

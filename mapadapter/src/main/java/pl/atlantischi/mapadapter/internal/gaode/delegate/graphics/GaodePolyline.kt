@@ -13,7 +13,7 @@ import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeLatLng
  * @author lx
  */
 
-class GaodePolyline(private val polyline: Polyline) : IPolyline {
+internal class GaodePolyline(private val polyline: Polyline) : IPolyline {
 
     override fun remove() {
         polyline.remove()
@@ -64,7 +64,7 @@ class GaodePolyline(private val polyline: Polyline) : IPolyline {
 
 
 
-    class Options : IPolyline.Options {
+    internal class Options : IPolyline.Options {
 
         val options = PolylineOptions()
 

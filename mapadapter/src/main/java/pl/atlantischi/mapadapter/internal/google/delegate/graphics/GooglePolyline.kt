@@ -13,7 +13,7 @@ import pl.atlantischi.mapadapter.internal.google.delegate.GoogleLatLng
  * @author lx
  */
 
-class GooglePolyline(private val polyline: Polyline) : IPolyline {
+internal class GooglePolyline(private val polyline: Polyline) : IPolyline {
 
     override fun remove() {
         polyline.remove()
@@ -63,8 +63,7 @@ class GooglePolyline(private val polyline: Polyline) : IPolyline {
         }
 
 
-
-    class Options : IPolyline.Options {
+    internal class Options : IPolyline.Options {
 
         val options = PolylineOptions()
 

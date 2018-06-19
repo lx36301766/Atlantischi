@@ -20,7 +20,7 @@ internal class GoogleCameraPosition(val cameraPosition: CameraPosition) : ICamer
 
     override val bearing = cameraPosition.bearing
 
-    class Builder : ICameraPosition.Builder {
+    internal class Builder : ICameraPosition.Builder {
 
         private val builder = CameraPosition.Builder()
 

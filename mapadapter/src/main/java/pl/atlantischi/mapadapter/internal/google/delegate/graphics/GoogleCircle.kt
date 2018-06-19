@@ -9,10 +9,10 @@ import pl.atlantischi.mapadapter.callback.graphics.ICircle
 
  * @author lx
  */
-class GoogleCircle(private val circle: Circle) : ICircle {
 
+internal class GoogleCircle(private val circle: Circle) : ICircle {
 
-    class Options : ICircle.Options {
+    internal class Options : ICircle.Options {
 
         val options = CircleOptions()
 

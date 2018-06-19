@@ -9,9 +9,10 @@ import pl.atlantischi.mapadapter.callback.graphics.ITileOverlay
 
  * @author lx
  */
-class GoogleTileOverlay(private val tileOverlay: TileOverlay) : ITileOverlay {
 
-    class Options : ITileOverlay.Options {
+internal class GoogleTileOverlay(private val tileOverlay: TileOverlay) : ITileOverlay {
+
+    internal class Options : ITileOverlay.Options {
 
         val options = TileOverlayOptions()
 

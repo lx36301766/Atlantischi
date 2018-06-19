@@ -10,7 +10,7 @@ import pl.atlantischi.mapadapter.callback.*
  * @author lx
  */
 
-class GoogleCameraUpdateFactory : ICameraUpdateFactory {
+internal class GoogleCameraUpdateFactory : ICameraUpdateFactory {
 
     override fun zoomIn(): ICameraUpdate {
         return GoogleCameraUpdate(CameraUpdateFactory.zoomIn())

@@ -9,4 +9,4 @@ import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
  * @author lx
  */
 
-class GoogleBitmapDescriptor(val descriptor: BitmapDescriptor) : IBitmapDescriptor
+internal class GoogleBitmapDescriptor(val descriptor: BitmapDescriptor) : IBitmapDescriptor

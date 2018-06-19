@@ -16,7 +16,7 @@ import pl.atlantischi.mapadapter.internal.google.delegate.graphics.*
  * @author lx
  */
 
-class GoogleMapObjectFactory(googleMap: GoogleMap) : MapObjectFactory {
+internal class GoogleMapObjectFactory(googleMap: GoogleMap) : MapObjectFactory {
 
     override val uiSetting: IUISettings = GoogleUISetting(googleMap.uiSettings)
 

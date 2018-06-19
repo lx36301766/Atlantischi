@@ -14,6 +14,7 @@ import pl.atlantischi.mapadapter.R
 
  * @author lx
  */
+
 internal class GoogleMapViewLifecycleImpl : MapViewLifecycleImpl {
 
     private var onMapViewFoundCallback: (MapView) -> Unit

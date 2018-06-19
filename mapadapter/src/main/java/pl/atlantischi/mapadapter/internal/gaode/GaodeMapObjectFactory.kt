@@ -16,7 +16,7 @@ import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
  * @author lx
  */
 
-class GaodeMapObjectFactory(aMap: AMap) : MapObjectFactory {
+internal class GaodeMapObjectFactory(aMap: AMap) : MapObjectFactory {
 
     override val uiSetting: IUISettings = GaodeUISetting(aMap.uiSettings)
 

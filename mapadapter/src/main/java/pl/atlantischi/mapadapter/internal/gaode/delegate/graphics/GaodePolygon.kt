@@ -10,10 +10,10 @@ import pl.atlantischi.mapadapter.callback.graphics.IPolygon
  * @author lx
  */
 
-class GaodePolygon(private val polygon: Polygon) : IPolygon {
+internal class GaodePolygon(private val polygon: Polygon) : IPolygon {
 
 
-    class Options : IPolygon.Options {
+    internal class Options : IPolygon.Options {
 
         val options = PolygonOptions()
 

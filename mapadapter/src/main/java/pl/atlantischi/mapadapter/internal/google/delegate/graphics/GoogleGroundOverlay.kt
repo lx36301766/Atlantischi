@@ -9,9 +9,10 @@ import pl.atlantischi.mapadapter.callback.graphics.IGroundOverlay
 
  * @author lx
  */
-class GoogleGroundOverlay(private val groundOverlay: GroundOverlay) : IGroundOverlay {
 
-    class Options : IGroundOverlay.Options {
+internal class GoogleGroundOverlay(private val groundOverlay: GroundOverlay) : IGroundOverlay {
+
+    internal class Options : IGroundOverlay.Options {
 
         val options = GroundOverlayOptions()
 

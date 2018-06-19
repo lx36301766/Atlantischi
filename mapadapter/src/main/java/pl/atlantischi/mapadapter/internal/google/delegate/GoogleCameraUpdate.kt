@@ -9,4 +9,4 @@ import pl.atlantischi.mapadapter.callback.ICameraUpdate
  * @author lx
  */
 
-class GoogleCameraUpdate(val cameraUpdate: CameraUpdate) : ICameraUpdate
+internal class GoogleCameraUpdate(val cameraUpdate: CameraUpdate) : ICameraUpdate

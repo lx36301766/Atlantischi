@@ -1,12 +1,10 @@
 package pl.atlantischi.mapadapter.internal.gaode
 
 import com.amap.api.maps.AMap
-import com.amap.api.maps.model.CameraPosition
 import com.amap.api.maps.model.LatLng
-import com.amap.api.maps.model.LatLngBounds
 import pl.atlantischi.mapadapter.MapObjectFactory
-import pl.atlantischi.mapadapter.callback.*
-import pl.atlantischi.mapadapter.callback.graphics.*
+import pl.atlantischi.mapadapter.mapapi.*
+import pl.atlantischi.mapadapter.mapapi.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
 

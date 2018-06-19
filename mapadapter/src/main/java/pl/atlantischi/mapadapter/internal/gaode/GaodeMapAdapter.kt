@@ -10,8 +10,8 @@ import pl.atlantischi.mapadapter.MapAdapter
 import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
-import pl.atlantischi.mapadapter.callback.*
-import pl.atlantischi.mapadapter.callback.graphics.*
+import pl.atlantischi.mapadapter.mapapi.*
+import pl.atlantischi.mapadapter.mapapi.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
 
 /**

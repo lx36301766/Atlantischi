@@ -3,9 +3,9 @@ package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
-import pl.atlantischi.mapadapter.callback.ILatLng
-import pl.atlantischi.mapadapter.callback.graphics.IMarker
+import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
+import pl.atlantischi.mapadapter.mapapi.ILatLng
+import pl.atlantischi.mapadapter.mapapi.graphics.IMarker
 import pl.atlantischi.mapadapter.internal.google.delegate.GoogleBitmapDescriptor
 
 /**

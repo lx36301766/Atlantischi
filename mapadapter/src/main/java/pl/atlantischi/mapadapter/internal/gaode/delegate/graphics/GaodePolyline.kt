@@ -3,8 +3,8 @@ package pl.atlantischi.mapadapter.internal.gaode.delegate.graphics
 import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.Polyline
 import com.amap.api.maps.model.PolylineOptions
-import pl.atlantischi.mapadapter.callback.ILatLng
-import pl.atlantischi.mapadapter.callback.graphics.IPolyline
+import pl.atlantischi.mapadapter.mapapi.ILatLng
+import pl.atlantischi.mapadapter.mapapi.graphics.IPolyline
 import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeLatLng
 
 /**

@@ -1,8 +1,8 @@
 package pl.atlantischi.mapadapter
 
 import android.view.ViewStub
-import pl.atlantischi.mapadapter.callback.*
-import pl.atlantischi.mapadapter.callback.graphics.*
+import pl.atlantischi.mapadapter.mapapi.*
+import pl.atlantischi.mapadapter.mapapi.graphics.*
 
 /**
  * Created on 05/06/2018.

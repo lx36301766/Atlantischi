@@ -4,9 +4,9 @@ import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.Marker
 import com.amap.api.maps.model.MarkerOptions
 import com.amap.api.maps.model.animation.Animation
-import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
-import pl.atlantischi.mapadapter.callback.ILatLng
-import pl.atlantischi.mapadapter.callback.graphics.IMarker
+import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
+import pl.atlantischi.mapadapter.mapapi.ILatLng
+import pl.atlantischi.mapadapter.mapapi.graphics.IMarker
 import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeBitmapDescriptor
 
 /**

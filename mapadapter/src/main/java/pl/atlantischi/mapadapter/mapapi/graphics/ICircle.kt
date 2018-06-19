@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.callback.graphics
+package pl.atlantischi.mapadapter.mapapi.graphics
 
 /**
  * Created on 11/06/2018.
@@ -6,7 +6,7 @@ package pl.atlantischi.mapadapter.callback.graphics
  * @author lx
  */
 
-interface ITileOverlay {
+interface ICircle {
 
     interface Options {
 

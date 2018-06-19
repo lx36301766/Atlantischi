@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.callback
+package pl.atlantischi.mapadapter.mapapi
 
 import android.graphics.Point
 

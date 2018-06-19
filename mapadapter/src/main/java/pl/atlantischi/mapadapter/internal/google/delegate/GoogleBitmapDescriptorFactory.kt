@@ -4,8 +4,8 @@ import android.graphics.Bitmap
 import android.view.View
 import android.widget.FrameLayout
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
-import pl.atlantischi.mapadapter.callback.IBitmapDescriptorFactory
+import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
+import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptorFactory
 
 /**
  * Created on 13/06/2018.

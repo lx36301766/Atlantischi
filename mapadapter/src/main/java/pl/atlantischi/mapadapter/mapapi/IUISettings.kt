@@ -1,10 +1,11 @@
-package pl.atlantischi.mapadapter.callback
+package pl.atlantischi.mapadapter.mapapi
 
 /**
  * Created on 08/06/2018.
 
  * @author lx
  */
+
 interface IUISettings {
 
     var isZoomControlsEnabled: Boolean

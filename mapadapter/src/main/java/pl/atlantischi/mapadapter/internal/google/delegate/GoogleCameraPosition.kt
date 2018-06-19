@@ -1,8 +1,8 @@
 package pl.atlantischi.mapadapter.internal.google.delegate
 
 import com.google.android.gms.maps.model.CameraPosition
-import pl.atlantischi.mapadapter.callback.ICameraPosition
-import pl.atlantischi.mapadapter.callback.ILatLng
+import pl.atlantischi.mapadapter.mapapi.ICameraPosition
+import pl.atlantischi.mapadapter.mapapi.ILatLng
 
 /**
  * Created on 11/06/2018.

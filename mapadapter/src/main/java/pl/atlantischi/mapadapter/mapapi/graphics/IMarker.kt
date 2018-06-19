@@ -1,7 +1,7 @@
-package pl.atlantischi.mapadapter.callback.graphics
+package pl.atlantischi.mapadapter.mapapi.graphics
 
-import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
-import pl.atlantischi.mapadapter.callback.ILatLng
+import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
+import pl.atlantischi.mapadapter.mapapi.ILatLng
 
 /**
  * Created on 11/06/2018.

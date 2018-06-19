@@ -3,8 +3,8 @@ package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
-import pl.atlantischi.mapadapter.callback.ILatLng
-import pl.atlantischi.mapadapter.callback.graphics.IPolyline
+import pl.atlantischi.mapadapter.mapapi.ILatLng
+import pl.atlantischi.mapadapter.mapapi.graphics.IPolyline
 import pl.atlantischi.mapadapter.internal.google.delegate.GoogleLatLng
 
 /**

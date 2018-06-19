@@ -1,13 +1,14 @@
 package pl.atlantischi.mapadapter.internal.google
 
 import android.app.Activity
+import android.support.annotation.RequiresPermission
 import android.support.v4.app.Fragment
 import android.view.ViewStub
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
-import pl.atlantischi.mapadapter.IMapAdapter
-import pl.atlantischi.mapadapter.IObjectFactory
+import pl.atlantischi.mapadapter.MapAdapter
+import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
 import pl.atlantischi.mapadapter.callback.*
 import pl.atlantischi.mapadapter.internal.google.delegate.*
@@ -18,16 +19,13 @@ import pl.atlantischi.mapadapter.internal.google.delegate.*
  * @author lx
  */
 
-internal class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
+internal class GoogleMapAdapter: MapAdapter, OnMapReadyCallback  {
 
     private lateinit var mapView: MapView
 
     private lateinit var googleMap: GoogleMap
 
     private var mapViewLifecycleDelegateImpl: GoogleMapViewLifecycleImpl
-
-    override lateinit var objectFactory: IObjectFactory
-        private set
 
     constructor(activity: Activity) {
         mapViewLifecycleDelegateImpl = GoogleMapViewLifecycleImpl(activity, mapViewFoundCallback)
@@ -44,18 +42,124 @@ internal class GoogleMapAdapter: IMapAdapter, OnMapReadyCallback  {
 
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
-        objectFactory = GoogleObjectFactory(googleMap)
+        mapObjectFactory = GoogleMapObjectFactory(googleMap)
     }
+
+    override lateinit var mapObjectFactory: MapObjectFactory
+        private set
 
     override fun setMapViewStub(viewStub: ViewStub) {
         viewStub.layoutResource = R.layout.view_google_map
         viewStub.inflate()
     }
 
+
+
+    override val maxZoomLevel = googleMap.maxZoomLevel
+
+    override val minZoomLevel = googleMap.minZoomLevel
+
+    override fun moveCamera(cameraUpdate: ICameraUpdate) {
+        val gau = cameraUpdate as GoogleCameraUpdate
+        googleMap.moveCamera(gau.cameraUpdate)
+    }
+
+    override fun animateCamera(cameraUpdate: ICameraUpdate) {
+        val gau = cameraUpdate as GoogleCameraUpdate
+        googleMap.animateCamera(gau.cameraUpdate)
+    }
+
+    override fun animateCamera(cameraUpdate: ICameraUpdate, callback: MapAdapter.CancelableCallback) {
+        val gau = cameraUpdate as GoogleCameraUpdate
+        googleMap.animateCamera(gau.cameraUpdate, object: GoogleMap.CancelableCallback {
+            override fun onFinish() {
+                callback.onFinish()
+            }
+
+            override fun onCancel() {
+                callback.onCancel()
+            }
+        })
+    }
+
+    override fun animateCamera(cameraUpdate: ICameraUpdate, duration: Long, callback: MapAdapter.CancelableCallback) {
+        val gau = cameraUpdate as GoogleCameraUpdate
+        googleMap.animateCamera(gau.cameraUpdate, duration.toInt(), object: GoogleMap.CancelableCallback {
+            override fun onFinish() {
+                callback.onFinish()
+            }
+
+            override fun onCancel() {
+                callback.onCancel()
+            }
+        })
+    }
+
+    override fun stopAnimation() {
+        googleMap.stopAnimation()
+    }
+
+    override fun addPolyline(polylineOptions: IPolylineOptions): IPolyline {
+        val gpo = polylineOptions as GooglePolylineOptions
+        return GooglePolyline(googleMap.addPolyline(gpo.options))
+    }
+
+    override fun addPolygon(polygonOptions: IPolygonOptions): IPolygon {
+        val gpo = polygonOptions as GooglePolygonOptions
+        return GooglePolygon(googleMap.addPolygon(gpo.options))
+    }
+
+    override fun addCircle(circleOptions: ICircleOptions): ICircle {
+        val gco = circleOptions as GoogleCircleOptions
+        return GoogleCircle(googleMap.addCircle(gco.options))
+    }
+
     override fun addMarker(markerOptions: IMarkerOptions): IMarker {
         val gmo = markerOptions as GoogleMarkerOptions
         return GoogleMarker(googleMap.addMarker(gmo.options))
     }
+
+    override fun addGroundOverlay(groundOverlayOptions: IGroundOverlayOptions): IGroundOverlay {
+        val goo = groundOverlayOptions as GoogleGroundOverlayOptions
+        return GoogleGroundOverlay(googleMap.addGroundOverlay(goo.options))
+    }
+
+    override fun addTileOverlay(tileOverlayOptions: ITileOverlayOptions): ITileOverlay {
+        val gto = tileOverlayOptions as GoogleTileOverlayOptions
+        return GoogleTileOverlay(googleMap.addTileOverlay(gto.options))
+    }
+
+    override fun clear() {
+        googleMap.clear()
+    }
+
+    override var mapType = googleMap.mapType
+        set(value) {
+            googleMap.mapType = value
+        }
+
+    override var isTrafficEnabled = googleMap.isTrafficEnabled
+        set(value) {
+            googleMap.isTrafficEnabled = value
+        }
+
+    override var isIndoorEnabled = googleMap.isIndoorEnabled
+        set(value) {
+            googleMap.isIndoorEnabled = value
+        }
+
+    override var isBuildingsEnabled = googleMap.isBuildingsEnabled
+        set(value) {
+            googleMap.isBuildingsEnabled = value
+        }
+
+    override var isMyLocationEnabled = googleMap.isMyLocationEnabled
+        set(value) {
+            @RequiresPermission(
+                    anyOf = arrayOf("android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION")
+            )
+            googleMap.isMyLocationEnabled = value
+        }
 
     override fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean) {
         googleMap.setOnMarkerClickListener {

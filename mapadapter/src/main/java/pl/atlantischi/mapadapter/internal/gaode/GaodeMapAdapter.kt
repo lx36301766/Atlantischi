@@ -6,8 +6,8 @@ import android.view.ViewStub
 import com.amap.api.maps.AMap
 import com.amap.api.maps.TextureMapView
 import com.amap.api.maps.model.CameraPosition
-import pl.atlantischi.mapadapter.IMapAdapter
-import pl.atlantischi.mapadapter.IObjectFactory
+import pl.atlantischi.mapadapter.MapAdapter
+import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
 import pl.atlantischi.mapadapter.callback.*
@@ -19,16 +19,13 @@ import pl.atlantischi.mapadapter.callback.*
  */
 
 
-internal class GaodeMapAdapter: IMapAdapter {
+internal class GaodeMapAdapter : MapAdapter {
 
     private lateinit var mapView: TextureMapView
 
     private lateinit var aMap: AMap
 
     private var mapViewLifecycleDelegateImpl: GaodeMapViewLifecycleImpl
-
-    override lateinit var objectFactory: IObjectFactory
-        private set
 
     constructor(activity: Activity) {
         mapViewLifecycleDelegateImpl = GaodeMapViewLifecycleImpl(activity, mapViewFoundCallback)
@@ -41,18 +38,121 @@ internal class GaodeMapAdapter: IMapAdapter {
     private val mapViewFoundCallback: (TextureMapView) -> Unit = {
         mapView = it
         aMap = mapView.map
-        objectFactory = GaodeObjectFactory(aMap)
+        mapObjectFactory = GaodeMapObjectFactory(aMap)
     }
+
+    override lateinit var mapObjectFactory: MapObjectFactory
+        private set
 
     override fun setMapViewStub(viewStub: ViewStub) {
         viewStub.layoutResource = R.layout.view_gaode_map
         viewStub.inflate()
     }
 
+
+
+    override val maxZoomLevel = aMap.maxZoomLevel
+
+    override val minZoomLevel = aMap.minZoomLevel
+
+    override fun moveCamera(cameraUpdate: ICameraUpdate) {
+        val gau = cameraUpdate as GaodeCameraUpdate
+        aMap.moveCamera(gau.cameraUpdate)
+    }
+
+    override fun animateCamera(cameraUpdate: ICameraUpdate) {
+        val gau = cameraUpdate as GaodeCameraUpdate
+        aMap.animateCamera(gau.cameraUpdate)
+    }
+
+    override fun animateCamera(cameraUpdate: ICameraUpdate, callback: MapAdapter.CancelableCallback) {
+        val gau = cameraUpdate as GaodeCameraUpdate
+        aMap.animateCamera(gau.cameraUpdate, object: AMap.CancelableCallback {
+            override fun onFinish() {
+                callback.onFinish()
+            }
+
+            override fun onCancel() {
+                callback.onCancel()
+            }
+        })
+    }
+
+    override fun animateCamera(cameraUpdate: ICameraUpdate, duration: Long, callback: MapAdapter.CancelableCallback) {
+        val gau = cameraUpdate as GaodeCameraUpdate
+        aMap.animateCamera(gau.cameraUpdate, duration, object: AMap.CancelableCallback {
+            override fun onFinish() {
+                callback.onFinish()
+            }
+
+            override fun onCancel() {
+                callback.onCancel()
+            }
+        })
+    }
+
+    override fun stopAnimation() {
+        aMap.stopAnimation()
+    }
+
+    override fun addPolyline(polylineOptions: IPolylineOptions): IPolyline {
+        val gpo = polylineOptions as GaodePolylineOptions
+        return GaodePolyline(aMap.addPolyline(gpo.options))
+    }
+
+    override fun addPolygon(polygonOptions: IPolygonOptions): IPolygon {
+        val gpo = polygonOptions as GaodePolygonOptions
+        return GaodePolygon(aMap.addPolygon(gpo.options))
+    }
+
+    override fun addCircle(circleOptions: ICircleOptions): ICircle {
+        val gco = circleOptions as GaodeCircleOptions
+        return GaodeCircle(aMap.addCircle(gco.options))
+    }
+
     override fun addMarker(markerOptions: IMarkerOptions): IMarker {
         val gmo = markerOptions as GaodeMarkerOptions
         return GaodeMarker(aMap.addMarker(gmo.options))
     }
+
+    override fun addGroundOverlay(groundOverlayOptions: IGroundOverlayOptions): IGroundOverlay {
+        val goo = groundOverlayOptions as GaodeGroundOverlayOptions
+        return GaodeGroundOverlay(aMap.addGroundOverlay(goo.options))
+    }
+
+    override fun addTileOverlay(tileOverlayOptions: ITileOverlayOptions): ITileOverlay {
+        val gto = tileOverlayOptions as GaodeTileOverlayOptions
+        return GaodeTileOverlay(aMap.addTileOverlay(gto.options))
+    }
+
+    override fun clear() {
+        aMap.clear()
+    }
+
+    override var mapType = aMap.mapType
+        set(value) {
+            aMap.mapType = value
+        }
+
+    override var isTrafficEnabled = aMap.isTrafficEnabled
+        set(value) {
+            aMap.isTrafficEnabled = value
+        }
+
+    override var isIndoorEnabled = false //getter not support
+        set(value) {
+            aMap.showIndoorMap(value)
+        }
+
+    override var isBuildingsEnabled = false //getter not support
+        set(value) {
+            aMap.showBuildings(value)
+        }
+
+    override var isMyLocationEnabled = aMap.isMyLocationEnabled
+        set(value) {
+            aMap.isMyLocationEnabled = value
+        }
 
     override fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean) {
         aMap.setOnMarkerClickListener {
@@ -73,14 +173,14 @@ internal class GaodeMapAdapter: IMapAdapter {
     }
 
     override fun setOnCameraChangeListener(onCameraChangeListener: (cameraPosition: ICameraPosition, isFinished: Boolean) -> Unit) {
-        aMap.setOnCameraChangeListener(object: AMap.OnCameraChangeListener{
+        aMap.setOnCameraChangeListener(object : AMap.OnCameraChangeListener {
 
             override fun onCameraChange(cameraPosition: CameraPosition) {
                 onCameraChangeListener.invoke(GaodeCameraPosition(cameraPosition), false)
             }
 
             override fun onCameraChangeFinish(cameraPosition: CameraPosition) {
-                onCameraChangeListener.invoke(GaodeCameraPosition(cameraPosition),true)
+                onCameraChangeListener.invoke(GaodeCameraPosition(cameraPosition), true)
             }
 
         })

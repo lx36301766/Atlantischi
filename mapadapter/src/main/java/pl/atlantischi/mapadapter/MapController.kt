@@ -33,23 +33,23 @@ class MapController private constructor() {
 
         fun initialize(@AdapterType adapterType: Int, activity: Activity) {
             when(adapterType) {
-                ADAPTER_TYPE_GOOGLE -> instance.iMapAdapter = GoogleMapAdapter(activity)
-                ADAPTER_TYPE_GAODE -> instance.iMapAdapter = GaodeMapAdapter(activity)
+                ADAPTER_TYPE_GOOGLE -> instance.mapAdapter = GoogleMapAdapter(activity)
+                ADAPTER_TYPE_GAODE -> instance.mapAdapter = GaodeMapAdapter(activity)
                 else -> throw IllegalArgumentException("error adapterType : $adapterType")
             }
         }
 
         fun initialize(@AdapterType adapterType: Int, fragment: Fragment) {
             when(adapterType) {
-                ADAPTER_TYPE_GOOGLE -> instance.iMapAdapter = GoogleMapAdapter(fragment)
-                ADAPTER_TYPE_GAODE -> instance.iMapAdapter = GaodeMapAdapter(fragment)
+                ADAPTER_TYPE_GOOGLE -> instance.mapAdapter = GoogleMapAdapter(fragment)
+                ADAPTER_TYPE_GAODE -> instance.mapAdapter = GaodeMapAdapter(fragment)
                 else -> throw IllegalArgumentException("error adapterType : $adapterType")
             }
         }
 
     }
 
-    private lateinit var iMapAdapter: IMapAdapter
+    private lateinit var mapAdapter: MapAdapter
 
     private object SingletonHolder {
         val holder = MapController()
@@ -57,11 +57,11 @@ class MapController private constructor() {
 
     val defaultAdapter by lazy {
         ensureInitialized()
-        iMapAdapter
+        mapAdapter
     }
 
     private fun ensureInitialized() {
-        if (!::iMapAdapter.isInitialized) {
+        if (!::mapAdapter.isInitialized) {
             throw IllegalStateException("please call MapController.initialize first")
         }
     }

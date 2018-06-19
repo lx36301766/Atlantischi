@@ -8,7 +8,7 @@ import pl.atlantischi.mapadapter.callback.*
  * @author lx
  */
 
-interface IObjectFactory {
+interface MapObjectFactory {
 
     val uiSetting: IUISettings
 

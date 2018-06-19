@@ -3,7 +3,7 @@ package pl.atlantischi.mapadapter.internal.gaode
 import com.amap.api.maps.AMap
 import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.LatLngBounds
-import pl.atlantischi.mapadapter.IObjectFactory
+import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.callback.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
 
@@ -13,7 +13,7 @@ import pl.atlantischi.mapadapter.internal.gaode.delegate.*
  * @author lx
  */
 
-class GaodeObjectFactory(aMap: AMap) : IObjectFactory {
+class GaodeMapObjectFactory(aMap: AMap) : MapObjectFactory {
 
     override val uiSetting: IUISettings = GaodeUISetting(aMap.uiSettings)
 

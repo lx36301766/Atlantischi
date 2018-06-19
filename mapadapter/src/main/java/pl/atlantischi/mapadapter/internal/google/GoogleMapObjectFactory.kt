@@ -3,7 +3,7 @@ package pl.atlantischi.mapadapter.internal.google
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
-import pl.atlantischi.mapadapter.IObjectFactory
+import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.callback.*
 import pl.atlantischi.mapadapter.internal.google.delegate.*
 
@@ -13,7 +13,7 @@ import pl.atlantischi.mapadapter.internal.google.delegate.*
  * @author lx
  */
 
-class GoogleObjectFactory(googleMap: GoogleMap) : IObjectFactory {
+class GoogleMapObjectFactory(googleMap: GoogleMap) : MapObjectFactory {
 
     override val uiSetting: IUISettings = GoogleUISetting(googleMap.uiSettings)
 

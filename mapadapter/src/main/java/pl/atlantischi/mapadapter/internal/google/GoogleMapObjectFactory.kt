@@ -6,6 +6,7 @@ import com.google.android.gms.maps.model.LatLngBounds
 import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.callback.*
 import pl.atlantischi.mapadapter.internal.google.delegate.*
+import pl.atlantischi.mapadapter.internal.google.delegate.graphics.*
 
 /**
  * Created on 15/06/2018.

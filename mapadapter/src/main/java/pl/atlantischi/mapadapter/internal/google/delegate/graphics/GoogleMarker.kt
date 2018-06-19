@@ -1,9 +1,9 @@
-package pl.atlantischi.mapadapter.internal.gaode.delegate
+package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 
-import com.amap.api.maps.model.Marker
-import com.amap.api.maps.model.animation.Animation
+import com.google.android.gms.maps.model.Marker
 import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
 import pl.atlantischi.mapadapter.callback.IMarker
+import pl.atlantischi.mapadapter.internal.google.delegate.GoogleBitmapDescriptor
 
 /**
  * Created on 11/06/2018.
@@ -11,7 +11,7 @@ import pl.atlantischi.mapadapter.callback.IMarker
  * @author lx
  */
 
-internal class GaodeMarker(private val marker: Marker) : IMarker {
+internal class GoogleMarker(private val marker: Marker): IMarker {
 
     override var title = marker.title
         set(value) {
@@ -23,9 +23,9 @@ internal class GaodeMarker(private val marker: Marker) : IMarker {
             marker.snippet = value
         }
 
-    override var tag = marker.`object`
+    override var tag = marker.tag
         set(value) {
-            marker.`object` = value
+            marker.tag = value
         }
 
     override fun showInfoWindow() {
@@ -41,17 +41,9 @@ internal class GaodeMarker(private val marker: Marker) : IMarker {
     }
 
     override fun setIcon(bitmapDescriptor: IBitmapDescriptor) {
-        if (bitmapDescriptor is GaodeBitmapDescriptor) {
+        if (bitmapDescriptor is GoogleBitmapDescriptor) {
             marker.setIcon(bitmapDescriptor.descriptor)
         }
-    }
-
-    fun setAnimation(animation: Animation) {
-        marker.setAnimation(animation)
-    }
-
-    fun startAnimation(): Boolean {
-        return marker.startAnimation()
     }
 
 }

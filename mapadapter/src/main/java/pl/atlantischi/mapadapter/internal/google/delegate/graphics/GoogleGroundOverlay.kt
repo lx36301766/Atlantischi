@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.internal.google.delegate
+package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 
 import com.google.android.gms.maps.model.GroundOverlay
 import pl.atlantischi.mapadapter.callback.IGroundOverlay

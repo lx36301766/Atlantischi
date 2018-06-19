@@ -12,6 +12,7 @@ import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
 import pl.atlantischi.mapadapter.callback.*
 import pl.atlantischi.mapadapter.internal.google.delegate.*
+import pl.atlantischi.mapadapter.internal.google.delegate.graphics.*
 
 /**
  * Created on 05/06/2018.

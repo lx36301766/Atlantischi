@@ -6,6 +6,7 @@ import com.amap.api.maps.model.LatLngBounds
 import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.callback.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
+import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
 
 /**
  * Created on 15/06/2018.

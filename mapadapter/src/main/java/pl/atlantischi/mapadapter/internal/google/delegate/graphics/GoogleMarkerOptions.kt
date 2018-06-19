@@ -1,10 +1,11 @@
-package pl.atlantischi.mapadapter.internal.gaode.delegate
+package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 
-import com.amap.api.maps.model.LatLng
-import com.amap.api.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import pl.atlantischi.mapadapter.callback.IBitmapDescriptor
 import pl.atlantischi.mapadapter.callback.ILatLng
 import pl.atlantischi.mapadapter.callback.IMarkerOptions
+import pl.atlantischi.mapadapter.internal.google.delegate.GoogleBitmapDescriptor
 
 /**
  * Created on 11/06/2018.
@@ -12,12 +13,12 @@ import pl.atlantischi.mapadapter.callback.IMarkerOptions
  * @author lx
  */
 
-internal class GaodeMarkerOptions: IMarkerOptions {
+internal class GoogleMarkerOptions: IMarkerOptions {
 
     val options = MarkerOptions()
 
     override fun bitmapDescriptor(bitmapDescriptor: IBitmapDescriptor): IMarkerOptions {
-        if (bitmapDescriptor is GaodeBitmapDescriptor) {
+        if (bitmapDescriptor is GoogleBitmapDescriptor) {
             options.icon(bitmapDescriptor.descriptor)
         }
         return this
@@ -34,7 +35,7 @@ internal class GaodeMarkerOptions: IMarkerOptions {
     }
 
     override fun rotation(rotation: Float): IMarkerOptions {
-        options.rotateAngle(rotation)
+        options.rotation(rotation)
         return this
     }
 
@@ -64,7 +65,7 @@ internal class GaodeMarkerOptions: IMarkerOptions {
     }
 
     override fun flat(flat: Boolean): IMarkerOptions {
-        options.isFlat = flat
+        options.flat(flat)
         return this
     }
 
@@ -74,8 +75,9 @@ internal class GaodeMarkerOptions: IMarkerOptions {
     }
 
     override fun infoWindowAnchor(infoWindowAnchorU: Float, infoWindowAnchorV: Float): IMarkerOptions {
-        options.setInfoWindowOffset(infoWindowAnchorU.toInt(), infoWindowAnchorV.toInt())
+        options.infoWindowAnchor(infoWindowAnchorU, infoWindowAnchorV)
         return this
     }
 
 }
+

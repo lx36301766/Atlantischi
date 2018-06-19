@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.internal.gaode.delegate
+package pl.atlantischi.mapadapter.internal.gaode.delegate.graphics
 
 import com.amap.api.maps.model.GroundOverlayOptions
 import pl.atlantischi.mapadapter.callback.IGroundOverlayOptions

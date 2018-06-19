@@ -1,9 +1,10 @@
-package pl.atlantischi.mapadapter.internal.google.delegate
+package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Polyline
 import pl.atlantischi.mapadapter.callback.ILatLng
 import pl.atlantischi.mapadapter.callback.IPolyline
+import pl.atlantischi.mapadapter.internal.google.delegate.GoogleLatLng
 
 /**
  * Created on 19/06/2018.

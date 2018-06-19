@@ -1,6 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode
 
 import com.amap.api.maps.AMap
+import com.amap.api.maps.model.CameraPosition
 import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.LatLngBounds
 import pl.atlantischi.mapadapter.MapObjectFactory
@@ -23,7 +24,9 @@ class GaodeMapObjectFactory(aMap: AMap) : MapObjectFactory {
 
     override val cameraUpdateFactory: ICameraUpdateFactory = GaodeCameraUpdateFactory()
 
-    override val cameraPosition: ICameraPosition = GaodeCameraPosition(aMap.cameraPosition)
+    override fun newCameraPositionBuilder(): ICameraPosition.Builder {
+        return GaodeCameraPosition.Builder(CameraPosition.Builder())
+    }
 
     override fun newLatlng(latitude: Double, longitude: Double): ILatLng {
         return GaodeLatLng(LatLng(latitude, longitude))

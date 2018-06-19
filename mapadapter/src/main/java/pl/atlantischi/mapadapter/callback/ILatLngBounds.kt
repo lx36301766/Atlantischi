@@ -14,7 +14,7 @@ interface ILatLngBounds {
 
     interface Builder {
 
-        fun include(latlng: ILatLng): ILatLngBounds.Builder
+        fun include(latlng: ILatLng): Builder
 
         fun build(): ILatLngBounds
 

@@ -16,4 +16,18 @@ interface ICameraPosition {
 
     val bearing: Float
 
+    interface Builder {
+
+        fun target(latlng: ILatLng): Builder
+
+        fun zoom(zoom: Float): Builder
+
+        fun tilt(tilt: Float): Builder
+
+        fun bearing(bearing: Float): Builder
+
+        fun build(): ICameraPosition
+
+    }
+
 }

@@ -57,6 +57,8 @@ internal class GoogleMapAdapter: MapAdapter, OnMapReadyCallback  {
 
 
 
+    override val cameraPosition: ICameraPosition = GoogleCameraPosition(googleMap.cameraPosition)
+
     override val maxZoomLevel = googleMap.maxZoomLevel
 
     override val minZoomLevel = googleMap.minZoomLevel

@@ -17,7 +17,7 @@ interface MapObjectFactory {
 
     val cameraUpdateFactory: ICameraUpdateFactory
 
-    val cameraPosition: ICameraPosition
+    fun newCameraPositionBuilder(): ICameraPosition.Builder
 
     fun newLatlng(latitude: Double, longitude: Double): ILatLng
 

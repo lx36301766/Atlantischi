@@ -20,4 +20,34 @@ internal class GaodeCameraPosition(val cameraPosition: CameraPosition) : ICamera
 
     override val bearing = cameraPosition.bearing
 
+    class Builder(private val builder: CameraPosition.Builder) : ICameraPosition.Builder {
+
+        override fun target(latlng: ILatLng): ICameraPosition.Builder {
+            if (latlng is GaodeLatLng) {
+                builder.target(latlng.latlng)
+            }
+            return this
+        }
+
+        override fun zoom(zoom: Float): ICameraPosition.Builder {
+            builder.zoom(zoom)
+            return this
+        }
+
+        override fun tilt(tilt: Float): ICameraPosition.Builder {
+            builder.tilt(tilt)
+            return this
+        }
+
+        override fun bearing(bearing: Float): ICameraPosition.Builder {
+            builder.bearing(bearing)
+            return this
+        }
+
+        override fun build(): ICameraPosition {
+            return GaodeCameraPosition(builder.build())
+        }
+
+    }
+
 }

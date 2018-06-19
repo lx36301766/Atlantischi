@@ -1,6 +1,7 @@
 package pl.atlantischi.mapadapter.internal.google
 
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import pl.atlantischi.mapadapter.MapObjectFactory
@@ -23,7 +24,9 @@ class GoogleMapObjectFactory(googleMap: GoogleMap) : MapObjectFactory {
 
     override val cameraUpdateFactory: ICameraUpdateFactory = GoogleCameraUpdateFactory()
 
-    override val cameraPosition: ICameraPosition = GoogleCameraPosition(googleMap.cameraPosition)
+    override fun newCameraPositionBuilder(): ICameraPosition.Builder {
+        return GoogleCameraPosition.Builder(CameraPosition.Builder())
+    }
 
     override fun newLatlng(latitude: Double, longitude: Double): ILatLng {
         return GoogleLatLng(LatLng(latitude, longitude))

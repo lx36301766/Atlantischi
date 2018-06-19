@@ -53,6 +53,8 @@ internal class GaodeMapAdapter : MapAdapter {
 
 
 
+    override val cameraPosition: ICameraPosition = GaodeCameraPosition(aMap.cameraPosition)
+
     override val maxZoomLevel = aMap.maxZoomLevel
 
     override val minZoomLevel = aMap.minZoomLevel

@@ -23,6 +23,8 @@ interface MapAdapter {
     fun setMapViewStub(viewStub: ViewStub)
 
 
+    val cameraPosition: ICameraPosition
+
     val maxZoomLevel: Float
 
     val minZoomLevel: Float

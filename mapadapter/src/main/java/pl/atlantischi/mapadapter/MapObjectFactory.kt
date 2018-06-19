@@ -17,22 +17,22 @@ interface MapObjectFactory {
 
     val cameraUpdateFactory: ICameraUpdateFactory
 
-    fun newCameraPositionBuilder(): ICameraPosition.Builder
-
     fun newLatlng(latitude: Double, longitude: Double): ILatLng
+
+    fun newCameraPositionBuilder(): ICameraPosition.Builder
 
     fun newLatLngBoundBuilder(): ILatLngBounds.Builder
 
-    fun newPolylineOptions(): IPolylineOptions
+    fun newPolylineOptions(): IPolyline.Options
 
-    fun newPolygonOptions(): IPolygonOptions
+    fun newPolygonOptions(): IPolygon.Options
 
-    fun newCircleOptions(): ICircleOptions
+    fun newCircleOptions(): ICircle.Options
 
-    fun newMarkerOptions(): IMarkerOptions
+    fun newMarkerOptions(): IMarker.Options
 
-    fun newGroundOverlayOptions(): IGroundOverlayOptions
+    fun newGroundOverlayOptions(): IGroundOverlay.Options
 
-    fun newTileOverlayOptions(): ITileOverlayOptions
+    fun newTileOverlayOptions(): ITileOverlay.Options
 
 }

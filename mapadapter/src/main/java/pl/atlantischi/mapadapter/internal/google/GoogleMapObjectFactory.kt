@@ -24,40 +24,40 @@ class GoogleMapObjectFactory(googleMap: GoogleMap) : MapObjectFactory {
 
     override val cameraUpdateFactory: ICameraUpdateFactory = GoogleCameraUpdateFactory()
 
-    override fun newCameraPositionBuilder(): ICameraPosition.Builder {
-        return GoogleCameraPosition.Builder(CameraPosition.Builder())
-    }
-
     override fun newLatlng(latitude: Double, longitude: Double): ILatLng {
         return GoogleLatLng(LatLng(latitude, longitude))
     }
 
+    override fun newCameraPositionBuilder(): ICameraPosition.Builder {
+        return GoogleCameraPosition.Builder()
+    }
+
     override fun newLatLngBoundBuilder(): ILatLngBounds.Builder {
-        return GoogleLatLngBounds.Builder(LatLngBounds.Builder())
+        return GoogleLatLngBounds.Builder()
     }
 
-    override fun newPolylineOptions(): IPolylineOptions {
-        return GooglePolylineOptions()
+    override fun newPolylineOptions(): IPolyline.Options {
+        return GooglePolyline.Options()
     }
 
-    override fun newPolygonOptions(): IPolygonOptions {
-        return GooglePolygonOptions()
+    override fun newPolygonOptions(): IPolygon.Options {
+        return GooglePolygon.Options()
     }
 
-    override fun newCircleOptions(): ICircleOptions {
-        return GoogleCircleOptions()
+    override fun newCircleOptions(): ICircle.Options {
+        return GoogleCircle.Options()
     }
 
-    override fun newMarkerOptions(): IMarkerOptions {
-        return GoogleMarkerOptions()
+    override fun newMarkerOptions(): IMarker.Options {
+        return GoogleMarker.Options()
     }
 
-    override fun newGroundOverlayOptions(): IGroundOverlayOptions {
-        return GoogleGroundOverlayOptions()
+    override fun newGroundOverlayOptions(): IGroundOverlay.Options {
+        return GoogleGroundOverlay.Options()
     }
 
-    override fun newTileOverlayOptions(): ITileOverlayOptions {
-        return GoogleTileOverlayOptions()
+    override fun newTileOverlayOptions(): ITileOverlay.Options {
+        return GoogleTileOverlay.Options()
     }
 
 }

@@ -39,17 +39,17 @@ interface MapAdapter {
 
     fun stopAnimation()
 
-    fun addPolyline(polylineOptions: IPolylineOptions): IPolyline
+    fun addPolyline(polylineOptions: IPolyline.Options): IPolyline
 
-    fun addPolygon(polygonOptions: IPolygonOptions): IPolygon
+    fun addPolygon(polygonOptions: IPolygon.Options): IPolygon
 
-    fun addCircle(circleOptions: ICircleOptions): ICircle
+    fun addCircle(circleOptions: ICircle.Options): ICircle
 
-    fun addMarker(markerOptions: IMarkerOptions): IMarker
+    fun addMarker(markerOptions: IMarker.Options): IMarker
 
-    fun addGroundOverlay(groundOverlayOptions: IGroundOverlayOptions): IGroundOverlay
+    fun addGroundOverlay(groundOverlayOptions: IGroundOverlay.Options): IGroundOverlay
 
-    fun addTileOverlay(tileOverlayOptions: ITileOverlayOptions): ITileOverlay
+    fun addTileOverlay(tileOverlayOptions: ITileOverlay.Options): ITileOverlay
 
     fun clear()
 

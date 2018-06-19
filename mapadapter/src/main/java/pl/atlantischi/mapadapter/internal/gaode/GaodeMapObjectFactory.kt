@@ -24,40 +24,40 @@ class GaodeMapObjectFactory(aMap: AMap) : MapObjectFactory {
 
     override val cameraUpdateFactory: ICameraUpdateFactory = GaodeCameraUpdateFactory()
 
-    override fun newCameraPositionBuilder(): ICameraPosition.Builder {
-        return GaodeCameraPosition.Builder(CameraPosition.Builder())
-    }
-
     override fun newLatlng(latitude: Double, longitude: Double): ILatLng {
         return GaodeLatLng(LatLng(latitude, longitude))
     }
 
+    override fun newCameraPositionBuilder(): ICameraPosition.Builder {
+        return GaodeCameraPosition.Builder()
+    }
+
     override fun newLatLngBoundBuilder(): ILatLngBounds.Builder {
-        return GaodeLatLngBounds.Builder(LatLngBounds.Builder())
+        return GaodeLatLngBounds.Builder()
     }
 
-    override fun newPolylineOptions(): IPolylineOptions {
-        return GaodePolylineOptions()
+    override fun newPolylineOptions(): IPolyline.Options {
+        return GaodePolyline.Options()
     }
 
-    override fun newPolygonOptions(): IPolygonOptions {
-        return GaodePolygonOptions()
+    override fun newPolygonOptions(): IPolygon.Options {
+        return GaodePolygon.Options()
     }
 
-    override fun newCircleOptions(): ICircleOptions {
-        return GaodeCircleOptions()
+    override fun newCircleOptions(): ICircle.Options {
+        return GaodeCircle.Options()
     }
 
-    override fun newMarkerOptions(): IMarkerOptions {
-        return GaodeMarkerOptions()
+    override fun newMarkerOptions(): IMarker.Options {
+        return GaodeMarker.Options()
     }
 
-    override fun newGroundOverlayOptions(): IGroundOverlayOptions {
-        return GaodeGroundOverlayOptions()
+    override fun newGroundOverlayOptions(): IGroundOverlay.Options {
+        return GaodeGroundOverlay.Options()
     }
 
-    override fun newTileOverlayOptions(): ITileOverlayOptions {
-        return GaodeTileOverlayOptions()
+    override fun newTileOverlayOptions(): ITileOverlay.Options {
+        return GaodeTileOverlay.Options()
     }
 
 }

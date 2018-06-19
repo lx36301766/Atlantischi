@@ -103,33 +103,33 @@ internal class GoogleMapAdapter: MapAdapter, OnMapReadyCallback  {
         googleMap.stopAnimation()
     }
 
-    override fun addPolyline(polylineOptions: IPolylineOptions): IPolyline {
-        val gpo = polylineOptions as GooglePolylineOptions
+    override fun addPolyline(polylineOptions: IPolyline.Options): IPolyline {
+        val gpo = polylineOptions as GooglePolyline.Options
         return GooglePolyline(googleMap.addPolyline(gpo.options))
     }
 
-    override fun addPolygon(polygonOptions: IPolygonOptions): IPolygon {
-        val gpo = polygonOptions as GooglePolygonOptions
+    override fun addPolygon(polygonOptions: IPolygon.Options): IPolygon {
+        val gpo = polygonOptions as GooglePolygon.Options
         return GooglePolygon(googleMap.addPolygon(gpo.options))
     }
 
-    override fun addCircle(circleOptions: ICircleOptions): ICircle {
-        val gco = circleOptions as GoogleCircleOptions
+    override fun addCircle(circleOptions: ICircle.Options): ICircle {
+        val gco = circleOptions as GoogleCircle.Options
         return GoogleCircle(googleMap.addCircle(gco.options))
     }
 
-    override fun addMarker(markerOptions: IMarkerOptions): IMarker {
-        val gmo = markerOptions as GoogleMarkerOptions
+    override fun addMarker(markerOptions: IMarker.Options): IMarker {
+        val gmo = markerOptions as GoogleMarker.Options
         return GoogleMarker(googleMap.addMarker(gmo.options))
     }
 
-    override fun addGroundOverlay(groundOverlayOptions: IGroundOverlayOptions): IGroundOverlay {
-        val goo = groundOverlayOptions as GoogleGroundOverlayOptions
+    override fun addGroundOverlay(groundOverlayOptions: IGroundOverlay.Options): IGroundOverlay {
+        val goo = groundOverlayOptions as GoogleGroundOverlay.Options
         return GoogleGroundOverlay(googleMap.addGroundOverlay(goo.options))
     }
 
-    override fun addTileOverlay(tileOverlayOptions: ITileOverlayOptions): ITileOverlay {
-        val gto = tileOverlayOptions as GoogleTileOverlayOptions
+    override fun addTileOverlay(tileOverlayOptions: ITileOverlay.Options): ITileOverlay {
+        val gto = tileOverlayOptions as GoogleTileOverlay.Options
         return GoogleTileOverlay(googleMap.addTileOverlay(gto.options))
     }
 

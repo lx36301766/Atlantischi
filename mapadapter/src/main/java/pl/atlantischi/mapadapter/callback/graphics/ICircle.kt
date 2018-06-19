@@ -8,4 +8,8 @@ package pl.atlantischi.mapadapter.callback.graphics
 
 interface ICircle {
 
+    interface Options {
+
+    }
+
 }

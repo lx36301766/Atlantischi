@@ -99,33 +99,33 @@ internal class GaodeMapAdapter : MapAdapter {
         aMap.stopAnimation()
     }
 
-    override fun addPolyline(polylineOptions: IPolylineOptions): IPolyline {
-        val gpo = polylineOptions as GaodePolylineOptions
+    override fun addPolyline(polylineOptions: IPolyline.Options): IPolyline {
+        val gpo = polylineOptions as GaodePolyline.Options
         return GaodePolyline(aMap.addPolyline(gpo.options))
     }
 
-    override fun addPolygon(polygonOptions: IPolygonOptions): IPolygon {
-        val gpo = polygonOptions as GaodePolygonOptions
+    override fun addPolygon(polygonOptions: IPolygon.Options): IPolygon {
+        val gpo = polygonOptions as GaodePolygon.Options
         return GaodePolygon(aMap.addPolygon(gpo.options))
     }
 
-    override fun addCircle(circleOptions: ICircleOptions): ICircle {
-        val gco = circleOptions as GaodeCircleOptions
+    override fun addCircle(circleOptions: ICircle.Options): ICircle {
+        val gco = circleOptions as GaodeCircle.Options
         return GaodeCircle(aMap.addCircle(gco.options))
     }
 
-    override fun addMarker(markerOptions: IMarkerOptions): IMarker {
-        val gmo = markerOptions as GaodeMarkerOptions
+    override fun addMarker(markerOptions: IMarker.Options): IMarker {
+        val gmo = markerOptions as GaodeMarker.Options
         return GaodeMarker(aMap.addMarker(gmo.options))
     }
 
-    override fun addGroundOverlay(groundOverlayOptions: IGroundOverlayOptions): IGroundOverlay {
-        val goo = groundOverlayOptions as GaodeGroundOverlayOptions
+    override fun addGroundOverlay(groundOverlayOptions: IGroundOverlay.Options): IGroundOverlay {
+        val goo = groundOverlayOptions as GaodeGroundOverlay.Options
         return GaodeGroundOverlay(aMap.addGroundOverlay(goo.options))
     }
 
-    override fun addTileOverlay(tileOverlayOptions: ITileOverlayOptions): ITileOverlay {
-        val gto = tileOverlayOptions as GaodeTileOverlayOptions
+    override fun addTileOverlay(tileOverlayOptions: ITileOverlay.Options): ITileOverlay {
+        val gto = tileOverlayOptions as GaodeTileOverlay.Options
         return GaodeTileOverlay(aMap.addTileOverlay(gto.options))
     }
 

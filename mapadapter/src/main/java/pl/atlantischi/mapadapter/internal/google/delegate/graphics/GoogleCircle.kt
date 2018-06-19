@@ -1,6 +1,7 @@
 package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 
 import com.google.android.gms.maps.model.Circle
+import com.google.android.gms.maps.model.CircleOptions
 import pl.atlantischi.mapadapter.callback.graphics.ICircle
 
 /**
@@ -9,5 +10,12 @@ import pl.atlantischi.mapadapter.callback.graphics.ICircle
  * @author lx
  */
 class GoogleCircle(private val circle: Circle) : ICircle {
+
+
+    class Options : ICircle.Options {
+
+        val options = CircleOptions()
+
+    }
 
 }

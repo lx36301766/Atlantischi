@@ -1,6 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.delegate.graphics
 
 import com.amap.api.maps.model.GroundOverlay
+import com.amap.api.maps.model.GroundOverlayOptions
 import pl.atlantischi.mapadapter.callback.graphics.IGroundOverlay
 
 /**
@@ -9,5 +10,12 @@ import pl.atlantischi.mapadapter.callback.graphics.IGroundOverlay
  * @author lx
  */
 class GaodeGroundOverlay(private val groundOverlay: GroundOverlay) : IGroundOverlay {
+
+
+    class Options : IGroundOverlay.Options {
+
+        val options = GroundOverlayOptions()
+
+    }
 
 }

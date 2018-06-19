@@ -26,7 +26,9 @@ class GoogleLatLngBounds(val latLngBounds: LatLngBounds) : ILatLngBounds {
         return this
     }
 
-    class Builder(private val builder: LatLngBounds.Builder) : ILatLngBounds.Builder {
+    class Builder : ILatLngBounds.Builder {
+
+        private val builder = LatLngBounds.Builder()
 
         override fun include(latlng: ILatLng): Builder {
             if (latlng is GoogleLatLng) {

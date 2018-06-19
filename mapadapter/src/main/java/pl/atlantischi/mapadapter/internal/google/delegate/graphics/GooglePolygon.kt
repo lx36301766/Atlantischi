@@ -1,6 +1,7 @@
 package pl.atlantischi.mapadapter.internal.google.delegate.graphics
 
 import com.google.android.gms.maps.model.Polygon
+import com.google.android.gms.maps.model.PolygonOptions
 import pl.atlantischi.mapadapter.callback.graphics.IPolygon
 
 /**
@@ -10,5 +11,11 @@ import pl.atlantischi.mapadapter.callback.graphics.IPolygon
  */
 
 class GooglePolygon(private val polygon: Polygon) : IPolygon {
+
+    class Options : IPolygon.Options {
+
+        val options = PolygonOptions()
+
+    }
 
 }

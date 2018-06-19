@@ -5,14 +5,19 @@ import android.support.v4.app.Fragment
 import android.view.ViewStub
 import com.amap.api.maps.AMap
 import com.amap.api.maps.TextureMapView
+import com.amap.api.maps.model.AMapGestureListener
 import com.amap.api.maps.model.CameraPosition
 import pl.atlantischi.mapadapter.MapAdapter
 import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
+import pl.atlantischi.mapadapter.extapi.gaode.IAMapGestureListener
+import pl.atlantischi.mapadapter.extapi.gaode.IGaodeMapAdapter
+import pl.atlantischi.mapadapter.extapi.gaode.IMyLocationStyle
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
 import pl.atlantischi.mapadapter.mapapi.*
 import pl.atlantischi.mapadapter.mapapi.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
+import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeMyLocationStyle
 
 /**
  * Created on 05/06/2018.
@@ -21,7 +26,7 @@ import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
  */
 
 
-internal class GaodeMapAdapter : MapAdapter {
+internal class GaodeMapAdapter : IGaodeMapAdapter {
 
     private lateinit var mapView: TextureMapView
 
@@ -188,6 +193,53 @@ internal class GaodeMapAdapter : MapAdapter {
             }
 
         })
+    }
+
+
+
+
+    /***************************** private api ***********************************/
+
+    override fun setAMapGestureListener(listener: IAMapGestureListener) {
+        aMap.setAMapGestureListener(object: AMapGestureListener {
+
+            override fun onDown(x: Float, y: Float) {
+                listener.onDown(x, y)
+            }
+
+            override fun onDoubleTap(x: Float, y: Float) {
+                listener.onDoubleTap(x, y)
+            }
+
+            override fun onFling(velocityX: Float, velocityY: Float) {
+                listener.onFling(velocityX, velocityY)
+            }
+
+            override fun onSingleTap(x: Float, y: Float) {
+                listener.onSingleTap(x, y)
+            }
+
+            override fun onScroll(distanceX: Float, distanceY: Float) {
+                listener.onScroll(distanceX, distanceY)
+            }
+
+            override fun onMapStable() {
+                listener.onMapStable()
+            }
+
+            override fun onUp(x: Float, y: Float) {
+                listener.onUp(x, y)
+            }
+
+            override fun onLongPress(x: Float, y: Float) {
+                listener.onLongPress(x, y)
+            }
+        })
+    }
+
+    override fun setMyLocationStyle(myLocationStyle: IMyLocationStyle) {
+        val gms = myLocationStyle as GaodeMyLocationStyle
+        aMap.myLocationStyle = gms.myLocationStyle
     }
 
 }

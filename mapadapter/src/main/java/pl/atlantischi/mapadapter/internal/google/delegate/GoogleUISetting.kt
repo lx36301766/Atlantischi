@@ -50,21 +50,4 @@ internal class GoogleUISetting(var uiSettings: UiSettings) : IUISettings {
         uiSettings.setAllGesturesEnabled(enable)
     }
 
-
-
-    //not support
-    override var isIndoorSwitchEnabled = false
-
-    //not support
-    override var isScaleControlsEnabled = false
-
-    //not support
-    override var logoPosition = 0
-
-    //not support
-    override var zoomPosition = 0
-
-    //not support
-    override var isGestureScaleByMapCenter = false
-
 }

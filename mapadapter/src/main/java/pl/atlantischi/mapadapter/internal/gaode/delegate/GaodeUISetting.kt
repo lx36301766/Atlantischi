@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.delegate
 
 import com.amap.api.maps.UiSettings
-import pl.atlantischi.mapadapter.mapapi.IUISettings
+import pl.atlantischi.mapadapter.extapi.gaode.IGaodeUISettings
 
 /**
  * Created on 08/06/2018.
@@ -9,7 +9,7 @@ import pl.atlantischi.mapadapter.mapapi.IUISettings
  * @author lx
  */
 
-internal class GaodeUISetting (var uiSettings: UiSettings) : IUISettings {
+internal class GaodeUISetting (var uiSettings: UiSettings) : IGaodeUISettings {
 
     override var isZoomControlsEnabled = uiSettings.isZoomControlsEnabled
         set(value) {

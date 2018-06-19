@@ -24,18 +24,4 @@ interface IUISettings {
 
     fun setAllGesturesEnabled(enable: Boolean)
 
-
-    //********************** Just Gaode Support  *******************************//
-
-    var isIndoorSwitchEnabled: Boolean
-
-    var isScaleControlsEnabled: Boolean
-
-    var logoPosition: Int
-
-    var zoomPosition: Int
-
-    var isGestureScaleByMapCenter: Boolean
-
 }
-

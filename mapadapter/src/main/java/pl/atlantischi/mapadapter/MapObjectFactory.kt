@@ -22,6 +22,16 @@ interface MapObjectFactory {
 
     fun newLatLngBoundBuilder(): ILatLngBounds.Builder
 
+    fun newPolylineOptions(): IPolylineOptions
+
+    fun newPolygonOptions(): IPolygonOptions
+
+    fun newCircleOptions(): ICircleOptions
+
     fun newMarkerOptions(): IMarkerOptions
+
+    fun newGroundOverlayOptions(): IGroundOverlayOptions
+
+    fun newTileOverlayOptions(): ITileOverlayOptions
 
 }

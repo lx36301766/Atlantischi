@@ -31,8 +31,28 @@ class GoogleMapObjectFactory(googleMap: GoogleMap) : MapObjectFactory {
         return GoogleLatLngBounds.Builder(LatLngBounds.Builder())
     }
 
+    override fun newPolylineOptions(): IPolylineOptions {
+        return GooglePolylineOptions()
+    }
+
+    override fun newPolygonOptions(): IPolygonOptions {
+        return GooglePolygonOptions()
+    }
+
+    override fun newCircleOptions(): ICircleOptions {
+        return GoogleCircleOptions()
+    }
+
     override fun newMarkerOptions(): IMarkerOptions {
         return GoogleMarkerOptions()
+    }
+
+    override fun newGroundOverlayOptions(): IGroundOverlayOptions {
+        return GoogleGroundOverlayOptions()
+    }
+
+    override fun newTileOverlayOptions(): ITileOverlayOptions {
+        return GoogleTileOverlayOptions()
     }
 
 }

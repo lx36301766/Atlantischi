@@ -1,6 +1,8 @@
 package pl.atlantischi.mapadapter.internal.gaode.delegate
 
+import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.Polyline
+import pl.atlantischi.mapadapter.callback.ILatLng
 import pl.atlantischi.mapadapter.callback.IPolyline
 
 /**
@@ -10,5 +12,52 @@ import pl.atlantischi.mapadapter.callback.IPolyline
  */
 
 class GaodePolyline(private val polyline: Polyline) : IPolyline {
+
+    override fun remove() {
+        polyline.remove()
+    }
+
+    override var id = polyline.id
+
+    override var points: List<ILatLng>
+        get() {
+            val list = mutableListOf<ILatLng>()
+            for (point in polyline.points) {
+                list.add(GaodeLatLng(point))
+            }
+            return list
+        }
+        set(value) {
+            val list = mutableListOf<LatLng>()
+            for (iLatLng in value) {
+                list.add(LatLng(iLatLng.latitude, iLatLng.longitude))
+            }
+            polyline.points = list
+        }
+
+    override var width = polyline.width
+        set(value) {
+            polyline.width = value
+        }
+
+    override var color = polyline.color
+        set(value) {
+            polyline.color = value
+        }
+
+    override var zIndex = polyline.zIndex
+        set(value) {
+            polyline.zIndex = value
+        }
+
+    override var isVisible = polyline.isVisible
+        set(value) {
+            polyline.isVisible = value
+        }
+
+    override var isGeodesic = polyline.isGeodesic
+        set(value) {
+            polyline.isGeodesic = value
+        }
 
 }

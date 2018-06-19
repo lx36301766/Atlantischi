@@ -31,8 +31,28 @@ class GaodeMapObjectFactory(aMap: AMap) : MapObjectFactory {
         return GaodeLatLngBounds.Builder(LatLngBounds.Builder())
     }
 
+    override fun newPolylineOptions(): IPolylineOptions {
+        return GaodePolylineOptions()
+    }
+
+    override fun newPolygonOptions(): IPolygonOptions {
+        return GaodePolygonOptions()
+    }
+
+    override fun newCircleOptions(): ICircleOptions {
+        return GaodeCircleOptions()
+    }
+
     override fun newMarkerOptions(): IMarkerOptions {
         return GaodeMarkerOptions()
+    }
+
+    override fun newGroundOverlayOptions(): IGroundOverlayOptions {
+        return GaodeGroundOverlayOptions()
+    }
+
+    override fun newTileOverlayOptions(): ITileOverlayOptions {
+        return GaodeTileOverlayOptions()
     }
 
 }

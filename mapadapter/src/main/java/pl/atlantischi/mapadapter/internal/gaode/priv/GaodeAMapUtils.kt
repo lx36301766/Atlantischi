@@ -1,9 +1,9 @@
 package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import com.amap.api.maps.AMapUtils
-import pl.atlantischi.mapadapter.prvi_api.gaode.IAMapUtils
+import pl.atlantischi.mapadapter.separate.gaode.IAMapUtils
 import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeLatLng
-import pl.atlantischi.mapadapter.common_api.ILatLng
+import pl.atlantischi.mapadapter.mapapi.ILatLng
 
 /**
  * Created on 19/06/2018.

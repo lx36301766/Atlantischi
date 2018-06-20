@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.prvi_api.gaode
+package pl.atlantischi.mapadapter.separate.gaode
 
 /**
  * Created on 19/06/2018.

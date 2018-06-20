@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.common_api
+package pl.atlantischi.mapadapter.mapapi
 
 /**
  * Created on 14/06/2018.

@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.google.delegate
 
 import com.google.android.gms.maps.UiSettings
-import pl.atlantischi.mapadapter.common_api.IUISettings
+import pl.atlantischi.mapadapter.mapapi.IUISettings
 
 /**
  * Created on 08/06/2018.

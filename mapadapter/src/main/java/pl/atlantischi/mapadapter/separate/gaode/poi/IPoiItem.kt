@@ -1,6 +1,6 @@
-package pl.atlantischi.mapadapter.prvi_api.gaode.poi
+package pl.atlantischi.mapadapter.separate.gaode.poi
 
-import pl.atlantischi.mapadapter.prvi_api.gaode.ILatLonPoint
+import pl.atlantischi.mapadapter.separate.gaode.ILatLonPoint
 
 /**
  * Created on 19/06/2018.

@@ -1,8 +1,8 @@
 package pl.atlantischi.mapadapter.internal.google.delegate
 
 import com.google.android.gms.maps.model.LatLngBounds
-import pl.atlantischi.mapadapter.common_api.ILatLng
-import pl.atlantischi.mapadapter.common_api.ILatLngBounds
+import pl.atlantischi.mapadapter.mapapi.ILatLng
+import pl.atlantischi.mapadapter.mapapi.ILatLngBounds
 
 /**
  * Created on 14/06/2018.

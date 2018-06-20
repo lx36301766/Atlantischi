@@ -1,9 +1,9 @@
 package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import com.amap.api.maps.model.MyLocationStyle
-import pl.atlantischi.mapadapter.prvi_api.gaode.IMyLocationStyle
+import pl.atlantischi.mapadapter.separate.gaode.IMyLocationStyle
 import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeBitmapDescriptor
-import pl.atlantischi.mapadapter.common_api.IBitmapDescriptor
+import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
 
 /**
  * Created on 19/06/2018.

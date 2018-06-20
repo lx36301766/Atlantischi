@@ -1,6 +1,6 @@
-package pl.atlantischi.mapadapter.common_api.graphics
+package pl.atlantischi.mapadapter.mapapi.graphics
 
-import pl.atlantischi.mapadapter.common_api.ILatLng
+import pl.atlantischi.mapadapter.mapapi.ILatLng
 
 /**
  * Created on 11/06/2018.

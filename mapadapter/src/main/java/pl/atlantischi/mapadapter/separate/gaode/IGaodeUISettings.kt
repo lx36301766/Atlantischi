@@ -1,6 +1,6 @@
-package pl.atlantischi.mapadapter.prvi_api.gaode
+package pl.atlantischi.mapadapter.separate.gaode
 
-import pl.atlantischi.mapadapter.common_api.IUISettings
+import pl.atlantischi.mapadapter.mapapi.IUISettings
 
 /**
  * Created on 08/06/2018.

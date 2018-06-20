@@ -3,8 +3,8 @@ package pl.atlantischi.mapadapter.internal.gaode.delegate
 import android.graphics.Bitmap
 import android.view.View
 import com.amap.api.maps.model.BitmapDescriptorFactory
-import pl.atlantischi.mapadapter.common_api.IBitmapDescriptor
-import pl.atlantischi.mapadapter.common_api.IBitmapDescriptorFactory
+import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
+import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptorFactory
 
 /**
  * Created on 13/06/2018.

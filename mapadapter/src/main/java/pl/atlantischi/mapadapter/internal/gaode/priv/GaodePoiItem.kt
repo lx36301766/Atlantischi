@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import com.amap.api.services.core.PoiItem
-import pl.atlantischi.mapadapter.prvi_api.gaode.poi.IPoiItem
+import pl.atlantischi.mapadapter.separate.gaode.poi.IPoiItem
 
 /**
  * Created on 19/06/2018.

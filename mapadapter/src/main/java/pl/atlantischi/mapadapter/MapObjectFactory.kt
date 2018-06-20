@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter
 
-import pl.atlantischi.mapadapter.common_api.*
-import pl.atlantischi.mapadapter.common_api.graphics.*
+import pl.atlantischi.mapadapter.mapapi.*
+import pl.atlantischi.mapadapter.mapapi.graphics.*
 
 /**
  * Created on 15/06/2018.

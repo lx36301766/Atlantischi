@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.delegate
 
 import com.amap.api.maps.UiSettings
-import pl.atlantischi.mapadapter.prvi_api.gaode.IGaodeUISettings
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeUISettings
 
 /**
  * Created on 08/06/2018.

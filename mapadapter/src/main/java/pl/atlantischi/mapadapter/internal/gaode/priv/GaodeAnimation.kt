@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.internal.gaode.delegate
+package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeAnimation
 import com.amap.api.maps.model.animation.Animation

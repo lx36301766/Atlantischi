@@ -14,6 +14,7 @@ import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeAMapUtils
 import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeLatLonPoint
 import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeMyLocationStyle
+import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeScaleAnimation
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeScaleAnimation
 
 /**

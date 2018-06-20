@@ -3,7 +3,7 @@ package pl.atlantischi.mapadapter.internal.gaode.delegate.graphics
 import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.Marker
 import com.amap.api.maps.model.MarkerOptions
-import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeAnimation
+import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeAnimation
 import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
 import pl.atlantischi.mapadapter.mapapi.ILatLng
 import pl.atlantischi.mapadapter.mapapi.graphics.IMarker

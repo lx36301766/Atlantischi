@@ -1,6 +1,6 @@
 package pl.atlantischi.mapadapter.separate.gaode.poi
 
-import pl.atlantischi.mapadapter.separate.gaode.ILatLonPoint
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeLatLonPoint
 
 /**
  * Created on 19/06/2018.
@@ -8,9 +8,9 @@ import pl.atlantischi.mapadapter.separate.gaode.ILatLonPoint
  * @author lx
  */
 
-interface IPoiItem {
+interface IGaodePoiItem {
 
-    val latLonPoint: ILatLonPoint
+    val gaodeLatLonPoint: IGaodeLatLonPoint
 
     val title: String
 

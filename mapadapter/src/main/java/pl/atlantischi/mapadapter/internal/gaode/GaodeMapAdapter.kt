@@ -12,7 +12,7 @@ import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
 import pl.atlantischi.mapadapter.separate.gaode.IAMapGestureListener
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeMapAdapter
-import pl.atlantischi.mapadapter.separate.gaode.IMyLocationStyle
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeMyLocationStyle
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
 import pl.atlantischi.mapadapter.mapapi.*
 import pl.atlantischi.mapadapter.mapapi.graphics.*
@@ -237,8 +237,8 @@ internal class GaodeMapAdapter : IGaodeMapAdapter {
         })
     }
 
-    override fun setMyLocationStyle(myLocationStyle: IMyLocationStyle) {
-        val gms = myLocationStyle as GaodeMyLocationStyle
+    override fun setMyLocationStyle(gaodeMyLocationStyle: IGaodeMyLocationStyle) {
+        val gms = gaodeMyLocationStyle as GaodeMyLocationStyle
         aMap.myLocationStyle = gms.myLocationStyle
     }
 

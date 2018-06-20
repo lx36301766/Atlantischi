@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import com.amap.api.maps.model.MyLocationStyle
-import pl.atlantischi.mapadapter.separate.gaode.IMyLocationStyle
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeMyLocationStyle
 import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeBitmapDescriptor
 import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
 
@@ -11,7 +11,7 @@ import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
  * @author lx
  */
 
-internal class GaodeMyLocationStyle : IMyLocationStyle {
+internal class GaodeMyLocationStyle : IGaodeMyLocationStyle {
 
     val myLocationStyle = MyLocationStyle()
 

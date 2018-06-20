@@ -12,6 +12,6 @@ interface IGaodeMapAdapter : MapAdapter {
 
     fun setAMapGestureListener(listener: IAMapGestureListener)
 
-    fun setMyLocationStyle(myLocationStyle: IMyLocationStyle)
+    fun setMyLocationStyle(gaodeMyLocationStyle: IGaodeMyLocationStyle)
 
 }

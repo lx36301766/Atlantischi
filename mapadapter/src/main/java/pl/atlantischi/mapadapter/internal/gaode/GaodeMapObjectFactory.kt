@@ -2,10 +2,11 @@ package pl.atlantischi.mapadapter.internal.gaode
 
 import com.amap.api.maps.AMap
 import com.amap.api.maps.model.LatLng
+import com.amap.api.maps.model.animation.ScaleAnimation
 import com.amap.api.services.core.LatLonPoint
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeMapObjectFactory
-import pl.atlantischi.mapadapter.separate.gaode.ILatLonPoint
-import pl.atlantischi.mapadapter.separate.gaode.IMyLocationStyle
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeLatLonPoint
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeMyLocationStyle
 import pl.atlantischi.mapadapter.mapapi.*
 import pl.atlantischi.mapadapter.mapapi.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
@@ -13,6 +14,7 @@ import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeAMapUtils
 import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeLatLonPoint
 import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeMyLocationStyle
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeScaleAnimation
 
 /**
  * Created on 15/06/2018.
@@ -70,12 +72,16 @@ internal class GaodeMapObjectFactory(aMap: AMap) : IGaodeMapObjectFactory {
 
     override val aMapUtils = GaodeAMapUtils()
 
-    override fun newMyLocationStyle(): IMyLocationStyle {
+    override fun newMyLocationStyle(): IGaodeMyLocationStyle {
         return GaodeMyLocationStyle()
     }
 
-    override fun newLatLonPoint(latitude: Double, longitude: Double): ILatLonPoint {
+    override fun newLatLonPoint(latitude: Double, longitude: Double): IGaodeLatLonPoint {
         return GaodeLatLonPoint(LatLonPoint(latitude, longitude))
+    }
+
+    override fun newScaleAnimation(fromX: Float, toX: Float, fromY: Float, toY: Float): IGaodeScaleAnimation {
+        return GaodeScaleAnimation(ScaleAnimation(fromX, toX, fromY, toY))
     }
 
 }

@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import com.amap.api.services.core.PoiItem
-import pl.atlantischi.mapadapter.separate.gaode.poi.IPoiItem
+import pl.atlantischi.mapadapter.separate.gaode.poi.IGaodePoiItem
 
 /**
  * Created on 19/06/2018.
@@ -9,9 +9,9 @@ import pl.atlantischi.mapadapter.separate.gaode.poi.IPoiItem
  * @author lx
  */
 
-internal class GaodePoiItem(poiItem: PoiItem) : IPoiItem {
+internal class GaodePoiItem(poiItem: PoiItem) : IGaodePoiItem {
 
-    override val latLonPoint = GaodeLatLonPoint(poiItem.latLonPoint)
+    override val gaodeLatLonPoint = GaodeLatLonPoint(poiItem.latLonPoint)
 
     override val title = poiItem.title
 

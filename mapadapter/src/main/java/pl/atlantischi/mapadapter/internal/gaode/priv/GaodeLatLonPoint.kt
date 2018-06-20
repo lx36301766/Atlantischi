@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import com.amap.api.services.core.LatLonPoint
-import pl.atlantischi.mapadapter.separate.gaode.ILatLonPoint
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeLatLonPoint
 
 /**
  * Created on 19/06/2018.
@@ -9,7 +9,7 @@ import pl.atlantischi.mapadapter.separate.gaode.ILatLonPoint
  * @author lx
  */
 
-internal class GaodeLatLonPoint(val latLonPoint: LatLonPoint) : ILatLonPoint {
+internal class GaodeLatLonPoint(val latLonPoint: LatLonPoint) : IGaodeLatLonPoint {
 
     override var latitude: Double
         get() = latLonPoint.latitude

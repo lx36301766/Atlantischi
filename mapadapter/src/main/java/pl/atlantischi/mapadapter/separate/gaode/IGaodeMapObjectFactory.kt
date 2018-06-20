@@ -12,8 +12,10 @@ interface IGaodeMapObjectFactory : MapObjectFactory {
 
     val aMapUtils: IAMapUtils
 
-    fun newMyLocationStyle(): IMyLocationStyle
+    fun newMyLocationStyle(): IGaodeMyLocationStyle
 
-    fun newLatLonPoint(latitude: Double, longitude: Double): ILatLonPoint
+    fun newLatLonPoint(latitude: Double, longitude: Double): IGaodeLatLonPoint
+
+    fun newScaleAnimation(fromX: Float, toX: Float, fromY: Float, toY: Float): IGaodeScaleAnimation
 
 }

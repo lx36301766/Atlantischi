@@ -8,7 +8,7 @@ import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
  * @author lx
  */
 
-interface IMyLocationStyle {
+interface IGaodeMyLocationStyle {
 
     var myLocationIcon: IBitmapDescriptor
 

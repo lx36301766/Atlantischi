@@ -3,11 +3,13 @@ package pl.atlantischi.mapadapter.internal.gaode.delegate.graphics
 import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.Marker
 import com.amap.api.maps.model.MarkerOptions
-import com.amap.api.maps.model.animation.Animation
+import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeAnimation
 import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
 import pl.atlantischi.mapadapter.mapapi.ILatLng
 import pl.atlantischi.mapadapter.mapapi.graphics.IMarker
 import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeBitmapDescriptor
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeAnimation
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeMarker
 
 /**
  * Created on 11/06/2018.
@@ -15,7 +17,7 @@ import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeBitmapDescriptor
  * @author lx
  */
 
-internal class GaodeMarker(private val marker: Marker) : IMarker {
+internal class GaodeMarker(private val marker: Marker) : IGaodeMarker {
 
     override var title = marker.title
         set(value) {
@@ -50,11 +52,16 @@ internal class GaodeMarker(private val marker: Marker) : IMarker {
         }
     }
 
-    fun setAnimation(animation: Animation) {
-        marker.setAnimation(animation)
+
+
+    /************************* private api *****************************/
+
+    override fun setAnimation(animation: IGaodeAnimation) {
+        val ga = animation as GaodeAnimation
+        marker.setAnimation(ga.animation)
     }
 
-    fun startAnimation(): Boolean {
+    override fun startAnimation(): Boolean {
         return marker.startAnimation()
     }
 

@@ -6,7 +6,7 @@ package pl.atlantischi.mapadapter.separate.gaode
  * @author lx
  */
 
-interface ILatLonPoint {
+interface IGaodeLatLonPoint {
 
     var latitude: Double
 

@@ -10,12 +10,12 @@ import com.amap.api.maps.model.CameraPosition
 import pl.atlantischi.mapadapter.MapAdapter
 import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
-import pl.atlantischi.mapadapter.extapi.gaode.IAMapGestureListener
-import pl.atlantischi.mapadapter.extapi.gaode.IGaodeMapAdapter
-import pl.atlantischi.mapadapter.extapi.gaode.IMyLocationStyle
+import pl.atlantischi.mapadapter.prvi_api.gaode.IAMapGestureListener
+import pl.atlantischi.mapadapter.prvi_api.gaode.IGaodeMapAdapter
+import pl.atlantischi.mapadapter.prvi_api.gaode.IMyLocationStyle
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
-import pl.atlantischi.mapadapter.mapapi.*
-import pl.atlantischi.mapadapter.mapapi.graphics.*
+import pl.atlantischi.mapadapter.common_api.*
+import pl.atlantischi.mapadapter.common_api.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeMyLocationStyle
 

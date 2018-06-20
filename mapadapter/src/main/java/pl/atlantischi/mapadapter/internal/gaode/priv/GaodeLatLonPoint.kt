@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import com.amap.api.services.core.LatLonPoint
-import pl.atlantischi.mapadapter.extapi.gaode.ILatLonPoint
+import pl.atlantischi.mapadapter.prvi_api.gaode.ILatLonPoint
 
 /**
  * Created on 19/06/2018.

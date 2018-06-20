@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.extapi.gaode
+package pl.atlantischi.mapadapter.prvi_api.gaode
 
 import pl.atlantischi.mapadapter.MapObjectFactory
 

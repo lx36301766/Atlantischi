@@ -10,8 +10,8 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import pl.atlantischi.mapadapter.MapAdapter
 import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
-import pl.atlantischi.mapadapter.mapapi.*
-import pl.atlantischi.mapadapter.mapapi.graphics.*
+import pl.atlantischi.mapadapter.common_api.*
+import pl.atlantischi.mapadapter.common_api.graphics.*
 import pl.atlantischi.mapadapter.internal.google.delegate.*
 import pl.atlantischi.mapadapter.internal.google.delegate.graphics.*
 

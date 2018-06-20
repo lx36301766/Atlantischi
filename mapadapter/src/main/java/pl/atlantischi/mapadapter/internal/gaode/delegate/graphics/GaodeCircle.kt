@@ -2,7 +2,7 @@ package pl.atlantischi.mapadapter.internal.gaode.delegate.graphics
 
 import com.amap.api.maps.model.Circle
 import com.amap.api.maps.model.CircleOptions
-import pl.atlantischi.mapadapter.mapapi.graphics.ICircle
+import pl.atlantischi.mapadapter.common_api.graphics.ICircle
 
 /**
  * Created on 19/06/2018.

@@ -1,4 +1,4 @@
-package pl.atlantischi.mapadapter.extapi.google
+package pl.atlantischi.mapadapter.prvi_api.google
 
 /**
  * Created on 08/06/2018.

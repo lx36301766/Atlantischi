@@ -1,6 +1,6 @@
-package pl.atlantischi.mapadapter.extapi.gaode
+package pl.atlantischi.mapadapter.prvi_api.gaode
 
-import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
+import pl.atlantischi.mapadapter.common_api.IBitmapDescriptor
 
 /**
  * Created on 19/06/2018.

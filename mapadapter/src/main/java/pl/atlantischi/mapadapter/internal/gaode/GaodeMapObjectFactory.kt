@@ -3,11 +3,11 @@ package pl.atlantischi.mapadapter.internal.gaode
 import com.amap.api.maps.AMap
 import com.amap.api.maps.model.LatLng
 import com.amap.api.services.core.LatLonPoint
-import pl.atlantischi.mapadapter.extapi.gaode.IGaodeMapObjectFactory
-import pl.atlantischi.mapadapter.extapi.gaode.ILatLonPoint
-import pl.atlantischi.mapadapter.extapi.gaode.IMyLocationStyle
-import pl.atlantischi.mapadapter.mapapi.*
-import pl.atlantischi.mapadapter.mapapi.graphics.*
+import pl.atlantischi.mapadapter.prvi_api.gaode.IGaodeMapObjectFactory
+import pl.atlantischi.mapadapter.prvi_api.gaode.ILatLonPoint
+import pl.atlantischi.mapadapter.prvi_api.gaode.IMyLocationStyle
+import pl.atlantischi.mapadapter.common_api.*
+import pl.atlantischi.mapadapter.common_api.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeAMapUtils

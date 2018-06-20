@@ -2,7 +2,7 @@ package pl.atlantischi.mapadapter.internal.gaode.delegate
 
 import android.graphics.Point
 import com.amap.api.maps.CameraUpdateFactory
-import pl.atlantischi.mapadapter.mapapi.*
+import pl.atlantischi.mapadapter.common_api.*
 
 /**
  * Created on 15/06/2018.

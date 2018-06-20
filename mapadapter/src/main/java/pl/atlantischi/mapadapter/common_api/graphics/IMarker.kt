@@ -1,7 +1,7 @@
-package pl.atlantischi.mapadapter.mapapi.graphics
+package pl.atlantischi.mapadapter.common_api.graphics
 
-import pl.atlantischi.mapadapter.mapapi.IBitmapDescriptor
-import pl.atlantischi.mapadapter.mapapi.ILatLng
+import pl.atlantischi.mapadapter.common_api.IBitmapDescriptor
+import pl.atlantischi.mapadapter.common_api.ILatLng
 
 /**
  * Created on 11/06/2018.

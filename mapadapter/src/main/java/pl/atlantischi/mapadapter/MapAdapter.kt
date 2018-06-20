@@ -1,8 +1,8 @@
 package pl.atlantischi.mapadapter
 
 import android.view.ViewStub
-import pl.atlantischi.mapadapter.mapapi.*
-import pl.atlantischi.mapadapter.mapapi.graphics.*
+import pl.atlantischi.mapadapter.common_api.*
+import pl.atlantischi.mapadapter.common_api.graphics.*
 
 /**
  * Created on 05/06/2018.

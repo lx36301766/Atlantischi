@@ -2,7 +2,7 @@ package pl.atlantischi.mapadapter.internal.gaode.delegate.graphics
 
 import com.amap.api.maps.model.GroundOverlay
 import com.amap.api.maps.model.GroundOverlayOptions
-import pl.atlantischi.mapadapter.mapapi.graphics.IGroundOverlay
+import pl.atlantischi.mapadapter.common_api.graphics.IGroundOverlay
 
 /**
  * Created on 19/06/2018.

@@ -8,7 +8,7 @@ import pl.atlantischi.mapadapter.mapapi.ILatLng
  * @author lx
  */
 
-interface IAMapUtils {
+interface IGaodeAMapUtils {
 
     fun calculateLineDistance(src: ILatLng, dest: ILatLng)
 

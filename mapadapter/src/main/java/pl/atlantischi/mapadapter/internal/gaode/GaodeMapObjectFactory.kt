@@ -1,9 +1,13 @@
 package pl.atlantischi.mapadapter.internal.gaode
 
+import android.content.Context
+import com.amap.api.location.AMapLocationClient
+import com.amap.api.location.AMapLocationClientOption
 import com.amap.api.maps.AMap
 import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.animation.ScaleAnimation
 import com.amap.api.services.core.LatLonPoint
+import com.amap.api.services.poisearch.PoiSearch
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeMapObjectFactory
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeLatLonPoint
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeMyLocationStyle
@@ -11,11 +15,14 @@ import pl.atlantischi.mapadapter.mapapi.*
 import pl.atlantischi.mapadapter.mapapi.graphics.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
 import pl.atlantischi.mapadapter.internal.gaode.delegate.graphics.*
-import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeAMapUtils
-import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeLatLonPoint
-import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeMyLocationStyle
-import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeScaleAnimation
+import pl.atlantischi.mapadapter.internal.gaode.priv.*
+import pl.atlantischi.mapadapter.internal.gaode.priv.location.GaodeAMapLocationClient
+import pl.atlantischi.mapadapter.internal.gaode.priv.location.GaodeAMapLocationClientOption
+import pl.atlantischi.mapadapter.internal.gaode.priv.poi.GaodePoiSearch
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeScaleAnimation
+import pl.atlantischi.mapadapter.separate.gaode.location.IGaodeAMapLocationClient
+import pl.atlantischi.mapadapter.separate.gaode.location.IGaodeAMapLocationClientOption
+import pl.atlantischi.mapadapter.separate.gaode.poi.IGaodePoiSearch
 
 /**
  * Created on 15/06/2018.
@@ -83,6 +90,23 @@ internal class GaodeMapObjectFactory(aMap: AMap) : IGaodeMapObjectFactory {
 
     override fun newScaleAnimation(fromX: Float, toX: Float, fromY: Float, toY: Float): IGaodeScaleAnimation {
         return GaodeScaleAnimation(ScaleAnimation(fromX, toX, fromY, toY))
+    }
+
+    override fun newAMapLocationClient(context: Context): IGaodeAMapLocationClient {
+        return GaodeAMapLocationClient(AMapLocationClient(context))
+    }
+
+    override fun newAMapLocationClientOption(): IGaodeAMapLocationClientOption {
+        return GaodeAMapLocationClientOption(AMapLocationClientOption())
+    }
+
+    override fun newPoiSearch(context: Context, query: IGaodePoiSearch.IQuery): IGaodePoiSearch {
+        val gq = query as GaodePoiSearch.Query
+        return GaodePoiSearch(PoiSearch(context, gq.query))
+    }
+
+    override fun newPoiSearchQuery(query: String, ctgr: String, city: String): IGaodePoiSearch.IQuery {
+        return GaodePoiSearch.Query(PoiSearch.Query(query, ctgr, city))
     }
 
 }

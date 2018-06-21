@@ -10,7 +10,7 @@ import pl.atlantischi.mapadapter.MapAdapter
 
 interface IGaodeMapAdapter : MapAdapter {
 
-    fun setAMapGestureListener(listener: IAMapGestureListener)
+    fun setAMapGestureListener(listener: IGaodeAMapGestureListener)
 
     fun setMyLocationStyle(gaodeMyLocationStyle: IGaodeMyLocationStyle)
 

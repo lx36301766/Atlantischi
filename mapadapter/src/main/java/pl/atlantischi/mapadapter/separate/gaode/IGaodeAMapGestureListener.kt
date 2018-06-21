@@ -6,7 +6,7 @@ package pl.atlantischi.mapadapter.separate.gaode
  * @author lx
  */
 
-interface IAMapGestureListener {
+interface IGaodeAMapGestureListener {
 
     fun onDown(x: Float, y: Float)
 

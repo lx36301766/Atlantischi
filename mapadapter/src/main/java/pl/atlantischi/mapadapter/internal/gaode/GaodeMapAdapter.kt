@@ -10,7 +10,7 @@ import com.amap.api.maps.model.CameraPosition
 import pl.atlantischi.mapadapter.MapAdapter
 import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.R
-import pl.atlantischi.mapadapter.separate.gaode.IAMapGestureListener
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeAMapGestureListener
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeMapAdapter
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeMyLocationStyle
 import pl.atlantischi.mapadapter.internal.gaode.delegate.*
@@ -200,7 +200,7 @@ internal class GaodeMapAdapter : IGaodeMapAdapter {
 
     /***************************** private api ***********************************/
 
-    override fun setAMapGestureListener(listener: IAMapGestureListener) {
+    override fun setAMapGestureListener(listener: IGaodeAMapGestureListener) {
         aMap.setAMapGestureListener(object: AMapGestureListener {
 
             override fun onDown(x: Float, y: Float) {

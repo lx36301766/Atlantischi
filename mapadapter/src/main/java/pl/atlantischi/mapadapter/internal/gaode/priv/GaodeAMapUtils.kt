@@ -1,7 +1,7 @@
 package pl.atlantischi.mapadapter.internal.gaode.priv
 
 import com.amap.api.maps.AMapUtils
-import pl.atlantischi.mapadapter.separate.gaode.IAMapUtils
+import pl.atlantischi.mapadapter.separate.gaode.IGaodeAMapUtils
 import pl.atlantischi.mapadapter.internal.gaode.delegate.GaodeLatLng
 import pl.atlantischi.mapadapter.mapapi.ILatLng
 
@@ -11,7 +11,7 @@ import pl.atlantischi.mapadapter.mapapi.ILatLng
  * @author lx
  */
 
-internal class GaodeAMapUtils : IAMapUtils {
+internal class GaodeAMapUtils : IGaodeAMapUtils {
 
     override fun calculateLineDistance(src: ILatLng, dest: ILatLng) {
         val srcGll = src as GaodeLatLng

@@ -52,6 +52,8 @@ internal class GaodeUISetting (var uiSettings: UiSettings) : IGaodeUISettings {
 
 
 
+    /********************************* private api ****************************************/
+
     override var isIndoorSwitchEnabled = uiSettings.isIndoorSwitchEnabled
         set(value) {
             uiSettings.isIndoorSwitchEnabled = value

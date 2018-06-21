@@ -1,6 +1,7 @@
-package pl.atlantischi.mapadapter.internal.gaode.priv
+package pl.atlantischi.mapadapter.internal.gaode.priv.poi
 
 import com.amap.api.services.core.PoiItem
+import pl.atlantischi.mapadapter.internal.gaode.priv.GaodeLatLonPoint
 import pl.atlantischi.mapadapter.separate.gaode.poi.IGaodePoiItem
 
 /**

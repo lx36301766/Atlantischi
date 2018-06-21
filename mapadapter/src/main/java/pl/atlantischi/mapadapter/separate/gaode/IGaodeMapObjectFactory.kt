@@ -1,6 +1,10 @@
 package pl.atlantischi.mapadapter.separate.gaode
 
+import android.content.Context
 import pl.atlantischi.mapadapter.MapObjectFactory
+import pl.atlantischi.mapadapter.separate.gaode.location.IGaodeAMapLocationClient
+import pl.atlantischi.mapadapter.separate.gaode.location.IGaodeAMapLocationClientOption
+import pl.atlantischi.mapadapter.separate.gaode.poi.IGaodePoiSearch
 
 /**
  * Created on 19/06/2018.
@@ -10,12 +14,20 @@ import pl.atlantischi.mapadapter.MapObjectFactory
 
 interface IGaodeMapObjectFactory : MapObjectFactory {
 
-    val aMapUtils: IAMapUtils
+    val aMapUtils: IGaodeAMapUtils
 
     fun newMyLocationStyle(): IGaodeMyLocationStyle
 
     fun newLatLonPoint(latitude: Double, longitude: Double): IGaodeLatLonPoint
 
     fun newScaleAnimation(fromX: Float, toX: Float, fromY: Float, toY: Float): IGaodeScaleAnimation
+
+    fun newAMapLocationClient(context: Context): IGaodeAMapLocationClient
+
+    fun newAMapLocationClientOption(): IGaodeAMapLocationClientOption
+
+    fun newPoiSearch(context: Context, query: IGaodePoiSearch.IQuery): IGaodePoiSearch
+
+    fun newPoiSearchQuery(query: String, ctgr: String, city: String): IGaodePoiSearch.IQuery
 
 }

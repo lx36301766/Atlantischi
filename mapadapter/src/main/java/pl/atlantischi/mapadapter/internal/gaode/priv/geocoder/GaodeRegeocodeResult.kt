@@ -12,7 +12,7 @@ import pl.atlantischi.mapadapter.separate.gaode.geocoder.IGaodeRegeocodeResult
 internal class GaodeRegeocodeResult(val regeocodeResult: RegeocodeResult) : IGaodeRegeocodeResult {
 
     override fun getCity(): String {
-        regeocodeResult.regeocodeAddress.city
+        return regeocodeResult.regeocodeAddress.city
     }
 
 }

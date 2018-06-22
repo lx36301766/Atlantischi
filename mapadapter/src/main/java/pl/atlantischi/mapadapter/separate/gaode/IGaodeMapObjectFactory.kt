@@ -5,6 +5,7 @@ import pl.atlantischi.mapadapter.MapObjectFactory
 import pl.atlantischi.mapadapter.separate.gaode.location.IGaodeAMapLocationClient
 import pl.atlantischi.mapadapter.separate.gaode.location.IGaodeAMapLocationClientOption
 import pl.atlantischi.mapadapter.separate.gaode.poi.IGaodePoiSearch
+import pl.atlantischi.mapadapter.separate.gaode.route.IGaodeRouteSearch
 
 /**
  * Created on 19/06/2018.
@@ -29,5 +30,11 @@ interface IGaodeMapObjectFactory : MapObjectFactory {
     fun newPoiSearch(context: Context, query: IGaodePoiSearch.IQuery): IGaodePoiSearch
 
     fun newPoiSearchQuery(query: String, ctgr: String, city: String): IGaodePoiSearch.IQuery
+
+    fun newRouteSearch(context: Context): IGaodeRouteSearch
+
+    fun newRouteSearchFromAndTo(from: IGaodeLatLonPoint, to: IGaodeLatLonPoint): IGaodeRouteSearch.IFromAndTo
+
+    fun newRouteSearchWalkRouteQuery(fromAndTo: IGaodeRouteSearch.IFromAndTo): IGaodeRouteSearch.IWalkRouteQuery
 
 }

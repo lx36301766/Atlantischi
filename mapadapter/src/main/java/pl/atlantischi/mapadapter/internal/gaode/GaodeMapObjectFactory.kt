@@ -8,6 +8,7 @@ import com.amap.api.maps.model.LatLng
 import com.amap.api.maps.model.animation.ScaleAnimation
 import com.amap.api.services.core.LatLonPoint
 import com.amap.api.services.poisearch.PoiSearch
+import com.amap.api.services.route.RouteSearch
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeMapObjectFactory
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeLatLonPoint
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeMyLocationStyle
@@ -19,10 +20,12 @@ import pl.atlantischi.mapadapter.internal.gaode.priv.*
 import pl.atlantischi.mapadapter.internal.gaode.priv.location.GaodeAMapLocationClient
 import pl.atlantischi.mapadapter.internal.gaode.priv.location.GaodeAMapLocationClientOption
 import pl.atlantischi.mapadapter.internal.gaode.priv.poi.GaodePoiSearch
+import pl.atlantischi.mapadapter.internal.gaode.priv.route.GaodeRouteSearch
 import pl.atlantischi.mapadapter.separate.gaode.IGaodeScaleAnimation
 import pl.atlantischi.mapadapter.separate.gaode.location.IGaodeAMapLocationClient
 import pl.atlantischi.mapadapter.separate.gaode.location.IGaodeAMapLocationClientOption
 import pl.atlantischi.mapadapter.separate.gaode.poi.IGaodePoiSearch
+import pl.atlantischi.mapadapter.separate.gaode.route.IGaodeRouteSearch
 
 /**
  * Created on 15/06/2018.
@@ -107,6 +110,21 @@ internal class GaodeMapObjectFactory(aMap: AMap) : IGaodeMapObjectFactory {
 
     override fun newPoiSearchQuery(query: String, ctgr: String, city: String): IGaodePoiSearch.IQuery {
         return GaodePoiSearch.Query(PoiSearch.Query(query, ctgr, city))
+    }
+
+    override fun newRouteSearch(context: Context): IGaodeRouteSearch {
+        return GaodeRouteSearch(RouteSearch(context))
+    }
+
+    override fun newRouteSearchFromAndTo(from: IGaodeLatLonPoint, to: IGaodeLatLonPoint): IGaodeRouteSearch.IFromAndTo {
+        val gFrom = from as GaodeLatLonPoint
+        val gTo = to as GaodeLatLonPoint
+        return GaodeRouteSearch.FromAndTo(RouteSearch.FromAndTo(gFrom.latLonPoint, gTo.latLonPoint))
+    }
+
+    override fun newRouteSearchWalkRouteQuery(fromAndTo: IGaodeRouteSearch.IFromAndTo): IGaodeRouteSearch.IWalkRouteQuery {
+        val gFromAndTo = fromAndTo as GaodeRouteSearch.FromAndTo
+        return GaodeRouteSearch.WalkRouteQuery (RouteSearch.WalkRouteQuery (gFromAndTo.fromAndTo))
     }
 
 }

@@ -22,14 +22,12 @@ class MapController private constructor() {
     private annotation class AdapterType
 
     @SuppressLint("SwitchIntDef")
-    companion object {
+    companion object Initializer {
 
         val instance = SingletonHolder.holder
 
         const val ADAPTER_TYPE_GOOGLE = 1
         const val ADAPTER_TYPE_GAODE = 2
-//        const val ADAPTER_TYPE_BAIDU = 3
-//        const val ADAPTER_TYPE_TENCENT = 4
 
         fun initialize(@AdapterType adapterType: Int, activity: Activity) {
             when(adapterType) {
@@ -66,12 +64,4 @@ class MapController private constructor() {
         }
     }
 
-}
-
-inline fun <T : Any, R> T?.notNull(block: (T) -> R): R? {
-    return if (this == null) null else block(this)
-}
-
-inline fun <T1 : Any, T2 : Any, R : Any> safeLet(p1: T1?, p2: T2?, block: (T1, T2) -> R?): R? {
-    return if (p1 != null && p2 != null) block(p1, p2) else null
 }

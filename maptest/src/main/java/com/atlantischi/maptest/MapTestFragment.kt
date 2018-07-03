@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import pl.atlantischi.mapadapter.MapController
-import pl.atlantischi.mapadapter.MapController.Companion.ADAPTER_TYPE_GAODE
-import pl.atlantischi.mapadapter.MapController.Companion.ADAPTER_TYPE_GOOGLE
+import pl.atlantischi.mapadapter.MapController.Initializer.ADAPTER_TYPE_GOOGLE
 
 
 /**

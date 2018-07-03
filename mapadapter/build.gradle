@@ -16,11 +16,10 @@ android {
 
 dependencies {
 
-    implementation map.aMaplocation
+    api map.aMaplocation
+    api map.aMap3d
+    api map.aMapSearch
 
-    implementation map.aMap3d
-    implementation map.aMapSearch
-
-    implementation map.googleMap
+    api map.googleMap
 
 }

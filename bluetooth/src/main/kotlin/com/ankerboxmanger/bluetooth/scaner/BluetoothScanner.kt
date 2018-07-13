@@ -18,7 +18,7 @@ import com.ankerboxmanger.bluetooth.IBluetooth.Companion.TAG
 abstract class BluetoothScanner(protected var context: Context) {
 
     private val deviceFoundListeners: MutableSet<IBluetooth.DeviceFoundListener>
-            by lazy { HashSet<IBluetooth.DeviceFoundListener>() }
+            by lazy(LazyThreadSafetyMode.NONE) { HashSet<IBluetooth.DeviceFoundListener>() }
 
     val foundedBluetoothDevices: MutableSet<AnkerBoxBluetoothDevice> by lazy { HashSet<AnkerBoxBluetoothDevice>() }
 

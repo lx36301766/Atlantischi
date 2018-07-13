@@ -18,16 +18,16 @@ import kotlin.math.absoluteValue
 
 fun reverse(x: Int): Int {
     val str = x.absoluteValue.toString()
-    val reverseStr = reverseString(str)
+    val reverseStr = (if (x> 0) "" else "-") + reverseString(str)
     return reverseStr.toInt()
 }
 
 fun reverseString(str: String): String {
-    return str.last() + reverseString(str.substring(0, str.lastIndex - 1))
+    return if (str.length == 1) str else str.last() + reverseString(str.substring(0, str.lastIndex))
 }
 
 fun main(args: Array<String>) {
-    print(reverse(123))
-    print(reverse(-321))
-    print(reverse(120))
+    println(reverse(123))
+    println(reverse(-321))
+    println(reverse(120))
 }

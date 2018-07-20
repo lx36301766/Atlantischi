@@ -182,6 +182,8 @@
         </activity>
         <activity android:name=".bluetooth.BluetoothActivity2">
         </activity>
+        <activity android:name=".retrofit.RetrofitActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -31,6 +31,23 @@ dependencies {
     implementation log.xlog
     implementation log.logger
 
+    implementation network.retrofit2
+
+    implementation network.retrofit2_adapter_rxjava2
+    implementation network.retrofit2_adapter_java8
+    implementation network.retrofit2_adapter_guava
+
+    implementation network.retrofit2_converter_fastjson
+    implementation network.retrofit2_converter_gson
+    implementation network.retrofit2_converter_jackson
+    implementation network.retrofit2_converter_moshi
+    implementation network.retrofit2_converter_guava
+    implementation network.retrofit2_converter_java8
+    implementation network.retrofit2_converter_protobuf
+    implementation network.retrofit2_converter_simplexml
+    implementation network.retrofit2_converter_wire
+
+
 //    implementation 'org.jetbrains:annotations:13.0'
 
 //    def nav_version = '1.0.0-alpha01'

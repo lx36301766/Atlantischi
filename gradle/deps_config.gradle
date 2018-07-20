@@ -12,30 +12,38 @@ ext {
 
     support_version = '25.3.1'
     support_deps = [
-            supportV4   : "com.android.support:support-v4:${support_version}",
-            supportV13  : "com.android.support:support-v13:${support_version}",
-            appcompatV7 : "com.android.support:appcompat-v7:${support_version}",
-            cardview    : "com.android.support:cardview-v7:${support_version}",
-            recyclerView: "com.android.support:recyclerview-v7:${support_version}",
-            design      : "com.android.support:design:${support_version}",
-            annotations : "com.android.support:support-annotations:${support_version}",
+            supportV4   : "com.android.support:support-v4:$support_version",
+            supportV13  : "com.android.support:support-v13:$support_version",
+            appcompatV7 : "com.android.support:appcompat-v7:$support_version",
+            cardview    : "com.android.support:cardview-v7:$support_version",
+            recyclerView: "com.android.support:recyclerview-v7:$support_version",
+            design      : "com.android.support:design:$support_version",
+            annotations : "com.android.support:support-annotations:$support_version",
     ]
 
     volley_version = '1.0.0'
     okhttp_version = '3.8.0'
-    retrofit_version = '2.3.0'
+    retrofit_version = '2.4.0'
     network = [
-            volley                    : "com.android.volley:volley:${volley_version}",
-            okhttp3                   : "com.squareup.okhttp3:okhttp:${okhttp_version}",
+            volley                              : "com.android.volley:volley:$volley_version",
+            okhttp3                             : "com.squareup.okhttp3:okhttp:$okhttp_version",
 
-            retrofit2                 : "com.squareup.retrofit2:retrofit:${retrofit_version}",
-            retrofit2_gson_convert    : "com.squareup.retrofit2:converter-gson:${retrofit_version}",
-            retrofit2_moshi_convert   : "com.squareup.retrofit2:converter-moshi:${retrofit_version}",
-            retrofit2_adapter_rxjava  : "com.squareup.retrofit2:adapter-rxjava:${retrofit_version}",
-            retrofit2_adapter_rxjava2 : "com.squareup.retrofit2:adapter-rxjava2:${retrofit_version}",
-            retrofit2_protobuf_convert: "com.squareup.retrofit2:converter-protobuf:${retrofit_version}",
-            retrofit2_xml_convert     : "com.squareup.retrofit2:converter-simplexml:${retrofit_version}",
-            retrofit2_fastjson_convert: "org.ligboy.retrofit2:converter-fastjson:2.1.0",
+            retrofit2                           : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            //call adapter
+            retrofit2_adapter_rxjava            : "com.squareup.retrofit2:adapter-rxjava:$retrofit_version",
+            retrofit2_adapter_rxjava2           : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+            retrofit2_adapter_java8             : "com.squareup.retrofit2:adapter-java8:$retrofit_version",
+            retrofit2_adapter_guava             : "com.squareup.retrofit2:adapter-guava:$retrofit_version",
+            //data converter
+            retrofit2_converter_fastjson        : "org.ligboy.retrofit2:converter-fastjson:2.1.0",
+            retrofit2_converter_gson            : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            retrofit2_converter_jackson         : "com.squareup.retrofit2:converter-jackson:$retrofit_version",
+            retrofit2_converter_moshi           : "com.squareup.retrofit2:converter-moshi:$retrofit_version",
+            retrofit2_converter_guava           : "com.squareup.retrofit2:converter-guava:$retrofit_version",
+            retrofit2_converter_java8           : "com.squareup.retrofit2:converter-java8:$retrofit_version",
+            retrofit2_converter_simplexml       : "com.squareup.retrofit2:converter-simplexml:$retrofit_version",
+            retrofit2_converter_protobuf        : "com.squareup.retrofit2:converter-protobuf:$retrofit_version",
+            retrofit2_converter_wire            : "com.squareup.retrofit2:converter-wire:$retrofit_version",
     ]
 
     glide_version = '4.0.0-RC1'
@@ -44,19 +52,19 @@ ext {
     fresco_ext_version = '0.12.0'
     uil_version = '1.9.5'
     image = [
-            glide                 : "com.github.bumptech.glide:glide:${glide_version}",
-            glide_compiler        : "com.github.bumptech.glide:compiler:${glide_version}",
-            picasso               : "com.squareup.picasso:picasso:${picasso_version}",
-            fresco                : "com.facebook.fresco:fresco:${fresco_version}",
-            fresco_okhttp         : "com.facebook.fresco:imagepipeline-okhttp3:${fresco_ext_version}",
-            fresco_volley         : "com.facebook.fresco:drawee-volley:${fresco_ext_version}",
-            universal_image_loader: "com.nostra13.universalimageloader:universal-image-loader:${uil_version}",
+            glide                 : "com.github.bumptech.glide:glide:$glide_version",
+            glide_compiler        : "com.github.bumptech.glide:compiler:$glide_version",
+            picasso               : "com.squareup.picasso:picasso:$picasso_version",
+            fresco                : "com.facebook.fresco:fresco:$fresco_version",
+            fresco_okhttp         : "com.facebook.fresco:imagepipeline-okhttp3:$fresco_ext_version",
+            fresco_volley         : "com.facebook.fresco:drawee-volley:$fresco_ext_version",
+            universal_image_loader: "com.nostra13.universalimageloader:universal-image-loader:$uil_version",
     ]
 
     //butterknife_version = '8.8.1'
     annotation = [
-            butterknife         : "com.jakewharton:butterknife:${butterknife_version}",
-            butterknife_compiler: "com.jakewharton:butterknife-compiler:${butterknife_version}"
+            butterknife         : "com.jakewharton:butterknife:$butterknife_version",
+            butterknife_compiler: "com.jakewharton:butterknife-compiler:$butterknife_version"
     ]
 
     rx = [
@@ -95,11 +103,11 @@ ext {
 
     google_agera_version = '1.3.0'
     google_agera = [
-            content      : "com.google.android.agera:content:${google_agera_version}",
-            database     : "com.google.android.agera:database:${google_agera_version}",
-            net          : "com.google.android.agera:net:${google_agera_version}",
-            rvadapter    : "com.google.android.agera:rvadapter:${google_agera_version}",
-            rvdatabinding: "com.google.android.agera:rvdatabinding:${google_agera_version}",
+            content      : "com.google.android.agera:content:$google_agera_version",
+            database     : "com.google.android.agera:database:$google_agera_version",
+            net          : "com.google.android.agera:net:$google_agera_version",
+            rvadapter    : "com.google.android.agera:rvadapter:$google_agera_version",
+            rvdatabinding: "com.google.android.agera:rvdatabinding:$google_agera_version",
     ]
 
     //kotlin_version = '1.1.51'
@@ -109,8 +117,8 @@ ext {
             javapoet     : "com.squareup:javapoet:1.7.0",
             guava        : "com.google.guava:guava:22.0",
             guava_android: "com.google.guava:guava:22.0-android",
-            stetho       : "com.facebook.stetho:stetho:${stetho_version}",
-            stetho_okhttp: "com.facebook.stetho:stetho-okhttp:${stetho_version}",
+            stetho       : "com.facebook.stetho:stetho:$stetho_version",
+            stetho_okhttp: "com.facebook.stetho:stetho-okhttp:$stetho_version",
     ]
 
     other_deps = [
@@ -128,4 +136,193 @@ ext {
             mapBox              : "com.mapbox.mapboxsdk:mapbox-android-sdk:6.1.3",
     ]
 
+    //***************************** Android Architecture Components *****************************//
+    lifecycle_version = '1.1.1'
+    lifecycle = [
+            extensions     : "android.arch.lifecycle:extensions:$lifecycle_version",
+            viewmodel      : "android.arch.lifecycle:viewmodel:$lifecycle_version",
+            livedata       : "android.arch.lifecycle:livedata:$lifecycle_version",
+            runtime        : "android.arch.lifecycle:runtime:$lifecycle_version",
+            compiler       : "android.arch.lifecycle:compiler:$lifecycle_version",
+            common_java8   : "android.arch.lifecycle:common-java8:$lifecycle_version",
+            reactivestreams: "android.arch.lifecycle:reactivestreams:$lifecycle_version",
+            core_testing   : "android.arch.lifecycle:core-testing:$lifecycle_version",
+    ]
+
+    lifecycle_androidx_version = '2.0.0-beta01'
+    lifecycle_androidx = [
+            extensions     : "androidx.lifecycle:lifecycle-extensions:$lifecycle_androidx_version",
+            viewmodel      : "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_androidx_version",
+            viewmodel_ktx  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_androidx_version",
+            livedata       : "androidx.lifecycle:lifecycle-livedata:$lifecycle_androidx_version",
+            runtime        : "androidx.lifecycle:lifecycle-runtime:$lifecycle_androidx_version",
+            compiler       : "androidx.lifecycle:lifecycle-compiler:$lifecycle_androidx_version",
+            common_java8   : "androidx.lifecycle:lifecycle-common-java8:$lifecycle_androidx_version",
+            reactivestreams: "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_androidx_version",
+            core_testing   : "androidx.lifecycle:lifecycle-core-testing:$lifecycle_androidx_version",
+    ]
+
+    room_version = '1.1.1'
+    room = [
+            runtime : "android.arch.persistence.room:runtime:$room_version",
+            compiler: "android.arch.persistence.room:compiler:$room_version",
+            rxjava2 : "android.arch.persistence.room:rxjava2:$room_version",
+            guava   : "android.arch.persistence.room:guava:$room_version",
+            testing : "android.arch.persistence.room:testing:$room_version",
+    ]
+
+    paging_version = "1.0.0"
+    paging = [
+            runtime: "android.arch.paging:runtime:$paging_version",
+            common : "android.arch.paging:common:$paging_version",
+            rxjava2: "android.arch.paging:rxjava2:1.0.0-rc1",
+    ]
+
+    paging_androidx_version = "2.0.0-beta01"
+    paging_androidx = [
+            runtime: "androidx.paging:paging-runtime:$paging_androidx_version",
+            common : "androidx.paging:paging-runtime:$paging_androidx_version",
+            rxjava2: "androidx.paging:paging-rxjava2:$paging_androidx_version"
+    ]
+
+    navigation_version = "1.0.0-alpha04"
+    navigation = [
+            fragment: "android.arch.navigation:navigation-fragment:$navigation_version",
+            ui      : "android.arch.navigation:navigation-ui:$navigation_version",
+            testing : "android.arch.navigation:navigation-testing:$navigation_version",
+    ]
+
+    work_version = "1.0.0-alpha04"
+    navigation = [
+            runtime : "android.arch.work:work-runtime:$work_version",
+            firebase: "android.arch.work:work-firebase:$work_version",
+            testing : "android.arch.work:work-testing:$work_version",
+    ]
+    //***************************** Android Architecture Components *****************************//
+
 }
+
+
+
+
+
+////Dependencies for Lifecycle, including LiveData and ViewModel.
+//dependencies {
+//    def lifecycle_version = "1.1.0"
+//
+//    // ViewModel and LiveData
+//    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+//    // alternatively - just ViewModel
+//    implementation "android.arch.lifecycle:viewmodel:$lifecycle_version" // use -ktx for Kotlin
+//    // alternatively - just LiveData
+//    implementation "android.arch.lifecycle:livedata:$lifecycle_version"
+//    // alternatively - Lifecycles only (no ViewModel or LiveData).
+//    //     Support library depends on this lightweight import
+//    implementation "android.arch.lifecycle:runtime:$lifecycle_version"
+//
+//    annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
+//    // alternately - if using Java8, use the following instead of compiler
+//    implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
+//
+//    // optional - ReactiveStreams support for LiveData
+//    implementation "android.arch.lifecycle:reactivestreams:$lifecycle_version"
+//
+//    // optional - Test helpers for LiveData
+//    testImplementation "android.arch.core:core-testing:$lifecycle_version"
+//}
+////AndroidX
+//dependencies {
+//    def lifecycle_version = "2.0.0-beta01"
+//
+//    // ViewModel and LiveData
+//    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+//    // alternatively - just ViewModel
+//    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version" // use -ktx for Kotlin
+//    // alternatively - just LiveData
+//    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+//    // alternatively - Lifecycles only (no ViewModel or LiveData). Some UI
+//    //     AndroidX libraries use this lightweight import for Lifecycle
+//    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+//
+//    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+//    // alternately - if using Java8, use the following instead of lifecycle-compiler
+//    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+//
+//    // optional - ReactiveStreams support for LiveData
+//    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version" // use -ktx for Kotlin
+//
+//    // optional - Test helpers for LiveData
+//    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+//}
+//
+////Dependencies for Room, including testing Room migrations and Room RxJava
+//dependencies {
+//    def room_version = "1.1.1"
+//
+//    implementation "android.arch.persistence.room:runtime:$room_version"
+//    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+//
+//    // optional - RxJava support for Room
+//    implementation "android.arch.persistence.room:rxjava2:$room_version"
+//
+//    // optional - Guava support for Room, including Optional and ListenableFuture
+//    implementation "android.arch.persistence.room:guava:$room_version"
+//
+//    // Test helpers
+//    testImplementation "android.arch.persistence.room:testing:$room_version"
+//}
+//
+////Dependencies for Paging
+//dependencies {
+//    def paging_version = "1.0.0"
+//
+//    implementation "android.arch.paging:runtime:$paging_version"
+//
+//    // alternatively - without Android dependencies for testing
+//    testImplementation "android.arch.paging:common:$paging_version"
+//
+//    // optional - RxJava support, currently in release candidate
+//    implementation "android.arch.paging:rxjava2:1.0.0-rc1"
+//}
+////AndroidX
+//dependencies {
+//    def paging_version = "2.0.0-beta01"
+//
+//    implementation "androidx.paging:paging-runtime:$paging_version"
+//
+//    // alternatively - without Android dependencies for testing
+//    testImplementation "androidx.paging:paging-common:$paging_version"
+//
+//    // optional - RxJava support
+//    implementation "androidx.paging:paging-rxjava2:$paging_version"
+//}
+//
+//// Dependencies for Navigation.
+////
+//// Navigation classes are already in the androidx.navigation package, but currently depend on Support Library 27.1.1,
+//// and associated Arch component versions. Version of Navigation with AndroidX dependencies will be released in the future.
+//dependencies {
+//    def nav_version = "1.0.0-alpha04"
+//
+//    implementation "android.arch.navigation:navigation-fragment:$nav_version" // use -ktx for Kotlin
+//    implementation "android.arch.navigation:navigation-ui:$nav_version" // use -ktx for Kotlin
+//
+//    // optional - Test helpers
+//    androidTestImplementation "android.arch.navigation:navigation-testing:$nav_version" // use -ktx for Kotlin
+//}
+//
+//// Dependencies for WorkManager.
+////
+//// WorkManager classes are already in the androidx.work package, but currently depend on Support Library 27.1, and
+//// associated Arch component versions. Version of WorkManager with AndroidX dependencies will be released in the future.
+//dependencies {
+//    def work_version = "1.0.0-alpha04"
+//
+//    implementation "android.arch.work:work-runtime:$work_version" // use -ktx for Kotlin
+//
+//    // optional - Firebase JobDispatcher support
+//    implementation "android.arch.work:work-firebase:$work_version"
+//
+//    // optional - Test helpers
+//    androidTestImplementation "android.arch.work:work-testing:$work_version"
+//}

@@ -25,6 +25,6 @@ include ':app', ':java'
 //include 'xjsonbridge:jsonbridgeapp'
 //include ':sockettest'
 include ':bluetooth'
-include ':maptest', ':mapadapter'
+//include ':maptest', ':mapadapter'
 
 include ':algorithm'

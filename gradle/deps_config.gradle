@@ -125,6 +125,7 @@ ext {
             slimadapter: "net.idik:slimadapter:2.1.0",
             okio       : "com.squareup.okio:okio:1.13.0",
             protobuf   : "com.google.protobuf:protobuf-lite:3.0.0",
+            util_code  : "com.blankj:utilcode:1.18.1",
     ]
 
     map = [

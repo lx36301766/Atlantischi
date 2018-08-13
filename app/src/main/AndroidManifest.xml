@@ -184,6 +184,8 @@
         </activity>
         <activity android:name=".retrofit.RetrofitActivity">
         </activity>
+        <activity android:name=".Main3Activity">
+        </activity>
     </application>
 
 </manifest>

@@ -58,3 +58,32 @@ public class MarketActivity extends Activity{
     }
 
 }
+
+interface ABC {
+
+    void tes();
+    void te2s();
+
+}
+
+@FunctionalInterface
+interface TestInterface {
+
+    // 抽象方法
+    void sub();
+
+    // java.lang.Object中的方法不是抽象方法
+    boolean equals(Object var1);
+
+    int hashCode();
+
+    // default不是抽象方法
+    default void defaultMethod(){
+
+    }
+
+    // static不是抽象方法
+    static void staticMethod(){
+
+    }
+}

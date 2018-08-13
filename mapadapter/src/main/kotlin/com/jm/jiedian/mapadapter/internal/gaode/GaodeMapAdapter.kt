@@ -21,6 +21,8 @@ import com.jm.jiedian.mapadapter.mapapi.*
 import com.jm.jiedian.mapadapter.mapapi.graphics.*
 import com.jm.jiedian.mapadapter.internal.gaode.delegate.graphics.*
 import com.jm.jiedian.mapadapter.internal.gaode.priv.GaodeMyLocationStyle
+import pl.atlantischi.mapadapter.R
+import java.io.BufferedReader
 
 /**
  * Created on 05/06/2018.
@@ -173,19 +175,19 @@ internal class GaodeMapAdapter(f: Fragment? = null, a: Activity? = null) : IGaod
 
     override fun setOnMarkerClickListener(onMarkerClickListener: (marker: IMarker) -> Boolean) {
         aMap.setOnMarkerClickListener {
-            onMarkerClickListener.invoke(GaodeMarker(it))
+            onMarkerClickListener(GaodeMarker(it))
         }
     }
 
     override fun setOnMapClickListener(onMapClickListener: (latlng: ILatLng) -> Unit) {
         aMap.setOnMapClickListener {
-            onMapClickListener.invoke(GaodeLatLng(it))
+            onMapClickListener(GaodeLatLng(it))
         }
     }
 
     override fun setOnMapLongClickListener(onMapLongClickListener: (latlng: ILatLng) -> Unit) {
         aMap.setOnMapLongClickListener {
-            onMapLongClickListener.invoke(GaodeLatLng(it))
+            onMapLongClickListener(GaodeLatLng(it))
         }
     }
 
@@ -193,11 +195,11 @@ internal class GaodeMapAdapter(f: Fragment? = null, a: Activity? = null) : IGaod
         aMap.setOnCameraChangeListener(object : AMap.OnCameraChangeListener {
 
             override fun onCameraChange(cameraPosition: CameraPosition) {
-                onCameraChangeListener.invoke(GaodeCameraPosition(cameraPosition), false)
+                onCameraChangeListener(GaodeCameraPosition(cameraPosition), false)
             }
 
             override fun onCameraChangeFinish(cameraPosition: CameraPosition) {
-                onCameraChangeListener.invoke(GaodeCameraPosition(cameraPosition), true)
+                onCameraChangeListener(GaodeCameraPosition(cameraPosition), true)
             }
 
         })
@@ -218,7 +220,7 @@ internal class GaodeMapAdapter(f: Fragment? = null, a: Activity? = null) : IGaod
 
     override fun setOnMyLocationChangeListener(onMyLocationChangeListener: (location: Location) -> Unit) {
         aMap.setOnMyLocationChangeListener { location ->
-            onMyLocationChangeListener.invoke(location)
+            onMyLocationChangeListener(location)
         }
     }
 

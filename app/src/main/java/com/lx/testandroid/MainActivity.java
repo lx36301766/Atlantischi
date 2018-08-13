@@ -1,5 +1,9 @@
 package com.lx.testandroid;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
 import com.lx.testandroid.log.utils.KLog;
 
 import android.app.Activity;

@@ -10,7 +10,7 @@ ext {
             kotlin_java: gradle_root + "/kotlin_java.gradle",
     ]
 
-    support_version = '27.0.1'
+    support_version = '25.3.1'
     support_deps = [
             supportV4   : "com.android.support:support-v4:$support_version",
             supportV13  : "com.android.support:support-v13:$support_version",

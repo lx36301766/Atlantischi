@@ -3,22 +3,23 @@ ext {
     sign_apk = rootDir.absolutePath + "/signAPK"
 
     //module gradle apply from
-    gradle_root = rootDir.absolutePath + "/gradle"
-    gradles = [
-            base_config: gradle_root + "/android_config.gradle",
-            AndResGuard: gradle_root + "/AndResGuard.gradle",
-            kotlin_java: gradle_root + "/kotlin_java.gradle",
-    ]
+//    gradle_root = rootDir.absolutePath + "/gradle"
+//    gradles = [
+//            base_config: gradle_root + "/android_config.gradle",
+//            AndResGuard: gradle_root + "/AndResGuard.gradle",
+//            kotlin_java: gradle_root + "/kotlin_java.gradle",
+//    ]
 
     support_version = '27.1.1'
     support_deps = [
-            supportV4   : "com.android.support:support-v4:$support_version",
-            supportV13  : "com.android.support:support-v13:$support_version",
-            appcompatV7 : "com.android.support:appcompat-v7:$support_version",
-            cardview    : "com.android.support:cardview-v7:$support_version",
-            recyclerView: "com.android.support:recyclerview-v7:$support_version",
-            design      : "com.android.support:design:$support_version",
-            annotations : "com.android.support:support-annotations:$support_version",
+            supportV4        : "com.android.support:support-v4:$support_version",
+            supportV13       : "com.android.support:support-v13:$support_version",
+            appcompatV7      : "com.android.support:appcompat-v7:$support_version",
+            cardview         : "com.android.support:cardview-v7:$support_version",
+            recyclerView     : "com.android.support:recyclerview-v7:$support_version",
+            design           : "com.android.support:design:$support_version",
+            annotations      : "com.android.support:support-annotations:$support_version",
+            constraint_layout: "com.android.support.constraint:constraint-layout:1.1.2",
     ]
 
     volley_version = '1.0.0'
@@ -29,12 +30,12 @@ ext {
             okhttp3                             : "com.squareup.okhttp3:okhttp:$okhttp_version",
 
             retrofit2                           : "com.squareup.retrofit2:retrofit:$retrofit_version",
-            //call adapter
+            //retrofit2 call adapter
             retrofit2_adapter_rxjava            : "com.squareup.retrofit2:adapter-rxjava:$retrofit_version",
             retrofit2_adapter_rxjava2           : "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
             retrofit2_adapter_java8             : "com.squareup.retrofit2:adapter-java8:$retrofit_version",
             retrofit2_adapter_guava             : "com.squareup.retrofit2:adapter-guava:$retrofit_version",
-            //data converter
+            //retrofit2 data converter
             retrofit2_converter_fastjson        : "org.ligboy.retrofit2:converter-fastjson:2.1.0",
             retrofit2_converter_gson            : "com.squareup.retrofit2:converter-gson:$retrofit_version",
             retrofit2_converter_jackson         : "com.squareup.retrofit2:converter-jackson:$retrofit_version",
@@ -62,16 +63,22 @@ ext {
     ]
 
     //butterknife_version = '8.8.1'
+    dagger_version = '2.17'
     annotation = [
-            butterknife         : "com.jakewharton:butterknife:$butterknife_version",
-            butterknife_compiler: "com.jakewharton:butterknife-compiler:$butterknife_version"
+            butterknife             : "com.jakewharton:butterknife:$butterknife_version",
+            butterknife_compiler    : "com.jakewharton:butterknife-compiler:$butterknife_version",
+
+            dagger                  : "com.google.dagger:dagger:$dagger_version",
+            dagger_compiler         : "com.google.dagger:dagger-compiler:$dagger_version",
+            dagger_android          : "com.google.dagger:dagger-android:$dagger_version",
+            dagger_android_support  : "com.google.dagger:dagger-android-support:$dagger_version",
+            dagger_android_processor: "com.google.dagger:dagger-android-processor:$dagger_version",
     ]
 
     rx = [
             rxandroid : 'io.reactivex.rxjava2:rxandroid:2.0.2',
             rxjava    : 'io.reactivex.rxjava2:rxjava:2.2.0',
     ]
-
 
     json = [
             gson            : "com.google.code.gson:gson:2.8.1",
@@ -90,7 +97,6 @@ ext {
     view = [
             gif_drawable     : "pl.droidsonroids.gif:android-gif-drawable:1.2.2",
             hlistview        : "it.sephiroth.android.library.horizontallistview:hlistview:1.2.2",
-            constraint_layout: "com.android.support.constraint:constraint-layout:1.1.2",
     ]
 
     //robust_version = '0.6.18'
@@ -117,6 +123,7 @@ ext {
             guava_android: "com.google.guava:guava:22.0-android",
             stetho       : "com.facebook.stetho:stetho:$stetho_version",
             stetho_okhttp: "com.facebook.stetho:stetho-okhttp:$stetho_version",
+            android_ktx  : "androidx.core:core-ktx:1.0.0-alpha1",
     ]
 
     other_deps = [
@@ -148,19 +155,6 @@ ext {
             core_testing   : "android.arch.lifecycle:core-testing:$lifecycle_version",
     ]
 
-    lifecycle_androidx_version = '2.0.0-beta01'
-    lifecycle_androidx = [
-            extensions     : "androidx.lifecycle:lifecycle-extensions:$lifecycle_androidx_version",
-            viewmodel      : "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_androidx_version",
-            viewmodel_ktx  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_androidx_version",
-            livedata       : "androidx.lifecycle:lifecycle-livedata:$lifecycle_androidx_version",
-            runtime        : "androidx.lifecycle:lifecycle-runtime:$lifecycle_androidx_version",
-            compiler       : "androidx.lifecycle:lifecycle-compiler:$lifecycle_androidx_version",
-            common_java8   : "androidx.lifecycle:lifecycle-common-java8:$lifecycle_androidx_version",
-            reactivestreams: "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_androidx_version",
-            core_testing   : "androidx.lifecycle:lifecycle-core-testing:$lifecycle_androidx_version",
-    ]
-
     room_version = '1.1.1'
     room = [
             runtime : "android.arch.persistence.room:runtime:$room_version",
@@ -177,13 +171,6 @@ ext {
             rxjava2: "android.arch.paging:rxjava2:1.0.0-rc1",
     ]
 
-    paging_androidx_version = "2.0.0-beta01"
-    paging_androidx = [
-            runtime: "androidx.paging:paging-runtime:$paging_androidx_version",
-            common : "androidx.paging:paging-runtime:$paging_androidx_version",
-            rxjava2: "androidx.paging:paging-rxjava2:$paging_androidx_version"
-    ]
-
     navigation_version = "1.0.0-alpha04"
     navigation = [
             fragment: "android.arch.navigation:navigation-fragment:$navigation_version",
@@ -198,5 +185,40 @@ ext {
             testing : "android.arch.work:work-testing:$work_version",
     ]
     //***************************** Android Architecture Components *****************************//
+
+
+    //***************************** andoirdx deps *****************************//
+
+    support_x_version = '1.0.0-alpha1'
+    support_x_deps = [
+            supportV4   : "androidx.legacy:legacy-support-v4:$support_x_version",
+            supportV13  : "androidx.legacy:legacy-support-v13:$support_x_version",
+            appcompatV7 : "androidx.appcompat:appcompat:$support_x_version",
+            cardview    : "androidx.cardview:cardview:$support_x_version",
+            recyclerView: "androidx.recyclerview:recyclerview:$support_x_version",
+            design      : "com.google.android.material:material:$support_x_version",
+            annotations : "androidx.annotation:annotation:$support_x_version",
+    ]
+
+    lifecycle_androidx_version = '2.0.0-beta01'
+    lifecycle_androidx = [
+            extensions     : "androidx.lifecycle:lifecycle-extensions:$lifecycle_androidx_version",
+            viewmodel      : "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_androidx_version",
+            viewmodel_ktx  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_androidx_version",
+            livedata       : "androidx.lifecycle:lifecycle-livedata:$lifecycle_androidx_version",
+            runtime        : "androidx.lifecycle:lifecycle-runtime:$lifecycle_androidx_version",
+            compiler       : "androidx.lifecycle:lifecycle-compiler:$lifecycle_androidx_version",
+            common_java8   : "androidx.lifecycle:lifecycle-common-java8:$lifecycle_androidx_version",
+            reactivestreams: "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_androidx_version",
+            core_testing   : "androidx.lifecycle:lifecycle-core-testing:$lifecycle_androidx_version",
+    ]
+
+    paging_androidx_version = "2.0.0-beta01"
+    paging_androidx = [
+            runtime: "androidx.paging:paging-runtime:$paging_androidx_version",
+            common : "androidx.paging:paging-runtime:$paging_androidx_version",
+            rxjava2: "androidx.paging:paging-rxjava2:$paging_androidx_version"
+    ]
+    //***************************** andoirdx deps *****************************//
 
 }

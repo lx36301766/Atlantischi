@@ -5,7 +5,7 @@ apply plugin: 'com.android.application'
 apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
 //apply from: rootDir.absolutePath + "/gradle/AndResGuard.gradle"
-apply from: rootDir.absolutePath + "/gradle/protobuf.gradle"
+//apply from: rootDir.absolutePath + "/gradle/protobuf.gradle"
 
 apply from: rootDir.absolutePath + "/gradle/kotlin_android.gradle"
 

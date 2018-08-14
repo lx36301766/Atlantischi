@@ -15,6 +15,9 @@ android {
 }
 
 dependencies {
+    implementation annotation.dagger
+    annotationProcessor annotation.dagger_compiler
+
     implementation lifecycle.extensions
     implementation lifecycle.viewmodel
     implementation lifecycle.livedata
@@ -22,4 +25,6 @@ dependencies {
     implementation lifecycle.common_java8
     implementation lifecycle.reactivestreams
     annotationProcessor lifecycle.compiler
+
+    implementation support_deps.supportV4
 }

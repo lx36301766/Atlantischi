@@ -79,6 +79,8 @@ configurations.all {
         force support_deps.cardview
         force support_deps.recyclerView
         force support_deps.design
+
+//        force json.fastjson
     }
 }
 
@@ -88,5 +90,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation support_deps.appcompatV7
-    implementation view.constraint_layout
+    implementation support_deps.constraint_layout
 }

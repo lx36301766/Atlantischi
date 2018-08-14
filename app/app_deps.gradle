@@ -47,11 +47,12 @@ dependencies {
     implementation network.retrofit2_converter_simplexml
     implementation network.retrofit2_converter_wire
 
+//    implementation tools.android_ktx
 
-//    implementation 'org.jetbrains:annotations:13.0'
-
-//    def nav_version = '1.0.0-alpha01'
-//    implementation "android.arch.navigation:navigation-fragment:$nav_version"
-//    implementation "android.arch.navigation:navigation-ui:$nav_version"
+    implementation annotation.dagger
+    implementation annotation.dagger_android
+    implementation annotation.dagger_android_support
+    annotationProcessor annotation.dagger_compiler
+    annotationProcessor annotation.dagger_android_processor
 
 }

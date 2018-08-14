@@ -10,7 +10,7 @@ ext {
             kotlin_java: gradle_root + "/kotlin_java.gradle",
     ]
 
-    support_version = '25.3.1'
+    support_version = '27.1.1'
     support_deps = [
             supportV4   : "com.android.support:support-v4:$support_version",
             supportV13  : "com.android.support:support-v13:$support_version",
@@ -90,7 +90,7 @@ ext {
     view = [
             gif_drawable     : "pl.droidsonroids.gif:android-gif-drawable:1.2.2",
             hlistview        : "it.sephiroth.android.library.horizontallistview:hlistview:1.2.2",
-            constraint_layout: "com.android.support.constraint:constraint-layout:1.0.2",
+            constraint_layout: "com.android.support.constraint:constraint-layout:1.1.2",
     ]
 
     //robust_version = '0.6.18'
@@ -192,7 +192,7 @@ ext {
     ]
 
     work_version = "1.0.0-alpha04"
-    navigation = [
+    work = [
             runtime : "android.arch.work:work-runtime:$work_version",
             firebase: "android.arch.work:work-firebase:$work_version",
             testing : "android.arch.work:work-testing:$work_version",

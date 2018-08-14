@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+
+apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
+apply from: rootDir.absolutePath + "/gradle/kotlin_android.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId "pl.atlantischi.architecturecomponents"
+        versionCode 1000
+        versionName "1.000"
+    }
+
+}
+
+dependencies {
+    implementation lifecycle.extensions
+    implementation lifecycle.viewmodel
+    implementation lifecycle.livedata
+    implementation lifecycle.runtime
+    implementation lifecycle.common_java8
+    implementation lifecycle.reactivestreams
+    annotationProcessor lifecycle.compiler
+}

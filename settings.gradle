@@ -1,5 +1,6 @@
 include ':app', ':java'
 
+include ':antiphoneharassment'
 include ':architecturecomponents'
 include ':algorithm'
 include ':bluetooth'

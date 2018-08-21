@@ -1,4 +1,4 @@
-include ':app', ':java'
+include ':app', ':java', ':kotlinandroid'
 
 include ':antiphoneharassment'
 include ':architecturecomponents'

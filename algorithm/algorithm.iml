@@ -51,20 +51,20 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-jdk8-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-jdk7-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-common-1.2.50" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-jdk8-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-jdk7-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-common-1.2.51" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="annotations-13.0" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-jdk8-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-jdk7-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-common-1.2.50" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-jdk8-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-jdk7-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-common-1.2.51" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="annotations-13.0" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-jdk8-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-jdk7-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-common-1.2.50" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-jdk8-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-jdk7-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-1.2.51" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-common-1.2.51" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="annotations-13.0" level="project" />
   </component>
 </module>

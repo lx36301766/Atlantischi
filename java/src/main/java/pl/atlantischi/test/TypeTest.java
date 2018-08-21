@@ -46,6 +46,18 @@ public class TypeTest {
 //        Object type = testInterface.getClass().get
 
         System.out.println(1);
+
+        FilePath2.Foo.run();
+    }
+
+    static FilePath3 foo;
+
+    static class FilePath3 implements Runnable {
+
+        public void run() {
+
+        }
+
     }
 
 }

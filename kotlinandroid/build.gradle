@@ -7,7 +7,7 @@ apply from: rootDir.absolutePath + "/gradle/kotlin_android.gradle"
 android {
 
     defaultConfig {
-        applicationId "pl.atlantischi."
+        applicationId "pl.atlantischi.kotlinandroid"
         versionCode 1000
         versionName "1.000"
     }

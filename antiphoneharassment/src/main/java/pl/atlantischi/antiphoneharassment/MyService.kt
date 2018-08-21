@@ -24,7 +24,7 @@ class MyService : Service() {
         telephoneManager.listen(object : PhoneStateListener() {
             override fun onCallStateChanged(state: Int, incomingNumber: String?) {
                 super.onCallStateChanged(state, incomingNumber)
-                Log.d(tag(), "onCallStateChanged, state=$state")
+                Log.d(tag(), "onCallStateChanged, state=$state, incomingNumber=$incomingNumber")
                 when(state) {
                     //电话挂断
                     TelephonyManager.CALL_STATE_IDLE -> {}

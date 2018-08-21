@@ -93,8 +93,27 @@ ext {
     ]
     //***************************** andoird x *****************************//
 
-
-
+    anko_version = '0.10.5'
+    anko = [
+            commons                   : "org.jetbrains.anko:anko-commons:$anko_version",
+            sdk25                     : "org.jetbrains.anko:anko-sdk25:$anko_version",
+            appcompat_v7              : "org.jetbrains.anko:anko-appcompat-v7:$anko_version",
+            sdk25_coroutines          : "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version",
+            appcompat_v7_coroutines   : "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version",
+            sqlite                    : "org.jetbrains.anko:anko-sqlite:$anko_version",
+            appcompat_v7_commons      : "org.jetbrains.anko:anko-appcompat-v7-commons:$anko_version",
+            coroutines                : "org.jetbrains.anko:anko-coroutines:$anko_version",
+            cardview_v7               : "org.jetbrains.anko:anko-cardview-v7:$anko_version",
+            design                    : "org.jetbrains.anko:anko-design:$anko_version",
+            design_coroutines         : "org.jetbrains.anko:anko-design-coroutines:$anko_version",
+            gridlayout_v7             : "org.jetbrains.anko:anko-gridlayout-v7:$anko_version",
+            percent                   : "org.jetbrains.anko:anko-percent:$anko_version",
+            recyclerview_v7           : "org.jetbrains.anko:anko-recyclerview-v7:$anko_version",
+            recyclerview_v7_coroutines: "org.jetbrains.anko:anko-recyclerview-v7-coroutines:$anko_version",
+            support_v4_commons        : "org.jetbrains.anko:anko-support-v4-commons:$anko_version",
+            support_v4                : "org.jetbrains.anko:anko-support-v4:$anko_version",
+            constraint_layout         : "org.jetbrains.anko:anko-constraint-layout:$anko_version",
+    ]
 
     volley_version = '1.0.0'
     okhttp_version = '3.11.0'

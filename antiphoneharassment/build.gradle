@@ -5,6 +5,8 @@ apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
 apply from: rootDir.absolutePath + "/gradle/kotlin_android.gradle"
 
+// mmvm: lifecycle room rxkotlin dragger anko (retrofit, moshi/kotlinx.serialization)
+
 android {
 
     defaultConfig {
@@ -17,3 +19,4 @@ android {
 
 dependencies {
 }
+

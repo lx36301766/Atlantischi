@@ -115,12 +115,12 @@ class AnkerBoxBluetoothLe : AnkerBoxBluetooth(), IBluetoothLe {
 
     override fun addLeStateChangedListener(listener: IBluetoothLe.StateChangedListener): Boolean {
         Log.d(TAG, "addLeStateChangedListener, listener=$listener")
-        return gattCallback.let { it != null && addLeStateChangedListener(listener) }
+        return gattCallback?.addLeStateChangedListener(listener) ?: false
     }
 
     override fun removeLeStateChangedListener(listener: IBluetoothLe.StateChangedListener): Boolean {
         Log.d(TAG, "removeLeStateChangedListener, listener=$listener")
-        return gattCallback.let { it != null && removeLeStateChangedListener(listener) }
+        return gattCallback?.removeLeStateChangedListener(listener) ?: false
     }
 
     override fun getServices(context: Context, deviceId: String): List<AnkerBoxBluetoothLeService>? {
@@ -190,19 +190,19 @@ class AnkerBoxBluetoothLe : AnkerBoxBluetooth(), IBluetoothLe {
                                                  characteristicId: String, state: Int): Boolean {
         Log.d(TAG, "notifyCharacteristicValueChange deviceId= " + deviceId + ", serviceId = " + serviceId
                 + ", characteristicId = " + characteristicId + ", state = " + state)
-        return mBluetoothGatt.let {
-            it != null && setNotify(it, uuidFromString(serviceId), uuidFromString(characteristicId), state == 1)
-        }
+        return mBluetoothGatt?.run {
+            setNotify(this, uuidFromString(serviceId), uuidFromString(characteristicId), state == 1)
+        } ?: false
     }
 
     override fun addCharacteristicValueChangedListener(listener: IBluetoothLe.CharacteristicValueChangedListener): Boolean {
         Log.d(TAG, "addCharacteristicValueChangedListener, listener=$listener")
-        return gattCallback.let { it != null && addCharacteristicValueChangedListener(listener) }
+        return gattCallback?.addCharacteristicValueChangedListener(listener) ?: false
     }
 
     override fun removeCharacteristicValueChangedListener(listener: IBluetoothLe.CharacteristicValueChangedListener): Boolean {
         Log.d(TAG, "removeCharacteristicValueChangedListener, listener=$listener")
-        return gattCallback.let { it != null && removeCharacteristicValueChangedListener(listener) }
+        return gattCallback?.removeCharacteristicValueChangedListener(listener) ?: false
     }
 
 }

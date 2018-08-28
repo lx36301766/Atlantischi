@@ -4,7 +4,7 @@ apply from: './gradle/deps_config.gradle'
 
 buildscript {
 
-    ext.kotlin_version = '1.2.51'
+    ext.kotlin_version = '1.2.50'
     ext.robust_version = '0.6.18'
     ext.butterknife_version = '8.5.1'
 

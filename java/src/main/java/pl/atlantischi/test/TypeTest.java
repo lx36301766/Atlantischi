@@ -2,6 +2,7 @@ package pl.atlantischi.test;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * Created on 25/04/2018.

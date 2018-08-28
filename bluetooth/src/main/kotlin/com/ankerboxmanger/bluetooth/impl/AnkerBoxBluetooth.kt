@@ -54,7 +54,7 @@ open class AnkerBoxBluetooth : IBluetooth {
     override val isEnabled: Boolean
         get() {
             Log.d(TAG, "isEnabled")
-            return isSupportBluetooth && mBluetoothAdapter.let { it != null && it.isEnabled }
+            return isSupportBluetooth && mBluetoothAdapter?.isEnabled ?: false
         }
 
     override val adapterState: Int
@@ -68,7 +68,7 @@ open class AnkerBoxBluetooth : IBluetooth {
         }
 
     override val isDiscovering: Boolean
-        get() = isSupportBluetooth && mBluetoothAdapter.let { it != null && it.isDiscovering }
+        get() = isSupportBluetooth && mBluetoothAdapter?.isDiscovering ?: false
 
     override val devices: Set<AnkerBoxBluetoothDevice>?
         get() {
@@ -108,12 +108,12 @@ open class AnkerBoxBluetooth : IBluetooth {
 
     override fun open(): Boolean {
         Log.d(TAG, "open")
-        return isSupportBluetooth && mBluetoothAdapter.let { it != null && it.enable() }
+        return isSupportBluetooth && mBluetoothAdapter?.enable() ?: false
     }
 
     override fun close(): Boolean {
         Log.d(TAG, "close")
-        return isSupportBluetooth && mBluetoothAdapter.let { it != null && it.disable() }
+        return isSupportBluetooth && mBluetoothAdapter?.disable() ?: false
     }
 
     override fun registerStateChangedListener(listener: IBluetooth.AdapterStateChangedListener): Boolean {
@@ -146,12 +146,12 @@ open class AnkerBoxBluetooth : IBluetooth {
 
     override fun addDeviceFoundListener(listener: IBluetooth.DeviceFoundListener): Boolean {
         Log.d(TAG, "addDeviceFoundListener, listener=$listener")
-        return isSupportBluetooth && bluetoothScanner.let { it != null && it.addDeviceFoundListener(listener) }
+        return isSupportBluetooth && bluetoothScanner?.addDeviceFoundListener(listener) ?: false
     }
 
     override fun removeDeviceFoundListener(listener: IBluetooth.DeviceFoundListener): Boolean {
         Log.d(TAG, "removeDeviceFoundListener, listener=$listener")
-        return isSupportBluetooth && bluetoothScanner.let { it != null && it.removeDeviceFoundListener(listener) }
+        return isSupportBluetooth && bluetoothScanner?.removeDeviceFoundListener(listener) ?: false
     }
 
     override fun getConnectedDevicesInfo(uuids: Array<String>): Set<AnkerBoxBluetoothDevice>? {
@@ -161,8 +161,8 @@ open class AnkerBoxBluetooth : IBluetooth {
             for (uuid in uuids) {
 //                val bondedDevice = mBluetoothAdapter?.getRemoteDevice(uuid)
 //                bluetoothScanner?.let { devices.add(it.buildDevice(bondedDevice)) }
-                safeLet(bluetoothScanner, mBluetoothAdapter) {
-                    scanner, adapter -> devices.add(scanner.buildDevice(adapter.getRemoteDevice(uuid)))
+                safeLet(bluetoothScanner, mBluetoothAdapter) { scanner, adapter ->
+                    devices.add(scanner.buildDevice(adapter.getRemoteDevice(uuid)))
                 }
 
             }

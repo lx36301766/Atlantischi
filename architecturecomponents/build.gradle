@@ -18,6 +18,9 @@ dependencies {
     implementation annotation.dagger
     annotationProcessor annotation.dagger_compiler
 
+//    implementation support_deps.design
+    implementation support_deps.recyclerView
+
     implementation lifecycle.extensions
     implementation lifecycle.viewmodel
     implementation lifecycle.livedata
@@ -26,5 +29,16 @@ dependencies {
     implementation lifecycle.reactivestreams
     annotationProcessor lifecycle.compiler
 
-    implementation support_deps.supportV4
+    implementation anko.commons
+    implementation anko.sdk25
+    implementation anko.sqlite
+    implementation anko.recyclerview_v7
+    implementation anko.constraint_layout
+
+//    implementation anko.design
+//    implementation anko.appcompat_v7
+//    implementation anko.appcompat_v7_commons
+//    implementation anko.cardview_v7
+//    implementation anko.support_v4_commons
+//    implementation anko.support_v4
 }

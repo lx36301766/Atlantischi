@@ -39,20 +39,37 @@ dependencies {
 
     implementation network.retrofit2_converter_fastjson
     implementation network.retrofit2_converter_gson
-    implementation network.retrofit2_converter_jackson
-    implementation network.retrofit2_converter_moshi
-    implementation network.retrofit2_converter_guava
-    implementation network.retrofit2_converter_java8
-    implementation network.retrofit2_converter_protobuf
-    implementation network.retrofit2_converter_simplexml
-    implementation network.retrofit2_converter_wire
-
-//    implementation tools.android_ktx
+//    implementation network.retrofit2_converter_jackson
+//    implementation network.retrofit2_converter_moshi
+//    implementation network.retrofit2_converter_guava
+//    implementation network.retrofit2_converter_java8
+//    implementation network.retrofit2_converter_protobuf
+//    implementation network.retrofit2_converter_simplexml
+//    implementation network.retrofit2_converter_wire
 
     implementation annotation.dagger
     implementation annotation.dagger_android
     implementation annotation.dagger_android_support
     annotationProcessor annotation.dagger_compiler
     annotationProcessor annotation.dagger_android_processor
+
+//    implementation anko.commons
+//    implementation anko.sdk25
+//    implementation anko.appcompat_v7
+//    implementation anko.sdk25_coroutines
+//    implementation anko.appcompat_v7_coroutines
+//    implementation anko.sqlite
+//    implementation anko.appcompat_v7_commons
+//    implementation anko.coroutines
+//    implementation anko.cardview_v7
+//    implementation anko.design
+//    implementation anko.design_coroutines
+//    implementation anko.gridlayout_v7
+//    implementation anko.percent
+//    implementation anko.recyclerview_v7
+//    implementation anko.recyclerview_v7_coroutines
+//    implementation anko.support_v4_commons
+//    implementation anko.support_v4
+//    implementation anko.constraint_layout
 
 }

@@ -3,7 +3,7 @@ apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 android {
 
     compileSdkVersion COMPILE_SDK_VERSION as int
-    buildToolsVersion BUILD_TOOLS_VERSION
+//    buildToolsVersion BUILD_TOOLS_VERSION
 
     lintOptions {
         abortOnError false

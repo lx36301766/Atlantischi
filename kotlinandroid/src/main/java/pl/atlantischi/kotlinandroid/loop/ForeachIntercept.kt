@@ -6,7 +6,7 @@ package pl.atlantischi.kotlinandroid.loop
  * @author lx
  */
 
-internal class Foreach {
+internal class ForeachIntercept {
 
     private val mStringCache = mutableListOf<String>()
 

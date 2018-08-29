@@ -61,6 +61,24 @@ ext {
 
     //***************************** andoird x *****************************//
 
+    ktx_version = '1.0.0-alpha1'
+    ktx_lifecycle_version = '2.0.0-alpha1'
+    ktx = [
+            core                     : "androidx.core:core-ktx:$ktx_version",
+            fragment                 : "androidx.fragment:fragment-ktx:$ktx_version",
+            palette                  : "androidx.palette:palette-ktx:$ktx_version",
+            sqlite                   : "androidx.sqlite:sqlite-ktx:$ktx_version",
+            collection               : "androidx.collection:collection-ktx:$ktx_version",
+            lifecycle_viewmodel      : "androidx.lifecycle:lifecycle-viewmodel-ktx:$ktx_lifecycle_version",
+            lifecycle_reactivestreams: "androidx.lifecycle:lifecycle-reactivestreams-ktx:$ktx_lifecycle_version",
+            navigation_common        : "android.arch.navigation:navigation-common-ktx:$ktx_version",
+            navigation_fragment      : "android.arch.navigation:navigation-fragment-ktx:$ktx_version",
+            navigation_runtime       : "android.arch.navigation:navigation-runtime-ktx:$ktx_version",
+            navigation_testing       : "android.arch.navigation:navigation-testing-ktx:$ktx_version",
+            navigation_ui            : "android.arch.navigation:navigation-ui-ktx:$ktx_version",
+            work_runtime             : "android.arch.work:work-runtime-ktx:$ktx_version",
+    ]
+
     support_x_version = '1.0.0-alpha1'
     support_x_deps = [
             supportV4   : "androidx.legacy:legacy-support-v4:$support_x_version",
@@ -76,7 +94,6 @@ ext {
     lifecycle_x = [
             extensions     : "androidx.lifecycle:lifecycle-extensions:$lifecycle_x_version",
             viewmodel      : "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_x_version",
-            viewmodel_ktx  : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_x_version",
             livedata       : "androidx.lifecycle:lifecycle-livedata:$lifecycle_x_version",
             runtime        : "androidx.lifecycle:lifecycle-runtime:$lifecycle_x_version",
             compiler       : "androidx.lifecycle:lifecycle-compiler:$lifecycle_x_version",

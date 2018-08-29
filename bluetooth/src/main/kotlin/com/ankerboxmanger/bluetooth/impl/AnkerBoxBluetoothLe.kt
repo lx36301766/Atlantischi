@@ -104,13 +104,17 @@ class AnkerBoxBluetoothLe : AnkerBoxBluetooth(), IBluetoothLe {
 
     override fun disconnectGatt(context: Context, deviceId: String): Boolean {
         Log.d(TAG, "disconnectGatt, deviceId=$deviceId")
-        if (mBluetoothGatt != null) {
-            mBluetoothGatt!!.disconnect()
-            mBluetoothGatt!!.close()
-            mBluetoothGatt = null
-            return true
+//        if (mBluetoothGatt != null) {
+//            mBluetoothGatt!!.disconnect()
+//            mBluetoothGatt!!.close()
+//            mBluetoothGatt = null
+//            return true
+//        }
+        mBluetoothGatt?.run {
+            disconnect()
+            close()
         }
-        return false
+        return mBluetoothGatt != null
     }
 
     override fun addLeStateChangedListener(listener: IBluetoothLe.StateChangedListener): Boolean {

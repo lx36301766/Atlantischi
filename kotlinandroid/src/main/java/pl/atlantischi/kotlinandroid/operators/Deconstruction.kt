@@ -18,6 +18,7 @@ internal class Deconstruction {
 
     fun foo () {
         val (text, length) = Password("abc", 10)
+        println("text=$text, length=$length")
     }
 
 }

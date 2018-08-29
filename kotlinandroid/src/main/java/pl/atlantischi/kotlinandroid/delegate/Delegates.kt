@@ -8,7 +8,7 @@ import kotlin.properties.Delegates
  * @author lx
  */
 
-class User(map: Map<String, Any?>) {
+class User(val map: MutableMap<String, Any?>) {
 
     //标准委托
     val lazyValue: String by lazy {
@@ -25,7 +25,9 @@ class User(map: Map<String, Any?>) {
     val name: String by map
     val age: Int     by map
 
-    val email: String by ReadWriteDelegate(map)
+    //属性委托给类
+    var email: String by ReadWriteDelegate()
+
 }
 
 //局部委托属性
@@ -44,9 +46,10 @@ class Foo{
 }
 
 fun main(args: Array<String>) {
-    val user = User(mapOf(
+    val user = User(mutableMapOf(
             "name" to "John Doe",
-            "age" to 25
+            "age" to 25,
+            "email" to "xxx@163.com"
     ))
     println("name=${user.name}, age=${user.age}")
 

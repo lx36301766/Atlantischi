@@ -10,10 +10,10 @@ import kotlin.reflect.KProperty
  * @author lx
  */
 
-class ReadDelegate : ReadOnlyProperty<Any?, String> {
+class ReadDelegate : ReadOnlyProperty<User, String> {
 
-    override operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
-        return "$thisRef, thank you for delegating '${property.name}' to me!"
+    override operator fun getValue(thisRef: User, property: KProperty<*>): String {
+        return thisRef.map[property.name] as? String ?: "null"
     }
 
 }
@@ -21,11 +21,11 @@ class ReadDelegate : ReadOnlyProperty<Any?, String> {
 class ReadWriteDelegate : ReadWriteProperty<User, String> {
 
     override operator fun getValue(thisRef: User, property: KProperty<*>): String {
-        return "$thisRef, thank you for delegating '${property.name}' to me!"
+        return thisRef.map[property.name] as? String ?: "null"
     }
 
     override operator fun setValue(thisRef: User, property: KProperty<*>, value: String) {
-        println("$value has been assigned to '${property.name}' in $thisRef.")
+        thisRef.map[property.name] = value
     }
 
 }

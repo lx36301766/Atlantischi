@@ -82,14 +82,15 @@ operator fun Operators.getValue(thisRef: Any?, property: KProperty<*>): String {
 operator fun Operators.setValue(thisRef: Any?, property: KProperty<*>, value: String) {
     println("$value has been assigned to '${property.name}' in $thisRef.")
 }
-//operator fun Operators.provideDelegate(
-//        thisRef: MyUI,
-//        prop: KProperty<*>
-//): ReadOnlyProperty<MyUI, T> {
-////    checkProperty(thisRef, prop.name)
-//    // 创建委托
-////    return ResourceDelegate()
-//}
+operator fun Operators.provideDelegate(
+        thisRef: Any,
+        prop: KProperty<*>
+): ReadOnlyProperty<Any, Any>? {
+//    checkProperty(thisRef, prop.name)
+    // 创建委托
+//    return ResourceDelegate()
+    return null
+}
 
 
 

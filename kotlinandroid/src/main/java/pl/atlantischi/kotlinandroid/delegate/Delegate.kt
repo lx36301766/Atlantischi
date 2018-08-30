@@ -1,5 +1,9 @@
 package pl.atlantischi.kotlinandroid.delegate
 
+import android.app.Activity
+import android.view.View
+import android.widget.ImageView
+import pl.atlantischi.kotlinandroid.R
 import kotlin.properties.ReadOnlyProperty
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty

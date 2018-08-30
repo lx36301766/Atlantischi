@@ -1,5 +1,7 @@
 package pl.atlantischi.kotlinandroid.operators
 
+import pl.atlantischi.kotlinandroid.delegate.ReadDelegate
+import pl.atlantischi.kotlinandroid.delegate.User
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
@@ -82,14 +84,8 @@ operator fun Operators.getValue(thisRef: Any?, property: KProperty<*>): String {
 operator fun Operators.setValue(thisRef: Any?, property: KProperty<*>, value: String) {
     println("$value has been assigned to '${property.name}' in $thisRef.")
 }
-operator fun Operators.provideDelegate(
-        thisRef: Any,
-        prop: KProperty<*>
-): ReadOnlyProperty<Any, Any>? {
-//    checkProperty(thisRef, prop.name)
-    // 创建委托
-//    return ResourceDelegate()
-    return null
+operator fun Operators.provideDelegate(thisRef: Any, prop: KProperty<*>): ReadOnlyProperty<User, String> {
+    return ReadDelegate()
 }
 
 

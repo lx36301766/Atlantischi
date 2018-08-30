@@ -1,4 +1,4 @@
-package pl.atlantischi.ktutil
+package pl.atlantischi.ktutil.extension
 
 import android.app.Activity
 import android.content.Context

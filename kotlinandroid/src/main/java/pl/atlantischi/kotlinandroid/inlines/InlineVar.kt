@@ -12,7 +12,8 @@ class Foo {}
 
 inline var foo: Foo
     get() = Foo()
-    set(v) {}
+    set(v) {
+    }
 
 val foo1: Foo
     inline get() = Foo()

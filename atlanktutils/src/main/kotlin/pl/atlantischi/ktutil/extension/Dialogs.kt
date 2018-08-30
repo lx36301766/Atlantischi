@@ -2,8 +2,7 @@ package pl.atlantischi.ktutil.extension
 
 import android.app.Dialog
 import android.view.View
-import kotlin.properties.ReadOnlyProperty
-import kotlin.reflect.KProperty
+import pl.atlantischi.ktutil.intenal.GetValueDelegate
 
 /**
  * Created on 30/08/2018.
@@ -11,10 +10,4 @@ import kotlin.reflect.KProperty
  * @author lx
  */
 
-fun <V : View> Dialog.bindView(id: Int): ReadOnlyProperty<Dialog, V?> {
-    return object : ReadOnlyProperty<Dialog, V?> {
-        override fun getValue(thisRef: Dialog, property: KProperty<*>): V? {
-            return thisRef.findViewById(id)
-        }
-    }
-}
+fun <V : View> Dialog.bindView(id: Int) = GetValueDelegate<Dialog, V?> { findViewById(id) }

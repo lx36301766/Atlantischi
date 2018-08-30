@@ -5,9 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import pl.atlantischi.ktutil.intenal.GetValueDelegate
 import java.util.*
-import kotlin.properties.ReadOnlyProperty
-import kotlin.reflect.KProperty
 
 /**
  * Created on 28/08/2018.
@@ -17,13 +16,7 @@ import kotlin.reflect.KProperty
 
 inline fun <reified T : View> Activity.findView(id: Int) = findViewById(id) as T
 
-fun <V : View> Activity.bindView(id: Int): ReadOnlyProperty<Activity, V?> {
-    return object : ReadOnlyProperty<Activity, V?> {
-        override fun getValue(thisRef: Activity, property: KProperty<*>): V? {
-            return thisRef.findViewById(id)
-        }
-    }
-}
+fun <V : View> Activity.bindView(id: Int) = GetValueDelegate<Activity, V?> { findViewById(id) }
 
 val resultCallbacks = mutableMapOf<Int, (Int, Intent)-> Unit>()
 

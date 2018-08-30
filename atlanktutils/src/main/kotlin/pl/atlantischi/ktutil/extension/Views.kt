@@ -1,8 +1,7 @@
 package pl.atlantischi.ktutil.extension
 
 import android.view.View
-import kotlin.properties.ReadOnlyProperty
-import kotlin.reflect.KProperty
+import pl.atlantischi.ktutil.intenal.GetValueDelegate
 
 /**
  * Created on 29/08/2018.
@@ -10,13 +9,7 @@ import kotlin.reflect.KProperty
  * @author lx
  */
 
-class ReadOnlyDelegate<R, T>(val getValue: (R)-> T) : ReadOnlyProperty<R, T> {
-
-    override operator fun getValue(thisRef: R, property: KProperty<*>): T {
-        return getValue(thisRef)
-    }
-
-}
+fun <V : View> View.bindView(id: Int) = GetValueDelegate<View, V?> { findViewById(id) }
 
 fun View.visible() { visibility = View.VISIBLE }
 
@@ -26,4 +19,3 @@ fun View.gone() { visibility = View.GONE }
 
 val View.isVisible: Boolean
     inline get() = visibility == View.VISIBLE
-

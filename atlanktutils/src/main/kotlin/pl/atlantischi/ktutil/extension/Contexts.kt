@@ -47,4 +47,3 @@ fun Context.launchIntent(
     intercept?.invoke()
     startActivity(intent)
 }
-

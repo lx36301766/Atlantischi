@@ -3,7 +3,7 @@ apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
 android {
 
     compileSdkVersion COMPILE_SDK_VERSION as int
-//    buildToolsVersion BUILD_TOOLS_VERSION
+    buildToolsVersion BUILD_TOOLS_VERSION
 
     lintOptions {
         abortOnError false
@@ -72,14 +72,6 @@ android {
 
 configurations.all {
     resolutionStrategy {
-        force support_deps.appcompatV7
-        force support_deps.supportV4
-        force support_deps.supportV13
-        force support_deps.appcompatV7
-        force support_deps.cardview
-        force support_deps.recyclerView
-        force support_deps.design
-
 //        force json.fastjson
     }
 }

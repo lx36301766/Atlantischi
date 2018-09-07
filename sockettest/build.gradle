@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
+apply from: "deps.gradle"
 apply from: rootDir.absolutePath + "/gradle/android_config.gradle"
 apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
-apply from: rootDir.absolutePath + "/gradle/protobuf.gradle"
-apply from: "deps.gradle"
-apply from: rootDir.absolutePath + "/gradle/tinker_support.gradle"
+apply from: rootDir.absolutePath + "/gradle/third/protobuf.gradle"
+apply from: rootDir.absolutePath + "/gradle/third/tinker_support.gradle"
 
 android {
 

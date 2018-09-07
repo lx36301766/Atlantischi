@@ -18,7 +18,7 @@ dependencies {
     implementation annotation.dagger
     annotationProcessor annotation.dagger_compiler
 
-    implementation ktx.core
+//    implementation ktx.core
 //    implementation ktx.fragment
 //    implementation ktx.palette
 //    implementation ktx.sqlite
@@ -43,11 +43,11 @@ dependencies {
 //    implementation lifecycle.reactivestreams
 //    annotationProcessor lifecycle.compiler
 
-    implementation anko.commons
-    implementation anko.sdk25
-    implementation anko.sqlite
-    implementation anko.recyclerview_v7
-    implementation anko.constraint_layout
+//    implementation anko.commons
+//    implementation anko.sdk25
+//    implementation anko.sqlite
+//    implementation anko.recyclerview_v7
+//    implementation anko.constraint_layout
 
 //    implementation anko.design
 //    implementation anko.appcompat_v7
@@ -55,4 +55,8 @@ dependencies {
 //    implementation anko.cardview_v7
 //    implementation anko.support_v4_commons
 //    implementation anko.support_v4
+
+
+
 }
+

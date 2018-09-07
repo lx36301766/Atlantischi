@@ -50,7 +50,7 @@ ext {
             testing : "android.arch.navigation:navigation-testing:$navigation_version",
     ]
 
-    work_version = "1.0.0-alpha04"
+    work_version = "1.0.0-alpha07"
     work = [
             runtime : "android.arch.work:work-runtime:$work_version",
             firebase: "android.arch.work:work-firebase:$work_version",
@@ -76,7 +76,7 @@ ext {
             navigation_runtime       : "android.arch.navigation:navigation-runtime-ktx:$ktx_version",
             navigation_testing       : "android.arch.navigation:navigation-testing-ktx:$ktx_version",
             navigation_ui            : "android.arch.navigation:navigation-ui-ktx:$ktx_version",
-            work_runtime             : "android.arch.work:work-runtime-ktx:$ktx_version",
+            work_runtime             : "android.arch.work:work-runtime-ktx:1.0.0-alpha07",
     ]
 
     support_x_version = '1.0.0-alpha1'
@@ -192,13 +192,19 @@ ext {
     rx = [
             rxandroid : 'io.reactivex.rxjava2:rxandroid:2.0.2',
             rxjava    : 'io.reactivex.rxjava2:rxjava:2.2.0',
+            rxkotlin  : 'io.reactivex.rxjava2:rxkotlin:2.3.0',
     ]
 
+    moshi_version = '1.6.0'
+    serialization_version = '0.6.1'
     json = [
-            gson            : "com.google.code.gson:gson:2.8.1",
-            fastjson        : "com.alibaba:fastjson:1.2.49",
-            fastjson_android: "com.alibaba:fastjson:1.1.70.android",
-            moshi           : "com.squareup.moshi:moshi:1.5.0",
+            gson                : "com.google.code.gson:gson:2.8.1",
+            fastjson            : "com.alibaba:fastjson:1.2.49",
+            fastjson_android    : "com.alibaba:fastjson:1.1.70.android",
+            moshi               : "com.squareup.moshi:moshi:$moshi_version",
+            moshi_kotlin        : "com.squareup.moshi:moshi-kotlin:$moshi_version",
+            moshi_kotlin_codegen: "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version",
+            kotlin_serialization: "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
     ]
 
     log = [

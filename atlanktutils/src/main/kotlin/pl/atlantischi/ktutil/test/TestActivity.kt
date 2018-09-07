@@ -3,6 +3,7 @@ package pl.atlantischi.ktutil.test
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.TextView
 import pl.atlantischi.ktutil.extension.bindView
 import pl.atlantischi.ktutil.extension.findView

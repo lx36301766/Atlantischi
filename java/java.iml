@@ -29,7 +29,9 @@
             <array />
           </option>
           <option name="pluginClasspaths">
-            <array />
+            <array>
+              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-scripting-compiler-embeddable/1.2.61/945947f933d5e9db2b16a6391daea51e14a37948/kotlin-scripting-compiler-embeddable-1.2.61.jar" />
+            </array>
           </option>
         </compilerArguments>
       </configuration>
@@ -51,22 +53,22 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-jdk8-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-jdk7-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-common-1.2.50" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-jdk8-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-jdk7-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="kotlin-stdlib-common-1.2.61" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="annotations-13.0" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="commons-codec-1.7" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-jdk8-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-jdk7-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-common-1.2.50" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-jdk8-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-jdk7-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="kotlin-stdlib-common-1.2.61" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="annotations-13.0" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="commons-codec-1.7" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-jdk8-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-jdk7-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-1.2.50" level="project" />
-    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-common-1.2.50" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-jdk8-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-jdk7-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-1.2.61" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="kotlin-stdlib-common-1.2.61" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="annotations-13.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="commons-codec-1.7" level="project" />
   </component>

@@ -1,0 +1,15 @@
+
+buildscript {
+
+    ext.robust_version = '0.6.18'
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.meituan.robust:gradle-plugin:$robust_version"
+        classpath "com.meituan.robust:auto-patch-plugin:$robust_version"
+    }
+
+}

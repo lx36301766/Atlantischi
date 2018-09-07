@@ -11,5 +11,6 @@ class ProtobufActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_protobuf_actitvity)
 
+
     }
 }

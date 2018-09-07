@@ -41,17 +41,6 @@ android.applicationVariants.all { variant ->
                     rename { String fileName ->
                         signedName = "jiedian_cabinet_system_" + android.defaultConfig.versionCode + "_signed.apk"
                         unsignedName = "jiedian_cabinet_system_" + android.defaultConfig.versionCode + ".apk"
-//                        println "fileName22222 = " + fileName;
-//                        def newName = "jiedian_cabinet_" + android.defaultConfig.versionCode + ".apk"
-//                        def signName = "jiedian_cabinet_" + android.defaultConfig.versionCode + "_signed.apk"
-//                        println "fileName = " + fileName;
-//                        println "newName = " + newName;
-//                        def command = """java -jar signapk.jar platform.x509.pem platform.pk8 ${newName} ${signName}"""
-//                        println "command = " + command;
-////                        def command = """ps"""
-//                        def proc = command.execute()
-//                        proc.waitFor()
-//                        return
                     }
                 }
                 println "44444444444444";

@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+import android.support.graphics.drawable.VectorDrawableCompat;
 import bak.bluetooth.AnkerBoxBluetoothManager;
 
 import android.Manifest;

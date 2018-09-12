@@ -53,7 +53,7 @@ import android.view.textservice.TextServicesManager
 
 internal object SystemServiceMap {
 
-    val SERVICE_NAMES = hashMapOf<Class<*>, String>()
+    internal val SERVICE_NAMES = hashMapOf<Class<*>, String>()
 
     init {
         SERVICE_NAMES[AccessibilityManager::class.java] = Context.ACCESSIBILITY_SERVICE

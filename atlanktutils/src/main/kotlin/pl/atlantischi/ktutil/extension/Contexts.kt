@@ -59,40 +59,57 @@ fun Context.bindColorRes(@ColorRes id: Int) = lazy { resources.getColor(id) }
  */
 fun Context.bindDrawableRes(@DrawableRes id: Int) = lazy { resources.getDrawable(id) }
 
-inline fun <reified T : Activity> Context.launchActivity(
+/**
+ *
+ */
+inline fun <reified T : Activity> Context.startActivity (
         flags: Int? = null,
         data: Uri? = null,
+        type: String? = null,
         categories: String? = null,
         bundle: Bundle? = null,
-        noinline interceptor: ((Intent)-> Unit)? = null
+        noinline interceptor: (Intent.()-> Unit)? = null
 ) {
     val intent = Intent(this, T::class.java)
     intent.apply {
         flags?.let { this.flags = it }
         data?.let { this.data = it }
+        type?.let { this.type = it }
         categories?.let { addCategory(it)}
         bundle?.let { putExtras(it) }
+        interceptor?.invoke(this)
     }
-    interceptor?.invoke(intent)
     startActivity(intent)
 }
 
+/**
+ *
+ */
 fun Context.launchIntent(
-        intent: Intent = Intent(),
         action: String? = null,
         flags: Int? = null,
         data: Uri? = null,
+        type: String? = null,
         categories: String? = null,
         bundle: Bundle? = null,
-        interceptor: (()-> Unit)? = null
+        interceptor: (Intent.()-> Unit)? = null
 ) {
+    val intent = Intent()
     intent.apply {
-        flags?.let { this.flags = it }
         action?.let { this.action = it }
+        flags?.let { this.flags = it }
         data?.let { this.data = it }
+        type?.let { this.type = it }
         categories?.let { addCategory(it)}
         bundle?.let { putExtras(it) }
+        interceptor?.invoke(this)
     }
-    interceptor?.invoke()
     startActivity(intent)
+}
+
+/**
+ *
+ */
+fun Context.startActivity(interceptor: (Intent.()-> Unit)? = null) {
+    startActivity(Intent().apply { interceptor?.invoke(this) })
 }

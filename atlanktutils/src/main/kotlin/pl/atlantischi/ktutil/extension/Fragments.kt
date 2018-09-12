@@ -1,7 +1,7 @@
 package pl.atlantischi.ktutil.extension
 
+import android.support.v4.app.Fragment
 import android.view.View
-import pl.atlantischi.ktutil.intenal.GetValueDelegate
 
 /**
  * Created on 30/08/2018.
@@ -9,8 +9,4 @@ import pl.atlantischi.ktutil.intenal.GetValueDelegate
  * @author lx
  */
 
-fun <V : View> android.support.v4.app.Fragment.bindView(id: Int)
-        = GetValueDelegate<android.support.v4.app.Fragment, V?> { view?.findViewById(id) }
-
-fun <V : View> android.app.Fragment.bindView(id: Int)
-        = GetValueDelegate<android.app.Fragment, V?> { view?.findViewById(id) }
+fun <V : View> Fragment.bindView(id: Int) = lazy<V?> { view?.findViewById(id) }

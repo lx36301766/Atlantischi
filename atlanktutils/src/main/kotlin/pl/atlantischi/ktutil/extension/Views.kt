@@ -1,7 +1,6 @@
 package pl.atlantischi.ktutil.extension
 
 import android.view.View
-import pl.atlantischi.ktutil.intenal.GetValueDelegate
 
 /**
  * Created on 29/08/2018.
@@ -9,7 +8,7 @@ import pl.atlantischi.ktutil.intenal.GetValueDelegate
  * @author lx
  */
 
-fun <V : View> View.bindView(id: Int) = GetValueDelegate<View, V?> { findViewById(id) }
+fun <V : View> View.bindView(id: Int) = lazy<V?> { findViewById(id) }
 
 fun View.visible() { visibility = View.VISIBLE }
 

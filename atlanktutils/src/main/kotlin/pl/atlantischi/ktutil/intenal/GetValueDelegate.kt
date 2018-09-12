@@ -9,10 +9,10 @@ import kotlin.reflect.KProperty
  * @author lx
  */
 
-class GetValueDelegate<in R, out T>(val getValue: (R)-> T) : ReadOnlyProperty<R, T> {
+internal class GetValueDelegate<in R, out T>(private val delegate: (R)-> T) : ReadOnlyProperty<R, T> {
 
     override operator fun getValue(thisRef: R, property: KProperty<*>): T {
-        return getValue(thisRef)
+        return delegate(thisRef)
     }
 
 }

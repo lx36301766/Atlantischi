@@ -5,7 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import pl.atlantischi.ktutil.intenal.GetValueDelegate
 import java.util.*
 
 /**
@@ -14,11 +13,11 @@ import java.util.*
  * @author lx
  */
 
-inline fun <reified T : View> Activity.findView(id: Int) = findViewById(id) as T
+//inline fun <reified T : View> Activity.findView(id: Int) = findViewById(id) as T
 
-fun <V : View> Activity.bindView(id: Int) = GetValueDelegate<Activity, V?> { findViewById(id) }
+//fun <V : View> Activity.bindView(id: Int) = GetValueDelegate<Activity, V?> { findViewById(id) }
 
-val resultCallbacks = mutableMapOf<Int, (Int, Intent)-> Unit>()
+fun <V : View> Activity.bindView(id: Int) = lazy<V?> { findViewById(id) }
 
 @JvmOverloads
 inline fun <reified T : Activity> Activity.launchActivityForResult(
@@ -26,7 +25,7 @@ inline fun <reified T : Activity> Activity.launchActivityForResult(
         data: Uri? = null,
         categories: String? = null,
         bundle: Bundle? = null,
-        noinline callback: ((Int, Intent)-> Unit)? = null,
+//        noinline callback: ((Int, Intent)-> Unit)? = null,
         noinline intentInterceptor: ((Intent)-> Unit)? = null
 ) {
     val intent = Intent(this, T::class.java)
@@ -36,11 +35,7 @@ inline fun <reified T : Activity> Activity.launchActivityForResult(
     bundle?.let { intent.putExtras(it) }
     //TODO random only code
     val randomRequestCode = Random().nextInt(100000)
-    callback?.let{ resultCallbacks[randomRequestCode] = it }
+//    callback?.let{ resultCallbacks[randomRequestCode] = it }
     intentInterceptor?.invoke(intent)
     startActivityForResult(intent, randomRequestCode)
-}
-
-fun Activity.dispatchActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-    resultCallbacks.remove(requestCode)?.invoke(resultCode, data)
 }

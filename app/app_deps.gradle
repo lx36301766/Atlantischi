@@ -11,6 +11,8 @@ dependencies {
     implementation support_deps.design
     implementation support_deps.recyclerView
 
+    implementation support_deps.flexbox
+
     implementation view.gif_drawable
     implementation view.hlistview
 

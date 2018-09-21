@@ -9,6 +9,11 @@ package pl.atlantischi.ktutil.extension
 inline val <reified T> T.TAG : String
     get() = T::class.java.simpleName
 
+inline fun <T> multipleWith(vararg receivers: T?, block: T.() -> Unit) {
+    for (receiver in receivers) {
+        receiver?.block()
+    }
+}
 
 inline fun <T : Any, R> T?.notNull(block: (T) -> R): R? {
     return if (this == null) null else block(this)

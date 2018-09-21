@@ -8,7 +8,7 @@ import android.view.View
  * @author lx
  */
 
-fun <V : View> View.bindView(id: Int) = lazy<V?> { findViewById(id) }
+fun <V : View> View.bindView(id: Int) = lazy { findViewById(id) as? V }
 
 fun View.visible() { visibility = View.VISIBLE }
 

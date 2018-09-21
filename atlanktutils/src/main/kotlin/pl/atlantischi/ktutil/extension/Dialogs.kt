@@ -9,4 +9,4 @@ import android.view.View
  * @author lx
  */
 
-fun <V : View> Dialog.bindView(id: Int) = lazy<V?> { findViewById(id) }
+fun <V : View> Dialog.bindView(id: Int) = lazy { findViewById(id) as? V }

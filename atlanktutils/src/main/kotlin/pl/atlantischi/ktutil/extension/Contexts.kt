@@ -4,14 +4,11 @@ import android.app.Activity
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
-import android.os.Bundle
 import android.support.annotation.ColorRes
 import android.support.annotation.DrawableRes
 import android.support.annotation.StringRes
 import pl.atlantischi.ktutil.intenal.SystemServiceMap.SERVICE_NAMES
-
 import java.io.File
 
 /**
@@ -62,54 +59,61 @@ fun Context.bindDrawableRes(@DrawableRes id: Int) = lazy { resources.getDrawable
 /**
  *
  */
-inline fun <reified T : Activity> Context.startActivity (
-        flags: Int? = null,
-        data: Uri? = null,
-        type: String? = null,
-        categories: String? = null,
-        bundle: Bundle? = null,
-        noinline interceptor: (Intent.()-> Unit)? = null
-) {
-    val intent = Intent(this, T::class.java)
-    intent.apply {
-        flags?.let { this.flags = it }
-        data?.let { this.data = it }
-        type?.let { this.type = it }
-        categories?.let { addCategory(it)}
-        bundle?.let { putExtras(it) }
-        interceptor?.invoke(this)
-    }
-    startActivity(intent)
+inline fun <reified T : Activity> Context.startActivity(noinline interceptor: (Intent.()-> Unit)? = null) {
+    startActivity(Intent(this, T::class.java).apply { interceptor?.invoke(this) })
 }
 
 /**
  *
  */
-fun Context.launchIntent(
-        action: String? = null,
-        flags: Int? = null,
-        data: Uri? = null,
-        type: String? = null,
-        categories: String? = null,
-        bundle: Bundle? = null,
-        interceptor: (Intent.()-> Unit)? = null
-) {
-    val intent = Intent()
-    intent.apply {
-        action?.let { this.action = it }
-        flags?.let { this.flags = it }
-        data?.let { this.data = it }
-        type?.let { this.type = it }
-        categories?.let { addCategory(it)}
-        bundle?.let { putExtras(it) }
-        interceptor?.invoke(this)
-    }
-    startActivity(intent)
-}
-
-/**
- *
- */
-fun Context.startActivity(interceptor: (Intent.()-> Unit)? = null) {
+fun Context.startIntent(interceptor: (Intent.()-> Unit)? = null) {
     startActivity(Intent().apply { interceptor?.invoke(this) })
 }
+
+///**
+// *
+// */
+//inline fun <reified T : Activity> Context.startActivity (
+//        flags: Int? = null,
+//        data: Uri? = null,
+//        type: String? = null,
+//        categories: String? = null,
+//        bundle: Bundle? = null,
+//        noinline interceptor: (Intent.()-> Unit)? = null
+//) {
+//    val intent = Intent(this, T::class.java)
+//    intent.apply {
+//        flags?.let { this.flags = it }
+//        data?.let { this.data = it }
+//        type?.let { this.type = it }
+//        categories?.let { addCategory(it)}
+//        bundle?.let { putExtras(it) }
+//        interceptor?.invoke(this)
+//    }
+//    startActivity(intent)
+//}
+//
+///**
+// *
+// */
+//fun Context.launchIntent(
+//        action: String? = null,
+//        flags: Int? = null,
+//        data: Uri? = null,
+//        type: String? = null,
+//        categories: String? = null,
+//        bundle: Bundle? = null,
+//        interceptor: (Intent.()-> Unit)? = null
+//) {
+//    val intent = Intent()
+//    intent.apply {
+//        action?.let { this.action = it }
+//        flags?.let { this.flags = it }
+//        data?.let { this.data = it }
+//        type?.let { this.type = it }
+//        categories?.let { addCategory(it)}
+//        bundle?.let { putExtras(it) }
+//        interceptor?.invoke(this)
+//    }
+//    startActivity(intent)
+//}

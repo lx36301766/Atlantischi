@@ -34,7 +34,7 @@ operator fun Operators.rem(other: Operators) = Operators(x % other.x) // a % b
 operator fun Operators.rangeTo(other: Operators) = listOf(this, other)// a..b
 
 //赋值算术运算符
-//PS：当同一类型的和上面的算术运算符同时定义时，调用处会报错, 例如 += 会匹配到 plus 和 plusAssign 两个函数
+//PS：当同一类型的和上面的算术运算符同时定义时，调用处会报错, 例如 '+=' 会匹配到 plus 和 plusAssign 两个函数
 operator fun Operators.plusAssign(other: Operators) { x + other.x } // a += b
 operator fun Operators.minusAssign(other: Operators) { x - other.x } // a -= b
 operator fun Operators.timesAssign(other: Operators) { x * other.x } // a *= b

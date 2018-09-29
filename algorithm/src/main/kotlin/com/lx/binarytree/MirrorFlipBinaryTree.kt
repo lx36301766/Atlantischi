@@ -1,4 +1,4 @@
-package com.custom
+package com.lx.binarytree
 
 /**
  * Created on 28/09/2018.
@@ -9,23 +9,9 @@ package com.custom
  *
  */
 
-class TreeNode(var value: Int, block: (TreeNode.() -> Unit)? = null) {
-
-    init {
-        block?.invoke(this)
-    }
-
-    var left: TreeNode? = null
-    var right: TreeNode? = null
-
-    override fun toString(): String {
-        return "TreeNode(value=$value, left=${left?.value}, right=${right?.value})"
-    }
-
-}
 
 //非递归实现
-fun TreeNode.reverse() {
+private fun TreeNode.reverse() {
     val list = mutableListOf(this)
     while (list.isNotEmpty()) {
         val target = list.removeAt(0)
@@ -38,7 +24,7 @@ fun TreeNode.reverse() {
 }
 
 //递归实现
-fun TreeNode.reverse2() {
+private fun TreeNode.reverseRecursive() {
     if (left == null || right == null) {
         return
     }
@@ -46,8 +32,8 @@ fun TreeNode.reverse2() {
     left = right
     right = tmpNode
 
-    left?.reverse2()
-    right?.reverse2()
+    left?.reverseRecursive()
+    right?.reverseRecursive()
 }
 
 
@@ -87,7 +73,7 @@ fun main(args: Array<String>) {
 
 }
 
-fun TreeNode.printTree() {
+private fun TreeNode.printTree() {
     println(this)
     left?.printTree()
     right?.printTree()

@@ -64,17 +64,11 @@ fun main(args: Array<String>) {
                 }
             }
 
-    root.printTree()
+    root.printThis()
     root.reverse()
     println("reverse")
 //    root.reverse2()
 //    println("reverse2")
-    root.printTree()
+    root.printThis()
 
-}
-
-private fun TreeNode.printTree() {
-    println(this)
-    left?.printTree()
-    right?.printTree()
 }

@@ -48,6 +48,7 @@ fun isOneBitCharacter(bits: IntArray): Boolean {
     }
     var index = 0
     var result = false
+    // 从头开始遍历，遇到0，index + 1，遇到1，index + 2
     while (index < bits.size) {
         if (bits[index] == 0) {
             index++
@@ -56,7 +57,7 @@ fun isOneBitCharacter(bits: IntArray): Boolean {
         }
         if (bits[index] == 1) {
             if (index == bits.lastIndex - 1) {
-                result = false
+                result = false //只有遍历到倒数第二位数仍是1的情况下，才不满足条件
             }
             index += 2
         }

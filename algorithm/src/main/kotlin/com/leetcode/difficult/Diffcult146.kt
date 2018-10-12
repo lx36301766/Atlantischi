@@ -29,18 +29,26 @@ LRU缓存机制
 
  */
 
-class LRUCache(capacity: Int) {
+class LRUCache(private val capacity: Int) {
 
-    val map: LinkedHashMap<Int, Int> = LinkedHashMap(capacity)
+    val map: LinkedHashMap<Int, Int> = LinkedHashMap(capacity + 1)
 
     fun get(key: Int): Int {
-
-
-        return map[key] ?: -1
+        val value = map.remove(key)
+        return value?.also { map[key] = it } ?: -1
     }
 
     fun put(key: Int, value: Int) {
-
+        map.remove(key)
+        map[key] = value
+        if (map.size > capacity) {
+            //linkedHashMap.entrySet().toArray()[linkedHashMap.size() -1];
+            map.remove(map.entries.iterator().next().key)
+        }
     }
 
+}
+
+class LRUCache2(private val capacity: Int) {
+    //TODO 不使用 LinkedHashMap 来实现？
 }

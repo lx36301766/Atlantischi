@@ -10,6 +10,7 @@ import java.util.*
  *
  */
 
+// 这里block参数的目的是为了通过DSL方式更直观的构造测试数据
 class TreeNode(var value: Int, block: (TreeNode.() -> Unit)? = null) {
 
     init {

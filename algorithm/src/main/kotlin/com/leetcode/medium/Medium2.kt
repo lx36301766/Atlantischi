@@ -1,5 +1,8 @@
 package com.leetcode.medium
 
+import com.lx.listnode.ListNode
+import com.lx.listnode.printNode
+
 /**
 
 两数相加
@@ -75,26 +78,4 @@ fun main(args: Array<String>) {
     println(l1)
     ret?.printNode()
 
-}
-
-private class ListNode(var value: Int = 0, nextBlock: (ListNode.() -> ListNode?)? = null) {
-
-    var next: ListNode? = nextBlock?.invoke(this)
-
-    override fun toString(): String {
-        return "ListNode(value=$value, next=$next)"
-    }
-
-}
-
-private fun ListNode.printNode() {
-    var tmpNode : ListNode? = this
-    while (tmpNode != null) {
-        print(tmpNode.value)
-        if (tmpNode.next != null) {
-            print("-")
-        }
-        tmpNode = tmpNode.next
-    }
-    println()
 }

@@ -1,5 +1,14 @@
 package pl.atlantischi.kotlinandroid.lambda
 
+/**
+ * Created on 27/08/2018.
+
+ * @author lx
+ *
+ *  带参数的lambda使用
+ *
+ */
+
 
 fun buildString(builderAction:(StringBuilder) -> Unit):String {
     val sb = StringBuilder()

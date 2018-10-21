@@ -10,6 +10,8 @@ package com.lx.binarytree
  *  给定一个二叉树的根节点，请写一个函数判断该二叉树是否是平衡二叉树（平衡二叉树的定义是一颗二叉树，其任意节点的左右子树的深度相差不超过1）
  */
 
+
+//TODO
 fun TreeNode.isBalancedTree():Boolean {
 
     return false

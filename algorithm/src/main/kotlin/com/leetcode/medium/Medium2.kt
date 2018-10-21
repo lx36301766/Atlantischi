@@ -16,8 +16,10 @@ import com.lx.listnode.printNode
         输出：7 -> 0 -> 8
         原因：342 + 465 = 807
 
- */
 
+    Solution: https://leetcode-cn.com/problems/add-two-numbers/solution/
+
+ */
 
 private fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
     val root: ListNode? = ListNode(0)
@@ -38,27 +40,6 @@ private fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
         cur = cur?.next
     }
     return root
-}
-
-private fun addTwoNumbers2(l1: ListNode?, l2: ListNode?): ListNode? {
-    val root: ListNode? = ListNode(0)
-    var cur = root
-    var tmp1 = l1
-    var tmp2 = l2
-    var sum: Int
-    var carry = 0
-    while (tmp1 != null || tmp2 != null) {
-        sum = carry + ((tmp1?.value ?: 0) + (tmp2?.value ?: 0))
-        carry = sum / 10
-        cur?.next = ListNode(sum % 10)
-        cur = cur?.next
-        tmp1 = tmp1?.next
-        tmp2 = tmp2?.next
-    }
-    if (carry > 0) {
-        cur?.next = ListNode(carry)
-    }
-    return root?.next
 }
 
 fun main(args: Array<String>) {

@@ -1,6 +1,16 @@
 package com.lx
 
 
+/**
+ * Created on 16/10/2018.
+ *
+ * @author lx
+ *
+ *  数塔问题，经典的动态规划问题
+ *
+ */
+
+
 fun findMaxTreeLine(data: Array<IntArray>):Int {
     for (i in data.size - 1 downTo 1) {
         for (j in 0 until i) {

@@ -11,7 +11,7 @@ import java.util.*
  */
 
 // 这里block参数的目的是为了通过DSL方式更直观的构造测试数据
-class TreeNode(var value: Int, block: (TreeNode.() -> Unit)? = null) {
+class  TreeNode(var value: Int, block: (TreeNode.() -> Unit)? = null) {
 
     init {
         block?.invoke(this)
@@ -59,6 +59,7 @@ fun TreeNode.printTree() {
             next = 0
         }
     }
+    println()
 }
 
 // 更漂亮的格式换行遍历打印

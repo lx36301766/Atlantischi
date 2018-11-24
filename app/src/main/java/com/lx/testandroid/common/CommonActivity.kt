@@ -3,23 +3,14 @@ package com.lx.testandroid.common
 import java.util.ArrayList
 
 import com.lx.testandroid.R
-import com.lx.testandroid.receiver.HomePressReceiver
-import com.lx.testandroid.shortcut.shortcut_lib.ShortcutSuperUtils
+import pl.atlantischi.shortcut.shortcut.shortcut_lib.ShortcutSuperUtils
 import com.lx.testandroid.util.ResidentNotification
 import com.lx.testandroid.util.TestShortcutUtils
 
 import android.app.Activity
-import android.app.Application
-import android.content.BroadcastReceiver
-import android.content.ComponentName
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.View
-import android.widget.Toast
 
 /**
  * Created on 05/09/2017.

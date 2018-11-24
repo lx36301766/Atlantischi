@@ -1,9 +1,9 @@
-apply from: rootDir.absolutePath + "/gradle/deps_config.gradle"
+
+apply from: rootDir.absolutePath + "/gradle/kotlin_android.gradle"
 
 android {
 
     compileSdkVersion COMPILE_SDK_VERSION as int
-    buildToolsVersion BUILD_TOOLS_VERSION
 
     lintOptions {
         abortOnError false
@@ -13,7 +13,7 @@ android {
         minSdkVersion MIN_SDK_VERSION as int
         targetSdkVersion TARGET_SDK_VERSION as int
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        vectorDrawables.useSupportLibrary = true
+//        vectorDrawables.useSupportLibrary = true
     }
 
     sourceSets {
@@ -71,17 +71,17 @@ android {
     }
 }
 
-configurations.all {
-    resolutionStrategy {
-//        force json.fastjson
-    }
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation support_deps.appcompatV7
+
+    implementation support_x_deps.appcompatV7
+    implementation support_x_deps.supportV4
+    implementation support_x_deps.supportV13
+    implementation support_x_deps.annotations
+    implementation support_x_deps.recyclerView
+    implementation support_x_deps.design
     implementation support_deps.constraint_layout
 }

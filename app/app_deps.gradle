@@ -1,46 +1,44 @@
 
 dependencies {
 
-    implementation files('libs/httpmime-4.1.1.jar')
+//    implementation files('libs/httpmime-4.1.1.jar')
 
     implementation support_deps.supportV4
     implementation support_deps.supportV13
     implementation support_deps.appcompatV7
-    implementation support_deps.cardview
-    implementation support_deps.annotations
     implementation support_deps.design
     implementation support_deps.recyclerView
 
-    implementation support_deps.flexbox
+//    implementation support_deps.flexbox
+//
+//    implementation view.gif_drawable
+//    implementation view.hlistview
 
-    implementation view.gif_drawable
-    implementation view.hlistview
+//    implementation google_agera.content
+//    implementation google_agera.database
+//    implementation google_agera.net
+//    implementation google_agera.rvadapter
+//    implementation google_agera.rvdatabinding
 
-    implementation google_agera.content
-    implementation google_agera.database
-    implementation google_agera.net
-    implementation google_agera.rvadapter
-    implementation google_agera.rvdatabinding
+//    implementation annotation.butterknife
+//    kapt annotation.butterknife_compiler
 
-    implementation annotation.butterknife
-    annotationProcessor annotation.butterknife_compiler
-
-    implementation 'pl.atlantischi.ximagebriage:library:0.0.1'
+//    implementation 'pl.atlantischi.ximagebriage:library:0.0.1'
 
 
-    implementation log.timber
-    implementation log.klog
-    implementation log.xlog
-    implementation log.logger
+//    implementation log.timber
+//    implementation log.klog
+//    implementation log.xlog
+//    implementation log.logger
 
-    implementation network.retrofit2
-
-    implementation network.retrofit2_adapter_rxjava2
-    implementation network.retrofit2_adapter_java8
-    implementation network.retrofit2_adapter_guava
-
-    implementation network.retrofit2_converter_fastjson
-    implementation network.retrofit2_converter_gson
+//    implementation network.retrofit2
+//
+//    implementation network.retrofit2_adapter_rxjava2
+//    implementation network.retrofit2_adapter_java8
+//    implementation network.retrofit2_adapter_guava
+//
+//    implementation network.retrofit2_converter_fastjson
+//    implementation network.retrofit2_converter_gson
 //    implementation network.retrofit2_converter_jackson
 //    implementation network.retrofit2_converter_moshi
 //    implementation network.retrofit2_converter_guava
@@ -49,11 +47,11 @@ dependencies {
 //    implementation network.retrofit2_converter_simplexml
 //    implementation network.retrofit2_converter_wire
 
-    implementation annotation.dagger
-    implementation annotation.dagger_android
-    implementation annotation.dagger_android_support
-    annotationProcessor annotation.dagger_compiler
-    annotationProcessor annotation.dagger_android_processor
+//    implementation annotation.dagger
+//    implementation annotation.dagger_android
+//    implementation annotation.dagger_android_support
+//    kapt annotation.dagger_compiler
+//    kapt annotation.dagger_android_processor
 
 //    implementation anko.commons
 //    implementation anko.sdk25
@@ -74,5 +72,5 @@ dependencies {
 //    implementation anko.support_v4
 //    implementation anko.constraint_layout
 
-    implementation work.runtime
+//    implementation work.runtime
 }

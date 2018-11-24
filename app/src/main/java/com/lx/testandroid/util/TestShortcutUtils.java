@@ -1,7 +1,7 @@
 package com.lx.testandroid.util;
 
 import com.lx.testandroid.common.NumberTextActivity;
-import com.lx.testandroid.shortcut.shortcut_lib.ShortcutUtils;
+import pl.atlantischi.shortcut.shortcut.shortcut_lib.ShortcutUtils;
 
 import android.content.Context;
 import android.content.Intent;

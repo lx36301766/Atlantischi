@@ -1,9 +1,16 @@
-include ':app', ':java', ':kotlinandroid', ':atlanktutils'
 
-include ':antiphoneharassment'
-include ':architecturecomponents'
-include ':algorithm'
-include ':bluetooth'
+//include ':app', ':java'
+include ':kotlinandroid'
+include ':atlanktutils'
+include ':jetpack'
+
+
+//include ':shortcut'
+//include ':antiphoneharassment'
+//include ':databinding'
+//include ':architecturecomponents'
+//include ':algorithm'
+//include ':bluetooth'
 //include ':videocompress'
 //include 'force:dexshell', 'force:forceapkobj', 'force:reforceapk'
 //include 'annotation:javaannotation', 'annotation:androidannotation'

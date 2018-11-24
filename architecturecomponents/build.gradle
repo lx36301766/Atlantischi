@@ -15,8 +15,8 @@ android {
 }
 
 dependencies {
-    implementation annotation.dagger
-    annotationProcessor annotation.dagger_compiler
+//    implementation annotation.dagger
+//    annotationProcessor annotation.dagger_compiler
 
 //    implementation ktx.core
 //    implementation ktx.fragment

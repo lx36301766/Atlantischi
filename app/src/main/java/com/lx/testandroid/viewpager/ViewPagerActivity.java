@@ -6,11 +6,11 @@ import java.util.List;
 import com.lx.testandroid.R;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.PagerAdapter;
 
 /**
  * Created by xuanluo on 16/11/25.

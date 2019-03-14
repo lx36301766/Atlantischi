@@ -37,8 +37,7 @@ class SingletonWithContext private constructor(context: Context) {
         private var instance: SingletonWithContext? = null
 
         fun getInstance(context: Context): SingletonWithContext {
-            return instance ?: synchronized(this) {
-                instance ?: SingletonWithContext(context) }
+            return instance ?: synchronized(this) { instance ?: SingletonWithContext(context) }
         }
 
     }

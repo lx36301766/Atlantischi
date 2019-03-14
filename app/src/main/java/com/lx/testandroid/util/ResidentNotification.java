@@ -18,8 +18,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.support.v7.app.NotificationCompat;
 import android.widget.RemoteViews;
+import androidx.core.app.NotificationCompat;
 
 /**
  * Created on 05/09/2017.

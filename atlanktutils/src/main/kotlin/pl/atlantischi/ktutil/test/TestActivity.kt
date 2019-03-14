@@ -8,11 +8,10 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.PowerManager
-import android.support.annotation.RequiresApi
-import android.support.v7.app.AppCompatActivity
 import android.telephony.SubscriptionManager
 import android.util.Log
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import pl.atlantischi.ktutil.R
 import pl.atlantischi.ktutil.extension.*
 

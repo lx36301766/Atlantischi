@@ -6,15 +6,15 @@ import java.lang.annotation.RetentionPolicy;
 import android.content.Context;
 import android.graphics.PointF;
 import android.graphics.Rect;
-import android.support.annotation.IntDef;
-import android.support.v7.widget.LinearSmoothScroller;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import androidx.annotation.IntDef;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * CustomLayoutManager

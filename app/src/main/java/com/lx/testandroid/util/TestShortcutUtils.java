@@ -1,7 +1,6 @@
 package com.lx.testandroid.util;
 
 import com.lx.testandroid.common.NumberTextActivity;
-import pl.atlantischi.shortcut.shortcut.shortcut_lib.ShortcutUtils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +21,7 @@ public class TestShortcutUtils {
     public static void delLaunchIcon(Context context) {
         Intent shortcutAction = new Intent(context, NumberTextActivity.class);
         shortcutAction.setAction(ACTION_PLAY);
-        ShortcutUtils.removeShortcut(context, shortcutAction, "ttt");
+//        ShortcutUtils.removeShortcut(context, shortcutAction, "ttt");
     }
 
     public static void addLaunchIcon(Context context) {
@@ -34,7 +33,7 @@ public class TestShortcutUtils {
         paint.setTextAlign(Paint.Align.CENTER);
         paint.setTextSize(50);
         new Canvas(bitmap).drawText("" + 3, 50, 50, paint);
-        ShortcutUtils.addShortcut(context, shortcutAction, "ttt", false, bitmap);
+//        ShortcutUtils.addShortcut(context, shortcutAction, "ttt", false, bitmap);
     }
 
 

@@ -8,10 +8,6 @@ import com.lx.testandroid.recyclerview.FragmentTestActivity;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -24,6 +20,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class SocialViewPageTitleLayout extends RelativeLayout {
 

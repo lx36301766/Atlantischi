@@ -8,9 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.View;
 import android.widget.Button;
+import androidx.annotation.Nullable;
 
 /**
  * Created on 28/04/2017.
@@ -57,33 +56,4 @@ public class MarketActivity extends Activity{
         }
     }
 
-}
-
-interface ABC {
-
-    void tes();
-    void te2s();
-
-}
-
-@FunctionalInterface
-interface TestInterface {
-
-    // 抽象方法
-    void sub();
-
-    // java.lang.Object中的方法不是抽象方法
-    boolean equals(Object var1);
-
-    int hashCode();
-
-    // default不是抽象方法
-    default void defaultMethod(){
-
-    }
-
-    // static不是抽象方法
-    static void staticMethod(){
-
-    }
 }

@@ -3,7 +3,6 @@ package com.lx.testandroid.common
 import java.util.ArrayList
 
 import com.lx.testandroid.R
-import pl.atlantischi.shortcut.shortcut.shortcut_lib.ShortcutSuperUtils
 import com.lx.testandroid.util.ResidentNotification
 import com.lx.testandroid.util.TestShortcutUtils
 

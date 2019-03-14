@@ -31,7 +31,6 @@ import android.nfc.NfcManager
 import android.os.*
 import android.os.storage.StorageManager
 import android.print.PrintManager
-import android.support.annotation.RequiresApi
 import android.telecom.TelecomManager
 import android.telephony.SubscriptionManager
 import android.telephony.TelephonyManager
@@ -41,6 +40,7 @@ import android.view.accessibility.AccessibilityManager
 import android.view.accessibility.CaptioningManager
 import android.view.inputmethod.InputMethodManager
 import android.view.textservice.TextServicesManager
+import androidx.annotation.RequiresApi
 
 /**
  * Created on 12/09/2018.

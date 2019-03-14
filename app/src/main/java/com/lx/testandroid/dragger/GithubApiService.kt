@@ -12,6 +12,6 @@ import retrofit2.http.Path
  */
 
 interface GithubApiService {
-    @GET("/users/{user}/repos")
-    fun getRepoData(@Path("user") user: String): Observable<ArrayList<Repo>>
+//    @GET("/users/{user}/repos")
+//    fun getRepoData(@Path("user") user: String): Observable<ArrayList<Repo>>
 }

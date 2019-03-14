@@ -17,7 +17,6 @@ import android.net.LocalSocket;
 import android.net.LocalSocketAddress;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 

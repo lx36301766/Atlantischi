@@ -10,12 +10,12 @@ import com.lx.testandroid.recyclerview.observablescrollview.TouchInterceptionFra
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 public class SocialScrollerHelper
         implements TouchInterceptionFrameLayout.TouchInterceptionListener, ObservableScrollViewCallbacks {

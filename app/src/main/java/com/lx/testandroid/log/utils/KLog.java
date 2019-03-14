@@ -1,6 +1,5 @@
 package com.lx.testandroid.log.utils;
 
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -76,7 +75,7 @@ public class KLog {
         IS_SHOW_LOG = isShowLog;
     }
 
-    public static void init(boolean isShowLog, @Nullable String tag) {
+    public static void init(boolean isShowLog, String tag) {
         IS_SHOW_LOG = isShowLog;
         mGlobalTag = tag;
     }

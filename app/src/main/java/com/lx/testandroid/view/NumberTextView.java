@@ -4,13 +4,13 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
-import android.widget.TextView;
+import androidx.appcompat.widget.AppCompatTextView;
 
 /**
  * Created by xuanluo on 2016/12/30.
  */
 
-public class NumberTextView extends TextView {
+public class NumberTextView extends AppCompatTextView {
 
     public NumberTextView(Context context) {
         super(context);

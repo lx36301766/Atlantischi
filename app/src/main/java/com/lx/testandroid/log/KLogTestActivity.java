@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class KLogTestActivity extends AppCompatActivity {
 
@@ -43,7 +43,7 @@ public class KLogTestActivity extends AppCompatActivity {
 //        handler.sendEmptyMessageDelayed(0, 3000);
 
         Integer[] aaa = new Integer[4];
-        TreeLog.array(aaa);
+//        TreeLog.array(aaa);
     }
 
     private void initView() {

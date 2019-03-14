@@ -22,7 +22,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 /**
@@ -75,7 +74,7 @@ public class KLog {
         IS_SHOW_LOG = isShowLog;
     }
 
-    public static void init(boolean isShowLog, @Nullable String tag) {
+    public static void init(boolean isShowLog, String tag) {
         IS_SHOW_LOG = isShowLog;
         mGlobalTag = tag;
     }

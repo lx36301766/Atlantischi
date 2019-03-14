@@ -78,10 +78,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation support_x_deps.appcompatV7
-    implementation support_x_deps.supportV4
-    implementation support_x_deps.supportV13
-    implementation support_x_deps.annotations
-    implementation support_x_deps.recyclerView
-    implementation support_x_deps.design
-    implementation support_deps.constraint_layout
+//    implementation support_x_deps.supportV4
+//    implementation support_x_deps.supportV13
+//    implementation support_x_deps.annotations
+//    implementation support_x_deps.recyclerView
+//    implementation support_x_deps.design
+//    implementation support_deps.constraint_layout
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }

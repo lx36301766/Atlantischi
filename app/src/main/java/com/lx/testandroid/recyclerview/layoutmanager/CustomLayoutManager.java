@@ -3,15 +3,15 @@ package com.lx.testandroid.recyclerview.layoutmanager;
 import android.content.Context;
 import android.graphics.PointF;
 import android.graphics.Rect;
-import android.support.annotation.IntDef;
-import android.support.v7.widget.LinearSmoothScroller;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import androidx.annotation.IntDef;
+import androidx.recyclerview.widget.LinearSmoothScroller;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -30,7 +30,6 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
     public CustomLayoutManager() {
     }
 
-    /** @see android.support.v7.widget.RecyclerView.LayoutManager#onLayoutChildren(RecyclerView.Recycler, RecyclerView.State) */
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         if (state.isPreLayout()) { // 跳过preLayout，preLayout主要用于支持动画，暂时先使用自带的简单的fading
@@ -139,7 +138,6 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
         return true;
     }
 
-    /** @see android.support.v7.widget.RecyclerView.LayoutManager#scrollVerticallyBy(int, RecyclerView.Recycler, RecyclerView.State) */
     @Override
     public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
         int willScroll = dy;
@@ -373,15 +371,11 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
         int contentHeight;
 
         /**
-         * {@link #orientation} 为 {@link #HORIZONTAL} 时，每列显示的item数
-         * {@link #orientation} 为 {@link #VERTICAL} 时，每行显示的item数
          * 每个item有可能占用多格 {@link LayoutParams#occupationLineBlocks}
          */
         int itemLineCount;
 
         /**
-         * {@link #orientation} 为 {@link #HORIZONTAL} 时，表示列数
-         * {@link #orientation} 为 {@link #VERTICAL} 时，表示行数
          */
         int totalSpreadCount;
 

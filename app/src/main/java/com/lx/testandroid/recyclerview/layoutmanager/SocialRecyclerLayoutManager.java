@@ -1,15 +1,15 @@
 package com.lx.testandroid.recyclerview.layoutmanager;
 
-import static android.support.v7.widget.RecyclerView.NO_POSITION;
+import static androidx.recyclerview.widget.DiffUtil.DiffResult.NO_POSITION;
 
 import java.util.ArrayList;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class SocialRecyclerLayoutManager extends RecyclerView.LayoutManager {
 

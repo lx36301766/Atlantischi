@@ -3,11 +3,11 @@ package com.lx.testandroid.common
 import java.util.Random
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 
 import com.lx.testandroid.R
 import com.lx.testandroid.util.NativeSupplier

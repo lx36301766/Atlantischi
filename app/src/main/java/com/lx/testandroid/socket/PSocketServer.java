@@ -35,43 +35,36 @@ public class PSocketServer {
 
     public void start() throws IOException {
         mLocalServerSocket = new LocalServerSocket(NAME);
-        Executors.newSingleThreadExecutor().submit(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    // 这个方法是阻塞的,有Client连接上来的时候,这里就会回调.
-                    try {
-                        mLocalSocket = mLocalServerSocket.accept();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    receiveMessageFromClient();
-                    responseToClient();
+        Executors.newSingleThreadExecutor().submit((Runnable) () -> {
+            while (true) {
+                // 这个方法是阻塞的,有Client连接上来的时候,这里就会回调.
+                try {
+                    mLocalSocket = mLocalServerSocket.accept();
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
+                receiveMessageFromClient();
+                responseToClient();
             }
         });
     }
 
     private void receiveMessageFromClient() {
         // 读取的是一个阻塞的过程,如果在这里不开一个线程的,那么会一直阻塞在这里,后面的代码得不到执行
-        Executors.newSingleThreadExecutor().submit(new Runnable() {
-
-            @Override
-            public void run() {
-                try {
-                    InputStream input = mLocalSocket.getInputStream();
-                    // 这里是读取的代码
-                    int read = 0;
-                    byte[] bytes = new byte[1024];
-                    // reading
-                    while (read != -1) {
-                        // read next byte
-                        read = input.read(bytes);
-                        Log.d(TAG, "-----receiveMessageFromClient = " + new String(bytes, 0, read));
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
+        Executors.newSingleThreadExecutor().submit(() -> {
+            try {
+                InputStream input = mLocalSocket.getInputStream();
+                // 这里是读取的代码
+                int read = 0;
+                byte[] bytes = new byte[1024];
+                // reading
+                while (read != -1) {
+                    // read next byte
+                    read = input.read(bytes);
+                    Log.d(TAG, "-----receiveMessageFromClient = " + new String(bytes, 0, read));
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         });
     }

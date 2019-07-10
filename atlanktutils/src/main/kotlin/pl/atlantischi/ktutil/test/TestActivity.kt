@@ -23,7 +23,7 @@ import pl.atlantischi.ktutil.extension.*
 
 class TestActivity : Activity() {
 
-    internal val tv by bindView<TextView>(R.id.tv_test)
+    val tv by bindView<TextView>(R.id.tv_test)
 
     val myColor by bindColorRes(R.color.bind_color_test)
 

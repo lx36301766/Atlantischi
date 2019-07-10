@@ -45,11 +45,11 @@ dependencies {
     implementation rx.rxkotlin
     implementation rx.rxjava
 
-    implementation annotation.dagger
+//    implementation annotation.dagger
 //    implementation annotation.dagger_android
 //    implementation annotation.dagger_android_support
-    kapt annotation.dagger_compiler
-    kapt annotation.dagger_android_processor
+//    kapt annotation.dagger_compiler
+//    kapt annotation.dagger_android_processor
 
 //    implementation anko.commons
 //    implementation anko.sdk25

@@ -13,8 +13,10 @@ android {
 }
 
 dependencies {
-    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    api "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    api kt.stdlib
+    api kt.reflect
+//    api kt.kotlinx_coroutines
+    api kt.kotlinx_coroutines_android
 }
 
 buildscript {
@@ -22,6 +24,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath kt.gradle_plugin
     }
 }

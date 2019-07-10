@@ -12,16 +12,12 @@ import pl.atlantischi.ktutil.extension.*
 
 fun main(args: Array<String>) {
 
-    val activity = Activity()
-
-    activity.TAG
 }
 
 class Foo {
 
     fun foo() {
         Log.d(TAG, "")
-
     }
 
 }

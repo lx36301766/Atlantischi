@@ -16,8 +16,10 @@ import android.content.pm.ResolveInfo
 import android.os.Bundle
 import android.os.Handler
 import android.text.format.DateFormat
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.TextView
 import android.widget.Toast
 
@@ -65,6 +67,13 @@ class NumberTextActivity : Activity() {
                 }
             }, 1000)
         }
+
+
+        val dm = DisplayMetrics()
+        val windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        windowManager.defaultDisplay.getMetrics(dm)
+
+        Log.d("lx", "h=" + dm.heightPixels + ", w=" + dm.widthPixels)
     }
 
 }

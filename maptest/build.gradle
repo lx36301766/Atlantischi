@@ -20,5 +20,12 @@ android {
 }
 
 dependencies {
-    implementation project(':mapadapter')
+    implementation anko.commons
+    implementation anko.design
+    implementation anko.recyclerview_v7
+
+    api "com.amap.api:3dmap:6.6.0"
+    api "com.amap.api:search:6.5.0.1"
+    api "com.amap.api:location:4.6.0"
+
 }

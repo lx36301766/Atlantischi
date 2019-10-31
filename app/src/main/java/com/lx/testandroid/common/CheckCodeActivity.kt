@@ -19,11 +19,11 @@ class CheckCodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_code)
 
-        val imageView = findViewById(R.id.verify_code_img) as ImageView
+        val imageView = findViewById<ImageView>(R.id.verify_code_img)
         val nativeSupplier = NativeSupplier(this)
         imageView.setImageBitmap(nativeSupplier.getVerifyCodeBitmap("" + randomInterval(1000, 9999), 137, 50))
 
-        val btn = findViewById(R.id.btn) as Button
+        val btn = findViewById<Button>(R.id.btn)
         btn.setOnClickListener {
             val width = NativeSupplier.sp2px(91.1f).toInt()
             val height = NativeSupplier.sp2px(33.3f).toInt()

@@ -12,7 +12,7 @@
     </item>
     <item android:duration="@integer/loading_anim_time">
         <rotate
-            android:drawable="@drawable/loading"
+            android:drawable="@drawable/ic_loading"
             android:fromDegrees="0"
             android:pivotX="50%"
             android:pivotY="50%"

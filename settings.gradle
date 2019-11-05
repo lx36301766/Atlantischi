@@ -1,6 +1,6 @@
 
 include ':app', ':java'
-//include ':kotlinandroid'
+include ':kotlinandroid'
 //include ':atlanktutils'
 //include ':jetpack'
 
